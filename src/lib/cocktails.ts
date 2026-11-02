@@ -82,6 +82,63 @@ export function formatAmount(item: RecipeIngredient, unit: MeasurementUnit, serv
   return `${fraction(amount)} ${label}`;
 }
 
+// ——— Soirée : quantités totales ———
+
+export type PartyLine = { id: string; name: string; category: string; text: string; detail?: string; volumeMl: number };
+
+const BOTTLES: Record<string, { size: number; label: string }> = {
+  spiritueux: { size: 700, label: 'bouteille de 70 cl' },
+  liqueur: { size: 700, label: 'bouteille de 70 cl' },
+  aperitif_vermouth: { size: 750, label: 'bouteille de 75 cl' },
+  vin_bulles: { size: 750, label: 'bouteille de 75 cl' },
+  soft_bulle: { size: 1000, label: 'bouteille de 1 L' },
+};
+const FRUITS: Record<string, { ml: number; label: string }> = {
+  citron: { ml: 30, label: 'citron' },
+  'citron-vert': { ml: 25, label: 'citron vert' },
+  'jus-d-orange': { ml: 80, label: 'orange' },
+  'jus-de-pamplemousse': { ml: 150, label: 'pamplemousse' },
+};
+/** « citron vert » → « citrons verts », « bouteille de 70 cl » → « bouteilles de 70 cl ». */
+function plural(count: number, label: string) {
+  if (count <= 1) return label;
+  const [head, ...tail] = label.split(' de ');
+  const words = head.split(' ').map((word) => (/[sx]$/.test(word) ? word : `${word}s`));
+  return [words.join(' '), ...tail].join(' de ');
+}
+
+/** Additionne les ingrédients de plusieurs cocktails (chacun pour N verres) et les traduit en achats concrets. */
+export function partyShopping(entries: { cocktail: Cocktail; glasses: number }[], ingredients: Map<string, Ingredient>): PartyLine[] {
+  const totals = new Map<string, { ml: number; others: Map<string, number> }>();
+  for (const { cocktail, glasses } of entries) {
+    for (const item of cocktail.ingredients) {
+      if (item.optional) continue;
+      const total = totals.get(item.id) ?? { ml: 0, others: new Map<string, number>() };
+      if (item.unit === 'ml') total.ml += item.amount * glasses;
+      else total.others.set(item.unit, (total.others.get(item.unit) ?? 0) + item.amount * glasses);
+      totals.set(item.id, total);
+    }
+  }
+  return [...totals.entries()].map(([id, total]) => {
+    const ingredient = ingredients.get(id);
+    const category = ingredient?.category ?? 'frais_garniture';
+    const parts: string[] = [];
+    if (total.ml) parts.push(total.ml >= 1000 ? `${fmt(total.ml / 1000, 2)} L` : `${fmt(total.ml / 10)} cl`);
+    for (const [unit, amount] of total.others) parts.push(formatAmount({ id, amount, unit: unit as RecipeIngredient['unit'] }, 'ml'));
+    let detail: string | undefined;
+    const fruit = FRUITS[id];
+    const bottle = BOTTLES[category];
+    if (total.ml && fruit) {
+      const count = Math.ceil(total.ml / fruit.ml);
+      detail = `≈ ${count} ${plural(count, fruit.label)}`;
+    } else if (total.ml && bottle) {
+      const count = Math.ceil(total.ml / bottle.size);
+      detail = `${count} ${plural(count, bottle.label)}`;
+    }
+    return { id, name: ingredient?.name ?? id, category, text: parts.join(' + '), detail, volumeMl: total.ml };
+  }).sort((a, b) => b.volumeMl - a.volumeMl || a.name.localeCompare(b.name, 'fr'));
+}
+
 // ——— Profil calculé ———
 
 export type Metrics = { abv: number; volume: number; sugar: number; acidity: number; bitterness: number; alcoholMl: number; dilution: number };

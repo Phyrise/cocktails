@@ -11,7 +11,7 @@ import { Scrim } from '@/components/scrim';
 import { Button, Card, Chip, HScroll, IconButton, Screen, SectionHeader, T } from '@/components/ui';
 import { radius, space } from '@/constants/theme';
 import { availability, cocktailOfTheDay, containsAvoided, tasteProfile, tasteScore } from '@/lib/cocktails';
-import { MOODS } from '@/lib/filters';
+import { COLLECTIONS, MOODS } from '@/lib/filters';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
 
@@ -30,6 +30,13 @@ export default function HomeScreen() {
   const { stock, data } = user;
 
   const featured = useMemo(() => cocktailOfTheDay(cocktails), [cocktails]);
+
+  // Chaque collection prend en couverture une de ses recettes avec photo (stable d'un jour à l'autre).
+  const collections = useMemo(() => COLLECTIONS.map((collection) => {
+    const members = cocktails.filter((cocktail) => collection.test(cocktail, catalog.ingredientById));
+    const withPhoto = members.filter((cocktail) => cocktail.image);
+    return { collection, count: members.length, cover: withPhoto[collection.id.length % Math.max(1, withPhoto.length)] ?? members[0] };
+  }).filter((entry) => entry.count >= 3), [catalog.ingredientById, cocktails]);
 
   const { ready, forYou, hasTaste } = useMemo(() => {
     const profile = tasteProfile(cocktails, { favorites: user.favorites, ratings: data.ratings, likedFlavors: data.likedFlavors, avoid: data.avoid });
@@ -92,6 +99,7 @@ export default function HomeScreen() {
           onPress={() => router.push({ pathname: '/recettes', params: { filter: 'ready' } })}
         />
         <IconButton name="shuffle" label="Cocktail au hasard" onPress={surprise} size={48} />
+        <IconButton name="users" label="Préparer une soirée" onPress={() => router.push('/soiree')} size={48} active={data.party.length > 0} />
       </View>
 
       <View style={styles.moods}>
@@ -133,6 +141,25 @@ export default function HomeScreen() {
         )}
       </View>
 
+      <View style={styles.section}>
+        <SectionHeader title="Collections" />
+        <HScroll>
+          {collections.map(({ collection, cover, count }) => (
+            <Pressable
+              key={collection.id}
+              onPress={() => router.push({ pathname: '/recettes', params: { collection: collection.id } })}
+              style={({ pressed }) => [styles.collection, { opacity: pressed ? 0.85 : 1 }]}>
+              {cover ? <CocktailImage cocktail={cover} style={StyleSheet.absoluteFill} rounded={radius.lg} /> : null}
+              <Scrim from={0.15} strength={0.82} />
+              <View style={styles.collectionText}>
+                <T variant="h3" style={{ color: '#FFFFFF' }} numberOfLines={2}>{collection.title}</T>
+                <T variant="tiny" style={{ color: 'rgba(255,255,255,0.85)' }} numberOfLines={1}>{count} recettes · {collection.subtitle}</T>
+              </View>
+            </Pressable>
+          ))}
+        </HScroll>
+      </View>
+
       {hasTaste && forYou.length ? (
         <View style={styles.section}>
           <SectionHeader title="Pour vous" subtitle="D’après vos favoris, vos notes et vos goûts" action="Mes goûts" onAction={() => router.push('/settings')} />
@@ -152,4 +179,6 @@ const styles = StyleSheet.create({
   cta: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
   ctaIcon: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
   moods: { marginTop: space.sm },
+  collection: { width: 168, height: 132, borderRadius: radius.lg, overflow: 'hidden', justifyContent: 'flex-end' },
+  collectionText: { padding: space.sm, gap: 2 },
 });

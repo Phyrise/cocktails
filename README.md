@@ -14,7 +14,13 @@ fonctionnement hors connexion.
   de base, famille, saveurs, préparation ; tris par disponibilité, goûts, note, degré.
 - **Fiche** : ingrédients cochés selon votre bar, nombre de verres, ml / cl / oz, étapes, profil (degré, sucre, acidité,
   amertume), histoire, note sur 5 et commentaire, favoris, « à essayer », recettes proches, ajout des manquants aux courses.
-- **Mon bar** : ingrédients par catégorie, meilleurs achats (ce qui débloque le plus de recettes), liste de courses.
+- **Pas à pas** : depuis une fiche, préparation guidée en plein écran (une étape par écran, doses rappelées, écran
+  maintenu allumé), puis note du cocktail.
+- **Soirée** : on choisit quelques cocktails et le nombre de verres ; l'app additionne tout et le traduit en bouteilles,
+  citrons et kilos de glaçons, puis ajoute les manquants aux courses.
+- **Collections** : sélection de Clément, classiques IBA, apéritif à l'italienne, trois ingrédients, tiki…
+- **Mon bar** : « Ce que j'ai », ingrédients par catégorie repliable, idées d'achat (ce qui débloque le plus de
+  recettes), liste de courses.
 - **Mes listes** : favoris, à essayer, notés, recettes personnelles.
 - **Créer / modifier** une recette (avec photo, compressée sur le téléphone). Modifier une recette de la base crée
   « ma version », réversible.

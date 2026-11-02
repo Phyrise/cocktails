@@ -35,6 +35,9 @@ export type UserData = {
   /** Saveurs recherchées et ingrédients à éviter : orientent les suggestions. */
   likedFlavors: string[];
   avoid: string[];
+  /** Soirée en préparation : cocktails choisis et nombre de verres de chacun. */
+  party: { id: string; glasses: number }[];
+  guests: number;
   settings: Settings;
 };
 
@@ -43,7 +46,7 @@ const LEGACY_KEY = '@arturo-clementine/v1';
 
 export const emptyUserData = (): UserData => ({
   version: 1, stock: [], favorites: [], toTry: [], ratings: {}, notes: {}, shopping: [], recent: [], custom: [], customIngredients: [],
-  likedFlavors: [], avoid: [],
+  likedFlavors: [], avoid: [], party: [], guests: 4,
   settings: { unit: 'ml', theme: 'auto', assumeBasics: true, autoUpdate: true },
 });
 
@@ -64,6 +67,10 @@ function sanitizeUserData(value: Partial<UserData> | undefined): UserData {
     customIngredients: sanitizeList(value.customIngredients, sanitizeIngredient),
     likedFlavors: list(value.likedFlavors),
     avoid: list(value.avoid),
+    party: (Array.isArray(value.party) ? value.party : [])
+      .filter((entry): entry is { id: string; glasses: number } => !!entry && typeof entry.id === 'string' && typeof entry.glasses === 'number')
+      .map((entry) => ({ id: entry.id, glasses: Math.max(1, Math.min(200, Math.round(entry.glasses))) })),
+    guests: typeof value.guests === 'number' && value.guests > 0 ? Math.min(100, Math.round(value.guests)) : 4,
     settings: { ...base.settings, ...(value.settings ?? {}) },
   };
 }
@@ -106,6 +113,11 @@ type UserActions = {
   toggleShopping: (id: string) => void;
   toggleLikedFlavor: (flavor: string) => void;
   toggleAvoid: (id: string) => void;
+  addToParty: (id: string) => void;
+  removeFromParty: (id: string) => void;
+  setPartyGlasses: (id: string, glasses: number) => void;
+  setGuests: (guests: number) => void;
+  clearParty: () => void;
   addShopping: (ids: string[]) => void;
   clearShopping: (onlyOwned?: boolean) => void;
   markViewed: (id: string) => void;
@@ -277,6 +289,11 @@ export function AppProvider({ children }: PropsWithChildren) {
       toggleShopping: (id) => update((current) => ({ ...current, shopping: toggle(current.shopping, id) })),
       toggleLikedFlavor: (flavor) => update((current) => ({ ...current, likedFlavors: toggle(current.likedFlavors, flavor) })),
       toggleAvoid: (id) => update((current) => ({ ...current, avoid: toggle(current.avoid, id) })),
+      addToParty: (id) => update((current) => (current.party.some((entry) => entry.id === id) ? current : { ...current, party: [...current.party, { id, glasses: current.guests }] })),
+      removeFromParty: (id) => update((current) => ({ ...current, party: current.party.filter((entry) => entry.id !== id) })),
+      setPartyGlasses: (id, glasses) => update((current) => ({ ...current, party: current.party.map((entry) => (entry.id === id ? { ...entry, glasses: Math.max(1, Math.min(200, glasses)) } : entry)) })),
+      setGuests: (guests) => update((current) => ({ ...current, guests: Math.max(1, Math.min(100, guests)) })),
+      clearParty: () => update((current) => ({ ...current, party: [] })),
       addShopping: (ids) => update((current) => ({ ...current, shopping: [...new Set([...current.shopping, ...ids])] })),
       clearShopping: () => update((current) => ({ ...current, shopping: [] })),
       markViewed: (id) => update((current) => (current.recent[0] === id ? current : { ...current, recent: [id, ...current.recent.filter((item) => item !== id)].slice(0, 20) })),

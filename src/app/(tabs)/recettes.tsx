@@ -8,7 +8,7 @@ import { Icon } from '@/components/icon';
 import { Chip, Divider, Empty, IconButton, T } from '@/components/ui';
 import { fonts, MAX_WIDTH, radius, space } from '@/constants/theme';
 import { availability, type Availability, computeMetrics, containsAvoided, isAlcoholFree, matchesQuery, tasteProfile, tasteScore } from '@/lib/cocktails';
-import { BASES, FAMILIES, FLAVORS, METHODS, MOODS, SORTS, type SortKey } from '@/lib/filters';
+import { BASES, COLLECTIONS, FAMILIES, FLAVORS, METHODS, MOODS, SORTS, type SortKey } from '@/lib/filters';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
 
@@ -25,7 +25,7 @@ const toggleIn = <T,>(list: T[], value: T) => (list.includes(value) ? list.filte
 export default function CocktailsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
-  const params = useLocalSearchParams<{ q?: string; filter?: string; mood?: string; family?: string; ingredient?: string }>();
+  const params = useLocalSearchParams<{ q?: string; filter?: string; mood?: string; family?: string; ingredient?: string; collection?: string }>();
   const { cocktails, ingredientById, searchIndex } = useCatalog();
   const { stock, favorites, data, updateSettings } = useUser();
   const layout = data.settings.layout ?? 'list';
@@ -38,11 +38,12 @@ export default function CocktailsScreen() {
   const [flavors, setFlavors] = useState<string[]>([]);
   const [methods, setMethods] = useState<string[]>([]);
   const [ingredient, setIngredient] = useState<string | null>(null);
+  const [collection, setCollection] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>('dispo');
   const [panel, setPanel] = useState(false);
 
   // Les liens de l'accueil (« Que puis-je faire ? », humeurs…) pré-remplissent les filtres.
-  const incoming = [params.filter, params.mood, params.family, params.ingredient, params.q];
+  const incoming = [params.filter, params.mood, params.family, params.ingredient, params.q, params.collection];
   const incomingKey = incoming.join('|');
   const [appliedKey, setAppliedKey] = useState('');
   if (incomingKey !== appliedKey) {
@@ -53,11 +54,12 @@ export default function CocktailsScreen() {
       setFamilies(params.family ? [params.family] : []);
       setIngredient(params.ingredient ?? null);
       setQuery(params.q ?? '');
+      setCollection(params.collection ?? null);
       setPanel(false);
     }
   }
   useEffect(() => {
-    if (incomingKey.replace(/\|/g, '')) router.setParams({ filter: undefined, mood: undefined, family: undefined, ingredient: undefined, q: undefined });
+    if (incomingKey.replace(/\|/g, '')) router.setParams({ filter: undefined, mood: undefined, family: undefined, ingredient: undefined, q: undefined, collection: undefined });
   }, [incomingKey]);
 
   const [showAvoided, setShowAvoided] = useState(false);
@@ -65,6 +67,7 @@ export default function CocktailsScreen() {
   const hiddenCount = showAvoided || query.trim() ? 0 : cocktails.filter((cocktail) => containsAvoided(cocktail, profile.avoid)).length;
   const results = (() => {
     const moodDef = MOODS.find((item) => item.id === mood);
+    const collectionDef = COLLECTIONS.find((item) => item.id === collection);
     const rows: { cocktail: Cocktail; value: Availability; relevance: number }[] = [];
     for (const cocktail of cocktails) {
       const relevance = query.trim() ? matchesQuery(cocktail, searchIndex.get(cocktail.id) ?? '', query) : 1;
@@ -76,6 +79,7 @@ export default function CocktailsScreen() {
       if (quick.includes('nojo') && !isAlcoholFree(cocktail, ingredientById)) continue;
       if (quick.includes('fav') && !favorites.has(cocktail.id)) continue;
       if (moodDef && !moodDef.test(cocktail, ingredientById)) continue;
+      if (collectionDef && !collectionDef.test(cocktail, ingredientById)) continue;
       if (families.length && !families.includes(cocktail.family)) continue;
       if (methods.length && !methods.includes(cocktail.method)) continue;
       if (flavors.length && !flavors.every((flavor) => cocktail.flavors.includes(flavor))) continue;
@@ -97,14 +101,15 @@ export default function CocktailsScreen() {
     return rows.map((row) => row.cocktail);
   })();
 
-  const advancedCount = families.length + bases.length + flavors.length + methods.length + (mood ? 1 : 0) + (ingredient ? 1 : 0);
+  const advancedCount = families.length + bases.length + flavors.length + methods.length + (mood ? 1 : 0) + (ingredient ? 1 : 0) + (collection ? 1 : 0);
   // En grille, la dernière rangée est complétée par des cases vides pour garder trois colonnes égales.
   const gridData: (Cocktail | null)[] = [...results, ...Array.from({ length: (3 - (results.length % 3)) % 3 }, () => null)];
 
   const resetAll = () => {
-    setQuery(''); setQuick([]); setMood(null); setFamilies([]); setBases([]); setFlavors([]); setMethods([]); setIngredient(null);
+    setQuery(''); setQuick([]); setMood(null); setFamilies([]); setBases([]); setFlavors([]); setMethods([]); setIngredient(null); setCollection(null);
   };
   const moodLabel = MOODS.find((item) => item.id === mood)?.label;
+  const collectionLabel = COLLECTIONS.find((item) => item.id === collection)?.title;
 
   const header = (
     <View style={styles.headerInner}>
@@ -152,8 +157,9 @@ export default function CocktailsScreen() {
           </T>
         </Pressable>
       ) : null}
-      {(moodLabel || ingredient) && !panel ? (
+      {(moodLabel || ingredient || collectionLabel) && !panel ? (
         <View style={styles.chips}>
+          {collectionLabel ? <Chip label={collectionLabel} icon="x" selected onPress={() => setCollection(null)} /> : null}
           {moodLabel ? <Chip label={`Envie : ${moodLabel}`} icon="x" selected onPress={() => setMood(null)} /> : null}
           {ingredient ? <Chip label={`Avec : ${ingredientById.get(ingredient)?.name ?? ingredient}`} icon="x" selected onPress={() => setIngredient(null)} /> : null}
         </View>

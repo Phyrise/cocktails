@@ -58,6 +58,7 @@ export default function CocktailScreen() {
   }
 
   const isFavorite = user.favorites.has(cocktail.id);
+  const inParty = user.data.party.some((entry) => entry.id === cocktail.id);
   const isToTry = user.toTry.has(cocktail.id);
   const rating = user.data.ratings[cocktail.id] ?? 0;
   const unit = user.data.settings.unit;
@@ -190,8 +191,18 @@ export default function CocktailScreen() {
             </Card>
 
             <View style={{ gap: space.sm }}>
-              <T variant="h2">Préparation</T>
-              <T variant="small" tone="muted">{cocktail.method} · {cocktail.ice} · {cocktail.glass}</T>
+              <View style={styles.rowBetween}>
+                <View style={{ flex: 1 }}>
+                  <T variant="h2">Préparation</T>
+                  <T variant="small" tone="muted">{cocktail.method} · {cocktail.ice} · {cocktail.glass}</T>
+                </View>
+                <Button
+                  label="Pas à pas"
+                  icon="shaker"
+                  size="sm"
+                  onPress={() => router.push({ pathname: '/preparer', params: { id: cocktail.id, servings: String(servings) } })}
+                />
+              </View>
               {cocktail.steps.map((step, index) => (
                 <View key={index} style={styles.step}>
                   <View style={[styles.stepNumber, { backgroundColor: colors.accent }]}><T variant="small" style={{ color: colors.accentInk, fontWeight: '800' }}>{index + 1}</T></View>
@@ -235,6 +246,11 @@ export default function CocktailScreen() {
             </Card>
 
             <View style={{ gap: space.xs }}>
+              {inParty ? (
+                <Button label="Dans ma soirée · voir le menu" icon="users" variant="secondary" onPress={() => router.push('/soiree')} />
+              ) : (
+                <Button label="Ajouter à ma soirée" icon="users" variant="secondary" onPress={() => { user.addToParty(cocktail.id); toast(`Ajouté au menu de la soirée (${user.data.guests} verres)`); }} />
+              )}
               <Button label={isCustom ? 'Modifier ma recette' : 'Modifier à mon goût'} icon="pencil" variant="secondary" onPress={() => router.push({ pathname: '/editor', params: { id: cocktail.id } })} />
               {isOverride ? (
                 <Button

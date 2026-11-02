@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { availability, bestPurchases, computeMetrics, formatAmount, matchesQuery, sanitizeCocktail, sanitizeList, searchText, tasteProfile, tasteScore } from '../../src/lib/cocktails.ts';
+import { availability, bestPurchases, computeMetrics, formatAmount, matchesQuery, partyShopping, sanitizeCocktail, sanitizeList, searchText, tasteProfile, tasteScore } from '../../src/lib/cocktails.ts';
 
 const negroni = {
   id: 'negroni', name: 'Negroni', tagline: '', description: '', family: 'Spirit-forward', method: 'Verre à mélange', glass: 'Old fashioned', ice: 'Gros glaçon',
@@ -59,6 +59,17 @@ test('goûts : saveurs aimées, favoris et ingrédients évités', () => {
   assert.ok(tasteScore(daiquiri, fan) > tasteScore(negroni, fan));
   const allergic = tasteProfile([negroni, daiquiri], { ...base, avoid: ['campari'] });
   assert.ok(tasteScore(negroni, allergic) < -5);
+});
+
+test('soirée : quantités additionnées et traduites en bouteilles et en fruits', () => {
+  const byId = new Map([...ingredients, ['rhum-blanc', { id: 'rhum-blanc', name: 'Rhum blanc', category: 'spiritueux' }], ['citron-vert', { id: 'citron-vert', name: 'Jus de citron vert', category: 'jus' }], ['gin', { id: 'gin', name: 'Gin', category: 'spiritueux' }]]);
+  const lines = partyShopping([{ cocktail: negroni, glasses: 10 }, { cocktail: daiquiri, glasses: 6 }], byId);
+  const rhum = lines.find((line) => line.id === 'rhum-blanc');
+  assert.equal(rhum.text, '36 cl');
+  assert.equal(rhum.detail, '1 bouteille de 70 cl');
+  assert.equal(lines.find((line) => line.id === 'gin').text, '30 cl');
+  assert.equal(lines.find((line) => line.id === 'citron-vert').detail, '≈ 8 citrons verts');
+  assert.ok(!lines.some((line) => line.id === 'menthe'), 'les facultatifs ne comptent pas');
 });
 
 test('fichier abîmé : fiches complétées ou écartées, jamais de plantage', () => {

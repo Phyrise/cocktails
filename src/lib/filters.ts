@@ -34,7 +34,25 @@ export const MOODS: Mood[] = [
   { id: 'sans-alcool', label: 'Sans alcool', icon: 'leaf', test: (c, ing) => isAlcoholFree(c, ing) },
 ];
 
-export type SortKey = 'nom' | 'dispo' | 'note' | 'force' | 'gouts';
+export type Collection = { id: string; title: string; subtitle: string; test: (cocktail: Cocktail, ingredients: Map<string, Ingredient>) => boolean };
+
+const uses = (cocktail: Cocktail, ids: string[]) => cocktail.ingredients.some((item) => ids.includes(item.id));
+const requiredCount = (cocktail: Cocktail) => cocktail.ingredients.filter((item) => !item.optional).length;
+
+/** Sélections thématiques proposées sur l'accueil (un toucher ouvre la liste filtrée). */
+export const COLLECTIONS: Collection[] = [
+  { id: 'clement', title: 'La sélection de Clément', subtitle: 'Ses recettes, ses doses', test: (c) => c.origin === 'clement' },
+  { id: 'iba', title: 'Les classiques IBA', subtitle: 'La liste officielle des barmen', test: (c) => !!c.iba },
+  { id: 'italien', title: 'Apéritif à l’italienne', subtitle: 'Bitter, vermouth et amaro', test: (c) => uses(c, ['campari', 'aperol', 'vermouth-rouge', 'amaro-nonino', 'cynar', 'fernet-branca']) },
+  { id: 'trois', title: 'Trois ingrédients max', subtitle: 'Simples et vite faits', test: (c) => requiredCount(c) <= 3 },
+  { id: 'bulles', title: 'Bulles & spritz', subtitle: 'Légers et pétillants', test: (c) => c.family === 'Pétillant & Spritz' || uses(c, ['champagne', 'prosecco']) },
+  { id: 'tiki', title: 'Tiki & tropical', subtitle: 'Rhum, fruits et glace pilée', test: (c) => c.family === 'Tiki & Tropical' },
+  { id: 'dessert', title: 'Après le dîner', subtitle: 'Crémeux, café, digestifs', test: (c) => c.family === 'Crémeux & Dessert' || c.flavors.includes('Café') },
+  { id: 'sans-alcool', title: 'Sans alcool', subtitle: 'De vrais cocktails, zéro degré', test: (c, ing) => isAlcoholFree(c, ing) },
+  { id: 'chaud', title: 'Boissons chaudes', subtitle: 'Pour l’hiver', test: (c) => c.family === 'Chaud' },
+];
+
+export type SortKey ='nom' | 'dispo' | 'note' | 'force' | 'gouts';
 export const SORTS: { id: SortKey; label: string }[] = [
   { id: 'dispo', label: 'Disponibilité' },
   { id: 'nom', label: 'Nom' },

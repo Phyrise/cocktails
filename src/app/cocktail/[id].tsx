@@ -15,7 +15,7 @@ import { confirm } from '@/lib/dialogs';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { MeasurementUnit } from '@/types/cocktail';
 
-const difficultyLabel = ['', 'Facile', 'Intermédiaire', 'Avancé'];
+const difficultyLabel = ['', 'Facile', 'Modéré', 'Avancé'];
 const fmt = (value: number, digits = 1) => Number(value.toFixed(digits)).toLocaleString('fr-FR');
 
 export default function CocktailScreen() {
@@ -156,7 +156,7 @@ export default function CocktailScreen() {
               {!value.ready ? (
                 <View style={styles.actionsRow}>
                   <Button
-                    label="Ajouter aux courses"
+                    label="Aux courses"
                     icon="cart"
                     size="sm"
                     variant="secondary"

@@ -31,16 +31,25 @@ export function availability(cocktail: Cocktail, stock: Set<string>, assumeBasic
   return { owned: required.length - missing.length, required: required.length, missing, ready: missing.length === 0 };
 }
 
-/** Ingrédients absents qui débloqueraient le plus de cocktails (ceux auxquels il ne manque que cet ingrédient). */
+/**
+ * Ingrédients absents qui rapprochent le plus de recettes : une recette à laquelle il ne manque que lui compte
+ * pleinement, une recette à qui il manque deux ingrédients compte un peu (utile quand le bar est presque vide).
+ */
 export function bestPurchases(cocktails: Cocktail[], stock: Set<string>, assumeBasics: boolean) {
-  const unlocks = new Map<string, Cocktail[]>();
+  const entries = new Map<string, { id: string; unlocked: Cocktail[]; score: number; uses: number }>();
   for (const cocktail of cocktails) {
     const { missing } = availability(cocktail, stock, assumeBasics);
-    if (missing.length !== 1) continue;
-    const id = missing[0].id;
-    unlocks.set(id, [...(unlocks.get(id) ?? []), cocktail]);
+    if (!missing.length || missing.length > 3) continue;
+    const weight = [0, 1, 0.3, 0.08][missing.length];
+    for (const item of missing) {
+      const entry = entries.get(item.id) ?? { id: item.id, unlocked: [], score: 0, uses: 0 };
+      entry.score += weight;
+      entry.uses += 1;
+      if (missing.length === 1) entry.unlocked.push(cocktail);
+      entries.set(item.id, entry);
+    }
   }
-  return [...unlocks.entries()].map(([id, list]) => ({ id, cocktails: list })).sort((a, b) => b.cocktails.length - a.cocktails.length);
+  return [...entries.values()].sort((a, b) => b.score - a.score);
 }
 
 export const isAlcoholFree = (cocktail: Cocktail, ingredients: Map<string, Ingredient>) =>
@@ -96,7 +105,7 @@ export function computeMetrics(cocktail: Cocktail, ingredients: Map<string, Ingr
     abv: served ? (alcoholMl / served) * 100 : 0,
     volume: served,
     sugar: rows.reduce((sum, row) => sum + (row.volume * (row.profile?.sugar ?? 0)) / 1000, 0),
-    acidity: Math.min(5, weighted('acidity')),
+    acidity: Math.min(5, weighted('acidity') * 1.8),
     bitterness: Math.min(5, weighted('bitterness') * 1.6),
     alcoholMl,
     dilution,

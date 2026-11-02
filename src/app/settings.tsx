@@ -118,10 +118,8 @@ export default function SettingsScreen() {
       <Group title="Importer et exporter">
         <T variant="small" tone="muted">Un seul bouton pour importer : l’app reconnaît une base de recettes ou une sauvegarde de vos données.</T>
         <Button label="Importer un fichier" icon="upload" loading={busy === 'import'} onPress={importAny} />
-        <View style={styles.row}>
-          <Button label="Mes données" icon="download" variant="secondary" flex onPress={() => run('backup', () => saveJsonFile(`arturo-clementine-sauvegarde-${today()}.json`, user.backupFile()))} />
-          <Button label="La base" icon="database" variant="secondary" flex onPress={() => run('export', async () => { if (db) await saveJsonFile(`arturo-clementine-base-${db.version}.json`, databaseFile(db)); })} />
-        </View>
+        <Button label="Exporter mes données" icon="download" variant="secondary" onPress={() => run('backup', () => saveJsonFile(`arturo-clementine-sauvegarde-${today()}.json`, user.backupFile()))} />
+        <Button label="Exporter la base" icon="database" variant="secondary" onPress={() => run('export', async () => { if (db) await saveJsonFile(`arturo-clementine-base-${db.version}.json`, databaseFile(db)); })} />
         <T variant="tiny" tone="muted">« Mes données » : bar, favoris, notes, listes et recettes personnelles, pour les transférer vers un autre téléphone. « La base » : toutes les recettes, pour les partager sans connexion.</T>
       </Group>
 

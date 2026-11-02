@@ -2,11 +2,11 @@
   "expo": {
     "name": "Arturo et Clémentine",
     "slug": "arturo-et-clementine",
-    "version": "0.3.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "arturoclementine",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon"
     },
@@ -24,7 +24,12 @@
       ]
     },
     "web": {
-      "output": "static",
+      "output": "single",
+      "name": "Arturo et Clémentine",
+      "shortName": "A&C Cocktails",
+      "lang": "fr",
+      "description": "Quoi boire ce soir ? Recettes de cocktails, votre bar et vos envies.",
+      "themeColor": "#8C2638",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [

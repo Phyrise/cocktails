@@ -89,11 +89,14 @@ export default function BarScreen() {
             <Card style={{ gap: space.sm }}>
               <View style={styles.rowCenter}>
                 <Icon name="sparkles" size={18} color={colors.gold} />
-                <T variant="h3" style={{ flex: 1 }}>Le meilleur achat</T>
+                <T variant="h3" style={{ flex: 1 }}>Les meilleurs achats</T>
               </View>
-              <T variant="small" tone="muted">Chaque bouteille ci-dessous complète d’un coup plusieurs recettes.</T>
-              {purchases.map(({ id, cocktails: unlocked }, index) => {
+              <T variant="small" tone="muted">{stock.size ? 'Ce qui complète le plus de recettes avec ce que vous avez déjà.' : 'Les ingrédients les plus utiles pour commencer votre bar.'}</T>
+              {purchases.map(({ id, unlocked, uses }, index) => {
                 const item = ingredientById.get(id);
+                const detail = unlocked.length
+                  ? `+${unlocked.length} : ${unlocked.slice(0, 3).map((cocktail) => cocktail.name).join(', ')}${unlocked.length > 3 ? '…' : ''}`
+                  : `Rapproche de ${uses} recette${uses > 1 ? 's' : ''}`;
                 return (
                   <View key={id}>
                     {index ? <Divider style={{ marginBottom: space.sm }} /> : null}
@@ -101,7 +104,7 @@ export default function BarScreen() {
                       <T style={{ fontSize: 22 }}>{item?.emoji ?? '•'}</T>
                       <Pressable style={{ flex: 1 }} onPress={() => router.push({ pathname: '/cocktails', params: { ingredient: id } })}>
                         <T variant="h3" numberOfLines={1}>{item?.name ?? id}</T>
-                        <T variant="small" tone="muted" numberOfLines={1}>+{unlocked.length} : {unlocked.slice(0, 3).map((cocktail) => cocktail.name).join(', ')}{unlocked.length > 3 ? '…' : ''}</T>
+                        <T variant="small" tone="muted" numberOfLines={1}>{detail}</T>
                       </Pressable>
                       <Pressable
                         accessibilityLabel="Ajouter à la liste de courses"

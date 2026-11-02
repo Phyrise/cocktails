@@ -41,7 +41,7 @@ export function GlassArt({ glass, color, size }: { glass: string; color: string;
 type Props = { cocktail: Cocktail; style?: ViewStyle; rounded?: number; artScale?: number };
 
 /** Photo du cocktail, ou illustration de son verre teintée à sa couleur quand il n'y a pas de photo. */
-export function CocktailImage({ cocktail, style, rounded = 16, artScale = 0.5 }: Props) {
+export function CocktailImage({ cocktail, style, rounded = 16, artScale = 0.6 }: Props) {
   const { db } = useCatalog();
   const { scheme } = useTheme();
   const [failed, setFailed] = useState(false);

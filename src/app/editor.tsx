@@ -221,7 +221,7 @@ export default function EditorScreen() {
             </View>
             <T variant="label" tone="muted">Difficulté</T>
             <View style={styles.wrap}>
-              {([1, 2, 3] as const).map((level) => <Chip key={level} label={['', 'Facile', 'Intermédiaire', 'Avancé'][level]} selected={draft.difficulty === level} onPress={() => set('difficulty', level)} />)}
+              {([1, 2, 3] as const).map((level) => <Chip key={level} label={['', 'Facile', 'Modéré', 'Avancé'][level]} selected={draft.difficulty === level} onPress={() => set('difficulty', level)} />)}
             </View>
             <T variant="label" tone="muted">Couleur de la boisson</T>
             <View style={styles.wrap}>

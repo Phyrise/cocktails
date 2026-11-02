@@ -157,7 +157,9 @@ async function worker() {
     const { size } = await stat(target);
     imageBytes += size;
     images.push(`img/${cocktail.id}.webp`);
-    cocktail.image = `img/${cocktail.id}.webp`;
+    // Le suffixe de version fait recharger une photo modifiée malgré le cache hors ligne.
+    const version = createHash('sha256').update(await readFile(target)).digest('hex').slice(0, 8);
+    cocktail.image = `img/${cocktail.id}.webp?v=${version}`;
     cocktail.imageCredit = credit;
   }
 }

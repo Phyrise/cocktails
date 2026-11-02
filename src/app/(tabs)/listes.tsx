@@ -46,7 +46,7 @@ export default function ListsScreen() {
         onChange={setTab}
         options={[
           { value: 'favoris', label: 'Favoris', count: lists.favoris.length },
-          { value: 'essayer', label: 'À essayer', count: lists.essayer.length },
+          { value: 'essayer', label: 'À tester', count: lists.essayer.length },
           { value: 'notes', label: 'Notés', count: lists.notes.length },
           { value: 'perso', label: 'Perso', count: lists.perso.length },
         ]}

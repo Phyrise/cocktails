@@ -140,7 +140,7 @@ export function Segmented<T extends string>({ options, value, onChange }: { opti
         return (
           <Pressable key={option.value} onPress={() => onChange(option.value)} style={[styles.segment, active && { backgroundColor: colors.surface, borderColor: colors.line }]}>
             <Text numberOfLines={1} style={[styles.segmentLabel, { color: active ? colors.ink : colors.muted }]}>
-              {option.label}{option.count != null ? ` · ${option.count}` : ''}
+              {option.label}{option.count ? ` · ${option.count}` : ''}
             </Text>
           </Pressable>
         );

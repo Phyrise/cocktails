@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { FlatList, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { CocktailRow } from '@/components/cocktail-card';
@@ -121,10 +121,10 @@ export default function CocktailsScreen() {
         />
         {query ? <Pressable hitSlop={8} onPress={() => setQuery('')} accessibilityLabel="Effacer"><Icon name="x" size={18} color={colors.muted} /></Pressable> : null}
       </View>
-      <View style={styles.chips}>
-        {QUICK.map((item) => <Chip key={item.id} label={item.label} selected={quick.includes(item.id)} onPress={() => setQuick(toggleIn(quick, item.id))} />)}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.quickScroll} contentContainerStyle={styles.quickRow} keyboardShouldPersistTaps="handled">
         <Chip label={advancedCount ? `Filtres · ${advancedCount}` : 'Filtres'} icon="sliders" selected={panel || advancedCount > 0} onPress={() => setPanel(!panel)} />
-      </View>
+        {QUICK.map((item) => <Chip key={item.id} label={item.label} selected={quick.includes(item.id)} onPress={() => setQuick(toggleIn(quick, item.id))} />)}
+      </ScrollView>
       {hiddenCount || showAvoided ? (
         <Pressable onPress={() => setShowAvoided(!showAvoided)} hitSlop={6}>
           <T variant="small" tone="muted">
@@ -221,6 +221,8 @@ const styles = StyleSheet.create({
   search: { flexDirection: 'row', alignItems: 'center', gap: space.xs, borderWidth: 1, borderRadius: radius.pill, paddingHorizontal: space.md, minHeight: 48 },
   searchInput: { flex: 1, fontFamily: fonts.body, fontSize: 16, paddingVertical: 10, outlineStyle: 'none' } as object,
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs },
+  quickScroll: { marginHorizontal: -space.md, flexGrow: 0 },
+  quickRow: { gap: space.xs, paddingHorizontal: space.md },
   panel: { borderWidth: 1, borderRadius: radius.lg, padding: space.md, gap: space.md },
   panelActions: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   panelDone: { borderRadius: radius.pill, paddingHorizontal: space.md, paddingVertical: 10 },

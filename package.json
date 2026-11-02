@@ -1,27 +1,29 @@
 {
-  "name": "expo-template-default",
+  "name": "arturo-et-clementine",
   "license": "0BSD",
   "main": "expo-router/entry",
-  "version": "57.0.12",
+  "version": "0.1.0",
   "scripts": {
     "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
+    "android": "expo start --android --localhost",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@expo/ui": "~57.0.9",
-    "expo": "~57.0.10",
-    "expo-constants": "~57.0.9",
+    "@expo/ui": "~57.0.10",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~57.0.12",
+    "expo-constants": "~57.0.10",
     "expo-device": "~57.0.1",
     "expo-font": "~57.0.1",
     "expo-glass-effect": "~57.0.1",
     "expo-image": "~57.0.2",
+    "expo-image-picker": "~57.0.9",
     "expo-linking": "~57.0.5",
-    "expo-router": "~57.0.10",
-    "expo-splash-screen": "~57.0.5",
+    "expo-router": "~57.0.12",
+    "expo-splash-screen": "~57.0.6",
     "expo-status-bar": "~57.0.1",
     "expo-symbols": "~57.0.1",
     "expo-system-ui": "~57.0.2",
@@ -38,6 +40,8 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~57.0.1",
     "typescript": "~6.0.3"
   }
 }

@@ -1,56 +1,65 @@
-# Welcome to your Expo app 👋
+# Arturo et Clémentine
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Une application mobile française pour choisir un cocktail à partir de ses envies et de ce que l'on possède déjà. Le projet est conçu par Arturo (IA et cocktails) et Clément (histoire et cocktails).
 
-## Get started
+Le dépôt contient déjà un prototype Expo SDK 57 navigable : accueil éditorial, bibliothèque filtrable, disponibilité calculée, inventaire interactif, favoris et fiches recettes.
 
-1. Install dependencies
+## Lancer le prototype
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+L'environnement du Mac est configuré avec Node.js 24 LTS, Watchman, Android Studio, le SDK Android et un appareil virtuel dédié.
 
 ```bash
-npm run reset-project
+pnpm install
+pnpm android
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+La commande `pnpm android` démarre Expo en connexion locale et ouvre l'application dans l'émulateur Android actif. Le mode local évite les erreurs réseau `Failed to download remote update`. Si le téléphone virtuel n'est pas déjà lancé :
 
-### Other setup steps
+```bash
+emulator -avd medium_phone
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Pour un aperçu web rapide :
 
-## Learn more
+```bash
+pnpm web
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Pour tester sur un Pixel réel, en Wi-Fi, par USB ou avec un APK alpha, suivre [le guide Android](./docs/TESTER-SUR-ANDROID.md). Le profil EAS `preview` est prêt à produire un APK installable.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Expo recommande actuellement le template SDK 57 pour les nouveaux projets et un *development build* pour l'environnement de développement complet. Sur un téléphone Android physique, la version d'Expo Go disponible peut temporairement imposer un SDK plus ancien pendant la transition ; l'émulateur et le development build évitent cette contrainte.
 
-## Join the community
+## Où travailler
 
-Join our community of developers creating universal apps.
+- `src/app/` : écrans et navigation Expo Router.
+- `src/data/cocktails.ts` : jeu de démonstration (à faire valider par Clément).
+- `src/types/cocktail.ts` : contrat de données.
+- `src/state/app-state.tsx` : état local provisoire du stock et des favoris.
+- `docs/` : cadrage produit, modèle de données et feuille de route.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Commandes
+
+```bash
+pnpm start       # serveur Expo
+pnpm android     # émulateur/appareil Android
+pnpm web         # aperçu navigateur
+pnpm lint        # règles Expo
+pnpm typecheck   # vérification TypeScript
+```
+
+## Données, profils et laboratoire
+
+La bibliothèque V0.2 réunit les recettes éditoriales initiales et les 44 cocktails du classeur `COCKTAIL_TIME_V1.xlsx` de Clément. L'import généré se trouve dans `src/data/clement-cocktails.generated.ts` et conserve les catégories détaillées ainsi que les doses en ml, traits, gouttes, pièces et garnitures.
+
+Chaque ingrédient porte désormais un profil ABV, sucre, acidité et amertume. Les fiches calculent dynamiquement l'ABV avant/après dilution, le sucre par verre et les indices gustatifs. Les hypothèses de dilution vivent dans `src/utils/cocktail-metrics.ts` et les profils dans `src/data/ingredient-profiles.ts`.
+
+L'onglet **Envies** contient désormais :
+
+- un laboratoire de recettes manuelles avec photo et stockage local ;
+- un accès aux réglages ml/oz, également disponible sur tous les autres écrans.
+
+Le comptoir expert se trouve sur l'accueil. Il utilise un score déterministe combinant mots de saveur, proximité entre recettes, favoris, exclusions et indicateurs ABV/sucre/acide/amer. Il est conçu pour être remplacé ou complété plus tard par le modèle serveur.
+
+## Statut
+
+Prototype V0.3. Le stock, les favoris, les préférences d'unité et les créations expérimentales sont conservés localement sur l'appareil. Une synchronisation serveur pourra être ajoutée après validation des parcours et du modèle éditorial.

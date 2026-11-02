@@ -10,7 +10,7 @@ import type { Cocktail, Database, Ingredient, MeasurementUnit } from '@/types/co
 // ——— Données personnelles ———
 
 export type ThemeChoice = 'auto' | 'light' | 'dark';
-export type Settings = { unit: MeasurementUnit; theme: ThemeChoice; assumeBasics: boolean; autoUpdate: boolean };
+export type Settings = { unit: MeasurementUnit; theme: ThemeChoice; assumeBasics: boolean; autoUpdate: boolean; installHintDismissed?: boolean };
 
 export type UserData = {
   version: 1;

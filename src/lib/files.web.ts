@@ -29,6 +29,10 @@ export function pickJsonFile(): Promise<unknown | null> {
     input.type = 'file';
     input.accept = 'application/json,.json';
     input.style.display = 'none';
+    input.addEventListener('cancel', () => {
+      input.remove();
+      resolve(null);
+    });
     input.onchange = async () => {
       const file = input.files?.[0];
       input.remove();

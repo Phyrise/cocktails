@@ -5,6 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { CocktailTile, openCocktail } from '@/components/cocktail-card';
 import { CocktailImage } from '@/components/cocktail-image';
 import { Icon } from '@/components/icon';
+import { InstallHint } from '@/components/install-hint';
 import { PageHeader } from '@/components/page-header';
 import { Scrim } from '@/components/scrim';
 import { Button, Card, Chip, HScroll, IconButton, Screen, SectionHeader, T } from '@/components/ui';
@@ -61,6 +62,8 @@ export default function HomeScreen() {
         title="Arturo et Clémentine"
         right={<IconButton name="settings" label="Réglages" onPress={() => router.push('/settings')} />}
       />
+
+      <InstallHint />
 
       {catalog.updateAvailable ? (
         <Card style={[styles.banner, { backgroundColor: colors.accentSoft, borderColor: colors.accentSoft }]} onPress={() => router.push('/settings')}>

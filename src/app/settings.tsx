@@ -168,7 +168,7 @@ export default function SettingsScreen() {
           {isIos ? (
             <T variant="small">Dans Safari, touchez <T variant="small" style={{ fontWeight: '700' }}>Partager</T> puis <T variant="small" style={{ fontWeight: '700' }}>Sur l’écran d’accueil</T>. L’app s’ouvrira en plein écran et fonctionnera hors ligne.</T>
           ) : (
-            <T variant="small">Dans Chrome, ouvrez le menu ⋮ puis <T variant="small" style={{ fontWeight: '700' }}>Installer l’application</T> (ou « Ajouter à l’écran d’accueil »). L’app fonctionnera ensuite hors ligne.</T>
+            <T variant="small">Dans Chrome, ouvrez le menu (les trois points) puis <T variant="small" style={{ fontWeight: '700' }}>Installer l’application</T> (ou « Ajouter à l’écran d’accueil »). L’app fonctionnera ensuite hors ligne.</T>
           )}
         </Group>
       ) : null}

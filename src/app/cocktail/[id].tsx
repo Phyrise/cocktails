@@ -10,7 +10,7 @@ import { Scrim } from '@/components/scrim';
 import { useToast } from '@/components/toast';
 import { Button, Card, Divider, Empty, HScroll, IconButton, SectionHeader, Segmented, Stars, T } from '@/components/ui';
 import { fonts, MAX_WIDTH, radius, space } from '@/constants/theme';
-import { computeMetrics, formatAmount, hasIngredient, similarCocktails, strengthLabel } from '@/lib/cocktails';
+import { BASICS, computeMetrics, formatAmount, hasIngredient, similarCocktails, strengthLabel } from '@/lib/cocktails';
 import { confirm } from '@/lib/dialogs';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { MeasurementUnit } from '@/types/cocktail';
@@ -52,7 +52,7 @@ export default function CocktailScreen() {
   if (!cocktail || !metrics) {
     return (
       <View style={[styles.screen, { backgroundColor: colors.bg, paddingTop: insets.top + space.xl }]}>
-        <Empty icon="search" title="Recette introuvable" text="Elle a peut-être été supprimée." action="Retour aux cocktails" onAction={() => router.replace('/cocktails')} />
+        <Empty icon="search" title="Recette introuvable" text="Elle a peut-être été supprimée." action="Retour aux cocktails" onAction={() => router.replace('/recettes')} />
       </View>
     );
   }
@@ -65,7 +65,7 @@ export default function CocktailScreen() {
   const isCustom = user.data.custom.some((item) => item.id === cocktail.id);
   const isOverride = isCustom && !!base;
   const missingIds = value.missing.map((item) => item.id);
-  const back = () => (router.canGoBack() ? router.back() : router.replace('/cocktails'));
+  const back = () => (router.canGoBack() ? router.back() : router.replace('/recettes'));
 
   const facts: { icon: IconName; label: string; value: string }[] = [
     { icon: 'glass', label: 'Verre', value: cocktail.glass },
@@ -137,11 +137,21 @@ export default function CocktailScreen() {
               {cocktail.ingredients.map((item, index) => {
                 const ingredient = catalog.ingredientById.get(item.id);
                 const owned = hasIngredient(item.id, user.stock, user.data.settings.assumeBasics);
+                const name = ingredient?.name ?? item.id;
+                const basic = user.data.settings.assumeBasics && BASICS.has(item.id);
                 return (
                   <Pressable
                     key={`${item.id}-${index}`}
-                    onPress={() => router.push({ pathname: '/cocktails', params: { ingredient: item.id } })}
-                    style={styles.ingredient}>
+                    accessibilityRole="checkbox"
+                    accessibilityState={{ checked: owned }}
+                    // Toucher : je l'ai / je ne l'ai plus. Appui long : les recettes avec cet ingrédient.
+                    onPress={() => {
+                      if (basic) return toast(`${name} : toujours disponible (réglage « basiques »)`);
+                      user.toggleStock(item.id);
+                      toast(user.stock.has(item.id) ? `${name} retiré de votre bar` : `${name} ajouté à votre bar`);
+                    }}
+                    onLongPress={() => router.push({ pathname: '/recettes', params: { ingredient: item.id } })}
+                    style={({ pressed }) => [styles.ingredient, { opacity: pressed ? 0.6 : 1 }]}>
                     <View style={[styles.dot, { borderColor: owned ? colors.ok : colors.line, backgroundColor: owned ? colors.ok : 'transparent' }]}>
                       {owned ? <Icon name="check" size={12} color={colors.surface} strokeWidth={3.2} /> : null}
                     </View>
@@ -157,6 +167,7 @@ export default function CocktailScreen() {
                   </Pressable>
                 );
               })}
+              <T variant="tiny" tone="muted">Touchez un ingrédient pour le cocher dans votre bar ; appui long : les recettes qui l’utilisent.</T>
               {cocktail.garnish ? (
                 <View style={[styles.garnish, { backgroundColor: colors.surfaceAlt }]}>
                   <Icon name="leaf" size={16} color={colors.muted} />

@@ -13,6 +13,18 @@ const baseIndex = args.indexOf('--base');
 const BASE = (baseIndex >= 0 ? args[baseIndex + 1] : '/cocktails').replace(/\/$/, '');
 const OUT = path.resolve('dist');
 
+// Une route qui porte le nom du dossier de publication (ex. /cocktails sous /cocktails/) serait confondue
+// avec la racine du site par le routeur : les liens vers elle ramèneraient à l'accueil.
+const segment = BASE.split('/').filter(Boolean).pop();
+if (segment) {
+  const routes = await readdir('src/app', { recursive: true });
+  const clash = routes.find((file) => path.basename(file).replace(/\.tsx?$/, '') === segment);
+  if (clash) {
+    console.error(`La route src/app/${clash} porte le même nom que la base d'URL « ${BASE} » : renommez-la.`);
+    process.exit(1);
+  }
+}
+
 await rm(OUT, { recursive: true, force: true });
 const result = spawnSync(process.execPath, ['node_modules/expo/bin/cli', 'export', '-p', 'web', '--output-dir', 'dist'], {
   stdio: 'inherit',

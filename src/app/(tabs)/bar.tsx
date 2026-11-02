@@ -109,7 +109,7 @@ export default function BarScreen() {
                     {index ? <Divider style={{ marginBottom: space.sm }} /> : null}
                     <View style={styles.rowCenter}>
                       <T style={{ fontSize: 22 }}>{item?.emoji ?? '•'}</T>
-                      <Pressable style={{ flex: 1 }} onPress={() => router.push({ pathname: '/cocktails', params: { ingredient: id } })}>
+                      <Pressable style={{ flex: 1 }} onPress={() => router.push({ pathname: '/recettes', params: { ingredient: id } })}>
                         <T variant="h3" numberOfLines={1}>{item?.name ?? id}</T>
                         <T variant="small" tone="muted" numberOfLines={1}>{detail}</T>
                       </Pressable>

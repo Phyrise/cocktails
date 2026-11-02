@@ -36,7 +36,7 @@ export default function TabsLayout() {
         sceneStyle: { backgroundColor: colors.bg },
       }}>
       <Tabs.Screen name="index" options={tab('Accueil', 'home')} />
-      <Tabs.Screen name="cocktails" options={tab('Cocktails', 'search')} />
+      <Tabs.Screen name="recettes" options={tab('Cocktails', 'search')} />
       <Tabs.Screen name="bar" options={{ ...tab('Mon bar', 'wine'), tabBarBadge: shoppingCount || undefined, tabBarBadgeStyle: { backgroundColor: colors.accent, color: colors.accentInk, fontSize: 10 } }} />
       <Tabs.Screen name="listes" options={tab('Mes listes', 'heart')} />
     </Tabs>

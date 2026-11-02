@@ -89,7 +89,7 @@ export default function HomeScreen() {
       ) : null}
 
       <View style={styles.quickRow}>
-        <Button label="Que puis-je faire ?" icon="wine" flex onPress={() => router.push({ pathname: '/cocktails', params: { filter: 'ready' } })} />
+        <Button label="Que puis-je faire ?" icon="wine" flex onPress={() => router.push({ pathname: '/recettes', params: { filter: 'ready' } })} />
         <IconButton name="shuffle" label="Cocktail au hasard" onPress={surprise} size={48} />
       </View>
 
@@ -98,7 +98,7 @@ export default function HomeScreen() {
           title="Avec votre bar"
           subtitle={stock.size ? `${ready.length} cocktail${ready.length > 1 ? 's' : ''} faisable${ready.length > 1 ? 's' : ''} maintenant` : undefined}
           action={ready.length ? 'Tout voir' : undefined}
-          onAction={() => router.push({ pathname: '/cocktails', params: { filter: 'ready' } })}
+          onAction={() => router.push({ pathname: '/recettes', params: { filter: 'ready' } })}
         />
         {!stock.size ? (
           <Card onPress={() => router.push('/bar')} style={styles.cta}>
@@ -120,7 +120,7 @@ export default function HomeScreen() {
 
       {almost.length ? (
         <View style={styles.section}>
-          <SectionHeader title="À un ingrédient près" action="Tout voir" onAction={() => router.push({ pathname: '/cocktails', params: { filter: 'one' } })} />
+          <SectionHeader title="À un ingrédient près" action="Tout voir" onAction={() => router.push({ pathname: '/recettes', params: { filter: 'one' } })} />
           <HScroll>
             {almost.slice(0, 12).map(({ cocktail, value }) => (
               <CocktailTile key={cocktail.id} cocktail={cocktail} subtitle={`Manque : ${ingredientById.get(value.missing[0].id)?.name ?? value.missing[0].id}`} />
@@ -154,7 +154,7 @@ export default function HomeScreen() {
         <SectionHeader title="Envie de…" />
         <View style={styles.moods}>
           {MOODS.map((mood) => (
-            <Chip key={mood.id} label={mood.label} icon={mood.icon} onPress={() => router.push({ pathname: '/cocktails', params: { mood: mood.id } })} />
+            <Chip key={mood.id} label={mood.label} icon={mood.icon} onPress={() => router.push({ pathname: '/recettes', params: { mood: mood.id } })} />
           ))}
         </View>
       </View>

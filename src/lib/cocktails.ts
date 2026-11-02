@@ -170,13 +170,32 @@ export function similarCocktails(target: Cocktail, cocktails: Cocktail[], count 
     .map((entry) => entry.cocktail);
 }
 
-/** Ordonne une liste selon les goûts : favoris et bonnes notes rapprochent, mauvaises notes éloignent. */
-export function tasteScore(cocktail: Cocktail, liked: Cocktail[], disliked: Cocktail[]) {
+export type TasteProfile = { liked: Cocktail[]; disliked: Cocktail[]; flavors: string[]; avoid: Set<string> };
+
+/** Profil de goûts : favoris et recettes notées 4-5 d'un côté, notées 1-2 de l'autre, plus les préférences déclarées. */
+export function tasteProfile(
+  cocktails: Cocktail[],
+  user: { favorites: Set<string>; ratings: Record<string, number>; likedFlavors: string[]; avoid: string[] },
+): TasteProfile {
+  return {
+    liked: cocktails.filter((cocktail) => user.favorites.has(cocktail.id) || (user.ratings[cocktail.id] ?? 0) >= 4),
+    disliked: cocktails.filter((cocktail) => (user.ratings[cocktail.id] ?? 5) <= 2),
+    flavors: user.likedFlavors,
+    avoid: new Set(user.avoid),
+  };
+}
+
+export const containsAvoided = (cocktail: Cocktail, avoid: Set<string>) => cocktail.ingredients.some((item) => !item.optional && avoid.has(item.id));
+
+/** Ordonne une liste selon les goûts : favoris, bonnes notes et saveurs aimées rapprochent ; mauvaises notes et ingrédients évités éloignent. */
+export function tasteScore(cocktail: Cocktail, profile: TasteProfile) {
   const features = (item: Cocktail) => [...item.ingredients.map((ingredient) => ingredient.id), ...item.flavors];
   const mine = features(cocktail);
   let score = 0;
-  for (const reference of liked) score += jaccard(mine, features(reference));
-  for (const reference of disliked) score -= jaccard(mine, features(reference)) * 1.5;
+  for (const reference of profile.liked) score += jaccard(mine, features(reference));
+  for (const reference of profile.disliked) score -= jaccard(mine, features(reference)) * 1.5;
+  score += cocktail.flavors.filter((flavor) => profile.flavors.includes(flavor)).length * 0.35;
+  if (containsAvoided(cocktail, profile.avoid)) score -= 10;
   return score;
 }
 

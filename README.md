@@ -1,65 +1,77 @@
 # Arturo et Clémentine
 
-Une application mobile française pour choisir un cocktail à partir de ses envies et de ce que l'on possède déjà. Le projet est conçu par Arturo (IA et cocktails) et Clément (histoire et cocktails).
+Une app française pour choisir un cocktail selon ses envies et ce qu'on a dans son bar. Projet d'Arturo (IA et cocktails)
+et de Clément (histoire et cocktails).
 
-Le dépôt contient déjà un prototype Expo SDK 57 navigable : accueil éditorial, bibliothèque filtrable, disponibilité calculée, inventaire interactif, favoris et fiches recettes.
+**Version 2** : web app installable (iPhone et Android) construite avec Expo, base de 228 recettes avec photos légères,
+fonctionnement hors connexion.
 
-## Lancer le prototype
+## Ce que fait l'app
 
-L'environnement du Mac est configuré avec Node.js 24 LTS, Watchman, Android Studio, le SDK Android et un appareil virtuel dédié.
+- **Accueil** : cocktail du jour, ce que vous pouvez préparer maintenant, ce qui est « à un ingrédient près », envies
+  (rafraîchissant, amer, sans alcool…), cocktail au hasard.
+- **Cocktails** : recherche par nom, ingrédient ou saveur ; filtres faisable / manque 1 / sans alcool / favoris, alcool
+  de base, famille, saveurs, préparation ; tris par disponibilité, goûts, note, degré.
+- **Fiche** : ingrédients cochés selon votre bar, nombre de verres, ml / cl / oz, étapes, profil (degré, sucre, acidité,
+  amertume), histoire, note sur 5 et commentaire, favoris, « à essayer », recettes proches, ajout des manquants aux courses.
+- **Mon bar** : ingrédients par catégorie, meilleurs achats (ce qui débloque le plus de recettes), liste de courses.
+- **Mes listes** : favoris, à essayer, notés, recettes personnelles.
+- **Créer / modifier** une recette (avec photo, compressée sur le téléphone). Modifier une recette de la base crée
+  « ma version », réversible.
+- **Réglages** : unités, thème clair / sombre, mise à jour de la base, photos hors ligne, import / export (sauvegarde de
+  vos données ou base complète en un fichier).
+
+## Démarrer
+
+Prérequis : Node.js 24 ou plus et pnpm 10 (`npm install -g pnpm@10`).
 
 ```bash
 pnpm install
-pnpm android
 ```
-
-La commande `pnpm android` démarre Expo en connexion locale et ouvre l'application dans l'émulateur Android actif. Le mode local évite les erreurs réseau `Failed to download remote update`. Si le téléphone virtuel n'est pas déjà lancé :
-
-```bash
-emulator -avd medium_phone
-```
-
-Pour un aperçu web rapide :
 
 ```bash
 pnpm web
 ```
 
-Pour tester sur un Pixel réel, en Wi-Fi, par USB ou avec un APK alpha, suivre [le guide Android](./docs/TESTER-SUR-ANDROID.md). Le profil EAS `preview` est prêt à produire un APK installable.
-
-Expo recommande actuellement le template SDK 57 pour les nouveaux projets et un *development build* pour l'environnement de développement complet. Sur un téléphone Android physique, la version d'Expo Go disponible peut temporairement imposer un SDK plus ancien pendant la transition ; l'émulateur et le development build évitent cette contrainte.
-
-## Où travailler
-
-- `src/app/` : écrans et navigation Expo Router.
-- `src/data/cocktails.ts` : jeu de démonstration (à faire valider par Clément).
-- `src/types/cocktail.ts` : contrat de données.
-- `src/state/app-state.tsx` : état local provisoire du stock et des favoris.
-- `docs/` : cadrage produit, modèle de données et feuille de route.
+L'app s'ouvre dans le navigateur (`http://localhost:8081`). `pnpm android` lance la version Android dans un émulateur.
 
 ## Commandes
 
 ```bash
-pnpm start       # serveur Expo
-pnpm android     # émulateur/appareil Android
-pnpm web         # aperçu navigateur
-pnpm lint        # règles Expo
-pnpm typecheck   # vérification TypeScript
+pnpm web          # développement, navigateur
+pnpm typecheck    # TypeScript
+pnpm lint         # règles Expo
+pnpm test         # cohérence de la base + logique (disponibilité, quantités, recherche)
+pnpm db:build     # reconstruit public/db à partir de data-src (fiches, photos WebP, tronçons)
+pnpm db:fetch     # retélécharge le catalogue TheCocktailDB (rarement utile)
+pnpm build:web    # site statique installable dans dist/ (base /cocktails)
+pnpm serve:web    # sert dist/ comme GitHub Pages sur http://localhost:8090/cocktails/
+pnpm icons        # régénère les icônes
 ```
 
-## Données, profils et laboratoire
+Publication : voir [docs/PUBLIER.md](./docs/PUBLIER.md).
 
-La bibliothèque V0.2 réunit les recettes éditoriales initiales et les 44 cocktails du classeur `COCKTAIL_TIME_V1.xlsx` de Clément. L'import généré se trouve dans `src/data/clement-cocktails.generated.ts` et conserve les catégories détaillées ainsi que les doses en ml, traits, gouttes, pièces et garnitures.
+## Où travailler
 
-Chaque ingrédient porte désormais un profil ABV, sucre, acidité et amertume. Les fiches calculent dynamiquement l'ABV avant/après dilution, le sucre par verre et les indices gustatifs. Les hypothèses de dilution vivent dans `src/utils/cocktail-metrics.ts` et les profils dans `src/data/ingredient-profiles.ts`.
+| Dossier | Contenu |
+|---|---|
+| `src/app/` | Écrans (Expo Router) : `(tabs)/` accueil, cocktails, bar, listes ; `cocktail/[id]`, `editor`, `settings`. |
+| `src/components/` | Interface : `ui.tsx` (boutons, puces, cartes…), `cocktail-card.tsx`, `cocktail-image.tsx` (photo ou verre dessiné), `icon.tsx`. |
+| `src/lib/` | Logique : `cocktails.ts` (disponibilité, quantités, profil, recherche, suggestions), `database.ts` (téléchargement par tronçons), `filters.ts`, stockage. |
+| `src/state/store.tsx` | État : base de recettes + données personnelles (IndexedDB sur le web), thème. |
+| `data-src/` | Sources de la base : fiches par lots, catalogue d'ingrédients, corrections, consignes de rédaction. |
+| `public/db/` | Base publiée (générée par `pnpm db:build`, ne pas modifier à la main). |
+| `scripts/` | Données, build du site, icônes, tests. |
+| `docs/` | Produit, modèle de données, feuille de route, publication. |
 
-L'onglet **Envies** contient désormais :
+## Données
 
-- un laboratoire de recettes manuelles avec photo et stockage local ;
-- un accès aux réglages ml/oz, également disponible sur tous les autres écrans.
-
-Le comptoir expert se trouve sur l'accueil. Il utilise un score déterministe combinant mots de saveur, proximité entre recettes, favoris, exclusions et indicateurs ABV/sucre/acide/amer. Il est conçu pour être remplacé ou complété plus tard par le modèle serveur.
+228 recettes : les 44 de la sélection de Clément (doses inchangées, textes réécrits), 5 fiches éditoriales et 179
+classiques (spécifications IBA ou recettes de référence, rédigées en français), dont 26 sans alcool. 145 ont une photo
+(TheCocktailDB, recadrée en WebP 480 px) ; les autres ont une illustration de leur verre teintée à la couleur de la boisson.
+Détails : [docs/MODELE-DONNEES.md](./docs/MODELE-DONNEES.md).
 
 ## Statut
 
-Prototype V0.3. Le stock, les favoris, les préférences d'unité et les créations expérimentales sont conservés localement sur l'appareil. Une synchronisation serveur pourra être ajoutée après validation des parcours et du modèle éditorial.
+V2.0, prête à publier. Les données personnelles restent sur l'appareil (exportables en un fichier). Les recettes
+classiques ont été relues mais méritent une validation par Clément (voir `notes` dans `data-src/recipes/`).

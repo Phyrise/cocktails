@@ -73,9 +73,9 @@ export default function CocktailScreen() {
     <View style={[styles.screen, { backgroundColor: colors.bg }]}>
       <ScrollView contentContainerStyle={{ paddingBottom: insets.bottom + space.xxl }} keyboardShouldPersistTaps="handled">
         <View style={styles.inner}>
-          <View style={styles.hero}>
+          <View style={[styles.hero, !cocktail.image && { height: 380 }]}>
             <CocktailImage cocktail={cocktail} style={StyleSheet.absoluteFill} rounded={0} artScale={0.42} />
-            <Scrim from={0.45} strength={cocktail.image ? 0.75 : 0.35} />
+            {cocktail.image ? <Scrim from={0.45} strength={0.75} /> : null}
             <View style={[styles.heroBar, { top: insets.top + space.sm }]}>
               <IconButton name="chevronLeft" label="Retour" onPress={back} />
               <View style={{ flexDirection: 'row', gap: space.xs }}>
@@ -84,8 +84,8 @@ export default function CocktailScreen() {
               </View>
             </View>
             <View style={styles.heroText}>
-              {cocktail.origin === 'clement' ? <T variant="label" style={{ color: '#F3D9A4' }}>Sélection de Clément</T> : null}
-              {cocktail.origin === 'perso' ? <T variant="label" style={{ color: '#F3D9A4' }}>{isOverride ? 'Ma version' : 'Ma recette'}</T> : null}
+              {cocktail.origin === 'clement' ? <T variant="label" style={{ color: cocktail.image ? '#F3D9A4' : colors.accent }}>Sélection de Clément</T> : null}
+              {cocktail.origin === 'perso' ? <T variant="label" style={{ color: cocktail.image ? '#F3D9A4' : colors.accent }}>{isOverride ? 'Ma version' : 'Ma recette'}</T> : null}
               <T variant="hero" style={{ color: cocktail.image ? '#FFFFFF' : colors.ink }}>{cocktail.name}</T>
               {cocktail.tagline ? <T variant="body" style={{ color: cocktail.image ? 'rgba(255,255,255,0.9)' : colors.inkSoft }}>{cocktail.tagline}</T> : null}
             </View>
@@ -140,6 +140,7 @@ export default function CocktailScreen() {
                       <T variant="body" style={{ fontWeight: '600' }}>
                         {ingredient?.name ?? item.id}
                         {item.optional ? <T variant="small" tone="muted"> (facultatif)</T> : null}
+                        {user.data.avoid.includes(item.id) ? <T variant="small" tone="danger"> · à éviter</T> : null}
                       </T>
                       {item.note ? <T variant="tiny" tone="muted">{item.note}</T> : null}
                     </View>

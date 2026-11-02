@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { availability, bestPurchases, computeMetrics, formatAmount, matchesQuery, searchText } from '../../src/lib/cocktails.ts';
+import { availability, bestPurchases, computeMetrics, formatAmount, matchesQuery, searchText, tasteProfile, tasteScore } from '../../src/lib/cocktails.ts';
 
 const negroni = {
   id: 'negroni', name: 'Negroni', tagline: '', description: '', family: 'Spirit-forward', method: 'Verre à mélange', glass: 'Old fashioned', ice: 'Gros glaçon',
@@ -49,6 +49,16 @@ test('profil : un Negroni tourne autour de 20-25 % une fois dilué', () => {
   const metrics = computeMetrics(negroni, ingredients);
   assert.ok(metrics.abv > 20 && metrics.abv < 26, `${metrics.abv}`);
   assert.ok(metrics.bitterness > 2);
+});
+
+test('goûts : saveurs aimées, favoris et ingrédients évités', () => {
+  const base = { favorites: new Set(), ratings: {}, likedFlavors: [], avoid: [] };
+  const amer = tasteProfile([negroni, daiquiri], { ...base, likedFlavors: ['Amer'] });
+  assert.ok(tasteScore(negroni, amer) > tasteScore(daiquiri, amer));
+  const fan = tasteProfile([negroni, daiquiri], { ...base, favorites: new Set(['daiquiri']) });
+  assert.ok(tasteScore(daiquiri, fan) > tasteScore(negroni, fan));
+  const allergic = tasteProfile([negroni, daiquiri], { ...base, avoid: ['campari'] });
+  assert.ok(tasteScore(negroni, allergic) < -5);
 });
 
 test('recherche : accents ignorés, nom prioritaire', () => {

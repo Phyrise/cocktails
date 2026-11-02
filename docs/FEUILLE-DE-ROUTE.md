@@ -1,43 +1,32 @@
 # Feuille de route
 
-## Lot 0 — prototype (présent)
+## Fait — V2 (novembre 2026)
 
-- Identité visuelle et navigation Android-first.
-- 7 recettes de démonstration à relire.
-- Inventaire, score de disponibilité, fiche et favoris interactifs.
+- Web app installable (iPhone, Android, ordinateur), hors ligne, publiable sur GitHub Pages.
+- Refonte visuelle : thème clair / sombre, police Fraunces, icônes, fiches lisibles, illustrations de verres.
+- Base de 228 recettes (sélection de Clément, IBA, classiques, 26 sans alcool), 145 photos WebP légères.
+- Base découpée en tronçons, mise à jour automatique, import / export d'un fichier.
+- Bar, meilleurs achats, liste de courses, favoris, à essayer, notes et commentaires, recettes personnelles avec photo.
+- Tests automatiques de la base et de la logique.
 
-## Lot 1 — fondations V1
+## Prochaines étapes
 
-- SQLite, migrations, persistance du stock et des favoris.
-- Outil d'import JSON/CSV avec validation de schéma.
-- 20 recettes « étalon » entièrement relues.
-- Tests unitaires sur quantités, filtres et disponibilité.
+- **Relecture par Clément** des 179 classiques (champ `notes` des fiches) et des textes de ses propres recettes.
+- **Photos maison** pour les recettes sans photo (déposer `data-src/images/<id>.jpg`, puis `pnpm db:build`).
+- **Substitutions** affichées sur la fiche (« pas de Cointreau ? un autre triple sec convient »).
+- **Partage** d'une recette personnelle par lien ou QR code.
+- **Synchronisation** entre appareils (aujourd'hui : export / import d'une sauvegarde).
+- **Android natif** (APK via EAS) si la web app ne suffit pas : le code est commun, seuls l'import/export de fichiers et la
+  compression des photos ont une version web à décliner.
 
-## Lot 2 — parcours complets
+## Plus tard (V3)
 
-- Recherche et filtres combinables réellement fonctionnels.
-- Substitutions et ingrédients équivalents.
-- Liste de courses.
-- Accessibilité, états vides, erreurs et petits écrans Android.
-
-## Lot 3 — contenu et bêta
-
-- Passage de 20 à 100 recettes validées.
-- Development build partageable avec Clément.
-- Mesure locale respectueuse de la vie privée et retours bêta.
-- Préparation Play Store (icône, captures, politique de confidentialité).
-
-## Lot 4 — recommandation V2
-
-- API étroite devant le modèle local Qwen.
-- Outils autorisés : rechercher, comparer, expliquer ; jamais écrire directement dans la base publiée.
-- Évaluations avec scénarios (« Americano plus corsé », contraintes d'allergie, alcool disponible).
-- Cache, délai maximal et solution 100 % déterministe si le serveur est indisponible.
+- Assistant conversationnel devant le modèle local (API étroite : rechercher, comparer, expliquer ; jamais écrire dans
+  la base publiée), avec repli sur les suggestions actuelles hors connexion.
+- Profil gustatif appris dans le temps, scan d'étiquettes, encyclopédie des techniques.
 
 ## Décisions à prendre ensemble
 
 - Conserver « Arturo et Clémentine » comme marque ou comme nom de code.
+- Photos : soutenir TheCocktailDB ou produire nos propres photos avant une diffusion large.
 - Niveau de précision historique et format des sources affichées.
-- Politique sur les marques d'alcool et les substitutions.
-- Quantité suivie ou simple présence/absence dans le stock.
-- Hébergement futur : serveur personnel seul ou service relais sécurisé.

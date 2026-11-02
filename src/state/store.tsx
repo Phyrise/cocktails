@@ -10,7 +10,7 @@ import type { Cocktail, Database, Ingredient, MeasurementUnit } from '@/types/co
 // ——— Données personnelles ———
 
 export type ThemeChoice = 'auto' | 'light' | 'dark';
-export type Settings = { unit: MeasurementUnit; theme: ThemeChoice; assumeBasics: boolean };
+export type Settings = { unit: MeasurementUnit; theme: ThemeChoice; assumeBasics: boolean; autoUpdate: boolean };
 
 export type UserData = {
   version: 1;
@@ -24,6 +24,9 @@ export type UserData = {
   /** Créations et recettes modifiées (même id qu'une recette de la base = version personnelle). */
   custom: Cocktail[];
   customIngredients: Ingredient[];
+  /** Saveurs recherchées et ingrédients à éviter : orientent les suggestions. */
+  likedFlavors: string[];
+  avoid: string[];
   settings: Settings;
 };
 
@@ -32,7 +35,8 @@ const LEGACY_KEY = '@arturo-clementine/v1';
 
 export const emptyUserData = (): UserData => ({
   version: 1, stock: [], favorites: [], toTry: [], ratings: {}, notes: {}, shopping: [], recent: [], custom: [], customIngredients: [],
-  settings: { unit: 'ml', theme: 'auto', assumeBasics: true },
+  likedFlavors: [], avoid: [],
+  settings: { unit: 'ml', theme: 'auto', assumeBasics: true, autoUpdate: true },
 });
 
 function sanitizeUserData(value: Partial<UserData> | undefined): UserData {
@@ -50,6 +54,8 @@ function sanitizeUserData(value: Partial<UserData> | undefined): UserData {
     recent: list(value.recent).slice(0, 20),
     custom: Array.isArray(value.custom) ? value.custom : [],
     customIngredients: Array.isArray(value.customIngredients) ? value.customIngredients : [],
+    likedFlavors: list(value.likedFlavors),
+    avoid: list(value.avoid),
     settings: { ...base.settings, ...(value.settings ?? {}) },
   };
 }
@@ -90,6 +96,8 @@ type UserActions = {
   setRating: (id: string, rating: number) => void;
   setNote: (id: string, note: string) => void;
   toggleShopping: (id: string) => void;
+  toggleLikedFlavor: (flavor: string) => void;
+  toggleAvoid: (id: string) => void;
   addShopping: (ids: string[]) => void;
   clearShopping: (onlyOwned?: boolean) => void;
   markViewed: (id: string) => void;
@@ -193,12 +201,17 @@ export function AppProvider({ children }: PropsWithChildren) {
     return () => { active = false; };
   }, [downloadLatest]);
 
-  // Vérifie une seule fois par lancement s'il existe une base plus récente.
+  // Une fois par lancement : s'il existe une base plus récente, elle est installée en arrière-plan
+  // (vos favoris, notes et recettes personnelles sont stockés à part et ne sont pas touchés).
+  const autoUpdate = data.settings.autoUpdate;
   useEffect(() => {
-    if (status !== 'ready' || checked.current) return;
+    if (status !== 'ready' || !userReady || checked.current) return;
     checked.current = true;
-    checkForUpdate().catch(() => undefined);
-  }, [checkForUpdate, status]);
+    (async () => {
+      const version = await checkForUpdate();
+      if (autoUpdate && version !== db?.version) await downloadLatest();
+    })().catch(() => undefined);
+  }, [autoUpdate, checkForUpdate, db?.version, downloadLatest, status, userReady]);
 
   const catalog = useMemo<Catalog>(() => {
     const baseCocktails = db?.cocktails ?? [];
@@ -250,6 +263,8 @@ export function AppProvider({ children }: PropsWithChildren) {
         return { ...current, notes };
       }),
       toggleShopping: (id) => update((current) => ({ ...current, shopping: toggle(current.shopping, id) })),
+      toggleLikedFlavor: (flavor) => update((current) => ({ ...current, likedFlavors: toggle(current.likedFlavors, flavor) })),
+      toggleAvoid: (id) => update((current) => ({ ...current, avoid: toggle(current.avoid, id) })),
       addShopping: (ids) => update((current) => ({ ...current, shopping: [...new Set([...current.shopping, ...ids])] })),
       clearShopping: () => update((current) => ({ ...current, shopping: [] })),
       markViewed: (id) => update((current) => (current.recent[0] === id ? current : { ...current, recent: [id, ...current.recent.filter((item) => item !== id)].slice(0, 20) })),
@@ -316,6 +331,8 @@ export function mergeUserData(current: UserData, incoming: UserData): UserData {
     favorites: union(current.favorites, incoming.favorites),
     toTry: union(current.toTry, incoming.toTry),
     shopping: union(current.shopping, incoming.shopping),
+    likedFlavors: union(current.likedFlavors, incoming.likedFlavors),
+    avoid: union(current.avoid, incoming.avoid),
     ratings: { ...incoming.ratings, ...current.ratings },
     notes: { ...incoming.notes, ...current.notes },
     custom: [...custom.values()],

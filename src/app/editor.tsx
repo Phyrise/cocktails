@@ -53,6 +53,8 @@ export default function EditorScreen() {
     return catalog.ingredients.filter((item) => normalize(item.name).includes(q) || item.id.includes(slugify(q))).slice(0, 6);
   }, [catalog.ingredients, picker]);
 
+  const exactMatch = suggestions.some((item) => normalize(item.name) === normalize(picker.trim()));
+
   const addIngredient = (ingredient: Ingredient) => {
     const unit: IngredientUnit = ['bitter_arome'].includes(ingredient.category) ? 'trait' : ingredient.category === 'frais_garniture' ? 'pièce' : 'ml';
     const amount = unit === 'ml' ? 30 : 1;
@@ -175,15 +177,15 @@ export default function EditorScreen() {
                     </Pressable>
                   </View>
                 ))}
-                {suggestions.length ? <Divider /> : null}
-                <View style={{ padding: space.sm, gap: space.xs }}>
+                {suggestions.length && !exactMatch ? <Divider /> : null}
+                {exactMatch ? null : <View style={{ padding: space.sm, gap: space.xs }}>
                   <T variant="small" tone="muted">Créer « {picker.trim()} » dans la catégorie :</T>
                   <View style={styles.wrap}>
                     {CATEGORY_LABELS.map((category) => (
                       <Chip key={category.id} label={category.label} selected={newCategory === category.id} onPress={() => createIngredient(category.id)} />
                     ))}
                   </View>
-                </View>
+                </View>}
               </View>
             ) : null}
           </Section>

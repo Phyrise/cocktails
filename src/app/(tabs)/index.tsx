@@ -9,7 +9,7 @@ import { PageHeader } from '@/components/page-header';
 import { Scrim } from '@/components/scrim';
 import { Button, Card, Chip, HScroll, IconButton, Screen, SectionHeader, T } from '@/components/ui';
 import { radius, space } from '@/constants/theme';
-import { availability, cocktailOfTheDay, tasteScore } from '@/lib/cocktails';
+import { availability, cocktailOfTheDay, containsAvoided, tasteProfile, tasteScore } from '@/lib/cocktails';
 import { MOODS } from '@/lib/filters';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
@@ -30,16 +30,20 @@ export default function HomeScreen() {
 
   const featured = useMemo(() => cocktailOfTheDay(cocktails), [cocktails]);
 
-  const { ready, almost } = useMemo(() => {
-    const liked = cocktails.filter((cocktail) => user.favorites.has(cocktail.id) || (data.ratings[cocktail.id] ?? 0) >= 4);
-    const disliked = cocktails.filter((cocktail) => (data.ratings[cocktail.id] ?? 5) <= 2);
-    const scored = cocktails.map((cocktail) => ({ cocktail, value: availability(cocktail, stock, data.settings.assumeBasics), taste: tasteScore(cocktail, liked, disliked) }));
+  const { ready, almost, forYou, hasTaste } = useMemo(() => {
+    const profile = tasteProfile(cocktails, { favorites: user.favorites, ratings: data.ratings, likedFlavors: data.likedFlavors, avoid: data.avoid });
+    const scored = cocktails
+      .filter((cocktail) => !containsAvoided(cocktail, profile.avoid))
+      .map((cocktail) => ({ cocktail, value: availability(cocktail, stock, data.settings.assumeBasics), taste: tasteScore(cocktail, profile) }));
     const byTaste = (a: { taste: number; cocktail: Cocktail }, b: { taste: number; cocktail: Cocktail }) => b.taste - a.taste || Number(!!b.cocktail.image) - Number(!!a.cocktail.image);
     return {
       ready: scored.filter((entry) => entry.value.ready).sort(byTaste),
       almost: scored.filter((entry) => entry.value.missing.length === 1).sort(byTaste),
+      // Suggestions personnelles : des recettes ni favorites ni encore notées.
+      forYou: scored.filter((entry) => !user.favorites.has(entry.cocktail.id) && !data.ratings[entry.cocktail.id] && entry.taste > 0).sort(byTaste).slice(0, 12),
+      hasTaste: profile.liked.length > 0 || profile.flavors.length > 0,
     };
-  }, [cocktails, data.ratings, data.settings.assumeBasics, stock, user.favorites]);
+  }, [cocktails, data.avoid, data.likedFlavors, data.ratings, data.settings.assumeBasics, stock, user.favorites]);
 
   const recent = data.recent.map((id) => catalog.byId.get(id)).filter((cocktail): cocktail is Cocktail => !!cocktail).slice(0, 10);
   const toTry = cocktails.filter((cocktail) => user.toTry.has(cocktail.id));
@@ -121,6 +125,27 @@ export default function HomeScreen() {
           </HScroll>
         </View>
       ) : null}
+
+      <View style={styles.section}>
+        <SectionHeader
+          title="Pour vous"
+          subtitle={hasTaste ? 'D’après vos favoris, vos notes et vos goûts' : undefined}
+          action={hasTaste ? 'Mes goûts' : undefined}
+          onAction={() => router.push('/settings')}
+        />
+        {hasTaste && forYou.length ? (
+          <HScroll>{forYou.map(({ cocktail }) => <CocktailTile key={cocktail.id} cocktail={cocktail} />)}</HScroll>
+        ) : (
+          <Card onPress={() => router.push('/settings')} style={styles.cta}>
+            <View style={[styles.ctaIcon, { backgroundColor: colors.accentSoft }]}><Icon name="heart" size={20} color={colors.accent} /></View>
+            <View style={{ flex: 1 }}>
+              <T variant="h3">Dites-nous ce que vous aimez</T>
+              <T variant="small" tone="muted">Saveurs préférées, ingrédients à éviter : les suggestions s’adaptent. Les favoris et les notes comptent aussi.</T>
+            </View>
+            <Icon name="chevronRight" size={18} color={colors.muted} />
+          </Card>
+        )}
+      </View>
 
       <View style={styles.section}>
         <SectionHeader title="Envie de…" />

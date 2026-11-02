@@ -7,7 +7,7 @@ import { CocktailRow } from '@/components/cocktail-card';
 import { Icon } from '@/components/icon';
 import { Chip, Divider, Empty, IconButton, T } from '@/components/ui';
 import { fonts, MAX_WIDTH, radius, space } from '@/constants/theme';
-import { availability, type Availability, computeMetrics, isAlcoholFree, matchesQuery, tasteScore } from '@/lib/cocktails';
+import { availability, type Availability, computeMetrics, containsAvoided, isAlcoholFree, matchesQuery, tasteProfile, tasteScore } from '@/lib/cocktails';
 import { BASES, FAMILIES, FLAVORS, METHODS, MOODS, SORTS, type SortKey } from '@/lib/filters';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
@@ -59,14 +59,16 @@ export default function CocktailsScreen() {
     if (incomingKey.replace(/\|/g, '')) router.setParams({ filter: undefined, mood: undefined, family: undefined, ingredient: undefined, q: undefined });
   }, [incomingKey]);
 
+  const [showAvoided, setShowAvoided] = useState(false);
+  const profile = tasteProfile(cocktails, { favorites, ratings: data.ratings, likedFlavors: data.likedFlavors, avoid: data.avoid });
+  const hiddenCount = showAvoided || query.trim() ? 0 : cocktails.filter((cocktail) => containsAvoided(cocktail, profile.avoid)).length;
   const results = (() => {
     const moodDef = MOODS.find((item) => item.id === mood);
-    const liked = cocktails.filter((cocktail) => favorites.has(cocktail.id) || (data.ratings[cocktail.id] ?? 0) >= 4);
-    const disliked = cocktails.filter((cocktail) => (data.ratings[cocktail.id] ?? 5) <= 2);
     const rows: { cocktail: Cocktail; value: Availability; relevance: number }[] = [];
     for (const cocktail of cocktails) {
       const relevance = query.trim() ? matchesQuery(cocktail, searchIndex.get(cocktail.id) ?? '', query) : 1;
       if (!relevance) continue;
+      if (hiddenCount && containsAvoided(cocktail, profile.avoid)) continue;
       const value = availability(cocktail, stock, data.settings.assumeBasics);
       if (quick.includes('ready') && !value.ready) continue;
       if (quick.includes('one') && value.missing.length !== 1) continue;
@@ -88,7 +90,7 @@ export default function CocktailsScreen() {
       const abv = new Map(rows.map((row) => [row.cocktail.id, computeMetrics(row.cocktail, ingredientById).abv]));
       rows.sort((a, b) => (abv.get(b.cocktail.id) ?? 0) - (abv.get(a.cocktail.id) ?? 0));
     } else if (sort === 'gouts') {
-      const taste = new Map(rows.map((row) => [row.cocktail.id, tasteScore(row.cocktail, liked, disliked)]));
+      const taste = new Map(rows.map((row) => [row.cocktail.id, tasteScore(row.cocktail, profile)]));
       rows.sort((a, b) => (taste.get(b.cocktail.id) ?? 0) - (taste.get(a.cocktail.id) ?? 0) || byName(a, b));
     } else rows.sort(byName);
     return rows.map((row) => row.cocktail);
@@ -123,6 +125,14 @@ export default function CocktailsScreen() {
         {QUICK.map((item) => <Chip key={item.id} label={item.label} selected={quick.includes(item.id)} onPress={() => setQuick(toggleIn(quick, item.id))} />)}
         <Chip label={advancedCount ? `Filtres · ${advancedCount}` : 'Filtres'} icon="sliders" selected={panel || advancedCount > 0} onPress={() => setPanel(!panel)} />
       </View>
+      {hiddenCount || showAvoided ? (
+        <Pressable onPress={() => setShowAvoided(!showAvoided)} hitSlop={6}>
+          <T variant="small" tone="muted">
+            {showAvoided ? 'Les recettes avec vos ingrédients évités sont affichées. ' : `${hiddenCount} recette${hiddenCount > 1 ? 's' : ''} masquée${hiddenCount > 1 ? 's' : ''} (ingrédients évités). `}
+            <T variant="small" tone="accent" style={{ fontWeight: '700' }}>{showAvoided ? 'Les masquer' : 'Afficher'}</T>
+          </T>
+        </Pressable>
+      ) : null}
       {(moodLabel || ingredient) && !panel ? (
         <View style={styles.chips}>
           {moodLabel ? <Chip label={`Envie : ${moodLabel}`} icon="x" selected onPress={() => setMood(null)} /> : null}

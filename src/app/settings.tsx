@@ -1,12 +1,14 @@
 import Constants from 'expo-constants';
 import { useState } from 'react';
-import { Platform, Pressable, StyleSheet, Switch, View } from 'react-native';
+import { Platform, Pressable, StyleSheet, Switch, TextInput, View } from 'react-native';
 
 import { Icon, type IconName } from '@/components/icon';
 import { PageHeader } from '@/components/page-header';
 import { useToast } from '@/components/toast';
-import { Button, Card, Divider, Screen, Segmented, T } from '@/components/ui';
-import { radius, space } from '@/constants/theme';
+import { Button, Card, Chip, Divider, Screen, Segmented, T } from '@/components/ui';
+import { fonts, radius, space } from '@/constants/theme';
+import { normalize } from '@/lib/cocktails';
+import { FLAVORS } from '@/lib/filters';
 import { databaseFile, defaultDbUrl, parseDatabaseFile, prefetchImages } from '@/lib/database';
 import { confirm } from '@/lib/dialogs';
 import { pickJsonFile, saveJsonFile } from '@/lib/files';
@@ -24,6 +26,10 @@ export default function SettingsScreen() {
   const [busy, setBusy] = useState<string | null>(null);
   const [imageProgress, setImageProgress] = useState<string | null>(null);
   const db = catalog.db;
+  const [avoidQuery, setAvoidQuery] = useState('');
+  const avoidMatches = avoidQuery.trim()
+    ? catalog.ingredients.filter((item) => !user.data.avoid.includes(item.id) && normalize(item.name).includes(normalize(avoidQuery.trim()))).slice(0, 8)
+    : [];
 
   const run = async (key: string, task: () => Promise<void>) => {
     setBusy(key);
@@ -98,6 +104,36 @@ export default function SettingsScreen() {
         </Line>
       </Group>
 
+      <Group title="Mes goûts">
+        <T variant="small" tone="muted">Les saveurs choisies font remonter les recettes correspondantes dans « Pour vous » et le tri « Mes goûts ».</T>
+        <View style={styles.wrap}>
+          {FLAVORS.map((flavor) => (
+            <Chip key={flavor} label={flavor} selected={user.data.likedFlavors.includes(flavor)} onPress={() => user.toggleLikedFlavor(flavor)} />
+          ))}
+        </View>
+        <Divider />
+        <T variant="body" style={{ fontWeight: '600' }}>Ingrédients à éviter</T>
+        <T variant="small" tone="muted">Allergie, aversion… Les recettes qui en contiennent disparaissent des suggestions et de la liste (la recherche les trouve encore).</T>
+        {user.data.avoid.length ? (
+          <View style={styles.wrap}>
+            {user.data.avoid.map((id) => (
+              <Chip key={id} label={catalog.ingredientById.get(id)?.name ?? id} icon="x" selected onPress={() => user.toggleAvoid(id)} />
+            ))}
+          </View>
+        ) : null}
+        <View style={[styles.search, { borderColor: colors.line, backgroundColor: colors.bg }]}>
+          <Icon name="search" size={17} color={colors.muted} />
+          <TextInput value={avoidQuery} onChangeText={setAvoidQuery} placeholder="Ajouter un ingrédient à éviter" placeholderTextColor={colors.muted} style={[styles.searchInput, { color: colors.ink }]} autoCorrect={false} />
+        </View>
+        {avoidMatches.length ? (
+          <View style={styles.wrap}>
+            {avoidMatches.map((item) => (
+              <Chip key={item.id} label={item.name} icon="plus" onPress={() => { user.toggleAvoid(item.id); setAvoidQuery(''); }} />
+            ))}
+          </View>
+        ) : null}
+      </Group>
+
       <Group title="Base de recettes">
         <View style={{ gap: 2 }}>
           <T variant="h3">{catalog.cocktails.length} recettes · {db?.cocktails.filter((cocktail) => cocktail.image).length ?? 0} photos</T>
@@ -110,6 +146,10 @@ export default function SettingsScreen() {
           <Button label="Rechercher une mise à jour" icon="refresh" variant="secondary" loading={busy === 'check'} onPress={checkUpdate} />
         )}
         {catalog.updateAvailable ? null : <Button label="Retélécharger la base" icon="download" variant="ghost" size="sm" loading={busy === 'update'} onPress={update} />}
+        <Divider />
+        <Line icon="refresh" label="Mise à jour automatique" hint="À l’ouverture, installe la dernière base publiée. Vos données personnelles ne changent pas.">
+          <Switch value={settings.autoUpdate} onValueChange={(autoUpdate) => user.updateSettings({ autoUpdate })} trackColor={{ true: colors.ok, false: colors.line }} />
+        </Line>
         <Divider />
         <T variant="small" tone="muted">Les photos s’enregistrent au fil de la navigation. Pour tout avoir hors ligne d’un coup (≈ {db ? Math.round(db.cocktails.filter((cocktail) => cocktail.image).length * 13 / 100) / 10 : 2} Mo) :</T>
         <Button label={imageProgress ? `Photos ${imageProgress}` : 'Télécharger toutes les photos'} icon="image" variant="secondary" loading={busy === 'images'} onPress={downloadImages} />
@@ -186,4 +226,7 @@ const styles = StyleSheet.create({
   line: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
   lineIcon: { width: 32, height: 32, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
   about: { alignItems: 'center', gap: 4, marginTop: space.md },
+  wrap: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs },
+  search: { flexDirection: 'row', alignItems: 'center', gap: space.xs, borderWidth: 1, borderRadius: radius.pill, paddingHorizontal: space.sm, minHeight: 44 },
+  searchInput: { flex: 1, fontFamily: fonts.body, fontSize: 16, paddingVertical: 8, outlineStyle: 'none' } as object,
 });

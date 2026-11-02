@@ -55,7 +55,7 @@ export function CocktailImage({ cocktail, style, rounded = 16, artScale = 0.6 }:
       {uri && !failed ? (
         <Image source={{ uri }} style={StyleSheet.absoluteFill} contentFit="cover" transition={150} onError={() => setFailed(true)} accessibilityLabel={cocktail.name} />
       ) : box > 0 ? (
-        <GlassArt glass={cocktail.glass} color={cocktail.color} size={box * artScale} />
+        <View style={{ marginBottom: box > 300 ? box * 0.12 : 0 }}><GlassArt glass={cocktail.glass} color={cocktail.color} size={box * artScale} /></View>
       ) : null}
     </View>
   );

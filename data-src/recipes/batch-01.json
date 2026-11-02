@@ -1,0 +1,643 @@
+{
+  "cocktails": [
+    {
+      "id": "alexander",
+      "name": "Alexander",
+      "aliases": ["Brandy Alexander"],
+      "tagline": "Cognac, cacao et crème, soyeux comme un dessert",
+      "description": "Apparu au début du XXe siècle aux États-Unis, l'Alexander se préparait d'abord au gin avant que la version au cognac ne s'impose et ne devienne la référence. Velouté et gourmand, il marie la chaleur boisée du cognac aux notes chocolatées du cacao, relevées d'un voile de muscade.",
+      "family": "Crémeux & Dessert",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "cognac", "amount": 30, "unit": "ml" },
+        { "id": "creme-de-cacao-brune", "amount": 30, "unit": "ml" },
+        { "id": "creme", "amount": 30, "unit": "ml" }
+      ],
+      "garnish": "Noix de muscade fraîchement râpée",
+      "steps": [
+        "Verser le cognac, la crème de cacao et la crème dans un shaker rempli de glaçons.",
+        "Shaker énergiquement pendant 12 à 15 secondes pour bien émulsionner la crème.",
+        "Filtrer dans une coupe bien froide.",
+        "Râper un peu de noix de muscade à la surface."
+      ],
+      "flavors": ["Crémeux", "Sucré", "Boisé", "Épicé"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#C9A27E",
+      "cocktailDbId": "11014",
+      "notes": "Source au gin avec crème de cacao blanche (version d'origine, doses déséquilibrées) ; fiche alignée sur la spécification IBA au cognac et cacao brun."
+    },
+    {
+      "id": "b-52",
+      "name": "B-52",
+      "aliases": ["B52"],
+      "tagline": "Trois liqueurs superposées en strates nettes",
+      "description": "Ce shot en trois couches serait né au début des années 1980, son nom évoquant le bombardier américain ou un groupe de rock de l'époque selon les versions. On y passe du café sucré à la crème irlandaise puis à l'orange amère du Grand Marnier, en une seule gorgée.",
+      "family": "Shot",
+      "method": "Au verre",
+      "glass": "Shot",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "liqueur-cafe", "amount": 20, "unit": "ml" },
+        { "id": "baileys", "amount": 20, "unit": "ml" },
+        { "id": "grand-marnier", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser la liqueur de café au fond d'un verre à shot.",
+        "Faire couler doucement la crème irlandaise sur le dos d'une cuillère pour former une deuxième couche.",
+        "Déposer de la même façon le Grand Marnier en surface, sans mélanger.",
+        "Servir aussitôt, à boire d'un trait."
+      ],
+      "flavors": ["Café", "Crémeux", "Sucré", "Agrume"],
+      "difficulty": 3,
+      "iba": "New Era Drinks",
+      "color": "#8B5A2B",
+      "cocktailDbId": "15853",
+      "notes": "Doses de la source incohérentes (1/3, 1/3, 1/4) : remplacées par trois parts égales de 20 ml. Catégorie IBA reprise de la source, à vérifier (le B-52 ne figure peut-être plus dans la liste IBA actuelle)."
+    },
+    {
+      "id": "bellini",
+      "name": "Bellini",
+      "aliases": [],
+      "tagline": "Pêche blanche et prosecco, l'apéritif vénitien",
+      "description": "Le Bellini est associé au Harry's Bar de Venise, où Giuseppe Cipriani l'aurait imaginé vers la fin des années 1940 en hommage au peintre Giovanni Bellini. La purée de pêche blanche apporte une douceur veloutée que les bulles fines du prosecco viennent alléger.",
+      "family": "Pétillant & Spritz",
+      "method": "Au verre",
+      "glass": "Flûte",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "puree-peche", "amount": 50, "unit": "ml" },
+        { "id": "prosecco", "amount": 100, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser la purée de pêche blanche bien froide dans une flûte rafraîchie.",
+        "Ajouter lentement le prosecco en inclinant le verre pour préserver les bulles.",
+        "Remuer très délicatement une fois pour homogénéiser."
+      ],
+      "flavors": ["Fruité", "Pétillant", "Sucré"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#F6C9A5",
+      "cocktailDbId": "17195",
+      "notes": "Source avec champagne et schnaps de pêche : remplacés par prosecco et purée de pêche blanche (spécification IBA et recette d'origine)."
+    },
+    {
+      "id": "casino",
+      "name": "Casino",
+      "aliases": [],
+      "tagline": "Old Tom gin, marasquin et citron, sec et ciselé",
+      "description": "Recette d'avant la Prohibition, le Casino apparaît dans les guides de bar du début du XXe siècle, cousin direct de l'Aviation sans la violette. L'Old Tom gin, légèrement sucré, y rencontre la note de cerise amère du marasquin et une touche de citron, pour un cocktail sec et aromatique.",
+      "family": "Spirit-forward",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "old-tom-gin", "amount": 40, "unit": "ml" },
+        { "id": "maraschino", "amount": 10, "unit": "ml" },
+        { "id": "citron", "amount": 10, "unit": "ml" },
+        { "id": "orange-bitters", "amount": 2, "unit": "trait" }
+      ],
+      "garnish": "Zeste de citron et cerise au marasquin",
+      "steps": [
+        "Verser tous les ingrédients dans un shaker rempli de glaçons.",
+        "Shaker vivement pendant une dizaine de secondes.",
+        "Filtrer dans une coupe bien froide.",
+        "Exprimer un zeste de citron au-dessus du verre et ajouter la cerise."
+      ],
+      "flavors": ["Sec", "Agrume", "Fruité", "Herbacé"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#EDE8D0",
+      "cocktailDbId": "17185",
+      "notes": "Source à 60 ml de gin et quelques gouttes de marasquin et de citron : doses IBA (40 / 10 / 10 ml, Old Tom gin) retenues."
+    },
+    {
+      "id": "caipirinha",
+      "name": "Caipirinha",
+      "aliases": [],
+      "tagline": "Citron vert pilé, sucre et cachaça sur glace pilée",
+      "description": "Boisson nationale du Brésil, la Caipirinha descendrait d'un remède populaire à base de citron et d'eau-de-vie de canne, devenu cocktail au fil du XXe siècle. Le citron vert écrasé avec le sucre libère jus et huiles essentielles, qui répondent au caractère végétal de la cachaça.",
+      "family": "Sour",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "cachaca", "amount": 60, "unit": "ml" },
+        { "id": "citron-vert-quartiers", "amount": 1, "unit": "pièce", "note": "coupé en petits quartiers" },
+        { "id": "sucre-morceau", "amount": 4, "unit": "pièce", "note": "ou 4 cuillères de sucre blanc en poudre" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Placer les quartiers de citron vert et le sucre dans un verre old fashioned.",
+        "Piler fermement pour extraire le jus et dissoudre le sucre, sans réduire l'écorce en bouillie.",
+        "Remplir le verre de glace pilée.",
+        "Verser la cachaça et remuer de bas en haut avec une cuillère de bar."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Sucré", "Frais"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#E3EDC8",
+      "cocktailDbId": "11202",
+      "notes": "Sucre en poudre absent du catalogue : sucre-morceau utilisé (4 morceaux ≈ 4 cuillères de la spécification IBA)."
+    },
+    {
+      "id": "clover-club",
+      "name": "Clover Club",
+      "aliases": [],
+      "tagline": "Gin, framboise et citron sous une mousse rosée",
+      "description": "Le Clover Club tient son nom d'un cercle d'hommes de lettres et d'affaires de Philadelphie qui se réunissait à la fin du XIXe siècle. Le sirop de framboise donne au gin un fruit acidulé et une jolie teinte rose, tandis que le blanc d'œuf lui confère une texture soyeuse.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "sirop-de-framboise", "amount": 15, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 15, "unit": "ml", "note": "pour la mousse" }
+      ],
+      "garnish": "Framboises fraîches",
+      "steps": [
+        "Verser tous les ingrédients dans un shaker et shaker 10 secondes sans glace pour monter le blanc d'œuf.",
+        "Ajouter des glaçons et shaker de nouveau vivement 10 à 12 secondes.",
+        "Double-filtrer dans une coupe bien froide.",
+        "Décorer de framboises piquées sur une pique."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Crémeux"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#E8919B",
+      "cocktailDbId": "17186",
+      "notes": "Source à la grenadine : remplacée par le sirop de framboise de la spécification IBA. L'IBA indique « quelques gouttes » de blanc d'œuf ; 15 ml retenus pour une mousse nette."
+    },
+    {
+      "id": "cosmopolitan",
+      "name": "Cosmopolitan",
+      "aliases": ["Cosmo"],
+      "tagline": "Vodka citron, cranberry et Cointreau, rose et vif",
+      "description": "Plusieurs barmen américains en revendiquent la paternité dans les années 1980, mais c'est à New York que le Cosmopolitan s'est imposé, avant que la série Sex and the City n'en fasse une icône. Vif et légèrement acidulé, il équilibre la vodka citronnée par l'orange du Cointreau et l'astringence de la cranberry.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka-citron", "amount": 40, "unit": "ml" },
+        { "id": "triple-sec", "amount": 15, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "jus-de-cranberry", "amount": 30, "unit": "ml" }
+      ],
+      "garnish": "Rondelle de citron vert ou zeste de citron",
+      "steps": [
+        "Verser tous les ingrédients dans un shaker rempli de glaçons.",
+        "Shaker énergiquement 10 à 12 secondes.",
+        "Double-filtrer dans un verre à martini bien froid.",
+        "Décorer d'une rondelle de citron vert."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Agrume"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#E8546B",
+      "cocktailDbId": "17196",
+      "notes": "Source à la vodka nature avec 1/4 cup de cranberry : vodka citron et doses IBA (40 / 15 / 15 / 30 ml) retenues."
+    },
+    {
+      "id": "cuba-libre",
+      "name": "Cuba Libre",
+      "aliases": ["Rhum-Coca"],
+      "tagline": "Rhum blanc, cola et citron vert, simple et efficace",
+      "description": "Selon la légende, le Cuba Libre serait né à La Havane vers 1900, quand des soldats américains auraient trinqué au rhum-cola à la liberté de Cuba. Bien plus qu'un rhum-coca, il doit son équilibre au trait de citron vert qui coupe le sucre du cola et réveille le rhum.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 50, "unit": "ml" },
+        { "id": "citron-vert", "amount": 10, "unit": "ml" },
+        { "id": "coca-cola", "amount": 120, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser le rhum et le jus de citron vert.",
+        "Compléter avec le cola bien frais et remuer brièvement.",
+        "Décorer d'un quartier de citron vert."
+      ],
+      "flavors": ["Sucré", "Pétillant", "Agrume"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#3B1F14",
+      "cocktailDbId": "11288",
+      "notes": ""
+    },
+    {
+      "id": "derby",
+      "name": "Derby",
+      "aliases": [],
+      "tagline": "Gin, bitter pêche et menthe, un martini parfumé",
+      "description": "Sous ce nom circulent plusieurs recettes ; la version au gin, au bitter de pêche et à la menthe figure dans les guides de bar anciens et a longtemps été retenue par l'IBA. Très sèche, elle laisse parler le gin, simplement nuancé d'un fruit discret et d'une fraîcheur mentholée.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "peach-bitters", "amount": 2, "unit": "goutte" },
+        { "id": "menthe", "amount": 2, "unit": "pièce", "note": "feuilles" }
+      ],
+      "garnish": "Brin de menthe fraîche",
+      "steps": [
+        "Placer les feuilles de menthe dans un verre à mélange et ajouter le gin et le bitter de pêche.",
+        "Remplir de glaçons et remuer 25 à 30 secondes.",
+        "Filtrer dans une coupe bien froide.",
+        "Déposer un brin de menthe fraîche dans le verre."
+      ],
+      "flavors": ["Sec", "Herbacé", "Frais"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#EEF2E2",
+      "cocktailDbId": "17187",
+      "notes": "Bitter pêche ajouté au catalogue (newIngredients). Catégorie IBA reprise de la source, à vérifier (le Derby ne figure peut-être plus dans la liste actuelle). Ne pas confondre avec le Derby au bourbon, vermouth, curaçao et citron vert."
+    },
+    {
+      "id": "dry-martini",
+      "name": "Dry Martini",
+      "aliases": ["Martini", "Gin Martini"],
+      "tagline": "Gin glacé et soupçon de vermouth, la pureté absolue",
+      "description": "Emblème du cocktail américain, le Dry Martini s'est asséché au fil du XXe siècle, la part de vermouth fondant jusqu'à n'être qu'une trace. Remué longuement et servi très froid, il met en avant les aromates du gin, que l'on oriente au choix vers l'agrume avec un zeste ou vers le salin avec une olive.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron exprimé ou olive verte",
+      "steps": [
+        "Verser le gin et le vermouth dans un verre à mélange rempli de glaçons.",
+        "Remuer 30 secondes environ, jusqu'à ce que le verre soit bien givré.",
+        "Filtrer dans un verre à martini glacé.",
+        "Exprimer les huiles d'un zeste de citron au-dessus du verre, ou ajouter une olive."
+      ],
+      "flavors": ["Sec", "Herbacé", "Corsé"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#F2F0E1",
+      "cocktailDbId": "11005",
+      "notes": ""
+    },
+    {
+      "id": "dirty-martini",
+      "name": "Dirty Martini",
+      "aliases": [],
+      "tagline": "Le martini troublé à la saumure d'olive, salin",
+      "description": "Variante du martini popularisée à la fin du XXe siècle, le Dirty Martini doit son nom à la saumure d'olive qui en trouble la limpidité. Le résultat est sec, légèrement salé et savoureux, idéal pour accompagner un apéritif.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka", "amount": 60, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 10, "unit": "ml" },
+        { "id": "saumure-olive", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Olives vertes sur une pique",
+      "steps": [
+        "Verser la vodka, le vermouth et la saumure d'olive dans un verre à mélange rempli de glaçons.",
+        "Remuer 25 à 30 secondes pour bien refroidir.",
+        "Filtrer dans un verre à martini glacé.",
+        "Ajouter une ou deux olives vertes sur une pique."
+      ],
+      "flavors": ["Salé", "Sec", "Herbacé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#E6E3C8",
+      "cocktailDbId": "17181",
+      "notes": "Saumure d'olive ajoutée au catalogue (newIngredients). Source au shaker, 70 ml de vodka et 30 ml de saumure, bord frotté au citron : ramené à la recette IBA (60 / 10 / 10 ml, remué). Catégorie IBA à vérifier (peut-être retiré de la liste actuelle)."
+    },
+    {
+      "id": "dark-n-stormy",
+      "name": "Dark 'n' Stormy",
+      "aliases": ["Dark and Stormy"],
+      "tagline": "Rhum brun sur ginger beer, le highball des Bermudes",
+      "description": "Originaire des Bermudes, le Dark 'n' Stormy est historiquement lié au rhum Gosling's, dont la maison a d'ailleurs déposé le nom. Le rhum brun, riche et caramélisé, flotte sur une ginger beer piquante qui lui donne tout son relief.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "rhum-brun", "amount": 60, "unit": "ml" },
+        { "id": "ginger-beer", "amount": 100, "unit": "ml" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la ginger beer bien fraîche.",
+        "Faire couler doucement le rhum brun en surface pour qu'il reste en couche sombre.",
+        "Décorer d'un quartier de citron vert, à presser au goût."
+      ],
+      "flavors": ["Épicé", "Pétillant", "Sucré"],
+      "difficulty": 1,
+      "iba": "New Era Drinks",
+      "color": "#6B4A2E",
+      "cocktailDbId": "17211",
+      "notes": "Source contradictoire (5 cl en liste, 6 cl dans les instructions) : 60 ml retenus selon l'IBA."
+    },
+    {
+      "id": "espresso-martini",
+      "name": "Espresso Martini",
+      "aliases": ["Vodka Espresso"],
+      "tagline": "Vodka, café serré et liqueur de café, mousse dense",
+      "description": "Le barman londonien Dick Bradsell l'aurait créé à la fin des années 1980 pour une cliente qui réclamait un verre capable à la fois de la réveiller et de l'enivrer. Secoué avec un espresso tout juste extrait, il se couvre d'une mousse crémeuse et offre un équilibre entre amertume torréfiée et douceur.",
+      "family": "Crémeux & Dessert",
+      "method": "Shaker",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka", "amount": 50, "unit": "ml" },
+        { "id": "liqueur-cafe", "amount": 30, "unit": "ml" },
+        { "id": "espresso", "amount": 30, "unit": "ml", "note": "fraîchement extrait" },
+        { "id": "sucre", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Trois grains de café",
+      "steps": [
+        "Préparer un espresso court et serré.",
+        "Verser tous les ingrédients dans un shaker rempli de glaçons.",
+        "Shaker très vigoureusement 15 secondes pour créer une mousse épaisse.",
+        "Double-filtrer dans un verre à martini glacé et déposer trois grains de café sur la mousse."
+      ],
+      "flavors": ["Café", "Amer", "Sucré"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#3A2418",
+      "cocktailDbId": "17212",
+      "notes": "Source sans espresso et avec seulement 10 ml de liqueur de café : recette IBA (50 / 30 / 10 ml + un espresso) retenue."
+    },
+    {
+      "id": "french-75",
+      "name": "French 75",
+      "aliases": ["Soixante-Quinze"],
+      "tagline": "Gin citronné rehaussé de champagne, frais et festif",
+      "description": "Baptisé d'après le canon de 75 mm de l'armée française de la Première Guerre mondiale, le French 75 est souvent rattaché aux bars parisiens des années 1920. Le gin et le citron forment une base vive que le champagne prolonge en bulles fines et sèches.",
+      "family": "Pétillant & Spritz",
+      "method": "Shaker",
+      "glass": "Flûte",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "sucre", "amount": 2, "unit": "trait" },
+        { "id": "champagne", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Verser le gin, le jus de citron et le sirop de sucre dans un shaker rempli de glaçons.",
+        "Shaker vivement une dizaine de secondes.",
+        "Filtrer dans une flûte bien froide.",
+        "Compléter avec le champagne et remuer délicatement une fois."
+      ],
+      "flavors": ["Pétillant", "Agrume", "Acidulé", "Sec"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#F3E9B8",
+      "cocktailDbId": "17197",
+      "notes": "Source très chargée en citron (45 ml) et en sucre, garnie d'orange et de cerise : doses IBA retenues (30 / 15 ml, 2 traits de sirop, 60 ml de champagne)."
+    },
+    {
+      "id": "french-martini",
+      "name": "French Martini",
+      "aliases": [],
+      "tagline": "Vodka, liqueur de framboise et ananas, en velours",
+      "description": "Né à New York à la fin des années 1980, au moment où les « martinis » fruités envahissaient les cartes, le French Martini doit son nom à la liqueur de framboise d'origine française qui le parfume. L'ananas secoué lui donne une mousse légère et une rondeur fruitée.",
+      "family": "Spirit-forward",
+      "method": "Shaker",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka", "amount": 45, "unit": "ml" },
+        { "id": "liqueur-framboise", "amount": 15, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron exprimé",
+      "steps": [
+        "Verser tous les ingrédients dans un shaker rempli de glaçons.",
+        "Shaker énergiquement 12 secondes pour faire mousser l'ananas.",
+        "Filtrer dans un verre à martini bien froid.",
+        "Exprimer les huiles d'un zeste de citron au-dessus du verre."
+      ],
+      "flavors": ["Fruité", "Sucré", "Tropical"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#B8395A",
+      "cocktailDbId": "17213",
+      "notes": ""
+    },
+    {
+      "id": "french-connection",
+      "name": "French Connection",
+      "aliases": [],
+      "tagline": "Cognac et amaretto à parts égales, tout en rondeur",
+      "description": "Ce digestif des années 1970 tirerait son nom du film policier sorti à la même époque. Le cognac apporte ses notes boisées et fruitées, l'amaretto une douceur d'amande qui arrondit l'ensemble.",
+      "family": "Spirit-forward",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "cognac", "amount": 35, "unit": "ml" },
+        { "id": "amaretto", "amount": 35, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Remplir un verre old fashioned de glaçons.",
+        "Verser le cognac puis l'amaretto.",
+        "Remuer doucement une dizaine de secondes."
+      ],
+      "flavors": ["Sucré", "Boisé", "Corsé"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#9C5A24",
+      "cocktailDbId": "17198",
+      "notes": "Source à 45 / 22,5 ml : proportions IBA à parts égales (35 / 35 ml) retenues."
+    },
+    {
+      "id": "gin-fizz",
+      "name": "Gin Fizz",
+      "aliases": [],
+      "tagline": "Gin, citron et eau gazeuse, désaltérant et pétillant",
+      "description": "Popularisé aux États-Unis dans la seconde moitié du XIXe siècle, le Gin Fizz est un sour allongé d'eau gazeuse, servi traditionnellement sans glace dans un verre court et étroit. Vif et rafraîchissant, il laisse le gin et le citron s'exprimer sous une effervescence légère.",
+      "family": "Fizz & Collins",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "citron", "amount": 30, "unit": "ml" },
+        { "id": "sucre", "amount": 10, "unit": "ml" },
+        { "id": "soda", "amount": 80, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Tranche de citron",
+      "steps": [
+        "Verser le gin, le jus de citron et le sirop de sucre dans un shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer dans un verre highball bien froid.",
+        "Compléter avec l'eau gazeuse et décorer d'une tranche de citron."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Pétillant", "Frais"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#F4F1DC",
+      "cocktailDbId": "11410",
+      "notes": ""
+    },
+    {
+      "id": "godfather",
+      "name": "Godfather",
+      "aliases": ["Le Parrain"],
+      "tagline": "Scotch et amaretto sur glace, puissant et doux",
+      "description": "Apparu dans les années 1970, le Godfather devrait son nom au film de Francis Ford Coppola, dont le succès était alors à son comble. Le whisky écossais y gagne une douceur d'amande grâce à l'amaretto, pour un digestif rond et chaleureux.",
+      "family": "Spirit-forward",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "scotch", "amount": 35, "unit": "ml" },
+        { "id": "amaretto", "amount": 35, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Remplir un verre old fashioned de glaçons.",
+        "Verser le scotch puis l'amaretto.",
+        "Remuer doucement une dizaine de secondes."
+      ],
+      "flavors": ["Sucré", "Boisé", "Corsé"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#A2622A",
+      "cocktailDbId": "11423",
+      "notes": "Source à 45 / 22,5 ml : proportions IBA à parts égales (35 / 35 ml) retenues ; beaucoup de bars préfèrent un ratio 2:1, moins sucré. Catégorie IBA à vérifier (peut-être retiré de la liste actuelle)."
+    },
+    {
+      "id": "grasshopper",
+      "name": "Grasshopper",
+      "aliases": [],
+      "tagline": "Menthe, cacao et crème, l'after-eight à boire",
+      "description": "Le Grasshopper aurait vu le jour au début du XXe siècle chez Tujague's, institution de La Nouvelle-Orléans. D'un vert pâle caractéristique, il évoque un chocolat à la menthe : frais, sucré et onctueux.",
+      "family": "Crémeux & Dessert",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "creme-de-menthe-verte", "amount": 30, "unit": "ml" },
+        { "id": "creme-de-cacao-blanche", "amount": 30, "unit": "ml" },
+        { "id": "creme", "amount": 30, "unit": "ml" }
+      ],
+      "garnish": "Feuille de menthe",
+      "steps": [
+        "Verser tous les ingrédients dans un shaker rempli de glaçons.",
+        "Shaker vivement 12 à 15 secondes pour émulsionner la crème.",
+        "Filtrer dans une coupe bien froide."
+      ],
+      "flavors": ["Frais", "Crémeux", "Sucré"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#A8D8A0",
+      "cocktailDbId": "17200",
+      "notes": "Source à 22,5 ml par ingrédient : doses IBA (30 ml chacun) retenues."
+    },
+    {
+      "id": "horses-neck",
+      "name": "Horse's Neck",
+      "aliases": [],
+      "tagline": "Cognac et ginger ale autour d'une longue spirale",
+      "description": "À la fin du XIXe siècle, le Horse's Neck désignait une simple boisson sans alcool au ginger ale et au zeste de citron ; l'ajout d'un spiritueux est venu ensuite. Son long ruban de citron, qui pend hors du verre comme l'encolure d'un cheval, parfume un highball léger et épicé.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "cognac", "amount": 40, "unit": "ml" },
+        { "id": "angostura", "amount": 1, "unit": "trait", "optional": true },
+        { "id": "ginger-ale", "amount": 120, "unit": "ml" }
+      ],
+      "garnish": "Longue spirale de zeste de citron",
+      "steps": [
+        "Prélever le zeste d'un citron en une seule longue spirale et la placer dans un verre highball, une extrémité accrochée au bord.",
+        "Remplir le verre de glaçons.",
+        "Verser le cognac, puis le ginger ale et, au goût, un trait d'Angostura.",
+        "Remuer doucement une fois."
+      ],
+      "flavors": ["Épicé", "Agrume", "Pétillant"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#D9A55B",
+      "cocktailDbId": "17202",
+      "notes": ""
+    },
+    {
+      "id": "harvey-wallbanger",
+      "name": "Harvey Wallbanger",
+      "aliases": [],
+      "tagline": "Screwdriver couronné de Galliano vanillé",
+      "description": "Selon la légende, il devrait son nom à un surfeur californien qui, après quelques verres, se cognait aux murs en sortant du bar ; sa vogue des années 1970 doit surtout beaucoup à la publicité de Galliano. Le jus d'orange et la vodka forment une base familière que la liqueur, vanillée et anisée, vient parfumer.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 45, "unit": "ml" },
+        { "id": "galliano", "amount": 15, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 90, "unit": "ml" }
+      ],
+      "garnish": "Demi-tranche d'orange et cerise au marasquin",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la vodka et le jus d'orange, puis remuer.",
+        "Faire couler doucement le Galliano sur le dos d'une cuillère pour qu'il flotte en surface.",
+        "Décorer d'une demi-tranche d'orange et d'une cerise."
+      ],
+      "flavors": ["Agrume", "Sucré", "Herbacé"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#F5A623",
+      "cocktailDbId": "11462",
+      "notes": "Source à 30 / 15 / 120 ml : doses IBA (45 / 15 / 90 ml) retenues. Catégorie IBA à vérifier (peut-être retiré de la liste actuelle)."
+    },
+    {
+      "id": "hemingway-special",
+      "name": "Hemingway Special",
+      "aliases": ["Papa Doble", "Hemingway Daiquiri"],
+      "tagline": "Daiquiri au pamplemousse et marasquin, sans sucre",
+      "description": "Variante du daiquiri associée au bar El Floridita de La Havane, où Ernest Hemingway avait ses habitudes et l'aurait réclamé avec double dose de rhum et sans sucre. Le pamplemousse et le citron vert le rendent sec et tranchant, à peine adouci par le marasquin.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 60, "unit": "ml" },
+        { "id": "maraschino", "amount": 15, "unit": "ml" },
+        { "id": "jus-de-pamplemousse", "amount": 40, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Verser tous les ingrédients dans un shaker rempli de glaçons.",
+        "Shaker énergiquement 12 secondes.",
+        "Double-filtrer dans une grande coupe bien froide."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Sec", "Fruité"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#F2E6C9",
+      "cocktailDbId": "17201",
+      "notes": "Source exprimée en parts : convertie selon la spécification IBA (60 / 40 / 15 / 15 ml)."
+    }
+  ],
+  "newIngredients": [
+    ["peach-bitters", "Bitter pêche", "bitter_arome", 40, 50, 0, 5, "🍑"],
+    ["saumure-olive", "Saumure d'olive", "bitter_arome", 0, 0, 1, 0, "🫒"]
+  ]
+}

@@ -1,29 +1,174 @@
-import { ImageBackground } from 'expo-image';
-import { Link } from 'expo-router';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { router } from 'expo-router';
+import { useMemo } from 'react';
+import { Pressable, StyleSheet, View } from 'react-native';
 
-import { ExpertPanel } from '@/components/expert-panel';
-import { SettingsButton } from '@/components/settings-button';
-import { fonts, palette, radius } from '@/constants/theme';
-import { useAppState } from '@/state/app-state';
+import { CocktailTile, openCocktail } from '@/components/cocktail-card';
+import { CocktailImage } from '@/components/cocktail-image';
+import { Icon } from '@/components/icon';
+import { PageHeader } from '@/components/page-header';
+import { Scrim } from '@/components/scrim';
+import { Button, Card, Chip, HScroll, IconButton, Screen, SectionHeader, T } from '@/components/ui';
+import { radius, space } from '@/constants/theme';
+import { availability, cocktailOfTheDay, tasteScore } from '@/lib/cocktails';
+import { MOODS } from '@/lib/filters';
+import { useCatalog, useTheme, useUser } from '@/state/store';
+import type { Cocktail } from '@/types/cocktail';
+
+function greeting(date = new Date()) {
+  const hour = date.getHours();
+  if (hour < 5 || hour >= 18) return 'Bonsoir';
+  if (hour < 12) return 'Bonjour';
+  return 'Bon après-midi';
+}
 
 export default function HomeScreen() {
-  const { favorites, toggleFavorite, cocktails } = useAppState();
-  const featured = cocktails.find((cocktail) => cocktail.featured) ?? cocktails[0];
-  return <ScrollView style={styles.screen} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
-    <View style={styles.brandRow}><Text style={styles.brand}>Arturo et Clémentine</Text><SettingsButton /></View>
-    <Text style={styles.kicker}>LE COCKTAIL DE LA SEMAINE</Text>
-    <ImageBackground source={featured.image} style={styles.hero} imageStyle={styles.heroImage} contentFit="cover" contentPosition="bottom center">
-      <View style={styles.heroShade}>
-        <Pressable onPress={() => toggleFavorite(featured.slug)} style={styles.favorite}><Text style={styles.favoriteText}>{favorites.has(featured.slug) ? '♥' : '♡'}</Text></Pressable>
-        <View style={styles.heroCopy}><View style={styles.pill}><Text style={styles.pillText}>Sélection de Clément</Text></View><Text style={styles.heroTitle}>{featured.name}</Text><Text style={styles.heroSubtitle}>{featured.subtitle}</Text><Link href={{ pathname: '/cocktail/[slug]', params: { slug: featured.slug } }} asChild><Pressable style={styles.heroButton}><Text style={styles.heroButtonText}>Voir la recette  →</Text></Pressable></Link></View>
+  const { colors } = useTheme();
+  const catalog = useCatalog();
+  const user = useUser();
+  const { cocktails, ingredientById } = catalog;
+  const { stock, data } = user;
+
+  const featured = useMemo(() => cocktailOfTheDay(cocktails), [cocktails]);
+
+  const { ready, almost } = useMemo(() => {
+    const liked = cocktails.filter((cocktail) => user.favorites.has(cocktail.id) || (data.ratings[cocktail.id] ?? 0) >= 4);
+    const disliked = cocktails.filter((cocktail) => (data.ratings[cocktail.id] ?? 5) <= 2);
+    const scored = cocktails.map((cocktail) => ({ cocktail, value: availability(cocktail, stock, data.settings.assumeBasics), taste: tasteScore(cocktail, liked, disliked) }));
+    const byTaste = (a: { taste: number; cocktail: Cocktail }, b: { taste: number; cocktail: Cocktail }) => b.taste - a.taste || Number(!!b.cocktail.image) - Number(!!a.cocktail.image);
+    return {
+      ready: scored.filter((entry) => entry.value.ready).sort(byTaste),
+      almost: scored.filter((entry) => entry.value.missing.length === 1).sort(byTaste),
+    };
+  }, [cocktails, data.ratings, data.settings.assumeBasics, stock, user.favorites]);
+
+  const recent = data.recent.map((id) => catalog.byId.get(id)).filter((cocktail): cocktail is Cocktail => !!cocktail).slice(0, 10);
+  const toTry = cocktails.filter((cocktail) => user.toTry.has(cocktail.id));
+
+  const surprise = () => {
+    const pool = ready.length ? ready.map((entry) => entry.cocktail) : cocktails;
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    if (pick) openCocktail(pick.id);
+  };
+
+  return (
+    <Screen>
+      <PageHeader
+        eyebrow={greeting()}
+        title="Arturo et Clémentine"
+        right={<IconButton name="settings" label="Réglages" onPress={() => router.push('/settings')} />}
+      />
+
+      {catalog.updateAvailable ? (
+        <Card style={[styles.banner, { backgroundColor: colors.accentSoft, borderColor: colors.accentSoft }]} onPress={() => router.push('/settings')}>
+          <Icon name="download" size={20} color={colors.accent} />
+          <View style={{ flex: 1 }}>
+            <T variant="h3">Nouvelles recettes disponibles</T>
+            <T variant="small" tone="muted">Touchez pour mettre à jour la base.</T>
+          </View>
+          <Icon name="chevronRight" size={18} color={colors.accent} />
+        </Card>
+      ) : null}
+
+      {featured ? (
+        <Pressable onPress={() => openCocktail(featured.id)} style={({ pressed }) => [styles.hero, { opacity: pressed ? 0.92 : 1 }]}>
+          <CocktailImage cocktail={featured} style={StyleSheet.absoluteFill} rounded={radius.xl} />
+          <Scrim from={0.3} />
+          <View style={styles.heroText}>
+            <T variant="label" style={{ color: '#F3D9A4' }}>Le cocktail du jour</T>
+            <T variant="hero" style={{ color: '#FFFFFF' }} numberOfLines={2}>{featured.name}</T>
+            <T variant="body" style={{ color: 'rgba(255,255,255,0.88)' }} numberOfLines={2}>{featured.tagline}</T>
+          </View>
+        </Pressable>
+      ) : null}
+
+      <View style={styles.quickRow}>
+        <Button label="Que puis-je faire ?" icon="wine" flex onPress={() => router.push({ pathname: '/cocktails', params: { filter: 'ready' } })} />
+        <IconButton name="shuffle" label="Cocktail au hasard" onPress={surprise} size={48} />
       </View>
-    </ImageBackground>
-    <View style={styles.expertWrap}><ExpertPanel /></View>
-  </ScrollView>;
+
+      <View style={styles.section}>
+        <SectionHeader
+          title="Avec votre bar"
+          subtitle={stock.size ? `${ready.length} cocktail${ready.length > 1 ? 's' : ''} faisable${ready.length > 1 ? 's' : ''} maintenant` : undefined}
+          action={ready.length ? 'Tout voir' : undefined}
+          onAction={() => router.push({ pathname: '/cocktails', params: { filter: 'ready' } })}
+        />
+        {!stock.size ? (
+          <Card onPress={() => router.push('/bar')} style={styles.cta}>
+            <View style={[styles.ctaIcon, { backgroundColor: colors.accentSoft }]}><Icon name="wine" size={22} color={colors.accent} /></View>
+            <View style={{ flex: 1 }}>
+              <T variant="h3">Qu’avez-vous à la maison ?</T>
+              <T variant="small" tone="muted">Cochez vos bouteilles : l’app trouve ce que vous pouvez préparer ce soir.</T>
+            </View>
+            <Icon name="chevronRight" size={18} color={colors.muted} />
+          </Card>
+        ) : ready.length ? (
+          <HScroll>
+            {ready.slice(0, 12).map(({ cocktail }) => <CocktailTile key={cocktail.id} cocktail={cocktail} subtitle={cocktail.tagline} />)}
+          </HScroll>
+        ) : (
+          <Card><T variant="small" tone="muted">Rien de complet pour l’instant. Regardez ci-dessous ce qu’il vous manque de peu.</T></Card>
+        )}
+      </View>
+
+      {almost.length ? (
+        <View style={styles.section}>
+          <SectionHeader title="À un ingrédient près" action="Tout voir" onAction={() => router.push({ pathname: '/cocktails', params: { filter: 'one' } })} />
+          <HScroll>
+            {almost.slice(0, 12).map(({ cocktail, value }) => (
+              <CocktailTile key={cocktail.id} cocktail={cocktail} subtitle={`Manque : ${ingredientById.get(value.missing[0].id)?.name ?? value.missing[0].id}`} />
+            ))}
+          </HScroll>
+        </View>
+      ) : null}
+
+      <View style={styles.section}>
+        <SectionHeader title="Envie de…" />
+        <View style={styles.moods}>
+          {MOODS.map((mood) => (
+            <Chip key={mood.id} label={mood.label} icon={mood.icon} onPress={() => router.push({ pathname: '/cocktails', params: { mood: mood.id } })} />
+          ))}
+        </View>
+      </View>
+
+      {toTry.length ? (
+        <View style={styles.section}>
+          <SectionHeader title="À essayer" action="Ma liste" onAction={() => router.push({ pathname: '/listes', params: { tab: 'essayer' } })} />
+          <HScroll>{toTry.slice(0, 12).map((cocktail) => <CocktailTile key={cocktail.id} cocktail={cocktail} />)}</HScroll>
+        </View>
+      ) : null}
+
+      {recent.length ? (
+        <View style={styles.section}>
+          <SectionHeader title="Vus récemment" />
+          <HScroll>{recent.map((cocktail) => <CocktailTile key={cocktail.id} cocktail={cocktail} width={128} />)}</HScroll>
+        </View>
+      ) : null}
+
+      <Card style={[styles.section, styles.cta]} onPress={() => router.push('/editor')}>
+        <View style={[styles.ctaIcon, { backgroundColor: colors.surfaceAlt }]}><Icon name="pencil" size={20} color={colors.ink} /></View>
+        <View style={{ flex: 1 }}>
+          <T variant="h3">Créer votre recette</T>
+          <T variant="small" tone="muted">Gardez vos créations et vos variantes avec photo.</T>
+        </View>
+        <Icon name="chevronRight" size={18} color={colors.muted} />
+      </Card>
+
+      <T variant="tiny" tone="muted" style={styles.footer}>
+        {cocktails.length} recettes · base du {catalog.db ? new Date(catalog.db.generatedAt).toLocaleDateString('fr-FR') : '—'}
+      </T>
+    </Screen>
+  );
 }
 
 const styles = StyleSheet.create({
-  screen: { backgroundColor: palette.cream }, content: { gap: 11, paddingBottom: 32 }, brandRow: { alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 40 }, brand: { color: palette.ink, fontFamily: fonts.display, fontSize: 21, fontStyle: 'italic', fontWeight: '600' }, kicker: { color: palette.muted, fontFamily: fonts.body, fontSize: 10, fontWeight: '700', letterSpacing: 2, paddingHorizontal: 20 },
-  hero: { aspectRatio: 1.18, marginHorizontal: 14 }, heroImage: { borderRadius: radius.lg }, heroShade: { backgroundColor: 'rgba(25,7,8,0.20)', borderRadius: radius.lg, flex: 1, justifyContent: 'space-between', padding: 16 }, favorite: { alignItems: 'center', alignSelf: 'flex-end', backgroundColor: 'rgba(255,249,240,0.9)', borderRadius: 19, height: 38, justifyContent: 'center', width: 38 }, favoriteText: { color: palette.wine, fontSize: 21 }, heroCopy: { gap: 6 }, pill: { alignSelf: 'flex-start', backgroundColor: palette.gold, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 4 }, pillText: { color: palette.wineDark, fontFamily: fonts.body, fontSize: 9, fontWeight: '700' }, heroTitle: { color: palette.white, fontFamily: fonts.display, fontSize: 36, fontWeight: '600' }, heroSubtitle: { color: '#F8EDE0', fontFamily: fonts.body, fontSize: 12, lineHeight: 16, maxWidth: 280 }, heroButton: { alignItems: 'center', alignSelf: 'flex-start', backgroundColor: palette.paper, borderRadius: radius.pill, marginTop: 3, paddingHorizontal: 16, paddingVertical: 9 }, heroButtonText: { color: palette.wineDark, fontFamily: fonts.body, fontSize: 11, fontWeight: '700' }, expertWrap: { marginHorizontal: 14, marginTop: 8 },
+  banner: { flexDirection: 'row', alignItems: 'center', gap: space.sm, marginBottom: space.md },
+  hero: { height: 380, borderRadius: radius.xl, overflow: 'hidden', justifyContent: 'flex-end' },
+  heroText: { padding: space.lg, gap: 4 },
+  quickRow: { flexDirection: 'row', gap: space.sm, marginTop: space.md },
+  section: { marginTop: space.xl },
+  cta: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
+  ctaIcon: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
+  moods: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs },
+  footer: { textAlign: 'center', marginTop: space.xl },
 });

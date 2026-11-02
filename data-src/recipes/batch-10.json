@@ -1,0 +1,834 @@
+{
+  "cocktails": [
+    {
+      "id": "blue-lagoon",
+      "name": "Blue Lagoon",
+      "aliases": [],
+      "tagline": "Un sour bleu lagon, vif et orangé",
+      "description": "On l'attribue souvent à Andy MacElhone, au Harry's New York Bar de Paris, vers 1960, même si sa paternité reste discutée. Souvent allongé de limonade, il est servi ici en version courte et shakée : le curaçao apporte l'orange amère et la couleur, le citron le rend plus tranchant que son allure ne le laisse croire.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka", "amount": 40, "unit": "ml" },
+        { "id": "curacao-bleu", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Refroidir une coupe au congélateur ou avec des glaçons.",
+        "Verser la vodka, le curaçao bleu et le jus de citron dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et exprimer le zeste de citron au-dessus."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Sucré"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#2E9BD6",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "june-sour",
+      "name": "June Sour",
+      "aliases": [],
+      "tagline": "Gin à la pêche, citron et mousse soyeuse",
+      "description": "Création sans histoire bien établie, le June Sour suit la structure classique du sour en s'appuyant sur un gin aromatisé à la pêche. Le fruit adoucit le citron, le blanc d'œuf donne une texture veloutée : un sour d'été, léger et parfumé, à boire à l'apéritif.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin-peche", "amount": 50, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 10, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 15, "unit": "ml", "note": "½ blanc" }
+      ],
+      "garnish": "Fine tranche de pêche ou zeste de citron",
+      "steps": [
+        "Shaker tous les ingrédients sans glace pendant 10 secondes pour monter le blanc d'œuf.",
+        "Ajouter les glaçons et shaker de nouveau vivement 10 secondes.",
+        "Double-filtrer dans une coupe refroidie.",
+        "Déposer la garniture sur la mousse."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Crémeux"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F3D9B1",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "holy-water",
+      "name": "Holy Water",
+      "aliases": [],
+      "tagline": "Long drink bleu azur, rhum, ananas et bulles",
+      "description": "Recette de fête répandue mais sans origine connue, le Holy Water mise sur un bleu limpide et une douceur tropicale. Vodka et rhum blanc donnent du corps, l'ananas et le curaçao arrondissent, la limonade apporte une finale fraîche et pétillante.",
+      "family": "Highball",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 30, "unit": "ml" },
+        { "id": "rhum-blanc", "amount": 30, "unit": "ml" },
+        { "id": "curacao-bleu", "amount": 15, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 30, "unit": "ml" },
+        { "id": "limonade", "amount": 60, "unit": "ml" }
+      ],
+      "garnish": "Quartier d'ananas et cerise",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Shaker la vodka, le rhum, le curaçao et le jus d'ananas avec des glaçons pendant 10 secondes.",
+        "Filtrer dans le verre.",
+        "Compléter avec la limonade et remuer une fois, délicatement."
+      ],
+      "flavors": ["Fruité", "Tropical", "Pétillant", "Sucré"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#3FB8D9",
+      "cocktailDbId": null,
+      "notes": "La limonade est ajoutée après le shaker pour garder les bulles.",
+      "origin": "clement"
+    },
+    {
+      "id": "cadillac-marg",
+      "name": "Cadillac Marg",
+      "aliases": ["Cadillac Margarita"],
+      "tagline": "Une Margarita grand format, ample et tranchante",
+      "description": "Aux États-Unis, « Cadillac » désigne la version haut de gamme d'une Margarita, plus généreuse en tequila et souvent rehaussée d'une liqueur d'orange de qualité. Cette version double presque la dose de tequila et ajoute un peu d'agave : plus ronde et plus ample, mais toujours vive grâce au citron vert.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "tequila", "amount": 60, "unit": "ml" },
+        { "id": "triple-sec", "amount": 15, "unit": "ml" },
+        { "id": "citron-vert", "amount": 30, "unit": "ml" },
+        { "id": "sirop-d-agave", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Demi-croûte de sel et quartier de citron vert",
+      "steps": [
+        "Givrer la moitié du bord du verre au sel, puis y déposer un gros glaçon.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer sur le gros glaçon et garnir d'un quartier de citron vert."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Corsé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E6E3B0",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "fat-penguin",
+      "name": "Fat Penguin",
+      "aliases": [],
+      "tagline": "Orange crémeuse, vanille et traînées bleues",
+      "description": "Création festive peu documentée, le Fat Penguin joue la carte du dessert : un mélange crémeux à l'orange, façon glace à l'orange et à la vanille, relevé par les épices du rhum. Le curaçao bleu versé en dernier dessine des traînées glacées le long du verre.",
+      "family": "Crémeux & Dessert",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka-vanille", "amount": 45, "unit": "ml" },
+        { "id": "rhum-epice", "amount": 15, "unit": "ml" },
+        { "id": "curacao-bleu", "amount": 15, "unit": "ml", "note": "versé le long de la paroi" },
+        { "id": "jus-d-orange", "amount": 60, "unit": "ml" },
+        { "id": "creme", "amount": 30, "unit": "ml" }
+      ],
+      "garnish": "Demi-rondelle d'orange",
+      "steps": [
+        "Shaker la vodka vanille, le rhum épicé, le jus d'orange et la crème avec des glaçons pendant 12 secondes.",
+        "Filtrer dans un verre highball rempli de glaçons.",
+        "Verser lentement le curaçao bleu le long de la paroi intérieure pour qu'il glisse vers le fond en traînées.",
+        "Garnir et servir sans remuer."
+      ],
+      "flavors": ["Crémeux", "Fruité", "Sucré", "Épicé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F2C98A",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "sky-juice",
+      "name": "Sky Juice",
+      "aliases": [],
+      "tagline": "Gin, eau de coco et lait concentré des Bahamas",
+      "description": "Boisson emblématique des Bahamas, on la sert traditionnellement dans les cabanes du Fish Fry d'Arawak Cay, à Nassau. Gin, eau de coco et lait concentré sucré y forment un mélange étonnamment désaltérant : laiteux et doux, avec la fraîcheur végétale de la coco et la pointe aromatique du gin.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "lait-concentre", "amount": 30, "unit": "ml" },
+        { "id": "eau-de-coco", "amount": 120, "unit": "ml" }
+      ],
+      "garnish": "Noix de muscade râpée",
+      "steps": [
+        "Verser le gin et le lait concentré dans le shaker et remuer pour dissoudre le lait.",
+        "Ajouter l'eau de coco et des glaçons, puis shaker vivement 12 secondes.",
+        "Filtrer dans un verre highball rempli de glaçons.",
+        "Râper un peu de noix de muscade sur le dessus."
+      ],
+      "flavors": ["Crémeux", "Tropical", "Sucré", "Herbacé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F1ECDF",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "the-incredible-turquoise-hulk",
+      "name": "The Incredible Turquoise Hulk",
+      "aliases": [],
+      "tagline": "Cognac et ananas sous un turquoise de comics",
+      "description": "Clin d'œil à l'Incredible Hulk, mélange de cognac et de liqueur Hpnotiq popularisé au début des années 2000, cette version remplace la liqueur par du curaçao bleu, de l'ananas et du citron vert. Le cognac pose un fond boisé sous un profil fruité et acidulé, la vodka garde l'ensemble net.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka", "amount": 22, "unit": "ml" },
+        { "id": "cognac", "amount": 22, "unit": "ml" },
+        { "id": "curacao-bleu", "amount": 15, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 22, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Petit quartier d'ananas",
+      "steps": [
+        "Refroidir une coupe.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 12 secondes pour faire mousser l'ananas.",
+        "Double-filtrer dans la coupe et garnir."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Tropical", "Boisé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#3CC2B4",
+      "cocktailDbId": null,
+      "notes": "Doses de 22 ml conservées telles que dans la source (≈ ¾ oz).",
+      "origin": "clement"
+    },
+    {
+      "id": "racquet-club-fizz",
+      "name": "Racquet Club Fizz",
+      "aliases": [],
+      "tagline": "Un fizz au rhum blanc, mousseux et désaltérant",
+      "description": "Création peu documentée, le Racquet Club Fizz reprend la structure d'un fizz classique avec du rhum blanc à la place du gin. Une pointe d'ananas arrondit le citron, le blanc d'œuf apporte une mousse soyeuse et l'eau gazeuse l'allonge en un drink vif et léger.",
+      "family": "Fizz & Collins",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 50, "unit": "ml" },
+        { "id": "citron", "amount": 30, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 15, "unit": "ml" },
+        { "id": "sucre", "amount": 22, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 15, "unit": "ml", "note": "½ blanc" },
+        { "id": "soda", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Shaker tous les ingrédients sauf l'eau gazeuse, sans glace, pendant 10 secondes.",
+        "Ajouter les glaçons et shaker très vivement 15 secondes.",
+        "Filtrer dans un verre highball bien froid, sans glace.",
+        "Compléter doucement à l'eau gazeuse pour faire monter la mousse, puis exprimer le zeste."
+      ],
+      "flavors": ["Acidulé", "Fruité", "Pétillant", "Crémeux"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F4EED2",
+      "cocktailDbId": null,
+      "notes": "Eau gazeuse « top » dans la source, estimée à 60 ml. Dose de sucre de 22 ml conservée telle que dans la source.",
+      "origin": "clement"
+    },
+    {
+      "id": "1910",
+      "name": "1910",
+      "aliases": [],
+      "tagline": "Mezcal et cognac, cerise amère et fumée",
+      "description": "Création contemporaine peu documentée, le 1910 réunit mezcal et cognac à parts égales, liés par le marasquin et relevés de Peychaud's. Court et corsé, il fait alterner fumée, fruits secs et notes de cerise, dans l'esprit d'un Vieux Carré ou d'un Sazerac.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "mezcal", "amount": 22, "unit": "ml" },
+        { "id": "cognac", "amount": 22, "unit": "ml" },
+        { "id": "maraschino", "amount": 15, "unit": "ml" },
+        { "id": "peychauds-bitters", "amount": 2, "unit": "trait" }
+      ],
+      "garnish": "Zeste d'orange",
+      "steps": [
+        "Refroidir une coupe.",
+        "Verser tous les ingrédients dans un verre à mélange rempli de glaçons.",
+        "Remuer 20 à 25 secondes.",
+        "Filtrer dans la coupe et exprimer le zeste d'orange au-dessus."
+      ],
+      "flavors": ["Fumé", "Boisé", "Corsé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#C98A4B",
+      "cocktailDbId": null,
+      "notes": "Méthode passée de shaker à verre à mélange (cocktail 100 % spiritueux). Doses de 22 ml conservées telles que dans la source.",
+      "origin": "clement"
+    },
+    {
+      "id": "garibaldi",
+      "name": "Garibaldi",
+      "aliases": ["Campari Orange"],
+      "tagline": "Campari et orange, l'Italie réunie en deux gestes",
+      "description": "Son nom rend hommage à Giuseppe Garibaldi : selon l'explication la plus répandue, le Campari milanais et l'orange du Sud y symbolisent l'Italie unifiée. Deux ingrédients seulement pour un long drink amer et juteux ; secoué vivement, le jus d'orange devient mousseux et aérien.",
+      "family": "Highball",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "campari", "amount": 60, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 120, "unit": "ml" }
+      ],
+      "garnish": "Quartier d'orange",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Shaker le Campari et le jus d'orange avec quelques glaçons pendant 10 secondes pour aérer le jus.",
+        "Filtrer dans le verre et garnir d'un quartier d'orange."
+      ],
+      "flavors": ["Amer", "Agrume", "Fruité"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E8572A",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "alien-brain-damage",
+      "name": "Alien Brain Damage",
+      "aliases": ["Alien Brain Hemorrhage"],
+      "tagline": "Le shot « cervelle » de pêche, crème et grenadine",
+      "description": "Variante du shot de soirée connu sous le nom d'Alien Brain Hemorrhage, pensé pour faire réagir plus que pour être dégusté. Le Baileys flocule au contact de la liqueur de pêche et forme une « cervelle » en suspension, que la grenadine et le curaçao veinent de rouge et de bleu. En bouche, c'est sucré, crémeux et fruité.",
+      "family": "Shot",
+      "method": "Au verre",
+      "glass": "Shot",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "liqueur-peche", "amount": 20, "unit": "ml" },
+        { "id": "baileys", "amount": 20, "unit": "ml" },
+        { "id": "curacao-bleu", "amount": 10, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser la liqueur de pêche bien froide dans un grand verre à shot.",
+        "Faire couler doucement le Baileys sur le dos d'une cuillère : il flocule et forme la « cervelle ».",
+        "Ajouter le curaçao bleu goutte à goutte, puis la grenadine en filet pour qu'elle descende en filaments.",
+        "Servir aussitôt, sans remuer."
+      ],
+      "flavors": ["Sucré", "Crémeux", "Fruité"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#D9A99B",
+      "cocktailDbId": null,
+      "notes": "Méthode passée de shaker à shot monté au verre, pour obtenir l'effet visuel qui donne son nom au shot. À valider avec Clément.",
+      "origin": "clement"
+    },
+    {
+      "id": "godmother-sour",
+      "name": "Godmother Sour",
+      "aliases": [],
+      "tagline": "Vodka et amaretto blanc en sour aérien",
+      "description": "Le Godmother, cousin féminin du Godfather, associe simplement vodka et amaretto sur glace ; il serait apparu dans les années 1970, dans le sillage de son aîné au whisky. Cette version sour y ajoute citron et blanc d'œuf : l'amande d'un amaretto blanc se fait plus légère, la vodka laissant toute la place à la note de massepain.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "vodka", "amount": 40, "unit": "ml" },
+        { "id": "adriatico-blanco", "amount": 35, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 15, "unit": "ml", "note": "½ blanc" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Shaker tous les ingrédients sans glace pendant 10 secondes.",
+        "Ajouter les glaçons et shaker vivement 10 secondes.",
+        "Filtrer sur un gros glaçon dans un verre old fashioned.",
+        "Exprimer le zeste de citron sur la mousse."
+      ],
+      "flavors": ["Sucré", "Acidulé", "Crémeux"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F2E6C6",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "tropical-beach",
+      "name": "Tropical Beach",
+      "aliases": [],
+      "tagline": "Coco, vanille et orange en dégradé de plage",
+      "description": "Création estivale sans histoire documentée, le Tropical Beach se construit comme un paysage : grenadine au fond, orange au milieu, bleu en surface. Peu alcoolisé, il mise sur la gourmandise de la coco et de la vanille, adoucie par le jus d'orange.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Hurricane",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "liqueur-vanille", "amount": 20, "unit": "ml" },
+        { "id": "liqueur-coco", "amount": 20, "unit": "ml" },
+        { "id": "curacao-bleu", "amount": 20, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 100, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 40, "unit": "ml" }
+      ],
+      "garnish": "Rondelle d'orange et cerise",
+      "steps": [
+        "Verser la grenadine au fond du verre, puis le remplir de glaçons.",
+        "Shaker les liqueurs de vanille et de coco avec le jus d'orange et des glaçons pendant 10 secondes.",
+        "Filtrer lentement dans le verre pour ne pas mélanger la grenadine.",
+        "Verser le curaçao bleu en filet sur le dessus et servir sans remuer."
+      ],
+      "flavors": ["Sucré", "Fruité", "Tropical"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F08A3C",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "green-eyes",
+      "name": "Green Eyes",
+      "aliases": [],
+      "tagline": "Gin et Chartreuse verte, un sour puissant",
+      "description": "Peu documenté sous ce nom, ce Green Eyes se présente comme un gimlet enrichi de Chartreuse verte. Le gin structure, la Chartreuse apporte ses plantes et sa chaleur, le citron vert et un peu de sucre tiennent l'équilibre : un sour herbacé, vif et généreux.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "chartreuse-verte", "amount": 22, "unit": "ml" },
+        { "id": "citron-vert", "amount": 22, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron vert",
+      "steps": [
+        "Refroidir une coupe.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et exprimer le zeste de citron vert."
+      ],
+      "flavors": ["Herbacé", "Acidulé", "Corsé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#C9D98A",
+      "cocktailDbId": null,
+      "notes": "Doses de 22 ml conservées telles que dans la source.",
+      "origin": "clement"
+    },
+    {
+      "id": "jasmine",
+      "name": "Jasmine",
+      "aliases": [],
+      "tagline": "Le gin sour qui imite le pamplemousse rose",
+      "description": "Il aurait été créé au début des années 1990 par le bartender californien Paul Harrington, qui l'aurait baptisé d'après un ami. Une petite touche de Campari et de triple sec sur une base de gin et de citron : l'ensemble évoque étonnamment le jus de pamplemousse rose, frais et légèrement amer.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "campari", "amount": 7.5, "unit": "ml" },
+        { "id": "triple-sec", "amount": 7.5, "unit": "ml" },
+        { "id": "citron", "amount": 22, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Refroidir une coupe.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et exprimer le zeste de citron."
+      ],
+      "flavors": ["Agrume", "Amer", "Acidulé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F4B6A0",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "bramble",
+      "name": "Bramble",
+      "aliases": [],
+      "tagline": "Gin, citron et mûre en filets sur glace pilée",
+      "description": "Imaginé par Dick Bradsell à Londres au milieu des années 1980, il compte parmi les classiques britanniques modernes. Un sour au gin servi sur glace pilée, que la crème de mûre vient napper de filets violets : vif et acidulé au début, de plus en plus fruité à mesure qu'on le boit.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "creme-de-mure", "amount": 7.5, "unit": "ml" },
+        { "id": "citron", "amount": 22, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Mûres fraîches et demi-rondelle de citron",
+      "steps": [
+        "Shaker le gin, le jus de citron et le sirop de sucre avec des glaçons pendant 10 secondes.",
+        "Filtrer dans un verre old fashioned rempli de glace pilée.",
+        "Ajouter un dôme de glace pilée.",
+        "Verser la crème de mûre en filet sur le dessus pour qu'elle s'infiltre dans la glace."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Frais"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#B2476A",
+      "cocktailDbId": null,
+      "notes": "Doses de Clément conservées (22 ml de citron) ; elles diffèrent légèrement de la spécification IBA.",
+      "origin": "clement"
+    },
+    {
+      "id": "charro-negro",
+      "name": "Charro Negro",
+      "aliases": [],
+      "tagline": "Tequila, cola et citron vert, le highball mexicain",
+      "description": "Highball très populaire au Mexique, le Charro Negro (le « cavalier noir ») est en quelque sorte le cousin tequila du Cuba Libre. Le citron vert coupe la douceur du cola et fait ressortir les notes végétales de l'agave.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "tequila", "amount": 60, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "coca-cola", "amount": 120, "unit": "ml" }
+      ],
+      "garnish": "Quartier de citron vert (bord salé en option)",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la tequila et le jus de citron vert.",
+        "Compléter avec le cola et remuer une fois, délicatement."
+      ],
+      "flavors": ["Sucré", "Acidulé", "Pétillant"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#3B1F14",
+      "cocktailDbId": null,
+      "notes": "Méthode passée de shaker à « au verre » (boisson gazeuse).",
+      "origin": "clement"
+    },
+    {
+      "id": "grand-duc",
+      "name": "Grand-Duc",
+      "aliases": [],
+      "tagline": "Chartreuse verte et jus de pomme, simple et net",
+      "description": "Création peu documentée, le Grand-Duc associe la Chartreuse verte à un jus de pomme généreux, avec juste un trait de vodka et de citron pour la tenue. La pomme adoucit la puissance des plantes : un long drink frais, herbacé et facile, idéal pour découvrir la Chartreuse.",
+      "family": "Highball",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 10, "unit": "ml" },
+        { "id": "chartreuse-verte", "amount": 20, "unit": "ml" },
+        { "id": "citron", "amount": 5, "unit": "ml" },
+        { "id": "jus-de-pomme", "amount": 100, "unit": "ml" }
+      ],
+      "garnish": "Fine tranche de pomme verte",
+      "steps": [
+        "Remplir un grand verre old fashioned de glaçons.",
+        "Shaker tous les ingrédients avec des glaçons pendant 8 à 10 secondes.",
+        "Filtrer dans le verre et garnir d'une tranche de pomme."
+      ],
+      "flavors": ["Herbacé", "Fruité", "Frais"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#D8C35A",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "swampwater",
+      "name": "Swampwater",
+      "aliases": ["Swamp Water"],
+      "tagline": "Chartreuse et ananas, le vert des marais",
+      "description": "Le Swampwater aurait été popularisé aux États-Unis dans les années 1970 par une campagne publicitaire de la Chartreuse. Sa recette tient en trois ingrédients : l'ananas enrobe les plantes de la Chartreuse verte, le citron ravive l'ensemble pour un long drink tropical et herbacé.",
+      "family": "Highball",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "chartreuse-verte", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 10, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 100, "unit": "ml" }
+      ],
+      "garnish": "Quartier d'ananas ou de citron vert",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Shaker tous les ingrédients avec des glaçons pendant 10 secondes pour faire mousser l'ananas.",
+        "Filtrer dans le verre et garnir."
+      ],
+      "flavors": ["Herbacé", "Tropical", "Fruité"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#C7C94A",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "last-word",
+      "name": "Last Word",
+      "aliases": [],
+      "tagline": "Quatre ingrédients à parts égales, verts et vifs",
+      "description": "Né au Detroit Athletic Club pendant la Prohibition selon la tradition, le Last Word était presque oublié avant d'être remis à l'honneur au début des années 2000 par Murray Stenson, au Zig Zag Café de Seattle. Gin, Chartreuse verte, marasquin et citron vert à parts égales : un équilibre intense, herbacé, acidulé et légèrement cerisé.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 20, "unit": "ml" },
+        { "id": "chartreuse-verte", "amount": 20, "unit": "ml" },
+        { "id": "maraschino", "amount": 20, "unit": "ml" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Cerise au marasquin (facultatif)",
+      "steps": [
+        "Refroidir un verre à martini.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans le verre."
+      ],
+      "flavors": ["Herbacé", "Acidulé", "Corsé"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#C8D27A",
+      "cocktailDbId": null,
+      "notes": "Doses de Clément (20 ml chacun) conservées ; la spécification IBA est à 22,5 ml.",
+      "origin": "clement"
+    },
+    {
+      "id": "chartreuse-mule",
+      "name": "Chartreuse Mule",
+      "aliases": [],
+      "tagline": "La mule herbacée : Chartreuse et ginger beer",
+      "description": "Variante moderne du Moscow Mule, il remplace la vodka par la Chartreuse verte. Le gingembre piquant de la ginger beer répond aux plantes et aux épices de la liqueur, le citron apporte la tension : un long drink rafraîchissant, plus aromatique que son modèle.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "chartreuse-verte", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 10, "unit": "ml" },
+        { "id": "ginger-beer", "amount": 100, "unit": "ml" }
+      ],
+      "garnish": "Quartier de citron vert et brin de menthe",
+      "steps": [
+        "Remplir un grand verre old fashioned de glaçons.",
+        "Verser la Chartreuse et le jus de citron.",
+        "Compléter avec la ginger beer et remuer délicatement."
+      ],
+      "flavors": ["Herbacé", "Épicé", "Pétillant", "Frais"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#D9CF8A",
+      "cocktailDbId": null,
+      "notes": "Méthode passée de shaker à « au verre » (boisson gazeuse).",
+      "origin": "clement"
+    },
+    {
+      "id": "blue-bird",
+      "name": "Blue Bird",
+      "aliases": ["Bluebird"],
+      "tagline": "Un gin sour bleu ciel aux notes d'orange",
+      "description": "Le nom Blue Bird désigne plusieurs recettes anciennes associant gin et curaçao, sans origine bien établie. Cette version en sour marie gin, triple sec et citron, avec juste assez de curaçao bleu pour le teinter : sec, citronné et nettement orangé.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 40, "unit": "ml" },
+        { "id": "triple-sec", "amount": 10, "unit": "ml" },
+        { "id": "curacao-bleu", "amount": 5, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Refroidir une coupe.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et exprimer le zeste de citron."
+      ],
+      "flavors": ["Agrume", "Acidulé", "Sec"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#6FB7D9",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "clement"
+    },
+    {
+      "id": "americano",
+      "name": "Americano",
+      "aliases": [],
+      "tagline": "L'amertume à l'italienne, tout en légèreté",
+      "description": "Héritier du Milano-Torino servi dans les cafés milanais à la fin du XIXᵉ siècle, l'Americano devrait son nom, selon la tradition, aux voyageurs américains qui l'appréciaient allongé d'eau gazeuse. Amertume du bitter, douceur vineuse du vermouth et bulles : un apéritif léger d'une modernité intacte.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "campari", "amount": 30, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 30, "unit": "ml" },
+        { "id": "soda", "amount": 30, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Demi-rondelle d'orange et zeste de citron",
+      "steps": [
+        "Remplir un verre old fashioned de glaçons.",
+        "Verser le Campari puis le vermouth rouge.",
+        "Compléter d'eau gazeuse et remuer délicatement.",
+        "Garnir d'une demi-rondelle d'orange et exprimer le zeste de citron."
+      ],
+      "flavors": ["Amer", "Herbacé", "Pétillant"],
+      "difficulty": 1,
+      "iba": "Unforgettables",
+      "color": "#B8322A",
+      "cocktailDbId": null,
+      "notes": "",
+      "origin": "editorial"
+    },
+    {
+      "id": "daiquiri",
+      "name": "Daiquiri",
+      "aliases": [],
+      "tagline": "Trois ingrédients, aucun endroit où se cacher",
+      "description": "Il porterait le nom d'une plage et d'une mine proches de Santiago de Cuba, où des ingénieurs américains l'auraient mis au point vers 1900. Rhum blanc, citron vert et sucre : ce grand classique démontre que la précision des doses compte davantage que la complication.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 60, "unit": "ml" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Refroidir une coupe.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker très vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Frais"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#EDEBD0",
+      "cocktailDbId": null,
+      "notes": "Citron vert passé de 30 à 20 ml pour suivre la spécification IBA.",
+      "origin": "editorial"
+    },
+    {
+      "id": "margarita",
+      "name": "Margarita",
+      "aliases": [],
+      "tagline": "Tequila, orange et citron vert en tension",
+      "description": "Ses origines restent disputées entre plusieurs bars du Mexique et de Californie, mais sa parenté avec la famille des Daisy, « margarita » en espagnol, explique probablement son nom. Tequila, liqueur d'orange et citron vert s'y répondent sur une pointe de sel : vif, agrumé et désaltérant.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "tequila", "amount": 50, "unit": "ml" },
+        { "id": "triple-sec", "amount": 20, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "sel", "amount": 1, "unit": "pincée", "optional": true, "note": "pour la demi-croûte" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Humecter la moitié du bord de la coupe au citron vert et la passer dans le sel.",
+        "Verser la tequila, le triple sec et le jus de citron vert dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Salé"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#E9E6B8",
+      "cocktailDbId": null,
+      "notes": "Citron vert passé de 25 à 15 ml pour suivre la spécification IBA ; le sel devient un ingrédient optionnel.",
+      "origin": "editorial"
+    },
+    {
+      "id": "mojito",
+      "name": "Mojito",
+      "aliases": [],
+      "tagline": "Frais, herbacé et cubain",
+      "description": "Descendant de mélanges anciens à base d'aguardiente, de citron vert et de menthe, le Mojito devient une icône de La Havane au XXᵉ siècle. Menthe fraîche, rhum blanc et citron vert, allongés d'eau gazeuse sur glace pilée : le long drink désaltérant par excellence.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 45, "unit": "ml" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" },
+        { "id": "menthe", "amount": 8, "unit": "pièce", "note": "feuilles" },
+        { "id": "soda", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Bouquet de menthe",
+      "steps": [
+        "Presser légèrement la menthe avec le sirop et le jus de citron vert au fond du verre, sans la déchirer.",
+        "Ajouter le rhum et remplir le verre de glace pilée.",
+        "Remuer de bas en haut avec une cuillère pour mêler la menthe.",
+        "Compléter d'eau gazeuse et garnir d'un bouquet de menthe."
+      ],
+      "flavors": ["Frais", "Herbacé", "Acidulé", "Pétillant"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#DDEBC0",
+      "cocktailDbId": null,
+      "notes": "Rhum 50 → 45 ml et citron vert 25 → 20 ml pour suivre la spécification IBA ; sirop de sucre conservé à la place du sucre de canne.",
+      "origin": "editorial"
+    },
+    {
+      "id": "tequila-mule",
+      "name": "Tequila Mule",
+      "aliases": ["Mexican Mule"],
+      "tagline": "Le coup de fouet du gingembre, version agave",
+      "description": "Le Moscow Mule, créé aux États-Unis au début des années 1940, a uni le destin de la vodka, de la ginger beer et de la célèbre timbale en cuivre. Cette variante maison remplace la vodka par une tequila blanco, dont les notes végétales d'agave s'accordent avec le piquant du gingembre et la vivacité du citron vert.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Mug cuivre",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "tequila", "amount": 50, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "ginger-beer", "amount": 100, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Remplir le mug de glaçons.",
+        "Verser la tequila et le jus de citron vert.",
+        "Compléter avec la ginger beer et remuer doucement une fois."
+      ],
+      "flavors": ["Épicé", "Frais", "Pétillant", "Acidulé"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#E8DDB0",
+      "cocktailDbId": null,
+      "notes": "Variante maison du Moscow Mule (ancien id `mule`).",
+      "origin": "editorial"
+    }
+  ],
+  "newIngredients": []
+}

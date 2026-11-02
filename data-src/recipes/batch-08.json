@@ -1,0 +1,767 @@
+{
+  "cocktails": [
+    {
+      "id": "orange-rosemary-collins",
+      "name": "Orange Rosemary Collins",
+      "aliases": [],
+      "tagline": "Un Collins au gin parfumé d'orange et de romarin",
+      "description": "Variante moderne du Tom Collins, où une partie du citron cède la place au jus d'orange et où le romarin vient infuser le sirop. Le gin garde le premier rôle, l'orange arrondit l'ensemble et le romarin laisse une note résineuse et fraîche sous les bulles.",
+      "family": "Fizz & Collins",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" },
+        { "id": "romarin", "amount": 1, "unit": "pièce", "note": "brin, secoué avec le reste" },
+        { "id": "soda", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Brin de romarin et demi-tranche d'orange",
+      "steps": [
+        "Froisser légèrement le brin de romarin entre les doigts et le placer dans le shaker.",
+        "Ajouter le gin, le jus d'orange, le citron et le sirop, remplir de glace et shaker 10 secondes.",
+        "Filtrer dans un verre highball rempli de glaçons.",
+        "Compléter à l'eau gazeuse et remuer d'un tour de cuillère."
+      ],
+      "flavors": ["Agrume", "Herbacé", "Pétillant", "Frais"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F4B860",
+      "cocktailDbId": "178341",
+      "notes": "Source : jus d'orange et de citron « à compléter », 25 ml de sirop de romarin. Doses rééquilibrées ; sirop de romarin remplacé par sirop de sucre + brin de romarin secoué (un sirop de romarin maison à 15 ml convient aussi)."
+    },
+    {
+      "id": "lemon-elderflower-spritzer",
+      "name": "Lemon Elderflower Spritzer",
+      "aliases": [],
+      "tagline": "Vodka, fleur de sureau et citron, tout en légèreté",
+      "description": "Un long drink printanier construit directement dans le verre, dans l'esprit des boissons de jardin britanniques au sirop de sureau. La vodka reste discrète et laisse le parfum floral du sureau s'exprimer, relevé par un trait de citron et beaucoup de bulles.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 45, "unit": "ml" },
+        { "id": "sirop-de-sureau", "amount": 15, "unit": "ml" },
+        { "id": "citron", "amount": 10, "unit": "ml" },
+        { "id": "soda", "amount": 90, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Rondelle de citron",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la vodka, le sirop de sureau et le jus de citron.",
+        "Compléter à l'eau gazeuse et remuer doucement de bas en haut."
+      ],
+      "flavors": ["Floral", "Agrume", "Pétillant", "Frais"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#EDEFC8",
+      "cocktailDbId": "178360",
+      "notes": "Source : 2 c. à café (10 ml) de cordial de sureau ; porté à 15 ml pour équilibrer le citron."
+    },
+    {
+      "id": "afterglow",
+      "name": "Afterglow",
+      "aliases": [],
+      "tagline": "Orange, ananas et grenadine aux couleurs du couchant",
+      "description": "Un grand classique des cartes sans alcool, dont le nom évoque la lueur du soleil couchant que rappelle son dégradé orangé. L'ananas apporte du corps et une légère mousse au shaker, l'orange la fraîcheur, et la grenadine une touche fruitée et sucrée.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-d-orange", "amount": 60, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 60, "unit": "ml" },
+        { "id": "citron-vert", "amount": 10, "unit": "ml", "optional": true, "note": "pour plus de vivacité" },
+        { "id": "sirop-de-grenadine", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Quartier d'ananas et cerise",
+      "steps": [
+        "Verser les jus et le citron vert dans un shaker rempli de glace.",
+        "Shaker vivement 10 secondes pour faire mousser l'ananas.",
+        "Filtrer dans un verre highball rempli de glaçons.",
+        "Verser la grenadine en filet le long de la paroi pour qu'elle tombe au fond."
+      ],
+      "flavors": ["Fruité", "Tropical", "Sucré", "Agrume"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F28A30",
+      "cocktailDbId": "12560",
+      "notes": "Source : simple mélange 1:4:4 servi sur glace. Ajout facultatif de citron vert et passage au shaker pour la dilution et la texture."
+    },
+    {
+      "id": "apello",
+      "name": "Apello",
+      "aliases": [],
+      "tagline": "Trois jus d'agrumes et de pomme, vif et désaltérant",
+      "description": "Un mélange sans alcool d'orange, de pamplemousse et de pomme, longtemps présent dans les cartes de bar européennes. Le pamplemousse apporte une pointe d'amertume qui tient tête à la douceur de l'orange, la pomme arrondit le tout.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-d-orange", "amount": 60, "unit": "ml" },
+        { "id": "jus-de-pamplemousse", "amount": 45, "unit": "ml" },
+        { "id": "jus-de-pomme", "amount": 15, "unit": "ml" },
+        { "id": "sucre", "amount": 5, "unit": "ml", "optional": true, "note": "si le pamplemousse est très amer" }
+      ],
+      "garnish": "Cerise au marasquin",
+      "steps": [
+        "Verser les jus et, au besoin, le sirop dans un shaker rempli de glace.",
+        "Shaker 8 secondes pour refroidir et diluer légèrement.",
+        "Filtrer dans un verre highball rempli de glaçons et piquer la cerise."
+      ],
+      "flavors": ["Agrume", "Fruité", "Amer", "Frais"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F5C26B",
+      "cocktailDbId": "15106",
+      "notes": "Source en cl (4/3/1) : proportions conservées, volume porté à 120 ml ; shaker plutôt que simple mélange, sirop facultatif ajouté."
+    },
+    {
+      "id": "bora-bora",
+      "name": "Bora Bora",
+      "aliases": [],
+      "tagline": "Ananas et passion, un parfum de lagon sans alcool",
+      "description": "Une boisson d'inspiration polynésienne qui marie l'ananas et le fruit de la passion, deux saveurs phares du bar tiki. La passion apporte une acidité parfumée, le citron la réveille et la grenadine donne à la fois la douceur et la teinte rosée.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-d-ananas", "amount": 90, "unit": "ml" },
+        { "id": "puree-passion", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 10, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Tranche d'ananas et cerise",
+      "steps": [
+        "Réunir tous les ingrédients dans un shaker rempli de glace.",
+        "Shaker vivement 12 secondes.",
+        "Filtrer dans un verre highball rempli de glaçons."
+      ],
+      "flavors": ["Tropical", "Fruité", "Acidulé", "Sucré"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F4A83A",
+      "cocktailDbId": "12572",
+      "notes": "Source : 60 ml de jus de passion ; ramené à 30 ml de purée, plus concentrée et acide."
+    },
+    {
+      "id": "fruit-cooler",
+      "name": "Fruit Cooler",
+      "aliases": [],
+      "tagline": "Fraises écrasées, pomme et citron sous les bulles",
+      "description": "À l'origine une boisson de pichet, préparée la veille en laissant macérer des fraises dans le sucre. Ramenée au verre, elle garde son caractère : fruit rouge juteux, douceur de la pomme, pointe de citron et longueur pétillante.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "fraises", "amount": 4, "unit": "pièce" },
+        { "id": "sucre", "amount": 15, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "jus-de-pomme", "amount": 60, "unit": "ml" },
+        { "id": "soda", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Tranche de pomme et rondelle de citron",
+      "steps": [
+        "Écraser les fraises avec le sirop au fond du shaker (ou les laisser macérer la veille avec du sucre).",
+        "Ajouter le citron, le jus de pomme et la glace, puis shaker 10 secondes.",
+        "Double-filtrer dans un verre highball rempli de glaçons.",
+        "Compléter à l'eau gazeuse et garnir."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Pétillant", "Frais"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F3A0A0",
+      "cocktailDbId": "12670",
+      "notes": "Source : recette de pichet (1 L d'eau gazeuse, concentré de pomme surgelé). Adaptée en portion individuelle, macération remplacée par écrasement."
+    },
+    {
+      "id": "limeade",
+      "name": "Limeade",
+      "aliases": ["Citronnade au citron vert"],
+      "tagline": "Citron vert, sucre et eau gazeuse, rien de plus",
+      "description": "Cousine de la lemonade américaine, la limeade se contente de citron vert, de sucre et d'eau, ici pétillante. Sa simplicité fait tout son intérêt : une acidité franche, juste tempérée, et une grande fraîcheur.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "citron-vert", "amount": 30, "unit": "ml" },
+        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "soda", "amount": 120, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Zeste de citron vert dans le verre",
+      "steps": [
+        "Mélanger le jus de citron vert et le sirop au fond du verre.",
+        "Remplir de glaçons et compléter avec l'eau gazeuse bien froide.",
+        "Remuer doucement et glisser le zeste dans le verre."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Pétillant", "Frais"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#E3EDB8",
+      "cocktailDbId": "12704",
+      "notes": ""
+    },
+    {
+      "id": "orangeade",
+      "name": "Orangeade",
+      "aliases": [],
+      "tagline": "Le jus d'orange relevé de citron et allongé de bulles",
+      "description": "L'orangeade maison était autrefois la boisson des après-midi d'été, bien avant les sodas en bouteille. Le citron redonne du peps au jus d'orange, un peu de sirop équilibre, et l'eau gazeuse allège le tout.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-d-orange", "amount": 90, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" },
+        { "id": "soda", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Demi-rondelle d'orange",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser le jus d'orange, le citron et le sirop, puis remuer.",
+        "Compléter avec l'eau gazeuse froide et servir avec une paille."
+      ],
+      "flavors": ["Agrume", "Fruité", "Pétillant", "Sucré"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#F6B84A",
+      "cocktailDbId": "12618",
+      "notes": "Source : 50 ml de citron pour 150 ml d'orange ; volumes réduits pour un verre highball."
+    },
+    {
+      "id": "lassi-mangue",
+      "name": "Lassi mangue",
+      "aliases": ["Mango Lassi"],
+      "tagline": "Yaourt et mangue mixés, onctueux et rafraîchissant",
+      "description": "Le lassi est une boisson au yaourt originaire du nord de l'Inde, servie nature, salée ou fruitée. La version à la mangue est devenue la plus connue hors du pays : épaisse, douce, avec une légère acidité lactée qui rafraîchit.",
+      "family": "Sans alcool",
+      "method": "Blender",
+      "glass": "Highball",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "mangue", "amount": 0.5, "unit": "pièce", "note": "bien mûre, en morceaux" },
+        { "id": "yaourt", "amount": 120, "unit": "ml" },
+        { "id": "lait", "amount": 60, "unit": "ml", "note": "ou eau glacée" },
+        { "id": "sucre", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Pincée de cardamome moulue (facultatif)",
+      "steps": [
+        "Mettre la mangue, le yaourt, le lait et le sirop dans le blender avec 3 ou 4 glaçons.",
+        "Mixer 30 secondes jusqu'à obtenir une texture lisse.",
+        "Goûter, ajuster le sucre selon la maturité de la mangue et verser dans un verre bien froid."
+      ],
+      "flavors": ["Crémeux", "Fruité", "Tropical", "Sucré"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F7C04A",
+      "cocktailDbId": "12698",
+      "notes": "Source pour 4 verres (2 mangues, 2 tasses de yaourt) ramenée à une portion ; eau remplacée par du lait (variante courante), l'eau reste possible."
+    },
+    {
+      "id": "thai-iced-tea",
+      "name": "Thai Iced Tea",
+      "aliases": ["Cha yen", "Thé glacé thaï"],
+      "tagline": "Thé noir épicé et lait concentré sur glace",
+      "description": "Le cha yen est le thé glacé des vendeurs de rue thaïlandais, reconnaissable à sa couleur orangée. Un thé noir très corsé, souvent parfumé d'épices, est adouci au lait concentré sucré puis versé sur la glace : sucré, crémeux et légèrement tannique.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "the-noir", "amount": 150, "unit": "ml", "note": "thé thaï ou thé noir très fort, infusé chaud" },
+        { "id": "lait-concentre", "amount": 30, "unit": "ml" },
+        { "id": "lait", "amount": 30, "unit": "ml", "optional": true, "note": "ou lait concentré non sucré, pour le nappage" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Infuser le thé 5 minutes à l'eau bouillante, en le dosant deux fois plus fort qu'à l'ordinaire, puis filtrer.",
+        "Dissoudre le lait concentré sucré dans le thé encore chaud et laisser refroidir.",
+        "Verser sur un verre rempli de glaçons.",
+        "Napper de lait en filet pour créer le dégradé et remuer au moment de boire."
+      ],
+      "flavors": ["Crémeux", "Sucré", "Épicé", "Amer"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#D98A4E",
+      "cocktailDbId": "12786",
+      "notes": "Source pour 2 verres, avec garniture de menthe (non traditionnelle, retirée). Thé thaï en poudre assimilé à thé-noir."
+    },
+    {
+      "id": "pineapple-ginger-ale-smoothie",
+      "name": "Pineapple Ginger Ale Smoothie",
+      "aliases": [],
+      "tagline": "Ananas frais et gingembre mixés, coiffés de ginger ale",
+      "description": "Un smoothie express où l'ananas frais est mixé avec un éclat de gingembre, puis allongé de ginger ale pour plus de légèreté. Le fruit apporte la douceur et le corps, le gingembre une chaleur piquante qui persiste.",
+      "family": "Sans alcool",
+      "method": "Blender",
+      "glass": "Highball",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "ananas", "amount": 2, "unit": "tranche", "note": "épaisses, sans écorce" },
+        { "id": "gingembre-frais", "amount": 1, "unit": "tranche", "note": "fine, environ 5 mm" },
+        { "id": "citron-vert", "amount": 10, "unit": "ml" },
+        { "id": "ginger-ale", "amount": 90, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Feuille d'ananas",
+      "steps": [
+        "Mettre l'ananas, le gingembre et le citron vert dans le blender avec une petite poignée de glace pilée.",
+        "Mixer 30 secondes jusqu'à ce que le mélange soit lisse.",
+        "Verser dans un verre highball et compléter de ginger ale en remuant doucement."
+      ],
+      "flavors": ["Tropical", "Épicé", "Fruité", "Pétillant"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F2D46B",
+      "cocktailDbId": "12718",
+      "notes": "Nom source « Gingerale » corrigé. La fiche source ne contient que l'ananas et le gingembre : ginger ale et citron vert ajoutés pour coller au nom et équilibrer."
+    },
+    {
+      "id": "rail-splitter",
+      "name": "Rail Splitter",
+      "aliases": [],
+      "tagline": "Citron et ginger ale, un long drink sec et piquant",
+      "description": "Un vieux long drink sans alcool dont le nom renvoie au surnom d'Abraham Lincoln, « le fendeur de rondins ». Le citron et une touche de sirop donnent du relief au ginger ale, pour une boisson nette, légèrement piquante et peu sucrée.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 10, "unit": "ml" },
+        { "id": "ginger-ale", "amount": 120, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Spirale de zeste de citron",
+      "steps": [
+        "Mélanger le jus de citron et le sirop au fond d'un verre highball.",
+        "Remplir de glaçons et compléter au ginger ale.",
+        "Remuer d'un tour de cuillère et garnir du zeste."
+      ],
+      "flavors": ["Acidulé", "Épicé", "Pétillant", "Agrume"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#EAD9A0",
+      "cocktailDbId": "12630",
+      "notes": ""
+    },
+    {
+      "id": "cranberry-punch",
+      "name": "Cranberry Punch",
+      "aliases": ["Punch à la cranberry"],
+      "tagline": "Le punch de fête rouge rubis, à préparer au saladier",
+      "description": "Un punch sans alcool typique des réceptions de fin d'année aux États-Unis, préparé au saladier pour toute la tablée. La cranberry apporte acidité et tanins, l'ananas la rondeur, une touche d'amande parfume l'ensemble et le ginger ale ajouté au dernier moment le fait pétiller.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-de-cranberry", "amount": 50, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 50, "unit": "ml" },
+        { "id": "citron", "amount": 10, "unit": "ml" },
+        { "id": "sirop-d-orgeat", "amount": 5, "unit": "ml", "note": "pour la note d'amande" },
+        { "id": "ginger-ale", "amount": 80, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Cranberries et rondelles d'orange flottant dans le saladier",
+      "steps": [
+        "Multiplier les doses par le nombre de convives et mélanger dans un saladier les jus, le citron et le sirop d'orgeat.",
+        "Réfrigérer au moins 1 heure.",
+        "Juste avant de servir, ajouter un gros bloc ou une couronne de glace puis verser le ginger ale.",
+        "Servir à la louche dans des verres garnis de glaçons."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Pétillant", "Sucré"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#C8324A",
+      "cocktailDbId": "12890",
+      "notes": "Source au saladier (environ 20 verres) ramenée à une portion. Arôme d'amande remplacé par du sirop d'orgeat ; sucre ajouté supprimé (jus et ginger ale déjà sucrés) et citron ajouté pour l'équilibre."
+    },
+    {
+      "id": "virgin-mojito",
+      "name": "Virgin Mojito",
+      "aliases": ["Nojito", "Mojito sans alcool"],
+      "tagline": "Menthe, citron vert et bulles, le Mojito sans le rhum",
+      "description": "La version sans alcool du célèbre Mojito cubain, devenue un incontournable des cartes de mocktails. On retrouve tout ce qui fait son charme : la menthe pressée, l'acidité du citron vert, le sucre et la glace pilée, pour une boisson très désaltérante.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "menthe", "amount": 8, "unit": "pièce", "note": "feuilles" },
+        { "id": "citron-vert", "amount": 25, "unit": "ml" },
+        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "soda", "amount": 100, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Bouquet de menthe et quartier de citron vert",
+      "steps": [
+        "Presser doucement la menthe avec le sirop au fond du verre, sans la déchiqueter.",
+        "Ajouter le jus de citron vert et remplir aux deux tiers de glace pilée.",
+        "Compléter avec l'eau gazeuse et remuer de bas en haut pour remonter la menthe.",
+        "Ajouter un dôme de glace pilée et garnir."
+      ],
+      "flavors": ["Frais", "Herbacé", "Acidulé", "Pétillant"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#DDEFC9",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "virgin-mule",
+      "name": "Virgin Mule",
+      "aliases": ["Moscow Mule sans alcool", "Ginger Mule"],
+      "tagline": "Ginger beer, citron vert et menthe dans le mug cuivré",
+      "description": "Inspiré du Moscow Mule, ce long drink remplace la vodka par un peu plus de caractère côté gingembre. La ginger beer apporte son piquant, le citron vert la vivacité et la menthe une fraîcheur qui allège le tout.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Mug cuivre",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "menthe", "amount": 6, "unit": "pièce", "note": "feuilles" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 10, "unit": "ml" },
+        { "id": "ginger-beer", "amount": 150, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Quartier de citron vert et brin de menthe",
+      "steps": [
+        "Presser légèrement la menthe avec le sirop au fond du mug.",
+        "Ajouter le jus de citron vert et remplir de glaçons.",
+        "Compléter à la ginger beer et remuer doucement."
+      ],
+      "flavors": ["Épicé", "Frais", "Acidulé", "Pétillant"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#E8DDB0",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "shirley-temple",
+      "name": "Shirley Temple",
+      "aliases": [],
+      "tagline": "Ginger ale et grenadine, le premier « cocktail » des enfants",
+      "description": "Ce mélange aurait été imaginé dans les années 1930 pour l'enfant star Shirley Temple, plusieurs établissements de Hollywood et d'Hawaï en revendiquant la paternité. Le ginger ale apporte une douceur épicée, la grenadine la couleur et le fruit, et un trait de citron évite l'excès de sucre.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "citron", "amount": 10, "unit": "ml", "optional": true, "note": "pour l'équilibre" },
+        { "id": "sirop-de-grenadine", "amount": 15, "unit": "ml" },
+        { "id": "ginger-ale", "amount": 150, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Cerise au marasquin et demi-tranche d'orange",
+      "steps": [
+        "Remplir un verre highball de glaçons et verser le ginger ale et le citron.",
+        "Ajouter la grenadine en filet, elle descend au fond du verre.",
+        "Remuer légèrement au moment de servir et garnir."
+      ],
+      "flavors": ["Sucré", "Fruité", "Pétillant", "Épicé"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#F07A7A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "roy-rogers",
+      "name": "Roy Rogers",
+      "aliases": [],
+      "tagline": "Cola et grenadine, le pendant du Shirley Temple",
+      "description": "Baptisé d'après l'acteur et chanteur de westerns Roy Rogers, il est souvent présenté comme la version « cow-boy » du Shirley Temple. Le cola gagne une note fruitée de grenadine, et un trait de citron vert facultatif lui donne plus de nervosité.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "citron-vert", "amount": 10, "unit": "ml", "optional": true, "note": "pour l'équilibre" },
+        { "id": "sirop-de-grenadine", "amount": 15, "unit": "ml" },
+        { "id": "coca-cola", "amount": 150, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Cerise au marasquin",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la grenadine et le citron vert, puis compléter au cola.",
+        "Remuer doucement et garnir de la cerise."
+      ],
+      "flavors": ["Sucré", "Fruité", "Pétillant"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#5A2A1E",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "arnold-palmer",
+      "name": "Arnold Palmer",
+      "aliases": ["Half & Half"],
+      "tagline": "Moitié thé glacé, moitié citronnade, signé d'un golfeur",
+      "description": "Le golfeur américain Arnold Palmer aurait popularisé dans les années 1960 ce mélange qu'il se préparait lui-même, et qui porte depuis son nom. Le thé noir apporte ses tanins, la citronnade maison l'acidité et la douceur : un équilibre très désaltérant.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "the-noir", "amount": 120, "unit": "ml", "note": "infusé puis refroidi" },
+        { "id": "citron", "amount": 30, "unit": "ml" },
+        { "id": "sucre", "amount": 25, "unit": "ml" }
+      ],
+      "garnish": "Rondelle de citron",
+      "steps": [
+        "Mélanger le jus de citron et le sirop dans un verre highball.",
+        "Remplir de glaçons et verser le thé froid.",
+        "Remuer 10 secondes pour refroidir et diluer légèrement."
+      ],
+      "flavors": ["Acidulé", "Amer", "Agrume", "Frais"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#C9893A",
+      "cocktailDbId": null,
+      "notes": "Citronnade plate reconstituée avec citron + sirop (l'ingrédient « limonade » du catalogue est un soda pétillant)."
+    },
+    {
+      "id": "virgin-mary",
+      "name": "Virgin Mary",
+      "aliases": ["Bloody Mary sans alcool", "Bloody Shame"],
+      "tagline": "Toute l'épice du Bloody Mary, sans la vodka",
+      "description": "Le Bloody Mary privé de vodka garde tout son intérêt, puisque son caractère vient surtout de l'assaisonnement. Tomate, citron, Worcestershire, piment et céleri composent une boisson salée, relevée et rafraîchissante, idéale au brunch.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-de-tomate", "amount": 120, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "sauce-worcestershire", "amount": 4, "unit": "trait" },
+        { "id": "tabasco", "amount": 2, "unit": "trait" },
+        { "id": "sel-de-celeri", "amount": 1, "unit": "pincée" },
+        { "id": "poivre", "amount": 1, "unit": "pincée" }
+      ],
+      "garnish": "Branche de céleri et quartier de citron",
+      "steps": [
+        "Réunir tous les ingrédients dans un shaker avec de la glace.",
+        "Rouler le mélange 5 ou 6 fois d'un contenant à l'autre, sans secouer, pour ne pas faire mousser la tomate.",
+        "Filtrer dans un verre highball rempli de glaçons et garnir."
+      ],
+      "flavors": ["Salé", "Épicé", "Acidulé", "Herbacé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#B52A1E",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "virgin-pina-colada",
+      "name": "Virgin Piña Colada",
+      "aliases": ["Piña Colada sans alcool", "Virgin Colada"],
+      "tagline": "Ananas et coco mixés, la plage sans le rhum",
+      "description": "La Piña Colada portoricaine se prête très bien à la version sans alcool, car l'ananas et la crème de coco font l'essentiel du travail. Mixée avec de la glace, elle est onctueuse, tropicale et gourmande, avec un trait de citron vert pour garder de la fraîcheur.",
+      "family": "Sans alcool",
+      "method": "Blender",
+      "glass": "Hurricane",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "jus-d-ananas", "amount": 120, "unit": "ml" },
+        { "id": "creme-de-coco", "amount": 45, "unit": "ml" },
+        { "id": "citron-vert", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Quartier d'ananas et cerise",
+      "steps": [
+        "Verser tous les ingrédients dans le blender avec une tasse de glace pilée.",
+        "Mixer 20 à 30 secondes jusqu'à une texture lisse et mousseuse.",
+        "Verser dans un verre hurricane et garnir."
+      ],
+      "flavors": ["Tropical", "Crémeux", "Sucré", "Fruité"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F6EED6",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "cinderella",
+      "name": "Cinderella",
+      "aliases": ["Cendrillon"],
+      "tagline": "Orange, ananas et citron, un sour pétillant sans alcool",
+      "description": "Un mocktail classique des bars américains, bâti comme un sour : trois jus à parts presque égales, un peu de grenadine et des bulles. Le citron tient la structure, l'orange et l'ananas apportent le fruit, et l'eau gazeuse allège l'ensemble.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-d-orange", "amount": 30, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 10, "unit": "ml" },
+        { "id": "soda", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Demi-tranche d'orange et cerise",
+      "steps": [
+        "Verser les jus et la grenadine dans un shaker rempli de glace.",
+        "Shaker vivement 10 secondes.",
+        "Filtrer dans un verre highball rempli de glaçons et compléter à l'eau gazeuse."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Agrume", "Pétillant"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F5B04E",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "safe-sex-on-the-beach",
+      "name": "Safe Sex on the Beach",
+      "aliases": ["Virgin Sex on the Beach", "Sex on the Beach sans alcool"],
+      "tagline": "Cranberry, orange et pêche : le classique, sans vodka",
+      "description": "La version sans alcool du Sex on the Beach, star des années 1980, dont elle reprend le duo cranberry-orange. La purée de pêche remplace la liqueur et apporte son velouté, un trait de citron vert garde l'ensemble vif.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-de-cranberry", "amount": 60, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 60, "unit": "ml" },
+        { "id": "puree-peche", "amount": 30, "unit": "ml" },
+        { "id": "citron-vert", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Demi-tranche d'orange",
+      "steps": [
+        "Réunir tous les ingrédients dans un shaker rempli de glace.",
+        "Shaker vivement 10 secondes.",
+        "Filtrer dans un verre highball rempli de glaçons."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Sucré", "Agrume"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E8604A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "lemon-fizz",
+      "name": "Lemon Fizz",
+      "aliases": [],
+      "tagline": "Citron pressé, sucre et bulles, net et désaltérant",
+      "description": "Construit comme un fizz classique mais sans spiritueux, il repose sur l'équilibre le plus simple qui soit : citron, sucre et eau gazeuse. Le passage au shaker refroidit et aère le jus pour une boisson vive et nette.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "citron", "amount": 30, "unit": "ml" },
+        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "soda", "amount": 120, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Rondelle de citron",
+      "steps": [
+        "Shaker vivement le citron et le sirop avec de la glace pendant 10 secondes.",
+        "Filtrer dans un verre highball rempli de glaçons.",
+        "Compléter à l'eau gazeuse bien froide et remuer d'un tour de cuillère."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Pétillant", "Frais"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F1F0D2",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "faux-americano",
+      "name": "Faux Americano",
+      "aliases": ["Americano sans alcool"],
+      "tagline": "L'amertume de l'apéritif italien, sans Campari",
+      "description": "Une imitation sans alcool de l'Americano, l'apéritif italien au Campari et au vermouth. Le pamplemousse et le tonic recréent l'amertume, l'orange apporte le fruit et la rondeur, et l'eau gazeuse donne la légèreté du modèle.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "jus-de-pamplemousse", "amount": 40, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 20, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 5, "unit": "ml", "optional": true, "note": "pour la teinte rouge" },
+        { "id": "tonic", "amount": 60, "unit": "ml" },
+        { "id": "soda", "amount": 30, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Zeste d'orange exprimé et demi-tranche d'orange",
+      "steps": [
+        "Remplir un verre old fashioned de glaçons.",
+        "Verser les jus de pamplemousse et d'orange, puis la grenadine si utilisée.",
+        "Ajouter le tonic, compléter à l'eau gazeuse et remuer doucement.",
+        "Exprimer le zeste d'orange au-dessus du verre et le glisser dedans."
+      ],
+      "flavors": ["Amer", "Agrume", "Pétillant", "Sec"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#E8875A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "espresso-tonic",
+      "name": "Espresso Tonic",
+      "aliases": ["Café tonic"],
+      "tagline": "Un espresso versé sur tonic glacé, amer et pétillant",
+      "description": "Ce mélange inattendu serait né en Scandinavie au milieu des années 2000 avant de conquérir les coffee shops du monde entier. L'amertume du tonic prolonge celle du café, ses agrumes éclairent l'espresso, et les bulles rendent l'ensemble étonnamment rafraîchissant.",
+      "family": "Sans alcool",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "tonic", "amount": 120, "unit": "ml" },
+        { "id": "espresso", "amount": 40, "unit": "ml", "note": "double, fraîchement extrait" }
+      ],
+      "garnish": "Zeste d'orange ou rondelle de citron",
+      "steps": [
+        "Remplir un verre highball de glaçons et verser le tonic bien froid.",
+        "Extraire l'espresso et le verser lentement sur le dos d'une cuillère pour former une couche au-dessus du tonic.",
+        "Garnir et servir sans remuer."
+      ],
+      "flavors": ["Café", "Amer", "Pétillant", "Agrume"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#7A4A2E",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "sour-sans-alcool",
+      "name": "Sour sans alcool",
+      "aliases": ["Virgin Sour"],
+      "tagline": "Citron, mousse d'œuf et thé noir pour la structure",
+      "description": "Une transposition du Whiskey Sour où le thé noir froid remplace le spiritueux et apporte tanins et longueur en bouche. Le citron et le sirop gardent l'équilibre aigre-doux du modèle, le blanc d'œuf lui donne sa mousse soyeuse.",
+      "family": "Sans alcool",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "the-noir", "amount": 60, "unit": "ml", "note": "infusé fort puis refroidi" },
+        { "id": "citron", "amount": 30, "unit": "ml" },
+        { "id": "sucre", "amount": 25, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Shaker à sec (sans glace) tous les ingrédients pendant 10 secondes pour monter le blanc d'œuf.",
+        "Ajouter la glace et shaker vivement 12 secondes.",
+        "Filtrer sur un gros glaçon dans un verre old fashioned.",
+        "Exprimer le zeste de citron au-dessus de la mousse."
+      ],
+      "flavors": ["Acidulé", "Sucré", "Crémeux", "Amer"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#D9B26A",
+      "cocktailDbId": null,
+      "notes": ""
+    }
+  ],
+  "newIngredients": [
+    ["mangue", "Mangue (chair)", "frais_garniture", 0, 140, 1, 0, "🥭"]
+  ]
+}

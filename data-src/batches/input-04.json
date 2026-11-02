@@ -1,0 +1,668 @@
+[
+ {
+  "requestedName": "Greyhound",
+  "cocktailDb": {
+   "cocktailDbId": "17252",
+   "name": "Greyhound",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Vodka"
+    ],
+    [
+     "3 oz",
+     "Grapefruit Juice"
+    ]
+   ],
+   "instructions": "Add the vodka to a Collins glass filled with ice.\nTop with grapefruit juice and stir.\n\n",
+   "instructionsFR": "Ajouter la vodka dans un verre Collins rempli de glace.\nCompléter avec du jus de pamplemousse et remuer.\n\n",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/g5upn41513706732.jpg"
+  }
+ },
+ {
+  "requestedName": "Hot Toddy",
+  "cocktailDb": {
+   "cocktailDbId": "178345",
+   "name": "Hot Toddy",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Irish coffee cup",
+   "ingredients": [
+    [
+     "50 ml",
+     "Whiskey"
+    ],
+    [
+     "15 ml",
+     "Honey"
+    ],
+    [
+     "1",
+     "Cinnamon"
+    ],
+    [
+     "1",
+     "lemon"
+    ],
+    [
+     "2",
+     "Cloves"
+    ]
+   ],
+   "instructions": "STEP 1\r\nWhisk the whisky and honey together and split between 2 heatproof glasses. Add half of the cinnamon stick to each, then top up with 200ml boiling water.\r\n\r\nSTEP 2\r\nAdd a splash of lemon juice to each, then taste and add more to your preference. Finish each with a slice of lemon, studded with a clove, and serve immediately.",
+   "instructionsFR": "ÉTAPE 1\r\nFouettez le whisky et le miel ensemble et répartissez-les dans deux verres résistants à la chaleur. Ajoutez la moitié du bâton de cannelle dans chaque verre, puis complétez avec 200 ml d'eau bouillante.\r\n\r\nÉTAPE 2\r\nAjoutez un filet de jus de citron dans chaque verre, puis goûtez et ajoutez-en selon vos préférences. Terminez chaque verre par une tranche de citron piquée d'un clou de girofle et servez immédiatement.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/ggx0lv1613942306.jpg"
+  }
+ },
+ {
+  "requestedName": "Honey Bee",
+  "cocktailDb": {
+   "cocktailDbId": "178316",
+   "name": "Honey Bee",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Margarita glass",
+   "ingredients": [
+    [
+     "6 cl",
+     "White Rum"
+    ],
+    [
+     "2 cl",
+     "Honey"
+    ],
+    [
+     "2 cl",
+     "Lemon Juice"
+    ]
+   ],
+   "instructions": "Shake ingredients with crushed ice\r\n",
+   "instructionsFR": "Secouer les ingrédients avec de la glace pilée\r\n",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/vu8l7t1582475673.jpg"
+  }
+ },
+ {
+  "requestedName": "Jack Rose Cocktail",
+  "cocktailDb": {
+   "cocktailDbId": "11542",
+   "name": "Jack Rose Cocktail",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Apple brandy"
+    ],
+    [
+     "1 tsp",
+     "Grenadine"
+    ],
+    [
+     "Juice of 1/2",
+     "Lime"
+    ]
+   ],
+   "instructions": "Shake all ingredients with ice, strain into a cocktail glass, and serve.",
+   "instructionsFR": "Secouer tous les ingrédients avec de la glace, filtrer dans un verre à cocktail et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/uuqqrv1439907068.jpg"
+  }
+ },
+ {
+  "requestedName": "John Collins",
+  "cocktailDb": {
+   "cocktailDbId": "11580",
+   "name": "John Collins",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Bourbon"
+    ],
+    [
+     "1 oz",
+     "Lemon juice"
+    ],
+    [
+     "1 tsp superfine",
+     "Sugar"
+    ],
+    [
+     "3 oz",
+     "Club soda"
+    ],
+    [
+     "1",
+     "Maraschino cherry"
+    ],
+    [
+     "1",
+     "Orange"
+    ]
+   ],
+   "instructions": "Pour all ingredients directly into highball glass filled with ice. Stir gently. Garnish. Add a dash of Angostura bitters.",
+   "instructionsFR": "Verser tous les ingrédients directement dans un verre à cocktail rempli de glace. Remuer doucement. Décorer. Ajouter un trait d'Angostura bitters.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/0t4bv71606854479.jpg"
+  }
+ },
+ {
+  "requestedName": "Kir",
+  "cocktailDb": {
+   "cocktailDbId": "17203",
+   "name": "Kir",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Wine Glass",
+   "ingredients": [
+    [
+     "1 part",
+     "Creme de Cassis"
+    ],
+    [
+     "5 parts",
+     "Champagne"
+    ]
+   ],
+   "instructions": "Add the crème de cassis to the bottom of the glass, then top up with wine.",
+   "instructionsFR": "Ajoutez la crème de cassis au fond du verre, puis complétez avec le vin.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/apneom1504370294.jpg"
+  }
+ },
+ {
+  "requestedName": "Kir Royale",
+  "cocktailDb": {
+   "cocktailDbId": "13837",
+   "name": "Kir Royale",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Champagne Flute",
+   "ingredients": [
+    [
+     "1 part",
+     "Creme de Cassis"
+    ],
+    [
+     "5 parts",
+     "Champagne"
+    ]
+   ],
+   "instructions": "Pour Creme de cassis in glass, gently pour champagne on top",
+   "instructionsFR": "Versez la crème de cassis dans un verre, versez délicatement le champagne dessus",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/yt9i7n1504370388.jpg"
+  }
+ },
+ {
+  "requestedName": "Lemon Drop",
+  "cocktailDb": {
+   "cocktailDbId": "14366",
+   "name": "Lemon Drop",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 shot",
+     "Vodka"
+    ],
+    [
+     "1 1/2 shot",
+     "Cointreau"
+    ],
+    [
+     "Juice of 1 wedge",
+     "Lemon"
+    ]
+   ],
+   "instructions": "Shake and strain into a chilled cocktail glass rimmed with sugar.",
+   "instructionsFR": "Secouer et filtrer dans un verre à cocktail réfrigéré, bordé de sucre.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/mtpxgk1504373297.jpg"
+  }
+ },
+ {
+  "requestedName": "Mint Julep",
+  "cocktailDb": {
+   "cocktailDbId": "17206",
+   "name": "Mint Julep",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "4 fresh",
+     "Mint"
+    ],
+    [
+     "2 1/2 oz",
+     "Bourbon"
+    ],
+    [
+     "1 tsp",
+     "Powdered sugar"
+    ],
+    [
+     "2 tsp",
+     "Water"
+    ]
+   ],
+   "instructions": "In a highball glass gently muddle the mint, sugar and water. Fill the glass with cracked ice, add Bourbon and stir well until the glass is well frosted. Garnish with a mint sprig.",
+   "instructionsFR": "Dans un verre highball, mélangez délicatement la menthe, le sucre et l'eau. Remplir le verre de glace pilée, ajouter le bourbon et bien mélanger jusqu'à ce que le verre soit bien givré. Garnir d'un brin de menthe.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/squyyq1439907312.jpg"
+  }
+ },
+ {
+  "requestedName": "Michelada",
+  "cocktailDb": {
+   "cocktailDbId": "178343",
+   "name": "Michelada",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Pint glass",
+   "ingredients": [
+    [
+     "4 oz",
+     "Beer"
+    ],
+    [
+     "4 oz",
+     "Tomato Juice"
+    ],
+    [
+     "1 tblsp",
+     "Lime Juice"
+    ],
+    [
+     "Dash",
+     "Hot Sauce"
+    ],
+    [
+     "Dash",
+     "Worcestershire Sauce"
+    ],
+    [
+     "Dash",
+     "Soy Sauce"
+    ]
+   ],
+   "instructions": "Mix the beer with tomato juice, freshly squeezed lime juice, and Worcestershire sauce, teriyaki sauce, soy sauce, or hot sauce.\r\nServed In a chilled, salt-rimmed glass\r\n",
+   "instructionsFR": "Mélanger la bière avec du jus de tomate, du jus de citron vert fraîchement pressé et de la sauce Worcestershire, de la sauce teriyaki, de la sauce soja ou de la sauce piquante.\r\nServi dans un verre réfrigéré à bord salé.\r\n",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/u736bd1605907086.jpg"
+  }
+ },
+ {
+  "requestedName": "Martinez 2",
+  "cocktailDb": {
+   "cocktailDbId": "17256",
+   "name": "Martinez 2",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Gin"
+    ],
+    [
+     "1 1/2 oz",
+     "Sweet Vermouth"
+    ],
+    [
+     "1 tsp",
+     "Maraschino Liqueur"
+    ],
+    [
+     "2 dashes",
+     "Angostura Bitters"
+    ]
+   ],
+   "instructions": "Add all ingredients to a mixing glass and fill with ice.\r\n\r\nStir until chilled, and strain into a chilled coupe glass.",
+   "instructionsFR": "Ajoutez tous les ingrédients dans un verre à mélange et remplissez-le de glace.\r\n\r\nRemuer jusqu'à refroidissement et filtrer dans un verre à coupe.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/fs6kiq1513708455.jpg"
+  }
+ },
+ {
+  "requestedName": "Miami Vice",
+  "cocktailDb": {
+   "cocktailDbId": "13936",
+   "name": "Miami Vice",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "5 oz Bacardi",
+     "151 proof rum"
+    ],
+    [
+     "frozen",
+     "Pina colada mix"
+    ],
+    [
+     "frozen",
+     "Daiquiri mix"
+    ]
+   ],
+   "instructions": "First: Mix pina colada with 2.5 oz. of rum with ice(set aside). Second: Mix daiquiri with 2.5 oz. of rum with ice. Third: While frozen, add pina colda mix then daiquiri mix in glass (Making sure they do not get mixed together).",
+   "instructionsFR": "Premièrement, mélanger la pina colada avec 2,5 oz de rhum et des glaçons : Mélanger la pina colada avec 2,5 oz de rhum et de la glace (mettre de côté). Deuxièmement : Mélanger le daiquiri avec 2,5 oz de rhum et de la glace. Troisièmement : pendant que le verre est gelé, ajouter le mélange de pina colada puis le mélange de daiquiri dans le verre (en veillant à ce qu'ils ne se mélangent pas).",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/qvuyqw1441208955.jpg"
+  }
+ },
+ {
+  "requestedName": "Mauresque",
+  "cocktailDb": {
+   "cocktailDbId": "178370",
+   "name": "Mauresque",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "3 cl",
+     "Ricard"
+    ],
+    [
+     "1 cl",
+     "Orgeat Syrup"
+    ],
+    [
+     "Full Glass",
+     "Water"
+    ]
+   ],
+   "instructions": "1 - Pour the Ricard (or pastis)\n2 - Pour the orgeat syrup\n3 - Finally pour the water and add ice cubes at your convenience.\n\nAdd the ice cubes at the end, otherwise the syrup and pastis do not mix well.",
+   "instructionsFR": "1 - Verser le Ricard (ou le pastis)\n2 - Versez le sirop d'orgeat\n3 - Versez enfin l'eau et ajoutez des glaçons à votre convenance.\n\nAjoutez les glaçons à la fin, sinon le sirop et le pastis ne se mélangent pas bien.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/duwfa11686236556.jpg"
+  }
+ },
+ {
+  "requestedName": "Mulled Wine",
+  "cocktailDb": {
+   "cocktailDbId": "12988",
+   "name": "Mulled Wine",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins Glass",
+   "ingredients": [
+    [
+     "3 cups",
+     "Water"
+    ],
+    [
+     "1 cup",
+     "Sugar"
+    ],
+    [
+     "12",
+     "Cloves"
+    ],
+    [
+     "2",
+     "Cinnamon"
+    ],
+    [
+     "1",
+     "Lemon peel"
+    ],
+    [
+     "750 ml",
+     "Red wine"
+    ],
+    [
+     "1/4 cup",
+     "Brandy"
+    ]
+   ],
+   "instructions": "Simmer 3 cups water with, sugar, cloves, cinnamon sticks, and lemon peel in a stainless steel pot for 10 minutes. Add wine heat to a \"coffee temperature\" (DO NOT BOIL) then add the brandy.",
+   "instructionsFR": "Faire mijoter 3 tasses d'eau avec le sucre, les clous de girofle, les bâtons de cannelle et le zeste de citron dans une casserole en acier inoxydable pendant 10 minutes. Ajouter le vin, chauffer à la température du café (NE PAS FAIRE BOUILLIR), puis ajouter le brandy.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/iuwi6h1504735724.jpg"
+  }
+ },
+ {
+  "requestedName": "Old Pal",
+  "cocktailDb": {
+   "cocktailDbId": "17827",
+   "name": "Old Pal",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Nick and Nora Glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Rye whiskey"
+    ],
+    [
+     "1 oz",
+     "Campari"
+    ],
+    [
+     "1 oz",
+     "Dry Vermouth"
+    ]
+   ],
+   "instructions": "Chill cocktail glass. Add ingredients to a mixing glass, and fill 2/3 full with ice. Stir about 20 seconds. Empty cocktail glass and strain into the glass. Garnish with a twist of lemon peel.",
+   "instructionsFR": "Refroidissez le verre à cocktail. Ajouter les ingrédients dans un verre à mélange et remplir aux 2/3 de glace. Remuer environ 20 secondes. Videz le verre à cocktail et filtrez-le dans le verre. Garnir d'un zeste de citron.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/x03td31521761009.jpg"
+  }
+ },
+ {
+  "requestedName": "Old Cuban",
+  "cocktailDb": {
+   "cocktailDbId": "178371",
+   "name": "Old Cuban",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "White Rum"
+    ],
+    [
+     "1 oz",
+     "Sugar Syrup"
+    ],
+    [
+     "1 oz",
+     "Lime Juice"
+    ],
+    [
+     "2 dashes",
+     "Angostura Bitters"
+    ],
+    [
+     "2 oz",
+     "Prosecco"
+    ]
+   ],
+   "instructions": "Shake a handful of mint, 2oz white rum, 1oz of sugar syrup, 1oz lime juice and 2 dashes angostura bitters with ice. Double strain into a glass and top with 2oz of prosecco.",
+   "instructionsFR": "Secouez une poignée de menthe, 2 oz de rhum blanc, 1 oz de sirop de sucre, 1 oz de jus de citron vert et 2 traits d'angostura bitters avec de la glace. Passez le tout au chinois dans un verre et complétez avec 2 oz de prosecco.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/eo8gfx1699022995.jpg"
+  }
+ },
+ {
+  "requestedName": "Paloma",
+  "cocktailDb": {
+   "cocktailDbId": "17253",
+   "name": "Paloma",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "3 oz",
+     "Grape Soda"
+    ],
+    [
+     "1 1/2 oz",
+     "Tequila"
+    ]
+   ],
+   "instructions": "Stir together and serve over ice.",
+   "instructionsFR": "Mélanger et servir sur des glaçons.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/samm5j1513706393.jpg"
+  }
+ },
+ {
+  "requestedName": "Pink Gin",
+  "cocktailDb": {
+   "cocktailDbId": "11936",
+   "name": "Pink Gin",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "White wine glass",
+   "ingredients": [
+    [
+     "3 dashes",
+     "Bitters"
+    ],
+    [
+     "2 oz",
+     "Gin"
+    ]
+   ],
+   "instructions": "Pour the bitters into a wine glass. Swirl the glass to coat the inside with the bitters, shake out the excess. Pour the gin into the glass. Do not add ice.",
+   "instructionsFR": "Versez le bitter dans un verre à vin. Faites tourner le verre pour enrober l’intérieur de bitter, secouez l’excédent. Versez le gin dans le verre. N'ajoutez pas de glace.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/qyr51e1504888618.jpg"
+  }
+ },
+ {
+  "requestedName": "Pegu Club",
+  "cocktailDb": {
+   "cocktailDbId": "17249",
+   "name": "Pegu Club",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Gin"
+    ],
+    [
+     "3/4 oz",
+     "Orange Curacao"
+    ],
+    [
+     "3/4 oz",
+     "Lime Juice"
+    ],
+    [
+     "1 dash",
+     "Angostura Bitters"
+    ],
+    [
+     "1 dash",
+     "Orange Bitters"
+    ]
+   ],
+   "instructions": "Shake, strain, up, cocktail glass",
+   "instructionsFR": "Secouez, filtrez, versez, verre à cocktail",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/jfkemm1513703902.jpg"
+  }
+ },
+ {
+  "requestedName": "Pink Lady",
+  "cocktailDb": {
+   "cocktailDbId": "11938",
+   "name": "Pink Lady",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Gin"
+    ],
+    [
+     "1 tsp",
+     "Grenadine"
+    ],
+    [
+     "1 tsp",
+     "Light cream"
+    ],
+    [
+     "1",
+     "Egg white"
+    ]
+   ],
+   "instructions": "Shake all ingredients with ice, strain into a cocktail glass, and serve.",
+   "instructionsFR": "Secouez tous les ingrédients avec de la glace, filtrez dans un verre à cocktail et servez.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/5ia6j21504887829.jpg"
+  }
+ },
+ {
+  "requestedName": "Penicillin",
+  "cocktailDb": {
+   "cocktailDbId": "17829",
+   "name": "Penicillin",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Blended Scotch"
+    ],
+    [
+     "3/4 oz",
+     "Lemon Juice"
+    ],
+    [
+     "2 tsp",
+     "Honey syrup"
+    ],
+    [
+     "2 tsp",
+     "Ginger Syrup"
+    ],
+    [
+     "1/4 oz",
+     "Islay single malt Scotch"
+    ]
+   ],
+   "instructions": "Shake blended Scotch, lemon juice, honey syrup and ginger syrup with ice. Strain over large ice in chilled rocks glass. Float smoky Scotch on top (be sure to use a smoky Scotch such as an Islay single malt). Garnish with candied ginger.",
+   "instructionsFR": "Mélanger le scotch, le jus de citron, le sirop de miel et le sirop de gingembre avec de la glace. Filtrer sur une grande quantité de glace dans un verre à glace glacée. Faire flotter le scotch fumé sur le dessus (veiller à utiliser un scotch fumé tel qu'un single malt Islay). Décorer avec du gingembre confit.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/hc9b1a1521853096.jpg"
+  }
+ },
+ {
+  "requestedName": "Pornstar Martini",
+  "cocktailDb": {
+   "cocktailDbId": "178357",
+   "name": "Pornstar Martini",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "3 cl",
+     "Vodka"
+    ],
+    [
+     "3 cl",
+     "Passoa"
+    ],
+    [
+     "1 cl",
+     "Passion fruit juice"
+    ],
+    [
+     "1 cl",
+     "Lime"
+    ],
+    [
+     "1 shot",
+     "Prosecco"
+    ]
+   ],
+   "instructions": "Straight: Pour all ingredients into mixing glass with ice cubes. Shake well. Strain in chilled martini cocktail glass. Cut passion fruit in half and use as garnish. Pour prosecco into a chilled shot glass and serve alongside the martini.",
+   "instructionsFR": "Droit : Versez tous les ingrédients dans un verre à mélange avec des glaçons. Bien agiter. Filtrer dans un verre à cocktail à martini réfrigéré. Coupez le fruit de la passion en deux et utilisez-le comme garniture. Versez le prosecco dans un verre à shot réfrigéré et servez avec le martini.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/xjhjdf1630406071.jpg"
+  }
+ }
+]

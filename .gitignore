@@ -41,3 +41,6 @@ example
 # generated native folders
 /ios
 /android
+
+# Données sources (cache local des téléchargements)
+data-src/cache/

@@ -1,0 +1,659 @@
+{
+  "cocktails": [
+    {
+      "id": "bronx",
+      "name": "Bronx",
+      "aliases": ["Bronx Cocktail"],
+      "tagline": "Un Martini parfait adouci de jus d'orange",
+      "description": "Star des bars new-yorkais avant la Prohibition, le Bronx aurait été imaginé au début du XXe siècle et doit son nom au quartier, et peut-être à son zoo. Les deux vermouths arrondissent le gin, tandis que le jus d'orange apporte une fraîcheur fruitée et légèrement acidulée.",
+      "family": "Spirit-forward",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 15, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 15, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 30, "unit": "ml", "note": "fraîchement pressé" }
+      ],
+      "garnish": "Zeste d'orange",
+      "steps": [
+        "Rafraîchir la coupe avec de la glace.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker énergiquement une dizaine de secondes.",
+        "Double-filtrer dans la coupe vidée de sa glace et exprimer le zeste d'orange au-dessus."
+      ],
+      "flavors": ["Agrume", "Herbacé", "Fruité"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E9A85C",
+      "cocktailDbId": null,
+      "notes": "Bronx absent de la liste IBA actuelle : proportions classiques (type Difford's)."
+    },
+    {
+      "id": "blood-and-sand",
+      "name": "Blood and Sand",
+      "aliases": [],
+      "tagline": "Scotch, cerise et orange à parts égales",
+      "description": "Ce cocktail tire son nom du film « Arènes sanglantes » (1922) avec Rudolph Valentino, et figure déjà dans le Savoy Cocktail Book de 1930. Rare classique à base de scotch, il marie la douceur de la liqueur de cerise, le vermouth rouge et l'orange pour un résultat rond, fruité et légèrement boisé.",
+      "family": "Spirit-forward",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "scotch", "amount": 25, "unit": "ml" },
+        { "id": "liqueur-cerise", "amount": 25, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 25, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 25, "unit": "ml", "note": "fraîchement pressé" }
+      ],
+      "garnish": "Zeste d'orange",
+      "steps": [
+        "Rafraîchir la coupe avec de la glace.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et exprimer le zeste d'orange au-dessus."
+      ],
+      "flavors": ["Fruité", "Boisé", "Sucré"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#B04A2F",
+      "cocktailDbId": null,
+      "notes": "Absent de la liste IBA actuelle : recette classique à parts égales (Savoy)."
+    },
+    {
+      "id": "el-presidente",
+      "name": "El Presidente",
+      "aliases": ["Presidente"],
+      "tagline": "Le Manhattan de La Havane, au rhum blanc",
+      "description": "Né à Cuba dans les années 1920, El Presidente aurait été baptisé en l'honneur d'un président de l'île, sans que l'on sache avec certitude lequel. Le rhum blanc s'y adoucit au contact du vermouth blanc et du curaçao, tandis qu'un trait de grenadine lui donne sa teinte rosée et une touche fruitée.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 45, "unit": "ml" },
+        { "id": "vermouth-blanc", "amount": 20, "unit": "ml", "note": "de type Chambéry blanc" },
+        { "id": "curacao-orange", "amount": 10, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 5, "unit": "ml" }
+      ],
+      "garnish": "Zeste d'orange",
+      "steps": [
+        "Rafraîchir la coupe avec de la glace.",
+        "Verser tous les ingrédients dans un verre à mélange rempli de glaçons.",
+        "Remuer 20 à 30 secondes pour bien refroidir.",
+        "Filtrer dans la coupe et exprimer le zeste d'orange au-dessus."
+      ],
+      "flavors": ["Fruité", "Sucré", "Agrume"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E4906A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "hugo",
+      "name": "Hugo",
+      "aliases": ["Hugo Spritz"],
+      "tagline": "Prosecco, sureau et menthe : le spritz des Alpes",
+      "description": "Apparu dans le Haut-Adige, au nord de l'Italie, au milieu des années 2000, le Hugo s'est vite répandu dans les terrasses d'Autriche et d'Allemagne comme alternative à l'Aperol Spritz. Léger et floral, il associe le sirop de fleur de sureau à la fraîcheur de la menthe et du citron vert.",
+      "family": "Pétillant & Spritz",
+      "method": "Au verre",
+      "glass": "Verre à vin",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "menthe", "amount": 8, "unit": "pièce", "note": "feuilles" },
+        { "id": "citron-vert-quartiers", "amount": 2, "unit": "pièce" },
+        { "id": "sirop-de-sureau", "amount": 20, "unit": "ml" },
+        { "id": "prosecco", "amount": 120, "unit": "ml" },
+        { "id": "soda", "amount": 30, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Brin de menthe et rondelle de citron vert",
+      "steps": [
+        "Froisser les feuilles de menthe entre les mains et les déposer dans le verre avec les quartiers de citron vert et le sirop.",
+        "Presser légèrement au pilon sans broyer la menthe.",
+        "Remplir de glaçons, verser le prosecco puis compléter avec l'eau gazeuse.",
+        "Remuer délicatement une fois de bas en haut."
+      ],
+      "flavors": ["Floral", "Frais", "Pétillant"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#E6EAC2",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "painkiller",
+      "name": "Painkiller",
+      "aliases": [],
+      "tagline": "Rhum, ananas et coco sous une pluie de muscade",
+      "description": "Le Painkiller est né dans les années 1970 au Soggy Dollar Bar, sur une plage des îles Vierges britanniques où l'on arrivait à la nage. Rhum navy, ananas, orange et crème de coco y composent un tiki onctueux et généreux, relevé par la muscade fraîchement râpée.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Tiki",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "rhum-brun", "amount": 60, "unit": "ml", "note": "idéalement un rhum navy" },
+        { "id": "jus-d-ananas", "amount": 120, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 30, "unit": "ml" },
+        { "id": "creme-de-coco", "amount": 30, "unit": "ml" }
+      ],
+      "garnish": "Muscade fraîchement râpée et tranche d'orange",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker avec des glaçons.",
+        "Shaker vivement une dizaine de secondes pour bien émulsionner la crème de coco.",
+        "Verser dans le verre rempli de glace pilée.",
+        "Râper généreusement de la muscade sur le dessus."
+      ],
+      "flavors": ["Tropical", "Crémeux", "Fruité", "Épicé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F0D49B",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "hurricane",
+      "name": "Hurricane",
+      "aliases": [],
+      "tagline": "Rhum et passion, l'ouragan de La Nouvelle-Orléans",
+      "description": "Emblème du French Quarter, le Hurricane est associé au bar Pat O'Brien's de La Nouvelle-Orléans, où il serait apparu dans les années 1940 et doit son nom à son verre en forme de lampe-tempête. Deux rhums, fruit de la passion et agrumes en font un long drink fruité et puissant, d'un rouge-orangé éclatant.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Hurricane",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 30, "unit": "ml" },
+        { "id": "rhum-brun", "amount": 30, "unit": "ml" },
+        { "id": "puree-passion", "amount": 30, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 30, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 5, "unit": "ml" }
+      ],
+      "garnish": "Tranche d'orange et cerise",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker énergiquement une dizaine de secondes.",
+        "Filtrer dans le verre Hurricane rempli de glaçons neufs."
+      ],
+      "flavors": ["Tropical", "Fruité", "Sucré", "Acidulé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E35B3A",
+      "cocktailDbId": null,
+      "notes": "Pas de recette canonique unique : version moderne équilibrée (sirop de passion remplacé par purée + sirop de sucre)."
+    },
+    {
+      "id": "gin-gin-mule",
+      "name": "Gin Gin Mule",
+      "aliases": [],
+      "tagline": "Le croisement réussi du Mojito et du Moscow Mule",
+      "description": "Créé au début des années 2000 par Audrey Saunders, figure du bar new-yorkais Pegu Club, le Gin Gin Mule a contribué au retour en grâce du gin. Menthe, citron vert et ginger beer y entourent le gin pour un long drink vif, herbacé et légèrement piquant.",
+      "family": "Highball",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "menthe", "amount": 8, "unit": "pièce", "note": "feuilles" },
+        { "id": "gin", "amount": 50, "unit": "ml" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "ginger-beer", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Brin de menthe et quartier de citron vert",
+      "steps": [
+        "Presser délicatement la menthe avec le sirop et le jus de citron vert dans le shaker.",
+        "Ajouter le gin et la glace, puis shaker vivement 10 secondes.",
+        "Double-filtrer dans le verre rempli de glaçons.",
+        "Compléter avec la ginger beer et remuer brièvement."
+      ],
+      "flavors": ["Herbacé", "Frais", "Épicé", "Agrume"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E3EBC8",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "champs-elysees",
+      "name": "Champs-Élysées",
+      "aliases": ["Champs Élysées"],
+      "tagline": "Un sidecar parisien parfumé à la Chartreuse",
+      "description": "Recette d'avant-guerre consignée dans le Savoy Cocktail Book, le Champs-Élysées rend hommage à la célèbre avenue parisienne. Il s'apparente à un Sidecar dans lequel la Chartreuse verte remplace la liqueur d'orange : le cognac gagne en notes herbacées, tenues par l'acidité du citron.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "cognac", "amount": 45, "unit": "ml" },
+        { "id": "chartreuse-verte", "amount": 15, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 10, "unit": "ml" },
+        { "id": "angostura", "amount": 1, "unit": "trait" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Rafraîchir la coupe avec de la glace.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et exprimer le zeste de citron au-dessus."
+      ],
+      "flavors": ["Herbacé", "Acidulé", "Boisé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#D8B65C",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "gold-rush",
+      "name": "Gold Rush",
+      "aliases": [],
+      "tagline": "Bourbon, miel et citron : un sour tout en rondeur",
+      "description": "Né au début des années 2000 au bar Milk & Honey de New York, le Gold Rush est un Whiskey Sour où le miel remplace le sucre. Simple et redoutablement efficace, il oppose la chaleur vanillée du bourbon à la douceur florale du miel et à la vivacité du citron.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "bourbon", "amount": 60, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sirop-de-miel", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker énergiquement une dizaine de secondes.",
+        "Filtrer sur un gros glaçon dans le verre old fashioned."
+      ],
+      "flavors": ["Acidulé", "Sucré", "Boisé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E2AE4C",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "canchanchara",
+      "name": "Canchanchara",
+      "aliases": [],
+      "tagline": "Le breuvage cubain des mambises, au miel et citron vert",
+      "description": "Selon la tradition, la Canchanchara était bue par les insurgés cubains lors des guerres d'indépendance du XIXe siècle, et elle reste la boisson emblématique de la ville de Trinidad. Aguardiente de canne, miel et citron vert y forment un mélange rustique, doux et désaltérant.",
+      "family": "Sour",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "miel", "amount": 15, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "eau", "amount": 50, "unit": "ml" },
+        { "id": "rhum-blanc", "amount": 60, "unit": "ml", "note": "idéalement un aguardiente cubain" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Mélanger le miel, l'eau et le jus de citron vert jusqu'à dissoudre le miel.",
+        "Verser ce mélange dans le verre en enrobant le fond et les parois.",
+        "Ajouter la glace concassée puis l'aguardiente.",
+        "Remuer énergiquement en remontant du fond vers le haut."
+      ],
+      "flavors": ["Acidulé", "Sucré", "Agrume"],
+      "difficulty": 1,
+      "iba": "New Era Drinks",
+      "color": "#EFE2B0",
+      "cocktailDbId": null,
+      "notes": "Aguardiente cubain non référencé : rhum-blanc utilisé. Traditionnellement servi dans un gobelet en terre cuite."
+    },
+    {
+      "id": "spicy-fifty",
+      "name": "Spicy Fifty",
+      "aliases": ["Spicy 50"],
+      "tagline": "Vodka vanille, sureau et piment rouge",
+      "description": "Création de Salvatore Calabrese pour le club londonien Fifty, ce cocktail joue sur un contraste inattendu. La vodka vanille et le sureau apportent une douceur florale, le citron vert la tient en équilibre, et le piment rouge laisse une chaleur qui monte doucement en fin de gorgée.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka-vanille", "amount": 50, "unit": "ml" },
+        { "id": "sirop-de-sureau", "amount": 15, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "sirop-de-miel", "amount": 10, "unit": "ml" },
+        { "id": "piment-rouge", "amount": 2, "unit": "tranche", "note": "fines" }
+      ],
+      "garnish": "Piment rouge",
+      "steps": [
+        "Rafraîchir le verre avec de la glace.",
+        "Verser tous les ingrédients, piment compris, dans le shaker rempli de glaçons.",
+        "Shaker énergiquement une dizaine de secondes.",
+        "Double-filtrer dans le verre pour retenir les morceaux de piment."
+      ],
+      "flavors": ["Épicé", "Floral", "Sucré", "Acidulé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#F1E7C4",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "illegal",
+      "name": "Illegal",
+      "aliases": [],
+      "tagline": "Mezcal fumé et rhum overproof, un sour qui détonne",
+      "description": "Cocktail contemporaire entré dans la sélection IBA en 2020, l'Illegal tire son nom du mezcal produit autrefois clandestinement. Le mezcal fumé et le rhum jamaïcain y sont domptés par le falernum épicé, une touche de marasquin et le citron vert, pour un sour complexe et tropical.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "mezcal", "amount": 30, "unit": "ml", "note": "espadín" },
+        { "id": "rhum-overproof", "amount": 15, "unit": "ml", "note": "rhum blanc jamaïcain overproof" },
+        { "id": "falernum", "amount": 15, "unit": "ml" },
+        { "id": "maraschino", "amount": 5, "unit": "ml" },
+        { "id": "citron-vert", "amount": 22.5, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 5, "unit": "ml", "optional": true, "note": "quelques gouttes, pour la texture" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Rafraîchir la coupe avec de la glace.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker très vigoureusement 12 à 15 secondes.",
+        "Filtrer dans la coupe, ou servir sur glace dans un gobelet en terre cuite."
+      ],
+      "flavors": ["Fumé", "Acidulé", "Épicé", "Tropical"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#E9E4C4",
+      "cocktailDbId": null,
+      "notes": "Citron vert à 22,5 ml conservé tel quel (spécification IBA)."
+    },
+    {
+      "id": "suffering-bastard",
+      "name": "Suffering Bastard",
+      "aliases": [],
+      "tagline": "Cognac, gin et ginger beer, le remède du Caire",
+      "description": "Le Suffering Bastard aurait été inventé en 1942 par Joe Scialom au bar de l'hôtel Shepheard's, au Caire, comme remède aux lendemains difficiles des officiers britanniques. Cognac et gin s'y associent au citron vert et à l'angostura, le tout allongé de ginger beer pour un long drink sec et piquant.",
+      "family": "Highball",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "cognac", "amount": 30, "unit": "ml" },
+        { "id": "gin", "amount": 30, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "angostura", "amount": 2, "unit": "trait" },
+        { "id": "ginger-beer", "amount": 120, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Brin de menthe et, si on le souhaite, tranche d'orange",
+      "steps": [
+        "Shaker le cognac, le gin, le jus de citron vert et l'angostura avec des glaçons.",
+        "Verser le tout, glace comprise, dans le verre sans filtrer.",
+        "Compléter avec la ginger beer et remuer brièvement."
+      ],
+      "flavors": ["Épicé", "Agrume", "Corsé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#D9A75E",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "cardinale",
+      "name": "Cardinale",
+      "aliases": ["Cardinal"],
+      "tagline": "Un Martini sec teinté de rouge par le Campari",
+      "description": "Le Cardinale serait né à Rome dans les années 1950, à l'hôtel Excelsior, et devrait son nom à un cardinal habitué des lieux, selon la légende. Proche d'un Negroni très sec, il marie le gin et le vermouth sec à une petite dose de Campari pour une amertume nette et élégante.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 40, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 20, "unit": "ml" },
+        { "id": "campari", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Rafraîchir le verre avec de la glace.",
+        "Verser tous les ingrédients dans un verre à mélange rempli de glaçons.",
+        "Remuer 20 à 30 secondes.",
+        "Filtrer dans le verre vidé de sa glace et exprimer le zeste de citron au-dessus."
+      ],
+      "flavors": ["Amer", "Sec", "Herbacé"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#C9443A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "oaxaca-old-fashioned",
+      "name": "Oaxaca Old Fashioned",
+      "aliases": [],
+      "tagline": "L'Old Fashioned passé à l'agave et au mezcal fumé",
+      "description": "Imaginé en 2007 par Phil Ward au bar Death & Co de New York, ce twist a largement contribué à faire découvrir le mezcal aux amateurs de cocktails. La tequila reposado assure la rondeur, le mezcal apporte sa fumée et le sirop d'agave lie l'ensemble, relevé par l'angostura.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "tequila-reposado", "amount": 45, "unit": "ml" },
+        { "id": "mezcal", "amount": 15, "unit": "ml" },
+        { "id": "sirop-d-agave", "amount": 5, "unit": "ml" },
+        { "id": "angostura", "amount": 2, "unit": "trait" }
+      ],
+      "garnish": "Zeste d'orange flambé",
+      "steps": [
+        "Verser tous les ingrédients dans un verre à mélange rempli de glaçons.",
+        "Remuer 20 à 30 secondes.",
+        "Filtrer sur un gros glaçon dans le verre old fashioned.",
+        "Flamber le zeste d'orange au-dessus du verre puis le déposer dans le cocktail."
+      ],
+      "flavors": ["Fumé", "Boisé", "Épicé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#C8893C",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "fernandito",
+      "name": "Fernandito",
+      "aliases": ["Fernet con coca", "Fernet cola"],
+      "tagline": "Fernet et cola, la boisson nationale argentine",
+      "description": "Le Fernet-Branca allongé de cola est devenu un véritable phénomène en Argentine, en particulier à Córdoba, où il se partage dans toutes les fêtes. L'amertume mentholée du fernet, adoucie par le cola, donne un long drink sombre, herbacé et étonnamment facile à boire.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "fernet-branca", "amount": 50, "unit": "ml" },
+        { "id": "coca-cola", "amount": 150, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Remplir un grand verre old fashioned de glaçons.",
+        "Verser le Fernet-Branca.",
+        "Compléter avec le cola en le versant doucement pour limiter la mousse, puis remuer délicatement."
+      ],
+      "flavors": ["Amer", "Herbacé", "Pétillant"],
+      "difficulty": 1,
+      "iba": "New Era Drinks",
+      "color": "#3A2418",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "kalimotxo",
+      "name": "Kalimotxo",
+      "aliases": ["Calimocho"],
+      "tagline": "Vin rouge et cola, le mélange des fêtes basques",
+      "description": "Selon l'histoire la plus répandue, le Kalimotxo serait né en 1972 lors des fêtes d'Algorta, au Pays basque, pour sauver un vin rouge de piètre qualité. Le cola en adoucit les tanins et lui donne un côté frais et pétillant, idéal pour les longues soirées d'été.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vin-rouge", "amount": 100, "unit": "ml" },
+        { "id": "coca-cola", "amount": 100, "unit": "ml" }
+      ],
+      "garnish": "Rondelle de citron (facultatif)",
+      "steps": [
+        "Remplir le verre de glaçons.",
+        "Verser le vin rouge puis le cola, bien frais.",
+        "Remuer délicatement une fois."
+      ],
+      "flavors": ["Fruité", "Sucré", "Pétillant"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#4B1A22",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "picon-biere",
+      "name": "Picon Bière",
+      "aliases": [],
+      "tagline": "L'apéritif orangé et amer du Nord et de l'Est",
+      "description": "Inventé au XIXe siècle par Gaëtan Picon, l'amer à l'orange qui porte son nom a trouvé sa place dans les estaminets du Nord et de l'Est de la France, mélangé à la bière blonde. Le Picon apporte des notes d'orange amère et une légère douceur qui arrondissent la bière.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Pinte",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "picon", "amount": 30, "unit": "ml" },
+        { "id": "biere-blonde", "amount": 250, "unit": "ml", "note": "bien fraîche" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser le Picon au fond du verre.",
+        "Incliner le verre et compléter doucement avec la bière blonde bien fraîche.",
+        "Laisser se former un col de mousse et servir aussitôt."
+      ],
+      "flavors": ["Amer", "Agrume", "Pétillant"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#D58A2E",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "lillet-tonic",
+      "name": "Lillet Tonic",
+      "aliases": [],
+      "tagline": "L'apéritif bordelais allongé de tonic et de fruits",
+      "description": "Popularisé par la maison Lillet, de Podensac près de Bordeaux, ce long drink est devenu un incontournable des apéritifs d'été. Les notes d'agrumes et de miel du Lillet blanc rencontrent l'amertume du tonic, rafraîchies par le concombre, la fraise et la menthe.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Verre à vin",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "lillet-blanc", "amount": 50, "unit": "ml" },
+        { "id": "tonic", "amount": 100, "unit": "ml" }
+      ],
+      "garnish": "Tranche de concombre, fraise et feuilles de menthe",
+      "steps": [
+        "Remplir un grand verre à vin de glaçons.",
+        "Verser le Lillet blanc puis le tonic.",
+        "Ajouter la garniture et remuer délicatement."
+      ],
+      "flavors": ["Fruité", "Amer", "Frais", "Pétillant"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#F0E3A6",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "pimms-cup",
+      "name": "Pimm's Cup",
+      "aliases": ["Pimm's", "Pimm's No.1 Cup"],
+      "tagline": "Le rafraîchissement anglais des étés à Wimbledon",
+      "description": "Créé au XIXe siècle par James Pimm, propriétaire d'un restaurant d'huîtres londonien, le Pimm's s'est imposé comme la boisson des pique-niques et des tournois de tennis anglais. Allongé de limonade et garni de fruits frais, il est léger, fruité et légèrement épicé.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "pimms", "amount": 50, "unit": "ml" },
+        { "id": "concombre", "amount": 2, "unit": "tranche" },
+        { "id": "fraises", "amount": 2, "unit": "pièce", "note": "coupées en deux" },
+        { "id": "orange-fruit", "amount": 1, "unit": "tranche" },
+        { "id": "limonade", "amount": 150, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Brin de menthe",
+      "steps": [
+        "Remplir le verre de glaçons en intercalant le concombre, les fraises et l'orange.",
+        "Verser le Pimm's.",
+        "Compléter avec la limonade et remuer délicatement."
+      ],
+      "flavors": ["Fruité", "Frais", "Pétillant", "Épicé"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#B7633F",
+      "cocktailDbId": null,
+      "notes": "Limonade de type britannique (pétillante, citronnée)."
+    },
+    {
+      "id": "white-negroni",
+      "name": "White Negroni",
+      "aliases": ["Negroni blanc"],
+      "tagline": "Gin, Suze et Lillet : un Negroni en blanc",
+      "description": "Le White Negroni a été imaginé en 2001 par le barman britannique Wayne Collins lors d'un salon à Bordeaux, avec des produits français. La Suze remplace le Campari et le Lillet blanc le vermouth rouge, pour un cocktail plus clair, floral et marqué par l'amertume de la gentiane.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "lillet-blanc", "amount": 30, "unit": "ml" },
+        { "id": "suze", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Verser tous les ingrédients dans un verre à mélange rempli de glaçons.",
+        "Remuer 20 à 30 secondes.",
+        "Filtrer sur un gros glaçon et exprimer le zeste de citron au-dessus."
+      ],
+      "flavors": ["Amer", "Floral", "Herbacé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F1E29E",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "negroni-sbagliato",
+      "name": "Negroni Sbagliato",
+      "aliases": ["Sbagliato"],
+      "tagline": "Le Negroni « raté » où les bulles remplacent le gin",
+      "description": "Selon la légende du Bar Basso de Milan, un barman aurait saisi par erreur une bouteille de spumante au lieu du gin en préparant un Negroni, d'où le nom « sbagliato », raté. Le résultat, plus léger, conserve l'amertume du Campari et la douceur du vermouth, avec la fraîcheur des bulles.",
+      "family": "Pétillant & Spritz",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "campari", "amount": 30, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 30, "unit": "ml" },
+        { "id": "prosecco", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Demi-tranche d'orange",
+      "steps": [
+        "Remplir le verre de glaçons.",
+        "Verser le Campari et le vermouth rouge, puis remuer brièvement.",
+        "Compléter avec le prosecco et remuer une fois, délicatement, pour préserver les bulles."
+      ],
+      "flavors": ["Amer", "Pétillant", "Agrume"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#B8322B",
+      "cocktailDbId": null,
+      "notes": ""
+    }
+  ],
+  "newIngredients": [
+    ["eau", "Eau plate", "soft_bulle", 0, 0, 0, 0, "💧"],
+    ["piment-rouge", "Piment rouge frais", "frais_garniture", 0, 0, 0, 0, "🌶️"],
+    ["picon", "Picon (amer à l'orange)", "aperitif_vermouth", 18, 200, 0.5, 3, "🍊"]
+  ]
+}

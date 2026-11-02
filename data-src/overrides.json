@@ -1,0 +1,7 @@
+{
+  "_note": "Corrections appliquées par scripts/data/build-db.mjs après les lots. Clé = id de la fiche ; les champs remplacent ceux de la fiche. `exclude: true` retire la fiche.",
+  "amaretto-sour": { "cocktailDbId": "13731" },
+  "blue-lagoon": { "cocktailDbId": "11117" },
+  "last-word": { "cocktailDbId": "17247" },
+  "amaretto-sunset": { "cocktailDbId": "17168" }
+}

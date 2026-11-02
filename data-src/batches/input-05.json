@@ -1,0 +1,696 @@
+[
+ {
+  "requestedName": "Passion Fruit Martini",
+  "cocktailDb": {
+   "cocktailDbId": "178323",
+   "name": "Passion Fruit Martini",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 shot",
+     "Vodka"
+    ],
+    [
+     "1/2 shot",
+     "Sugar Syrup"
+    ],
+    [
+     "Full Glass",
+     "Passion fruit juice"
+    ]
+   ],
+   "instructions": "Pour all ingredients into a glass and stir. Garnish with half a passion fruit piece.",
+   "instructionsFR": "Versez tous les ingrédients dans un verre et remuez. Garnir d'un demi-morceau de fruit de la passion.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/6trfve1582473527.jpg"
+  }
+ },
+ {
+  "requestedName": "Radler",
+  "cocktailDb": {
+   "cocktailDbId": "16031",
+   "name": "Radler",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "12 oz",
+     "Beer"
+    ],
+    [
+     "12 oz",
+     "7-Up"
+    ]
+   ],
+   "instructions": "Pour beer into large mug, slowly add the 7-up (or Sprite).",
+   "instructionsFR": "Verser la bière dans une grande chope et ajouter lentement le 7-up (ou le Sprite).",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/xz8igv1504888995.jpg"
+  }
+ },
+ {
+  "requestedName": "Rum Punch",
+  "cocktailDb": {
+   "cocktailDbId": "14978",
+   "name": "Rum Punch",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Punch bowl",
+   "ingredients": [
+    [
+     "mikey bottle",
+     "Rum"
+    ],
+    [
+     "large bottle",
+     "Ginger ale"
+    ],
+    [
+     "355 ml frozen",
+     "Fruit punch"
+    ],
+    [
+     "355 ml frozen",
+     "Orange juice"
+    ],
+    [
+     "crushed",
+     "Ice"
+    ]
+   ],
+   "instructions": "Mix all ingredients in a punch bowl and serve.",
+   "instructionsFR": "Mélanger tous les ingrédients dans un bol à punch et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/wyrsxu1441554538.jpg"
+  }
+ },
+ {
+  "requestedName": "Rum Runner",
+  "cocktailDb": {
+   "cocktailDbId": "16250",
+   "name": "Rum Runner",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Malibu rum"
+    ],
+    [
+     "1 oz",
+     "Blackberry brandy"
+    ],
+    [
+     "3-4 oz",
+     "Orange juice"
+    ],
+    [
+     "3-4 oz",
+     "Pineapple juice"
+    ],
+    [
+     "3-4 oz",
+     "Cranberry juice"
+    ]
+   ],
+   "instructions": "Mix all ingredients in glass & add ice.",
+   "instructionsFR": "Mélanger tous les ingrédients dans un verre et ajouter de la glace.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/vqws6t1504888857.jpg"
+  }
+ },
+ {
+  "requestedName": "Red Snapper",
+  "cocktailDb": {
+   "cocktailDbId": "14087",
+   "name": "Red Snapper",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "1 shot",
+     "Crown Royal"
+    ],
+    [
+     "1 shot",
+     "Amaretto"
+    ],
+    [
+     "1 shot",
+     "Cranberry juice"
+    ]
+   ],
+   "instructions": "One shot each, shake n shoot",
+   "instructionsFR": "Un coup chacun, shake n shoot",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/7p607y1504735343.jpg"
+  }
+ },
+ {
+  "requestedName": "Sangria",
+  "cocktailDb": {
+   "cocktailDbId": "13020",
+   "name": "Sangria",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Pitcher",
+   "ingredients": [
+    [
+     "1 bottle",
+     "Red wine"
+    ],
+    [
+     "1/2 cup",
+     "Sugar"
+    ],
+    [
+     "1 cup",
+     "Orange juice"
+    ],
+    [
+     "1 cup",
+     "Lemon juice"
+    ],
+    [
+     "",
+     "Cloves"
+    ],
+    [
+     "",
+     "Cinnamon"
+    ]
+   ],
+   "instructions": "Mix all together in a pitcher and refrigerate. Add cloves and cinnamon sticks to taste. Serve in wine glasses.",
+   "instructionsFR": "Mélanger le tout dans un pichet et réfrigérer. Ajouter des clous de girofle et des bâtons de cannelle selon le goût. Servir dans des verres à vin.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/xrvxpp1441249280.jpg"
+  }
+ },
+ {
+  "requestedName": "Salty Dog",
+  "cocktailDb": {
+   "cocktailDbId": "12107",
+   "name": "Salty Dog",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "5 oz",
+     "Grapefruit juice"
+    ],
+    [
+     "1 1/2 oz",
+     "Gin"
+    ],
+    [
+     "1/4 tsp",
+     "Salt"
+    ]
+   ],
+   "instructions": "Pour all ingredients over ice cubes in a highball glass. Stir well and serve. (Vodka may be substituted for gin, if preferred.)",
+   "instructionsFR": "Versez tous les ingrédients sur des glaçons dans un verre highball. Bien mélanger et servir. (La vodka peut remplacer le gin, si vous préférez.)",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/4vfge01504890216.jpg"
+  }
+ },
+ {
+  "requestedName": "Sherry Flip",
+  "cocktailDb": {
+   "cocktailDbId": "12190",
+   "name": "Sherry Flip",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Nick and Nora Glass",
+   "ingredients": [
+    [
+     "1 1/2 oz cream",
+     "Sherry"
+    ],
+    [
+     "2 tsp",
+     "Light cream"
+    ],
+    [
+     "1 tsp",
+     "Powdered sugar"
+    ],
+    [
+     "1 whole",
+     "Egg"
+    ],
+    [
+     "",
+     "Nutmeg"
+    ]
+   ],
+   "instructions": "Shake all ingredients (except nutmeg) with ice and strain into a whiskey sour glass. Sprinkle nutmeg on top and serve.",
+   "instructionsFR": "Secouez tous les ingrédients (sauf la muscade) avec de la glace et filtrez dans un verre à whisky sour. Saupoudrer de muscade et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/qrryvq1478820428.jpg"
+  }
+ },
+ {
+  "requestedName": "Tom Collins",
+  "cocktailDb": {
+   "cocktailDbId": "12402",
+   "name": "Tom Collins",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Gin"
+    ],
+    [
+     "1 oz",
+     "Lemon juice"
+    ],
+    [
+     "1 tsp superfine",
+     "Sugar"
+    ],
+    [
+     "3 oz",
+     "Club soda"
+    ],
+    [
+     "1",
+     "Maraschino cherry"
+    ],
+    [
+     "1",
+     "Orange"
+    ]
+   ],
+   "instructions": "In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar. Shake well. Strain into a collins glass alomst filled with ice cubes. Add the club soda. Stir and garnish with the cherry and the orange slice.",
+   "instructionsFR": "Dans un shaker à moitié rempli de glaçons, mélanger le gin, le jus de citron et le sucre. Bien agiter. Filtrer dans un verre Collins également rempli de glaçons. Ajouter le club soda. Remuer et décorer avec la cerise et la tranche d'orange.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/7cll921606854636.jpg"
+  }
+ },
+ {
+  "requestedName": "Tipperary",
+  "cocktailDb": {
+   "cocktailDbId": "17828",
+   "name": "Tipperary",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Nick and Nora Glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Irish Whiskey"
+    ],
+    [
+     "1 oz",
+     "Sweet Vermouth"
+    ],
+    [
+     "1/2 oz",
+     "Green Chartreuse"
+    ]
+   ],
+   "instructions": "Stir over ice. Strain into chilled glass. Cut a wide swath of orange peel, and express the orange oils over the drink. Discard orange twist.",
+   "instructionsFR": "Remuer sur de la glace. Filtrer dans un verre réfrigéré. Coupez une large bande de zeste d'orange et exprimez les huiles d'orange sur la boisson. Jeter le zeste d'orange.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/b522ek1521761610.jpg"
+  }
+ },
+ {
+  "requestedName": "White Russian",
+  "cocktailDb": {
+   "cocktailDbId": "12528",
+   "name": "White Russian",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Vodka"
+    ],
+    [
+     "1 oz",
+     "Coffee liqueur"
+    ],
+    [
+     "",
+     "Light cream"
+    ]
+   ],
+   "instructions": "Pour vodka and coffee liqueur over ice cubes in an old-fashioned glass. Fill with light cream and serve.",
+   "instructionsFR": "Verser la vodka et la liqueur de café sur des glaçons dans un verre à l'ancienne. Remplir de crème légère et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/vsrupw1472405732.jpg"
+  }
+ },
+ {
+  "requestedName": "Whisky Mac",
+  "cocktailDb": {
+   "cocktailDbId": "12518",
+   "name": "Whisky Mac",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins Glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Scotch"
+    ],
+    [
+     "1 oz Green Ginger",
+     "Wine"
+    ]
+   ],
+   "instructions": "Pour both of the ingredients into a wine goblet with no ice.",
+   "instructionsFR": "Verser les deux ingrédients dans un verre à vin sans glace.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/yvvwys1461867858.jpg"
+  }
+ },
+ {
+  "requestedName": "Zombie",
+  "cocktailDb": {
+   "cocktailDbId": "17241",
+   "name": "Zombie",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Hurricane glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Rum"
+    ],
+    [
+     "1 1/2 oz",
+     "Gold rum"
+    ],
+    [
+     "1 oz",
+     "151 proof rum"
+    ],
+    [
+     "1 tsp",
+     "Pernod"
+    ],
+    [
+     "1 tsp",
+     "Grenadine"
+    ],
+    [
+     "1 tsp",
+     "Lime Juice"
+    ],
+    [
+     "1 drop",
+     "Angostura Bitters"
+    ]
+   ],
+   "instructions": "Blend at high speed for no more than 5 seconds.\n\nPour into a glass, add ice cubes to fill, then add the garnish.\n\n*Donn’s mix: Bring 3 crushed cinnamon sticks, 1 cup of sugar and 1 cup of water to a boil, stirring until the sugar is dissolved.\n\nSimmer for 2 minutes, then remove from the heat and let sit for at least 2 hours before straining into a clean glass bottle.\n\nThen add 1 part of the syrup and 2 parts of fresh grapefruit juice together.",
+   "instructionsFR": "Mélangez à grande vitesse pendant 5 secondes maximum.\n\nVersez dans un verre, ajoutez des glaçons pour remplir, puis ajoutez la garniture.\n\n*Mélange Donn's : Portez à ébullition 3 bâtons de cannelle écrasés, 1 tasse de sucre et 1 tasse d'eau, en remuant jusqu'à ce que le sucre soit dissous.\n\nLaisser mijoter pendant 2 minutes, puis retirer du feu et laisser reposer au moins 2 heures avant de filtrer dans une bouteille en verre propre.\n\nAjoutez ensuite 1 partie de sirop et 2 parties de jus de pamplemousse frais ensemble.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/2en3jk1509557725.jpg"
+  }
+ },
+ {
+  "requestedName": "Egg-Nog - Classic Cooked",
+  "cocktailDb": {
+   "cocktailDbId": "12914",
+   "name": "Egg-Nog - Classic Cooked",
+   "iba": null,
+   "alcoholic": "Optional alcohol",
+   "glass": "Pitcher",
+   "ingredients": [
+    [
+     "6",
+     "Egg"
+    ],
+    [
+     "1/4 cup",
+     "Sugar"
+    ],
+    [
+     "1/4 tsp",
+     "Salt"
+    ],
+    [
+     "1 qt",
+     "Milk"
+    ],
+    [
+     "1 tsp",
+     "Vanilla extract"
+    ]
+   ],
+   "instructions": "In large saucepan, beat together eggs, sugar and salt, if desired. Stir in 2 cups of the milk. Cook over low heat, stirring constantly, until mixture is thick enough to coat a metal spoon and reaches 160 degrees F. Remove from heat. Stir in remaining 2 cups milk and vanilla. Cover and regfigerate until thoroughly chilled, several hours or overnight. Just before serving, pour into bowl or pitcher. Garnish or add stir-ins, if desired. Choose 1 or several of: Chocolate curls, cinnamon sticks, extracts of flavorings, flavored brandy or liqueur, fruit juice or nectar, ground nutmeg, maraschino cherries, orange slices, peppermint sticks or candy canes, plain brandy, run or whiskey, sherbet or ice-cream, whipping cream, whipped. Serve immediately.",
+   "instructionsFR": "Dans une grande casserole, battre les œufs, le sucre et le sel, si désiré. Incorporer 2 tasses de lait. Cuire à feu doux, en remuant constamment, jusqu'à ce que le mélange soit suffisamment épais pour recouvrir une cuillère en métal et atteigne 160 degrés F. Retirer du feu. Incorporer les 2 tasses de lait restantes et la vanille. Couvrir et réfrigérer jusqu'à refroidissement complet, plusieurs heures ou toute la nuit. Au moment de servir, verser dans un bol ou un pichet. Garnir ou ajouter des ingrédients, si désiré. Choisissez 1 ou plusieurs de ces ingrédients : Boucles de chocolat, bâtons de cannelle, extraits d'arômes, brandy ou liqueur aromatisés, jus ou nectar de fruits, noix de muscade moulue, cerises au marasquin, tranches d'orange, bâtons de menthe poivrée ou cannes à sucre, brandy nature, run ou whisky, sorbet ou crème glacée, crème à fouetter, chantilly. Servir immédiatement.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/quxsvt1468875505.jpg"
+  }
+ },
+ {
+  "requestedName": "Frosé",
+  "cocktailDb": {
+   "cocktailDbId": "178352",
+   "name": "Frosé",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "750 ml",
+     "Rose"
+    ],
+    [
+     "1/2 cup",
+     "Sugar"
+    ],
+    [
+     "8 oz",
+     "Strawberries"
+    ],
+    [
+     "2-3 oz",
+     "Lemon Juice"
+    ]
+   ],
+   "instructions": "Step 1\nPour rosé into a 13x9\" pan and freeze until almost solid (it won't completely solidify due to the alcohol), at least 6 hours.\n\nStep 2\nMeanwhile, bring sugar and ½ cup water to a boil in a medium saucepan; cook, stirring constantly, until sugar dissolves, about 3 minutes. Add strawberries, remove from heat, and let sit 30 minutes to infuse syrup with strawberry flavor. Strain through a fine-mesh sieve into a small bowl (do not press on solids); cover and chill until cold, about 30 minutes.\n\nStep 3\nScrape rosé into a blender. Add lemon juice, 3½ ounces strawberry syrup, and 1 cup crushed ice and purée until smooth. Transfer blender jar to freezer and freeze until frosé is thickened (aim for milkshake consistency), 25–35 minutes.\n\nStep 4\nBlend again until frosé is slushy. Divide among glasses.\n\nStep 5\nDo Ahead: Rosé can be frozen 1 week ahead.",
+   "instructionsFR": "Étape 1\nVerser le rosé dans un moule de 13 x 9 pouces et le congeler jusqu'à ce qu'il soit presque solide (il ne se solidifie pas complètement à cause de l'alcool), pendant au moins 6 heures.\n\nÉtape 2\nEntre-temps, porter le sucre et ½ tasse d'eau à ébullition dans une casserole moyenne ; cuire, en remuant constamment, jusqu'à ce que le sucre soit dissous, environ 3 minutes. Ajouter les fraises, retirer du feu et laisser reposer 30 minutes pour que le sirop s'imprègne de la saveur des fraises. Filtrer à travers un tamis à mailles fines dans un petit bol (ne pas appuyer sur les solides) ; couvrir et réfrigérer jusqu'à ce que le sirop soit froid, environ 30 minutes.\n\nÉtape 3\nVerser le rosé dans un mélangeur. Ajouter le jus de citron, 3½ onces de sirop de fraise et 1 tasse de glace pilée et réduire en purée jusqu'à consistance lisse. Transférer le récipient du mélangeur au congélateur et congeler jusqu'à ce que le frosé soit épaissi (viser la consistance d'un lait frappé), de 25 à 35 minutes.\n\nÉtape 4\nMixer à nouveau jusqu'à ce que le frosé soit mousseux. Répartir dans des verres.\n\nÉtape 5\nÀ faire à l'avance : Le rosé peut être congelé une semaine à l'avance.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/b4cadp1619695347.jpg"
+  }
+ },
+ {
+  "requestedName": "Vermouth Cassis",
+  "cocktailDb": {
+   "cocktailDbId": "12442",
+   "name": "Vermouth Cassis",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Dry Vermouth"
+    ],
+    [
+     "3/4 oz",
+     "Creme de Cassis"
+    ],
+    [
+     "",
+     "Carbonated water"
+    ]
+   ],
+   "instructions": "Stir vermouth and creme de cassis in a highball glass with ice cubes. Fill with carbonated water, stir again, and serve.",
+   "instructionsFR": "Mélangez le vermouth et la crème de cassis dans un verre highball avec des glaçons. Remplissez d'eau gazeuse, remuez à nouveau et servez.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/tswpxx1441554674.jpg"
+  }
+ },
+ {
+  "requestedName": "Snowball",
+  "cocktailDb": {
+   "cocktailDbId": "14195",
+   "name": "Snowball",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Advocaat"
+    ],
+    [
+     "8-10 oz cold",
+     "Lemonade"
+    ],
+    [
+     "1 slice",
+     "Lemon"
+    ],
+    [
+     "cubes",
+     "Ice"
+    ]
+   ],
+   "instructions": "Place one ice cube in the glass and add 1 1/2 oz of Advocaat. Fill up the glass with lemonade and decorate with a slice of lemon. Serve at once.",
+   "instructionsFR": "Placez un glaçon dans le verre et ajoutez 1 1/2 oz d'Advocaat. Remplissez le verre de limonade et décorez d'une tranche de citron. Servir aussitôt.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/7ibfs61504735416.jpg"
+  }
+ },
+ {
+  "requestedName": "Dubonnet Cocktail",
+  "cocktailDb": {
+   "cocktailDbId": "11326",
+   "name": "Dubonnet Cocktail",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Dubonnet Rouge"
+    ],
+    [
+     "3/4 oz",
+     "Gin"
+    ],
+    [
+     "1 dash",
+     "Bitters"
+    ],
+    [
+     "1 twist of",
+     "Lemon peel"
+    ]
+   ],
+   "instructions": "Stir all ingredients (except lemon peel) with ice and strain into a cocktail glass. Add the twist of lemon peel and serve.",
+   "instructionsFR": "Mélanger tous les ingrédients (sauf le zeste de citron) avec de la glace et filtrer dans un verre à cocktail. Ajouter le zeste de citron et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/pfz3hz1582483111.jpg"
+  }
+ },
+ {
+  "requestedName": "Havana Cocktail",
+  "cocktailDb": {
+   "cocktailDbId": "11470",
+   "name": "Havana Cocktail",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 oz",
+     "Light rum"
+    ],
+    [
+     "1 oz",
+     "Pineapple juice"
+    ],
+    [
+     "1 tsp",
+     "Lemon juice"
+    ]
+   ],
+   "instructions": "In a shaker half-filled with ice cubes, combine all of the ingredients. Shake well. Strain into a cocktail glass.",
+   "instructionsFR": "Dans un shaker à moitié rempli de glaçons, mélanger tous les ingrédients. Bien agiter. Filtrer dans un verre à cocktail.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/59splc1504882899.jpg"
+  }
+ },
+ {
+  "requestedName": "New York Sour",
+  "cocktailDb": {
+   "cocktailDbId": "11844",
+   "name": "New York Sour",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Whiskey sour glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Blended whiskey"
+    ],
+    [
+     "Juice of 1/2",
+     "Lemon"
+    ],
+    [
+     "1 tsp",
+     "Sugar"
+    ],
+    [
+     "(Claret)",
+     "Red wine"
+    ],
+    [
+     "",
+     "Lemon"
+    ],
+    [
+     "",
+     "Cherry"
+    ]
+   ],
+   "instructions": "Shake blended whiskey, juice of lemon, and powdered sugar with ice and strain into a whiskey sour glass. Float claret on top. Decorate with the half-slice of lemon and the cherry and serve.",
+   "instructionsFR": "Secouez le whisky mélangé, le jus de citron et le sucre en poudre avec de la glace et filtrez dans un verre à whisky aigre. Flottez le bordeaux sur le dessus. Décorer avec la demi-tranche de citron et la cerise et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/61wgch1504882795.jpg"
+  }
+ },
+ {
+  "requestedName": "Elderflower Caipirinha",
+  "cocktailDb": {
+   "cocktailDbId": "178346",
+   "name": "Elderflower Caipirinha",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "60 ml",
+     "Cachaca"
+    ],
+    [
+     "1",
+     "Lime"
+    ],
+    [
+     "3 cl",
+     "Elderflower cordial"
+    ]
+   ],
+   "instructions": "Take the glass and muddle the lime in it. Fill the glass with crushed ice and add the Cachaca. Stir well and top with some more crushed ice. Garnish with lime and enjoy!",
+   "instructionsFR": "Prenez un verre et mélangez-y le citron vert. Remplissez le verre de glace pilée et ajoutez la Cachaca. Remuez bien et complétez avec de la glace pilée. Décorez avec du citron vert et dégustez !",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/dif7a31614006331.jpg"
+  }
+ },
+ {
+  "requestedName": "Gin Daisy",
+  "cocktailDb": {
+   "cocktailDbId": "11408",
+   "name": "Gin Daisy",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Gin"
+    ],
+    [
+     "1 oz",
+     "Lemon juice"
+    ],
+    [
+     "1/2 tsp superfine",
+     "Sugar"
+    ],
+    [
+     "1/2 tsp",
+     "Grenadine"
+    ],
+    [
+     "1",
+     "Maraschino cherry"
+    ],
+    [
+     "1",
+     "Orange"
+    ]
+   ],
+   "instructions": "In a shaker half-filled with ice cubes, combine the gin, lemon juice, sugar, and grenadine. Shake well. Pour into an old-fashioned glass and garnish with the cherry and the orange slice.",
+   "instructionsFR": "Dans un shaker à moitié rempli de glaçons, mélanger le gin, le jus de citron, le sucre et la grenadine. Bien agiter. Verser dans un verre à l'ancienne et décorer avec la cerise et la tranche d'orange.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/z6e22f1582581155.jpg"
+  }
+ }
+]

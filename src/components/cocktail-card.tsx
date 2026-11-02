@@ -1,38 +1,90 @@
-import { useRouter } from 'expo-router';
+import { router } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { fonts, palette, radius } from '@/constants/theme';
+import { CocktailImage } from '@/components/cocktail-image';
+import { Icon } from '@/components/icon';
+import { T } from '@/components/ui';
+import { fonts, radius, space } from '@/constants/theme';
+import { availability, type Availability } from '@/lib/cocktails';
+import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
 
-export function CocktailCard({ cocktail, percentage, layout = 'list' }: { cocktail: Cocktail; percentage?: number; layout?: 'grid' | 'list' }) {
-  const router = useRouter();
-  const isGrid = layout === 'grid';
+export const openCocktail = (id: string) => router.push({ pathname: '/cocktail/[id]', params: { id } });
+
+export function useAvailability(cocktail: Cocktail) {
+  const { stock, data } = useUser();
+  return availability(cocktail, stock, data.settings.assumeBasics);
+}
+
+export function AvailabilityBadge({ value, compact }: { value: Availability; compact?: boolean }) {
+  const { colors } = useTheme();
+  const { ingredientById } = useCatalog();
+  if (!value.required) return null;
+  const ready = value.ready;
+  const one = value.missing.length === 1;
+  const label = ready ? 'Faisable' : one ? (compact ? 'Manque 1' : `Manque : ${ingredientById.get(value.missing[0].id)?.name ?? value.missing[0].id}`) : `Manque ${value.missing.length}`;
+  const fg = ready ? colors.ok : one ? colors.warn : colors.muted;
+  const bg = ready ? colors.okSoft : one ? colors.warnSoft : colors.surfaceAlt;
   return (
-      <Pressable onPress={() => router.push({ pathname: '/cocktail/[slug]', params: { slug: cocktail.slug } })} style={({ pressed }) => [styles.card, isGrid && styles.gridCard, pressed && styles.pressed]}>
-        <View style={[styles.monogram, isGrid && styles.gridMonogram]}><Text style={styles.monogramText}>{cocktail.name.slice(0, 1)}</Text></View>
-        <View style={[styles.copy, isGrid && styles.gridCopy]}>
-          <Text numberOfLines={isGrid ? 2 : 1} style={[styles.name, isGrid && styles.gridName]}>{cocktail.name}</Text>
-          <Text numberOfLines={1} style={[styles.meta, isGrid && styles.gridMeta]}>{cocktail.type} · {cocktail.method}</Text>
-          {!isGrid ? <View style={styles.tags}>{cocktail.flavors.slice(0, 2).map((flavor) => <Text key={flavor} style={styles.tag}>{flavor}</Text>)}</View> : null}
+    <View style={[styles.badge, { backgroundColor: bg }]}>
+      {ready ? <Icon name="check" size={13} color={fg} strokeWidth={3} /> : null}
+      <Text numberOfLines={1} style={[styles.badgeLabel, { color: fg }]}>{label}</Text>
+    </View>
+  );
+}
+
+/** Ligne de liste : vignette, nom, accroche, disponibilité. */
+export function CocktailRow({ cocktail }: { cocktail: Cocktail }) {
+  const { colors } = useTheme();
+  const { favorites, data } = useUser();
+  const { ingredientById } = useCatalog();
+  const value = useAvailability(cocktail);
+  const rating = data.ratings[cocktail.id];
+  const keyIngredients = cocktail.ingredients.filter((item) => !item.optional).slice(0, 4).map((item) => ingredientById.get(item.id)?.name.replace(/ \(.*\)$/, '') ?? item.id).join(' · ');
+  return (
+    <Pressable onPress={() => openCocktail(cocktail.id)} style={({ pressed }) => [styles.row, { opacity: pressed ? 0.7 : 1 }]}>
+      <CocktailImage cocktail={cocktail} style={styles.rowImage} rounded={14} artScale={0.62} />
+      <View style={styles.rowBody}>
+        <View style={styles.rowTitle}>
+          <T variant="h3" numberOfLines={1} style={{ flexShrink: 1 }}>{cocktail.name}</T>
+          {favorites.has(cocktail.id) ? <Icon name="heart" size={14} color={colors.accent} filled /> : null}
+          {cocktail.origin === 'perso' ? <Icon name="pencil" size={13} color={colors.muted} /> : null}
         </View>
-        {percentage !== undefined ? (
-          <View style={[styles.score, isGrid && styles.gridScore, percentage === 100 && styles.scoreReady]}><Text numberOfLines={1} adjustsFontSizeToFit style={[styles.scoreText, isGrid && styles.gridScoreText, percentage === 100 && styles.scoreTextReady]}>{percentage}%</Text></View>
-        ) : <Text style={styles.arrow}>›</Text>}
-      </Pressable>
+        <T variant="small" tone="muted" numberOfLines={1}>{keyIngredients}</T>
+        <View style={styles.rowMeta}>
+          <AvailabilityBadge value={value} compact />
+          {rating ? (
+            <View style={styles.rating}>
+              <Icon name="star" size={13} color={colors.gold} filled />
+              <T variant="tiny" tone="muted">{rating}</T>
+            </View>
+          ) : null}
+          <T variant="tiny" tone="muted" numberOfLines={1} style={{ flexShrink: 1 }}>{cocktail.family}</T>
+        </View>
+      </View>
+    </Pressable>
+  );
+}
+
+/** Carte de carrousel : grande image et nom. */
+export function CocktailTile({ cocktail, width = 156, subtitle }: { cocktail: Cocktail; width?: number; subtitle?: string }) {
+  const value = useAvailability(cocktail);
+  return (
+    <Pressable onPress={() => openCocktail(cocktail.id)} style={({ pressed }) => [{ width, opacity: pressed ? 0.75 : 1 }]}>
+      <CocktailImage cocktail={cocktail} style={{ width, height: width * 1.12 }} rounded={radius.lg} />
+      <T variant="h3" numberOfLines={1} style={{ marginTop: space.xs }}>{cocktail.name}</T>
+      {subtitle ? <T variant="small" tone="muted" numberOfLines={1}>{subtitle}</T> : <View style={{ marginTop: 4, flexDirection: 'row' }}><AvailabilityBadge value={value} compact /></View>}
+    </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  card: { alignItems: 'center', backgroundColor: palette.paper, borderColor: palette.line, borderRadius: radius.md, borderWidth: 1, flexDirection: 'row', gap: 14, padding: 12, width: '100%' },
-  gridCard: { alignItems: 'flex-start', flexDirection: 'column', gap: 5, padding: 6, width: '100%' },
-  pressed: { opacity: 0.72, transform: [{ scale: 0.99 }] },
-  monogram: { alignItems: 'center', backgroundColor: palette.wineDark, borderRadius: 14, height: 64, justifyContent: 'center', width: 58 },
-  gridMonogram: { borderRadius: 10, height: 62, width: '100%' },
-  monogramText: { color: palette.gold, fontFamily: fonts.display, fontSize: 26 },
-  copy: { flex: 1, gap: 3 }, gridCopy: { flex: 0, width: '100%' }, name: { color: palette.ink, fontFamily: fonts.display, fontSize: 19, fontWeight: '600' }, gridName: { fontSize: 13, lineHeight: 15 },
-  meta: { color: palette.muted, fontFamily: fonts.body, fontSize: 12 }, gridMeta: { fontSize: 8 }, tags: { flexDirection: 'row', gap: 6, marginTop: 4 },
-  tag: { backgroundColor: '#F1E7D9', borderRadius: radius.pill, color: palette.wine, fontFamily: fonts.body, fontSize: 10, overflow: 'hidden', paddingHorizontal: 8, paddingVertical: 4 },
-  arrow: { color: palette.wine, fontSize: 30 }, score: { alignItems: 'center', backgroundColor: '#F0E4D4', borderRadius: radius.pill, height: 46, justifyContent: 'center', width: 46 },
-  gridScore: { height: 29, position: 'absolute', right: 10, top: 10, width: 29 },
-  scoreReady: { backgroundColor: '#DDE9DF' }, scoreText: { color: palette.wine, fontFamily: fonts.body, fontSize: 12, fontWeight: '700' }, gridScoreText: { fontSize: 8, lineHeight: 10 }, scoreTextReady: { color: palette.success },
+  badge: { flexDirection: 'row', alignItems: 'center', gap: 3, paddingHorizontal: 8, paddingVertical: 3, borderRadius: radius.pill, flexShrink: 1 },
+  badgeLabel: { fontFamily: fonts.body, fontSize: 12, fontWeight: '700' },
+  row: { flexDirection: 'row', alignItems: 'center', gap: space.sm, paddingVertical: space.xs },
+  rowImage: { width: 72, height: 72 },
+  rowBody: { flex: 1, gap: 3, minWidth: 0 },
+  rowTitle: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  rowMeta: { flexDirection: 'row', alignItems: 'center', gap: space.xs, marginTop: 2 },
+  rating: { flexDirection: 'row', alignItems: 'center', gap: 2 },
 });

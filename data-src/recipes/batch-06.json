@@ -1,0 +1,640 @@
+{
+  "cocktails": [
+    {
+      "id": "boulevardier",
+      "name": "Boulevardier",
+      "aliases": [],
+      "tagline": "Le cousin du Negroni, réchauffé au bourbon",
+      "description": "Ce cocktail est associé à Erskine Gwynne, écrivain américain installé à Paris qui dirigeait un magazine baptisé Boulevardier, à la fin des années 1920. Il reprend la structure du Negroni en remplaçant le gin par du whiskey : l'amertume du Campari s'arrondit sur les notes vanillées et boisées du bourbon, pour un ensemble plus chaleureux et plus enveloppant.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "bourbon", "amount": 45, "unit": "ml", "note": "ou rye" },
+        { "id": "campari", "amount": 30, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 30, "unit": "ml" }
+      ],
+      "garnish": "Zeste d'orange",
+      "steps": [
+        "Rafraîchir la coupe avec de la glace ou au congélateur.",
+        "Verser le bourbon, le Campari et le vermouth dans un verre à mélange rempli de glaçons.",
+        "Remuer 20 à 30 secondes jusqu'à ce que le mélange soit bien froid.",
+        "Filtrer dans la coupe vide et exprimer le zeste d'orange au-dessus du verre."
+      ],
+      "flavors": ["Amer", "Boisé", "Sucré", "Corsé"],
+      "difficulty": 1,
+      "iba": "Unforgettables",
+      "color": "#8B2A1C",
+      "cocktailDbId": "17251",
+      "notes": "TheCocktailDB ne le marque pas IBA et donne 37,5 ml de rye pour 30/30 ; on suit la spec IBA (45 ml bourbon ou rye, 30 ml Campari, 30 ml vermouth rouge)."
+    },
+    {
+      "id": "bloody-mary",
+      "name": "Bloody Mary",
+      "aliases": [],
+      "tagline": "Tomate, vodka et piquant : le classique du brunch",
+      "description": "Plusieurs barmen en revendiquent la paternité, mais le nom de Fernand Petiot, passé par le Harry's New York Bar de Paris puis par le St. Regis à New York, revient le plus souvent. Le jus de tomate porte une vodka discrète, relevée par le citron, la Worcestershire, le Tabasco et le sel de céleri : un verre salé, épicé et rafraîchissant.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 45, "unit": "ml" },
+        { "id": "jus-de-tomate", "amount": 90, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "sauce-worcestershire", "amount": 2, "unit": "trait" },
+        { "id": "tabasco", "amount": 3, "unit": "goutte", "note": "selon le goût" },
+        { "id": "sel-de-celeri", "amount": 1, "unit": "pincée" },
+        { "id": "poivre", "amount": 1, "unit": "pincée" }
+      ],
+      "garnish": "Branche de céleri, quartier de citron (facultatif)",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la vodka, le jus de tomate et le jus de citron.",
+        "Ajouter la Worcestershire, le Tabasco, le sel de céleri et le poivre.",
+        "Remuer doucement pour mélanger sans diluer à l'excès, puis goûter et ajuster l'assaisonnement."
+      ],
+      "flavors": ["Salé", "Épicé", "Acidulé", "Frais"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#B3261E",
+      "cocktailDbId": "11113",
+      "notes": "Source : verre old fashioned et un simple trait de citron ; on suit la spec IBA (highball, 15 ml de citron, sel de céleri et poivre)."
+    },
+    {
+      "id": "bees-knees",
+      "name": "Bee's Knees",
+      "aliases": [],
+      "tagline": "Gin, miel et citron, un sour doré de la Prohibition",
+      "description": "Le nom reprend une expression d'argot américain des années 1920 qui désignait ce qu'il y a de mieux. On raconte que le miel et le citron servaient alors à masquer la rudesse des gins de contrebande. Le résultat est un sour soyeux, où la douceur florale du miel équilibre l'acidité des agrumes.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 52.5, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 15, "unit": "ml" },
+        { "id": "sirop-de-miel", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron ou d'orange (facultatif)",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser tous les ingrédients dans le shaker et remplir de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer finement dans la coupe."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Sucré", "Floral"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#E9D27A",
+      "cocktailDbId": null,
+      "notes": "Spec IBA avec jus d'orange ; la version courante s'en passe (60 ml gin, 20 ml citron, 20 ml sirop de miel)."
+    },
+    {
+      "id": "hanky-panky",
+      "name": "Hanky Panky",
+      "aliases": [],
+      "tagline": "Gin et vermouth piqués d'une pointe de Fernet",
+      "description": "Création d'Ada Coleman, cheffe barmaid de l'American Bar du Savoy à Londres au début du XXe siècle, pour l'acteur Charles Hawtrey qui réclamait « quelque chose qui ait du punch ». C'est un Martinez allégé de son marasquin, où quelques gouttes de Fernet-Branca apportent une amertume mentholée qui tranche sur la rondeur du vermouth.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 45, "unit": "ml" },
+        { "id": "fernet-branca", "amount": 7.5, "unit": "ml" }
+      ],
+      "garnish": "Zeste d'orange",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser le gin, le vermouth et le Fernet-Branca dans un verre à mélange rempli de glaçons.",
+        "Remuer environ 25 secondes.",
+        "Filtrer dans la coupe et exprimer le zeste d'orange au-dessus."
+      ],
+      "flavors": ["Amer", "Herbacé", "Sucré", "Corsé"],
+      "difficulty": 1,
+      "iba": "Unforgettables",
+      "color": "#6E2A1C",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "jungle-bird",
+      "name": "Jungle Bird",
+      "aliases": [],
+      "tagline": "Le tiki qui ose l'amertume du Campari",
+      "description": "Il aurait vu le jour en 1978 à l'Aviary Bar du Hilton de Kuala Lumpur, avant d'être remis à l'honneur par les amateurs de tiki dans les années 2000. Le rhum brun et l'ananas donnent une base ronde et tropicale, que le Campari vient tendre d'une amertume inattendue.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "rhum-brun", "amount": 45, "unit": "ml", "note": "idéalement un rhum jamaïcain ou blackstrap" },
+        { "id": "campari", "amount": 22.5, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 45, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml", "note": "sirop de demerara de préférence" }
+      ],
+      "garnish": "Quartier et feuilles d'ananas",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vigoureusement 12 secondes pour faire mousser l'ananas.",
+        "Filtrer dans un verre old fashioned rempli de glaçons frais.",
+        "Décorer d'un quartier d'ananas."
+      ],
+      "flavors": ["Tropical", "Amer", "Fruité", "Acidulé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#D9573A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "paper-plane",
+      "name": "Paper Plane",
+      "aliases": [],
+      "tagline": "Quatre parts égales, entre bourbon et amers italiens",
+      "description": "Imaginé par Sam Ross à la fin des années 2000 pour un bar de Chicago, il tire son nom d'une chanson alors en vogue. Variation moderne du Last Word en parts égales, il associe bourbon, Aperol, amaro et citron : l'orange amère et les notes d'herbes rencontrent la chaleur du whiskey dans un ensemble vif et parfaitement équilibré.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "bourbon", "amount": 30, "unit": "ml" },
+        { "id": "aperol", "amount": 30, "unit": "ml" },
+        { "id": "amaro-nonino", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 30, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser les quatre ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer finement dans la coupe."
+      ],
+      "flavors": ["Amer", "Agrume", "Acidulé", "Boisé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#E07A3A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "black-russian",
+      "name": "Black Russian",
+      "aliases": [],
+      "tagline": "Vodka et liqueur de café, sombre et sans détour",
+      "description": "Selon le récit le plus répandu, il aurait été créé vers 1949 par Gustave Tops à l'hôtel Métropole de Bruxelles, en l'honneur de la diplomate américaine Perle Mesta. Deux ingrédients suffisent : la vodka sèche la douceur de la liqueur de café pour un digestif court, corsé et aux arômes torréfiés.",
+      "family": "Spirit-forward",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 50, "unit": "ml" },
+        { "id": "liqueur-cafe", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Remplir un verre old fashioned de glaçons.",
+        "Verser la vodka puis la liqueur de café.",
+        "Remuer doucement une dizaine de secondes."
+      ],
+      "flavors": ["Café", "Sucré", "Corsé"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#2A1A12",
+      "cocktailDbId": "11102",
+      "notes": "Source : 45 ml vodka / 22,5 ml liqueur ; on suit la spec IBA (50 / 20)."
+    },
+    {
+      "id": "bacardi-cocktail",
+      "name": "Bacardi Cocktail",
+      "aliases": ["Bacardi"],
+      "tagline": "Un daiquiri rosi à la grenadine",
+      "description": "Popularisé dans les années 1930, ce cocktail est lié à la marque au point qu'un tribunal new-yorkais aurait jugé en 1936 qu'il devait être préparé avec du rhum Bacardi. Proche du daiquiri, il remplace le sucre par la grenadine : la boisson prend une teinte rose et une note fruitée, tout en gardant la fraîcheur acidulée du citron vert.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 45, "unit": "ml", "note": "Bacardi Carta Blanca selon la tradition" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser le rhum, le jus de citron vert et la grenadine dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 secondes.",
+        "Filtrer finement dans la coupe."
+      ],
+      "flavors": ["Acidulé", "Fruité", "Sucré", "Agrume"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#F4A1A8",
+      "cocktailDbId": "17183",
+      "notes": "Source : 52,5 ml de rhum, 30 ml de citron vert, sirop de sucre et un trait de grenadine ; on suit la spec IBA (45 / 20 / 10 ml de grenadine, sans sirop de sucre)."
+    },
+    {
+      "id": "caipiroska",
+      "name": "Caipiroska",
+      "aliases": ["Caipivodka"],
+      "tagline": "La caipirinha version vodka, citron vert pilé",
+      "description": "Variante née au Brésil de la caipirinha, où la vodka prend la place de la cachaça. Le citron vert écrasé avec le sucre libère à la fois son jus et les huiles de son écorce : le cocktail est plus neutre et plus net que l'original, franchement acidulé et très désaltérant.",
+      "family": "Sour",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "vodka", "amount": 60, "unit": "ml" },
+        { "id": "citron-vert-quartiers", "amount": 4, "unit": "pièce", "note": "½ citron vert" },
+        { "id": "sucre-poudre", "amount": 2, "unit": "cuillère" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Placer les quartiers de citron vert et le sucre dans un verre old fashioned.",
+        "Piler fermement pour extraire le jus et dissoudre le sucre.",
+        "Remplir de glace pilée et verser la vodka.",
+        "Remuer de bas en haut avec une cuillère, puis compléter de glace."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Frais", "Sucré"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E6EFC8",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "tommys-margarita",
+      "name": "Tommy's Margarita",
+      "aliases": ["Tommy's"],
+      "tagline": "La margarita épurée : tequila, citron vert, agave",
+      "description": "Mise au point au début des années 1990 par Julio Bermejo au Tommy's, restaurant mexicain familial de San Francisco. La liqueur d'orange disparaît au profit du nectar d'agave, issu de la même plante que la tequila : la boisson met le spiritueux au premier plan, avec une douceur ronde et une acidité franche.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "tequila", "amount": 60, "unit": "ml", "note": "100 % agave" },
+        { "id": "citron-vert", "amount": 30, "unit": "ml" },
+        { "id": "sirop-d-agave", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Verser la tequila, le jus de citron vert et le nectar d'agave dans le shaker.",
+        "Remplir de glaçons et shaker vivement 10 secondes.",
+        "Filtrer dans un verre old fashioned rempli de glaçons frais.",
+        "Décorer d'un quartier de citron vert."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Sucré", "Herbacé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#E3E6B5",
+      "cocktailDbId": null,
+      "notes": "Dose d'agave donnée pour du nectar pur ; avec un sirop d'agave dilué à 1:1, doubler (30 ml)."
+    },
+    {
+      "id": "gin-basil-smash",
+      "name": "Gin Basil Smash",
+      "aliases": ["Gin Pesto"],
+      "tagline": "Gin et basilic frais, d'un vert éclatant",
+      "description": "Créé en 2008 par Jörg Meyer au Le Lion, bar de Hambourg, il s'est diffusé en quelques années dans le monde entier. Le basilic, secoué énergiquement avec le citron, colore la boisson et lui donne un parfum vert et poivré, posé sur la structure d'un gin sour.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "citron", "amount": 25, "unit": "ml" },
+        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "basilic", "amount": 10, "unit": "pièce", "note": "feuilles, une belle poignée" }
+      ],
+      "garnish": "Brin de basilic",
+      "steps": [
+        "Piler légèrement les feuilles de basilic avec le jus de citron dans le shaker.",
+        "Ajouter le gin, le sirop de sucre et des glaçons.",
+        "Shaker très vivement 15 secondes.",
+        "Double-filtrer dans un verre old fashioned rempli de glaçons."
+      ],
+      "flavors": ["Herbacé", "Frais", "Acidulé", "Agrume"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#A9C95A",
+      "cocktailDbId": "178314",
+      "notes": "Source : 20 ml de citron ; on suit la recette du Le Lion (25 ml)."
+    },
+    {
+      "id": "southside",
+      "name": "Southside",
+      "aliases": ["South Side"],
+      "tagline": "Gin, citron vert et menthe, comme un mojito chic",
+      "description": "Associé à la Prohibition, il est souvent rattaché au Southside Sportsmen's Club de Long Island ou aux bandes du sud de Chicago, sans preuve décisive. Servi frappé et sans glace, il marie la vivacité du citron vert à la fraîcheur de la menthe sur une base de gin sec.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "citron-vert", "amount": 30, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" },
+        { "id": "menthe", "amount": 6, "unit": "pièce", "note": "feuilles" }
+      ],
+      "garnish": "Feuille de menthe",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Placer les feuilles de menthe dans le shaker et les presser doucement, sans les déchirer.",
+        "Ajouter le gin, le jus de citron vert, le sirop et des glaçons, puis shaker 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et poser une feuille de menthe en surface."
+      ],
+      "flavors": ["Frais", "Herbacé", "Acidulé", "Agrume"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#DCE8C0",
+      "cocktailDbId": null,
+      "notes": "Certaines recettes utilisent du citron jaune à la place du citron vert ; doses IBA à confirmer."
+    },
+    {
+      "id": "naked-and-famous",
+      "name": "Naked and Famous",
+      "aliases": [],
+      "tagline": "Mezcal fumé, Chartreuse et Aperol à parts égales",
+      "description": "Créé en 2011 par Joaquín Simó au Death & Co, à New York, sur le modèle en parts égales du Last Word. Le mezcal apporte sa fumée, la Chartreuse jaune ses notes de miel et d'herbes, l'Aperol une amertume orangée : le citron vert relie le tout dans un cocktail à la fois vif, fumé et légèrement sucré.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "mezcal", "amount": 22.5, "unit": "ml" },
+        { "id": "chartreuse-jaune", "amount": 22.5, "unit": "ml" },
+        { "id": "aperol", "amount": 22.5, "unit": "ml" },
+        { "id": "citron-vert", "amount": 22.5, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser les quatre ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer finement dans la coupe."
+      ],
+      "flavors": ["Fumé", "Herbacé", "Amer", "Acidulé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#F2A541",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "trinidad-sour",
+      "name": "Trinidad Sour",
+      "aliases": [],
+      "tagline": "L'Angostura en vedette, à pleine dose",
+      "description": "Imaginé à la fin des années 2000 par Giuseppe González au Clover Club de Brooklyn, il renverse les proportions habituelles : le bitter devient l'alcool de base et le rye n'est qu'un appoint. L'orgeat adoucit l'ensemble et le citron le relève, pour un sour d'un rouge profond, épicé, amer et étonnamment rond.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "angostura", "amount": 45, "unit": "ml" },
+        { "id": "rye", "amount": 15, "unit": "ml" },
+        { "id": "citron", "amount": 22.5, "unit": "ml" },
+        { "id": "sirop-d-orgeat", "amount": 30, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 12 secondes.",
+        "Double-filtrer dans la coupe."
+      ],
+      "flavors": ["Amer", "Épicé", "Sucré", "Acidulé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#7A1F1A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "sex-on-the-beach",
+      "name": "Sex on the Beach",
+      "aliases": [],
+      "tagline": "Pêche, orange et cranberry : l'esprit des vacances",
+      "description": "Emblème des années 1980, il aurait été baptisé en Floride lors d'une campagne pour promouvoir la liqueur de pêche. Long drink fruité et facile, il marie la douceur de la pêche à l'orange et à l'acidité légèrement tannique de la cranberry, la vodka restant en retrait.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 40, "unit": "ml" },
+        { "id": "liqueur-peche", "amount": 20, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 40, "unit": "ml" },
+        { "id": "jus-de-cranberry", "amount": 40, "unit": "ml" }
+      ],
+      "garnish": "Demi-tranche d'orange",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la vodka, la liqueur de pêche, le jus d'orange puis le jus de cranberry.",
+        "Remuer doucement et décorer d'une demi-tranche d'orange."
+      ],
+      "flavors": ["Fruité", "Sucré", "Acidulé"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#EC6A4C",
+      "cocktailDbId": "12754",
+      "notes": "Source sans dose pour les jus ; on suit la spec IBA (40 / 20 / 40 / 40)."
+    },
+    {
+      "id": "singapore-sling",
+      "name": "Singapore Sling",
+      "aliases": ["Straits Sling"],
+      "tagline": "Gin, ananas et cerise, signé Raffles Hotel",
+      "description": "On en attribue la création à Ngiam Tong Boon, barman du Raffles Hotel de Singapour, au début du XXe siècle, même si la recette d'origine reste discutée. La version actuelle superpose gin, liqueur de cerise, Bénédictine et triple sec sur une généreuse base d'ananas : un long drink rose, fruité et épicé.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "gin", "amount": 30, "unit": "ml" },
+        { "id": "liqueur-cerise", "amount": 15, "unit": "ml" },
+        { "id": "triple-sec", "amount": 7.5, "unit": "ml" },
+        { "id": "benedictine", "amount": 7.5, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 120, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 10, "unit": "ml" },
+        { "id": "angostura", "amount": 1, "unit": "trait" }
+      ],
+      "garnish": "Quartier d'ananas et cerise au marasquin",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 12 secondes pour faire mousser l'ananas.",
+        "Filtrer dans un verre highball rempli de glaçons frais.",
+        "Décorer d'un quartier d'ananas et d'une cerise."
+      ],
+      "flavors": ["Fruité", "Tropical", "Sucré", "Épicé"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#EF7F6E",
+      "cocktailDbId": "12214",
+      "notes": "Source : version simplifiée avec sweet & sour et eau gazeuse ; on suit la spec IBA (ananas, Bénédictine, triple sec, sans soda)."
+    },
+    {
+      "id": "brandy-crusta",
+      "name": "Brandy Crusta",
+      "aliases": ["Crusta"],
+      "tagline": "Cognac, croûte sucrée et long ruban de citron",
+      "description": "Il aurait été inventé vers 1850 par Joseph Santini dans un bar de La Nouvelle-Orléans et passe pour l'ancêtre du Sidecar. Son nom vient de la croûte de sucre qui borde le verre, associée à une spirale de zeste qui en tapisse l'intérieur. Le cognac y est relevé par le citron, le marasquin et le curaçao, pour un sour aromatique et délicat.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "cognac", "amount": 52.5, "unit": "ml" },
+        { "id": "maraschino", "amount": 7.5, "unit": "ml" },
+        { "id": "curacao-orange", "amount": 5, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "sucre", "amount": 5, "unit": "ml" },
+        { "id": "angostura", "amount": 2, "unit": "trait" },
+        { "id": "sucre-poudre", "amount": 1, "unit": "cuillère", "note": "pour la croûte" }
+      ],
+      "garnish": "Longue spirale de zeste de citron",
+      "steps": [
+        "Humecter le bord du verre avec une tranche de citron, le tremper dans le sucre et le mettre au frais.",
+        "Tailler une longue spirale de zeste de citron et la placer contre la paroi intérieure du verre.",
+        "Shaker tous les autres ingrédients avec des glaçons pendant 10 secondes.",
+        "Filtrer délicatement dans le verre préparé."
+      ],
+      "flavors": ["Agrume", "Acidulé", "Sucré", "Boisé"],
+      "difficulty": 3,
+      "iba": "Unforgettables",
+      "color": "#E3A65A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "vieux-carre",
+      "name": "Vieux Carré",
+      "aliases": [],
+      "tagline": "Rye, cognac et vermouth, l'âme de la Nouvelle-Orléans",
+      "description": "Créé en 1938 par Walter Bergeron, chef barman de l'hôtel Monteleone, il porte le nom du quartier français de La Nouvelle-Orléans. Le rye et le cognac se partagent la base, le vermouth et la Bénédictine apportent rondeur et notes de miel, tandis que les bitters ajoutent une touche épicée.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "rye", "amount": 30, "unit": "ml" },
+        { "id": "cognac", "amount": 30, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 30, "unit": "ml" },
+        { "id": "benedictine", "amount": 5, "unit": "ml" },
+        { "id": "peychauds-bitters", "amount": 2, "unit": "trait" },
+        { "id": "angostura", "amount": 2, "unit": "trait" }
+      ],
+      "garnish": "Zeste de citron et cerise",
+      "steps": [
+        "Verser tous les ingrédients dans un verre à mélange rempli de glaçons.",
+        "Remuer 25 à 30 secondes.",
+        "Filtrer sur un gros glaçon dans un verre old fashioned.",
+        "Exprimer le zeste de citron au-dessus du verre et ajouter la cerise."
+      ],
+      "flavors": ["Boisé", "Épicé", "Sucré", "Corsé"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#9A4A22",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "rob-roy",
+      "name": "Rob Roy",
+      "aliases": [],
+      "tagline": "Le Manhattan à l'écossaise",
+      "description": "Il aurait été créé en 1894 au Waldorf-Astoria de New York, à l'occasion d'une opérette consacrée au héros écossais Rob Roy MacGregor. Construit comme un Manhattan mais avec du scotch, il gagne en notes maltées et légèrement fumées, adoucies par le vermouth et relevées par l'Angostura.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "scotch", "amount": 60, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 30, "unit": "ml" },
+        { "id": "angostura", "amount": 2, "unit": "trait" }
+      ],
+      "garnish": "Cerise à l'eau-de-vie ou zeste d'orange",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser le scotch, le vermouth et l'Angostura dans un verre à mélange rempli de glaçons.",
+        "Remuer 25 à 30 secondes.",
+        "Filtrer dans la coupe et ajouter la cerise."
+      ],
+      "flavors": ["Boisé", "Sucré", "Corsé", "Épicé"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#8A3A1E",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "ward-eight",
+      "name": "Ward Eight",
+      "aliases": ["Ward 8"],
+      "tagline": "Rye, agrumes et grenadine, un classique de Boston",
+      "description": "Selon la tradition, il aurait été servi pour la première fois en 1898 au Locke-Ober de Boston, pour fêter une victoire électorale dans la huitième circonscription de la ville ; l'histoire reste toutefois contestée. C'est un whiskey sour rosé, où l'orange et la grenadine adoucissent le piquant du rye.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rye", "amount": 60, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 15, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Cerise et zeste d'orange",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer finement dans la coupe et décorer."
+      ],
+      "flavors": ["Acidulé", "Fruité", "Boisé", "Agrume"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E06A4A",
+      "cocktailDbId": null,
+      "notes": ""
+    },
+    {
+      "id": "between-the-sheets",
+      "name": "Between the Sheets",
+      "aliases": [],
+      "tagline": "Un Sidecar dédoublé, cognac et rhum blanc",
+      "description": "Souvent attribué à Harry MacElhone, du Harry's New York Bar à Paris, dans l'entre-deux-guerres, son origine n'est pas établie avec certitude. Il double la base du Sidecar en associant cognac et rhum blanc : le triple sec et le citron en font un sour sec, puissant et nettement orangé.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 30, "unit": "ml" },
+        { "id": "cognac", "amount": 30, "unit": "ml" },
+        { "id": "triple-sec", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Rafraîchir la coupe.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer finement dans la coupe."
+      ],
+      "flavors": ["Agrume", "Acidulé", "Corsé", "Sec"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#E8C27A",
+      "cocktailDbId": "17184",
+      "notes": "Source : 30 ml de citron ; on suit la spec IBA (20 ml)."
+    }
+  ],
+  "newIngredients": [
+    ["sucre-poudre", "Sucre en poudre", "sirop", 0, 0, 0, 0, "🥄"]
+  ]
+}

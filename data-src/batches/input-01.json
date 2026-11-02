@@ -1,0 +1,632 @@
+[
+ {
+  "requestedName": "Alexander",
+  "cocktailDb": {
+   "cocktailDbId": "11014",
+   "name": "Alexander",
+   "iba": "Unforgettables",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1/2 oz",
+     "Gin"
+    ],
+    [
+     "1/2 oz white",
+     "Creme de Cacao"
+    ],
+    [
+     "2 oz",
+     "Light cream"
+    ],
+    [
+     "",
+     "Nutmeg"
+    ]
+   ],
+   "instructions": "Shake all ingredients with ice and strain contents into a cocktail glass. Sprinkle nutmeg on top and serve.",
+   "instructionsFR": "Secouer tous les ingrédients avec de la glace et filtrer le contenu dans un verre à cocktail. Saupoudrer de noix de muscade et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/0clus51606772388.jpg"
+  }
+ },
+ {
+  "requestedName": "B-52",
+  "cocktailDb": {
+   "cocktailDbId": "15853",
+   "name": "B-52",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Shot glass",
+   "ingredients": [
+    [
+     "1/3",
+     "Baileys irish cream"
+    ],
+    [
+     "1/3",
+     "Grand Marnier"
+    ],
+    [
+     "1/4",
+     "Kahlua"
+    ]
+   ],
+   "instructions": "Layer ingredients into a shot glass. Serve with a stirrer.",
+   "instructionsFR": "Disposez les ingrédients dans un verre à shot. Servir avec un agitateur.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/5a3vg61504372070.jpg"
+  }
+ },
+ {
+  "requestedName": "Bellini",
+  "cocktailDb": {
+   "cocktailDbId": "17195",
+   "name": "Bellini",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Champagne Flute",
+   "ingredients": [
+    [
+     "6 oz",
+     "Champagne"
+    ],
+    [
+     "1 oz",
+     "Peach schnapps"
+    ]
+   ],
+   "instructions": "Pour peach purée into chilled flute, add sparkling wine. Stir gently.",
+   "instructionsFR": "Verser la purée de pêche dans une flûte réfrigérée, ajouter le vin mousseux. Remuer doucement.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg"
+  }
+ },
+ {
+  "requestedName": "Casino",
+  "cocktailDb": {
+   "cocktailDbId": "17185",
+   "name": "Casino",
+   "iba": "Unforgettables",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Gin"
+    ],
+    [
+     "1/4 tsp",
+     "Maraschino liqueur"
+    ],
+    [
+     "1/4 tsp",
+     "Lemon juice"
+    ],
+    [
+     "2 dashes",
+     "Orange bitters"
+    ],
+    [
+     "1",
+     "Cherry"
+    ]
+   ],
+   "instructions": "Pour all ingredients into shaker with ice cubes. Shake well. Strain into chilled cocktail glass. Garnish with a lemon twist and a maraschino cherry. Serve without a straw.",
+   "instructionsFR": "Verser tous les ingrédients dans un shaker avec des glaçons. Bien agiter. Filtrer dans un verre à cocktail réfrigéré. Décorer d'un zeste de citron et d'une cerise au marasquin. Servir sans paille.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/1mvjxg1504348579.jpg"
+  }
+ },
+ {
+  "requestedName": "Caipirinha",
+  "cocktailDb": {
+   "cocktailDbId": "11202",
+   "name": "Caipirinha",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "2 tsp",
+     "Sugar"
+    ],
+    [
+     "1",
+     "Lime"
+    ],
+    [
+     "2 1/2 oz",
+     "Cachaca"
+    ]
+   ],
+   "instructions": "Place lime and sugar into old fashioned glass and muddle (mash the two ingredients together using a muddler or a wooden spoon). Fill the glass with ice and add the Cachaça.",
+   "instructionsFR": "Placer le citron vert et le sucre dans un verre old fashioned et mélanger (écraser les deux ingrédients ensemble à l'aide d'un mélangeur ou d'une cuillère en bois). Remplir le verre de glace et ajouter la Cachaça.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/jgvn7p1582484435.jpg"
+  }
+ },
+ {
+  "requestedName": "Clover Club",
+  "cocktailDb": {
+   "cocktailDbId": "17186",
+   "name": "Clover Club",
+   "iba": "Unforgettables",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Gin"
+    ],
+    [
+     "2 tsp",
+     "Grenadine"
+    ],
+    [
+     "Juice of 1/2",
+     "Lemon"
+    ],
+    [
+     "1",
+     "Egg white"
+    ]
+   ],
+   "instructions": "Dry shake ingredients to emulsify, add ice, shake and served straight up.",
+   "instructionsFR": "Secouez les ingrédients pour les émulsionner, ajoutez de la glace, secouez et servez directement.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/t0aja61504348715.jpg"
+  }
+ },
+ {
+  "requestedName": "Cosmopolitan",
+  "cocktailDb": {
+   "cocktailDbId": "17196",
+   "name": "Cosmopolitan",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/4 oz",
+     "Vodka"
+    ],
+    [
+     "1/4 oz",
+     "Lime juice"
+    ],
+    [
+     "1/4 oz",
+     "Cointreau"
+    ],
+    [
+     "1/4 cup",
+     "Cranberry juice"
+    ]
+   ],
+   "instructions": "Add all ingredients into cocktail shaker filled with ice. Shake well and double strain into large cocktail glass. Garnish with lime wheel.",
+   "instructionsFR": "Ajouter tous les ingrédients dans un shaker rempli de glace. Bien agiter et filtrer dans un grand verre à cocktail. Garnir d'une roue de citron vert.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/kpsajh1504368362.jpg"
+  }
+ },
+ {
+  "requestedName": "Cuba Libre",
+  "cocktailDb": {
+   "cocktailDbId": "11288",
+   "name": "Cuba Libre",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Light rum"
+    ],
+    [
+     "Juice of 1/2",
+     "Lime"
+    ],
+    [
+     "",
+     "Coca-Cola"
+    ]
+   ],
+   "instructions": "Build all ingredients in a Collins glass filled with ice. Garnish with lime wedge.",
+   "instructionsFR": "Mettre tous les ingrédients dans un verre Collins rempli de glace. Garnir d'un quartier de citron vert.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/wmkbfj1606853905.jpg"
+  }
+ },
+ {
+  "requestedName": "Derby",
+  "cocktailDb": {
+   "cocktailDbId": "17187",
+   "name": "Derby",
+   "iba": "Unforgettables",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "6 cl",
+     "gin"
+    ],
+    [
+     "2 dashes",
+     "Peach Bitters"
+    ],
+    [
+     "2 Fresh leaves",
+     "Mint"
+    ]
+   ],
+   "instructions": "Pour all ingredients into a mixing glass with ice. Stir. Strain into a cocktail glass. Garnish with a sprig of fresh mint in the drink.",
+   "instructionsFR": "Verser tous les ingrédients dans un verre à mélange avec des glaçons. Remuer. Filtrer dans un verre à cocktail. Décorer avec un brin de menthe fraîche dans la boisson.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/52weey1606772672.jpg"
+  }
+ },
+ {
+  "requestedName": "Dry Martini",
+  "cocktailDb": {
+   "cocktailDbId": "11005",
+   "name": "Dry Martini",
+   "iba": "Unforgettables",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 2/3 oz",
+     "Gin"
+    ],
+    [
+     "1/3 oz",
+     "Dry Vermouth"
+    ],
+    [
+     "1",
+     "Olive"
+    ]
+   ],
+   "instructions": "Straight: Pour all ingredients into mixing glass with ice cubes. Stir well. Strain in chilled martini cocktail glass. Squeeze oil from lemon peel onto the drink, or garnish with olive.",
+   "instructionsFR": "Droit : Verser tous les ingrédients dans un verre à mélange avec des glaçons. Bien mélanger. Filtrer dans un verre à cocktail martini réfrigéré. Presser l'huile du zeste de citron sur la boisson ou décorer d'une olive.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/6ck9yi1589574317.jpg"
+  }
+ },
+ {
+  "requestedName": "Dirty Martini",
+  "cocktailDb": {
+   "cocktailDbId": "17181",
+   "name": "Dirty Martini",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "70ml/2fl oz",
+     "Vodka"
+    ],
+    [
+     "1 tbsp",
+     "Dry Vermouth"
+    ],
+    [
+     "2 tbsp",
+     "Olive Brine"
+    ],
+    [
+     "1 wedge",
+     "Lemon"
+    ],
+    [
+     "1",
+     "Olive"
+    ]
+   ],
+   "instructions": "Pour the vodka, dry vermouth and olive brine into a cocktail shaker with a handful of ice and shake well.\r\nRub the rim of a martini glass with the wedge of lemon.\r\nStrain the contents of the cocktail shaker into the glass and add the olive.\r\nA dirty Martini contains a splash of olive brine or olive juice and is typically garnished with an olive.",
+   "instructionsFR": "Verser la vodka, le vermouth sec et la saumure d'olive dans un shaker avec une poignée de glace et bien secouer.\r\nFrotter le bord d'un verre à martini avec le quartier de citron.\r\nFiltrer le contenu du shaker dans le verre et ajouter l'olive.\r\nUn dirty Martini contient un peu de saumure d'olive ou de jus d'olive et est généralement décoré d'une olive.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/vcyvpq1485083300.jpg"
+  }
+ },
+ {
+  "requestedName": "Dark and Stormy",
+  "cocktailDb": {
+   "cocktailDbId": "17211",
+   "name": "Dark and Stormy",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "5 cl",
+     "Dark Rum"
+    ],
+    [
+     "10 cl",
+     "Ginger Beer"
+    ]
+   ],
+   "instructions": "In a highball glass filled with ice add 6cl dark rum and top with ginger beer. Garnish with lime wedge.",
+   "instructionsFR": "Dans un verre highball rempli de glace, ajouter 6 cl de rhum noir et compléter avec de la bière de gingembre. Garnir avec un quartier de citron vert.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/t1tn0s1504374905.jpg"
+  }
+ },
+ {
+  "requestedName": "Espresso Martini",
+  "cocktailDb": {
+   "cocktailDbId": "17212",
+   "name": "Espresso Martini",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "5 cl",
+     "Vodka"
+    ],
+    [
+     "1 cl",
+     "Kahlua"
+    ],
+    [
+     "1 dash",
+     "Sugar syrup"
+    ]
+   ],
+   "instructions": "Pour ingredients into shaker filled with ice, shake vigorously, and strain into chilled martini glass",
+   "instructionsFR": "Verser les ingrédients dans un shaker rempli de glace, secouer vigoureusement et filtrer dans un verre à martini bien frais.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/n0sx531504372951.jpg"
+  }
+ },
+ {
+  "requestedName": "French 75",
+  "cocktailDb": {
+   "cocktailDbId": "17197",
+   "name": "French 75",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Gin"
+    ],
+    [
+     "2 tsp superfine",
+     "Sugar"
+    ],
+    [
+     "1 1/2 oz",
+     "Lemon juice"
+    ],
+    [
+     "4 oz Chilled",
+     "Champagne"
+    ],
+    [
+     "1",
+     "Orange"
+    ],
+    [
+     "1",
+     "Maraschino cherry"
+    ]
+   ],
+   "instructions": "Combine gin, sugar, and lemon juice in a cocktail shaker filled with ice. Shake vigorously and strain into a chilled champagne glass. Top up with Champagne. Stir gently.",
+   "instructionsFR": "Mélanger le gin, le sucre et le jus de citron dans un shaker rempli de glace. Secouer vigoureusement et filtrer dans une coupe à champagne réfrigérée. Compléter avec du champagne. Remuer doucement.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/hrxfbl1606773109.jpg"
+  }
+ },
+ {
+  "requestedName": "French Martini",
+  "cocktailDb": {
+   "cocktailDbId": "17213",
+   "name": "French Martini",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "4.5 cl",
+     "Vodka"
+    ],
+    [
+     "1.5 cl",
+     "Raspberry Liqueur"
+    ],
+    [
+     "1.5 cl",
+     "pineapple juice"
+    ]
+   ],
+   "instructions": "Pour all ingredients into shaker with ice cubes. Shake well and strain into a chilled cocktail glass. Squeeze oil from lemon peel onto the drink.",
+   "instructionsFR": "Verser tous les ingrédients dans un shaker avec des glaçons. Bien agiter et filtrer dans un verre à cocktail réfrigéré. Presser l'huile du zeste de citron sur la boisson.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/clth721504373134.jpg"
+  }
+ },
+ {
+  "requestedName": "French Connection",
+  "cocktailDb": {
+   "cocktailDbId": "17198",
+   "name": "French Connection",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Cognac"
+    ],
+    [
+     "3/4 oz",
+     "Amaretto"
+    ]
+   ],
+   "instructions": "Pour all ingredients directly into old fashioned glass filled with ice cubes. Stir gently.",
+   "instructionsFR": "Verser tous les ingrédients directement dans un verre old fashioned rempli de glaçons. Remuer doucement.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/zaqa381504368758.jpg"
+  }
+ },
+ {
+  "requestedName": "Gin Fizz",
+  "cocktailDb": {
+   "cocktailDbId": "11410",
+   "name": "Gin Fizz",
+   "iba": "Unforgettables",
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Gin"
+    ],
+    [
+     "Juice of 1/2",
+     "Lemon"
+    ],
+    [
+     "1 tsp",
+     "Powdered sugar"
+    ],
+    [
+     "",
+     "Carbonated water"
+    ]
+   ],
+   "instructions": "Shake all ingredients with ice cubes, except soda water. Pour into glass. Top with soda water.",
+   "instructionsFR": "Secouer tous les ingrédients avec des glaçons, à l'exception de l'eau gazeuse. Verser dans un verre. Compléter avec de l'eau gazeuse.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/drtihp1606768397.jpg"
+  }
+ },
+ {
+  "requestedName": "Godfather",
+  "cocktailDb": {
+   "cocktailDbId": "11423",
+   "name": "Godfather",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Scotch"
+    ],
+    [
+     "3/4 oz",
+     "Amaretto"
+    ]
+   ],
+   "instructions": "Pour all ingredients directly into old fashioned glass filled with ice cubes. Stir gently.",
+   "instructionsFR": "Verser tous les ingrédients directement dans un verre old fashioned rempli de glaçons. Remuer doucement.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/e5zgao1582582378.jpg"
+  }
+ },
+ {
+  "requestedName": "Grasshopper",
+  "cocktailDb": {
+   "cocktailDbId": "17200",
+   "name": "Grasshopper",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "3/4 oz",
+     "Green Creme de Menthe"
+    ],
+    [
+     "3/4 oz white",
+     "Creme de Cacao"
+    ],
+    [
+     "3/4 oz",
+     "Light cream"
+    ]
+   ],
+   "instructions": "Pour ingredients into a cocktail shaker with ice. Shake briskly and then strain into a chilled cocktail glass.",
+   "instructionsFR": "Verser les ingrédients dans un shaker avec de la glace. Secouer vigoureusement et filtrer dans un verre à cocktail bien frais.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/aqm9el1504369613.jpg"
+  }
+ },
+ {
+  "requestedName": "Horse's Neck",
+  "cocktailDb": {
+   "cocktailDbId": "17202",
+   "name": "Horse's Neck",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "1 long strip",
+     "Lemon peel"
+    ],
+    [
+     "2 oz",
+     "Brandy"
+    ],
+    [
+     "5 oz",
+     "Ginger ale"
+    ],
+    [
+     "2 dashes",
+     "Bitters"
+    ]
+   ],
+   "instructions": "Pour brandy and ginger ale directly into highball glass with ice cubes. Stir gently. Garnish with lemon zest. If desired, add dashes of Angostura Bitter.",
+   "instructionsFR": "Verser le brandy et le soda au gingembre directement dans un verre highball avec des glaçons. Remuer doucement. Garnir de zestes de citron. Si vous le souhaitez, ajoutez des traits d'Angostura Bitter.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/006k4e1504370092.jpg"
+  }
+ },
+ {
+  "requestedName": "Harvey Wallbanger",
+  "cocktailDb": {
+   "cocktailDbId": "11462",
+   "name": "Harvey Wallbanger",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Collins glass",
+   "ingredients": [
+    [
+     "1 oz",
+     "Vodka"
+    ],
+    [
+     "1/2 oz",
+     "Galliano"
+    ],
+    [
+     "4 oz",
+     "Orange juice"
+    ]
+   ],
+   "instructions": "Stir the vodka and orange juice with ice in the glass, then float the Galliano on top. Garnish and serve.",
+   "instructionsFR": "Remuez la vodka et le jus d'orange avec de la glace dans le verre, puis faites flotter le Galliano sur le dessus. Décorez et servez.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/7os4gs1606854357.jpg"
+  }
+ },
+ {
+  "requestedName": "Hemingway Special",
+  "cocktailDb": {
+   "cocktailDbId": "17201",
+   "name": "Hemingway Special",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "12 parts",
+     "Rum"
+    ],
+    [
+     "8 parts",
+     "Grapefruit Juice"
+    ],
+    [
+     "3 parts",
+     "Maraschino Liqueur"
+    ],
+    [
+     "3 parts",
+     "Lime Juice"
+    ]
+   ],
+   "instructions": "Pour all ingredients into a shaker with ice. Shake.",
+   "instructionsFR": "Verser tous les ingrédients dans un shaker avec des glaçons. Agiter.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/jfcvps1504369888.jpg"
+  }
+ }
+]

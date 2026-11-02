@@ -1,0 +1,473 @@
+[
+ {
+  "requestedName": "Orange Rosemary Collins",
+  "cocktailDb": {
+   "cocktailDbId": "178341",
+   "name": "Orange Rosemary Collins",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "1 shot",
+     "Gin"
+    ],
+    [
+     "Top",
+     "Orange Juice"
+    ],
+    [
+     "Top",
+     "Lemon Juice"
+    ],
+    [
+     "25 ml",
+     "Rosemary Syrup"
+    ],
+    [
+     "Top",
+     "Soda Water"
+    ],
+    [
+     "Garnish with",
+     "Rosemary"
+    ],
+    [
+     "Garnish with",
+     "Orange Peel"
+    ]
+   ],
+   "instructions": "Add the spirits to the bottom of the glass and top equally with the mixer drinks. Garnish with orange slices inside the glass as well as some rosemary on top.",
+   "instructionsFR": "Verser le spiritueux au fond du verre et compléter avec les boissons mixées. Décorez avec des tranches d'orange à l'intérieur du verre et du romarin sur le dessus.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/mokcas1604179977.jpg"
+  }
+ },
+ {
+  "requestedName": "Lemon Elderflower Spritzer",
+  "cocktailDb": {
+   "cocktailDbId": "178360",
+   "name": "Lemon Elderflower Spritzer",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "2 tsp",
+     "Elderflower cordial"
+    ],
+    [
+     "1 shot",
+     "Vodka"
+    ],
+    [
+     "1/3 cup",
+     "Soda Water"
+    ],
+    [
+     "Top",
+     "Fresh Lemon Juice"
+    ]
+   ],
+   "instructions": "Pour all ingredients over ice, stir and enjoy!\r\n",
+   "instructionsFR": "Versez tous les ingrédients sur des glaçons, remuez et dégustez !\r\n",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/125w0o1630407389.jpg"
+  }
+ },
+ {
+  "requestedName": "Afterglow",
+  "cocktailDb": {
+   "cocktailDbId": "12560",
+   "name": "Afterglow",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball Glass",
+   "ingredients": [
+    [
+     "1 part",
+     "Grenadine"
+    ],
+    [
+     "4 parts",
+     "Orange juice"
+    ],
+    [
+     "4 parts",
+     "Pineapple juice"
+    ]
+   ],
+   "instructions": "Mix. Serve over ice.",
+   "instructionsFR": "Mélanger. Servir sur des glaçons.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg"
+  }
+ },
+ {
+  "requestedName": "Apello",
+  "cocktailDb": {
+   "cocktailDbId": "15106",
+   "name": "Apello",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Collins Glass",
+   "ingredients": [
+    [
+     "4 cl",
+     "Orange juice"
+    ],
+    [
+     "3 cl",
+     "Grapefruit juice"
+    ],
+    [
+     "1 cl",
+     "Apple juice"
+    ],
+    [
+     "1",
+     "Maraschino cherry"
+    ]
+   ],
+   "instructions": "Stirr. Grnish with maraschino cherry.",
+   "instructionsFR": "Remuer. Garnir de cerises au marasquin.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/uptxtv1468876415.jpg"
+  }
+ },
+ {
+  "requestedName": "Bora Bora",
+  "cocktailDb": {
+   "cocktailDbId": "12572",
+   "name": "Bora Bora",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "10 cl",
+     "Pineapple juice"
+    ],
+    [
+     "6 cl",
+     "Passion fruit juice"
+    ],
+    [
+     "1 cl",
+     "Lemon juice"
+    ],
+    [
+     "1 cl",
+     "Grenadine"
+    ]
+   ],
+   "instructions": "Prepare in a blender or shaker, serve in a highball glass on the rocks. Garnish with 1 slice of pineapple and one cherry.",
+   "instructionsFR": "Préparer dans un mixeur ou un shaker, servir dans un verre highball avec des glaçons. Garnir d'une tranche d'ananas et d'une cerise.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/xwuqvw1473201811.jpg"
+  }
+ },
+ {
+  "requestedName": "Fruit Cooler",
+  "cocktailDb": {
+   "cocktailDbId": "12670",
+   "name": "Fruit Cooler",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball Glass",
+   "ingredients": [
+    [
+     "1 can frozen",
+     "Apple juice"
+    ],
+    [
+     "1 cup",
+     "Strawberries"
+    ],
+    [
+     "2 tblsp",
+     "Sugar"
+    ],
+    [
+     "1",
+     "Lemon"
+    ],
+    [
+     "1",
+     "Apple"
+    ],
+    [
+     "1 L",
+     "Soda water"
+    ],
+    [
+     "",
+     "Ice"
+    ]
+   ],
+   "instructions": "Toss strawberries with sugar, and let sit overnight in refrigerator. Cut lemon, reserve two slices. Juice the rest. Mix together the lemon juice, strawberries, apple juice, and soda water. Add slices of lemon (decor, really). In glasses, put ice cubes, and a slice of apple. Pour drink in, and serve.",
+   "instructionsFR": "Mélanger les fraises avec le sucre et laisser reposer une nuit au réfrigérateur. Couper le citron et réserver deux tranches. Presser le reste. Mélanger le jus de citron, les fraises, le jus de pomme et l'eau gazeuse. Ajouter des tranches de citron (décor, vraiment). Dans les verres, mettre des glaçons et une tranche de pomme. Verser la boisson et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/i3tfn31484430499.jpg"
+  }
+ },
+ {
+  "requestedName": "Limeade",
+  "cocktailDb": {
+   "cocktailDbId": "12704",
+   "name": "Limeade",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "Juice of 1",
+     "Lime"
+    ],
+    [
+     "1 tblsp",
+     "Sugar"
+    ],
+    [
+     "(seltzer water)",
+     "Soda water"
+    ],
+    [
+     "",
+     "Lime peel"
+    ]
+   ],
+   "instructions": "In a large glass, put the lime juice and sugar, and stir well. Add cold seltzer water to fill. Put the lime peels in the glass. Drink. Repeat until limes or soda run out.",
+   "instructionsFR": "Dans un grand verre, verser le jus de citron vert et le sucre, et bien mélanger. Ajoutez de l'eau de Seltz froide pour remplir le verre. Mettez les écorces de citron vert dans le verre. Buvez. Répétez l'opération jusqu'à ce qu'il n'y ait plus de citron vert ou de soda.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/5jdp5r1487603680.jpg"
+  }
+ },
+ {
+  "requestedName": "Orangeade",
+  "cocktailDb": {
+   "cocktailDbId": "12618",
+   "name": "Orangeade",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "5 cl",
+     "Lemon juice"
+    ],
+    [
+     "15 cl",
+     "Orange juice"
+    ],
+    [
+     "2-3 cl",
+     "Sugar syrup"
+    ],
+    [
+     "",
+     "Soda water"
+    ]
+   ],
+   "instructions": "Place some ice cubes in a large tumbler or highball glass, add lemon juice, orange juice, sugar syrup, and stir well. Top up with cold soda water, serve with a drinking straw.",
+   "instructionsFR": "Placez des glaçons dans un grand verre à pied ou à cocktail, ajoutez le jus de citron, le jus d'orange, le sirop de sucre et remuez bien. Compléter avec de l'eau gazeuse froide et servir avec une paille.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/ytsxxw1441167732.jpg"
+  }
+ },
+ {
+  "requestedName": "Lassi - Mango",
+  "cocktailDb": {
+   "cocktailDbId": "12698",
+   "name": "Lassi - Mango",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "2",
+     "Mango"
+    ],
+    [
+     "2 cups",
+     "Yoghurt"
+    ],
+    [
+     "1/2 cup",
+     "Sugar"
+    ],
+    [
+     "1 cup iced",
+     "Water"
+    ]
+   ],
+   "instructions": "Put it all in a blender and pour over crushed ice. You can also use other fruits like strawberries and bananas.",
+   "instructionsFR": "Mettez le tout dans un mixeur et versez sur de la glace pilée. Vous pouvez également utiliser d'autres fruits comme les fraises et les bananes.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/1bw6sd1487603816.jpg"
+  }
+ },
+ {
+  "requestedName": "Thai Iced Tea",
+  "cocktailDb": {
+   "cocktailDbId": "12786",
+   "name": "Thai Iced Tea",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "1/4 cup Thai",
+     "Tea"
+    ],
+    [
+     "1/2 cup boiling",
+     "Water"
+    ],
+    [
+     "2 tsp sweetened",
+     "Condensed milk"
+    ],
+    [
+     "cubes",
+     "Ice"
+    ],
+    [
+     "garnish",
+     "Mint"
+    ]
+   ],
+   "instructions": "Combine Thai tea (i.e., the powder), boiling water, and sweetened condensed milk, stir until blended. Pour into 2 tall glasses filled with ice cubes. Garnish with mint leaves. Makes 2 servings.",
+   "instructionsFR": "Mélangez le thé thaïlandais (c'est-à-dire la poudre), l'eau bouillante et le lait concentré sucré, remuez jusqu'à homogénéité. Verser dans 2 grands verres remplis de glaçons. Garnir de feuilles de menthe. Donne 2 portions.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/trvwpu1441245568.jpg"
+  }
+ },
+ {
+  "requestedName": "Pineapple Gingerale Smoothie",
+  "cocktailDb": {
+   "cocktailDbId": "12718",
+   "name": "Pineapple Gingerale Smoothie",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball Glass",
+   "ingredients": [
+    [
+     "1/4 inch",
+     "Ginger"
+    ],
+    [
+     "1/2",
+     "Pineapple"
+    ]
+   ],
+   "instructions": "Throw everything into a blender and liquify.",
+   "instructionsFR": "Mettre le tout dans un mixeur et liquéfier.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/eg9i1d1487603469.jpg"
+  }
+ },
+ {
+  "requestedName": "Rail Splitter",
+  "cocktailDb": {
+   "cocktailDbId": "12630",
+   "name": "Rail Splitter",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "2 tsp",
+     "Sugar syrup"
+    ],
+    [
+     "",
+     "Lemon juice"
+    ],
+    [
+     "",
+     "Ginger ale"
+    ]
+   ],
+   "instructions": "Mix sugar syrup with lemon juice in a tall glass. Fill up with ginger ale.",
+   "instructionsFR": "Mélanger le sirop de sucre et le jus de citron dans un grand verre. Remplir de ginger ale.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/stsuqq1441207660.jpg"
+  }
+ },
+ {
+  "requestedName": "Cranberry Punch",
+  "cocktailDb": {
+   "cocktailDbId": "12890",
+   "name": "Cranberry Punch",
+   "iba": null,
+   "alcoholic": "Non alcoholic",
+   "glass": "Punch Bowl",
+   "ingredients": [
+    [
+     "4 cups",
+     "Cranberry juice"
+    ],
+    [
+     "1 1/2 cup",
+     "Sugar"
+    ],
+    [
+     "4 cups",
+     "Pineapple juice"
+    ],
+    [
+     "1 tblsp",
+     "Almond flavoring"
+    ],
+    [
+     "2 qt",
+     "Ginger ale"
+    ]
+   ],
+   "instructions": "Combine first four ingredients. Stir until sugar is dissolved, chill. Then add ginger ale just before serving. Add ice ring to keep punch cold.",
+   "instructionsFR": "Mélanger les quatre premiers ingrédients. Remuer jusqu'à ce que le sucre soit dissous et mettre au frais. Ajouter ensuite le soda au gingembre juste avant de servir. Ajouter un anneau de glace pour garder le punch froid.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/mzgaqu1504389248.jpg"
+  }
+ },
+ {
+  "requestedName": "Virgin Mojito",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Virgin Mule",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Shirley Temple",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Roy Rogers",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Arnold Palmer",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Virgin Mary",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Virgin Piña Colada",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Cinderella",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Safe Sex on the Beach",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Lemon Fizz",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Faux Americano",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Espresso Tonic",
+  "cocktailDb": null
+ },
+ {
+  "requestedName": "Sour sans alcool",
+  "cocktailDb": null
+ }
+]

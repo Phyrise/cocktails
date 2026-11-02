@@ -1,35 +1,191 @@
-import { useRouter } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import Constants from 'expo-constants';
+import { useState } from 'react';
+import { Platform, Pressable, StyleSheet, Switch, View } from 'react-native';
 
-import { fonts, palette, radius } from '@/constants/theme';
-import { useAppState } from '@/state/app-state';
+import { Icon, type IconName } from '@/components/icon';
+import { PageHeader } from '@/components/page-header';
+import { useToast } from '@/components/toast';
+import { Button, Card, Divider, Screen, Segmented, T } from '@/components/ui';
+import { radius, space } from '@/constants/theme';
+import { databaseFile, defaultDbUrl, parseDatabaseFile, prefetchImages } from '@/lib/database';
+import { confirm } from '@/lib/dialogs';
+import { pickJsonFile, saveJsonFile } from '@/lib/files';
+import { emptyUserData, mergeUserData, parseBackupFile, type ThemeChoice, useCatalog, useTheme, useUser } from '@/state/store';
 import type { MeasurementUnit } from '@/types/cocktail';
 
+const today = () => new Date().toISOString().slice(0, 10);
+
 export default function SettingsScreen() {
-  const router = useRouter();
-  const { measurementUnit, setMeasurementUnit, customCocktails, cocktails } = useAppState();
-  const units: { id: MeasurementUnit; label: string; detail: string }[] = [
-    { id: 'ml', label: 'Millilitres', detail: 'Format de référence des recettes de Clément' },
-    { id: 'oz', label: 'Onces liquides', detail: 'Conversion automatique pour le service' },
-  ];
-  return <View style={styles.screen}>
-    <View style={styles.header}><Pressable onPress={() => router.back()} style={styles.back}><Text style={styles.backText}>‹</Text></Pressable><Text style={styles.eyebrow}>PRÉFÉRENCES</Text></View>
-    <Text style={styles.title}>Réglages</Text>
-    <Text style={styles.subtitle}>Choisissez l’unité utilisée sur toutes les fiches cocktail.</Text>
-    <View style={styles.card}>
-      {units.map((unit) => <Pressable key={unit.id} onPress={() => setMeasurementUnit(unit.id)} style={[styles.unit, measurementUnit === unit.id && styles.unitActive]}>
-        <View style={styles.radio}>{measurementUnit === unit.id ? <View style={styles.radioDot} /> : null}</View>
-        <View style={{ flex: 1 }}><Text style={styles.unitTitle}>{unit.label}</Text><Text style={styles.unitDetail}>{unit.detail}</Text></View>
-        <Text style={styles.unitCode}>{unit.id}</Text>
-      </Pressable>)}
+  const { colors } = useTheme();
+  const toast = useToast();
+  const catalog = useCatalog();
+  const user = useUser();
+  const { settings } = user.data;
+  const [busy, setBusy] = useState<string | null>(null);
+  const [imageProgress, setImageProgress] = useState<string | null>(null);
+  const db = catalog.db;
+
+  const run = async (key: string, task: () => Promise<void>) => {
+    setBusy(key);
+    try {
+      await task();
+    } catch (error) {
+      toast((error as Error).message || 'Une erreur est survenue');
+    } finally {
+      setBusy(null);
+    }
+  };
+
+  const checkUpdate = () => run('check', async () => {
+    const version = await catalog.checkForUpdate();
+    toast(version === db?.version ? 'Votre base est à jour' : 'Une nouvelle version est disponible');
+  });
+
+  const update = () => run('update', async () => {
+    const fresh = await catalog.downloadLatest();
+    toast(`Base mise à jour : ${fresh.cocktails.length} recettes`);
+  });
+
+  const downloadImages = () => run('images', async () => {
+    if (!db) return;
+    const result = await prefetchImages(db, (done, total) => setImageProgress(`${done}/${total}`));
+    setImageProgress(null);
+    toast(result.failed ? `${result.total - result.failed} photos enregistrées, ${result.failed} en échec` : `${result.total} photos disponibles hors ligne`);
+  });
+
+  const importAny = () => run('import', async () => {
+    const data = await pickJsonFile();
+    if (!data) return;
+    const importedDb = parseDatabaseFile(data, db?.imageBase ?? defaultDbUrl());
+    if (importedDb) {
+      if (!(await confirm('Remplacer la base ?', `Le fichier contient ${importedDb.cocktails.length} recettes (version ${importedDb.version}). Vos favoris, notes et créations sont conservés.`, 'Remplacer'))) return;
+      await catalog.replaceDatabase(importedDb);
+      toast('Base importée');
+      return;
+    }
+    const backup = parseBackupFile(data);
+    if (backup) {
+      const replace = await confirm('Importer la sauvegarde', 'OK : remplacer toutes vos données par celles du fichier.\nAnnuler : fusionner avec vos données actuelles (rien n’est perdu).', 'Remplacer');
+      user.replaceUserData(replace ? backup : mergeUserData(user.data, backup));
+      toast(replace ? 'Données remplacées' : 'Données fusionnées');
+      return;
+    }
+    throw new Error('Ce fichier n’est ni une base ni une sauvegarde Arturo et Clémentine.');
+  });
+
+  const isIos = Platform.OS === 'web' && /iPhone|iPad|iPod/.test(globalThis.navigator?.userAgent ?? '');
+  const standalone = Platform.OS === 'web' && (globalThis.matchMedia?.('(display-mode: standalone)').matches || (globalThis.navigator as Navigator & { standalone?: boolean })?.standalone);
+
+  return (
+    <Screen>
+      <PageHeader title="Réglages" back />
+
+      <Group title="Affichage">
+        <Line icon="glass" label="Unité des doses">
+          <View style={{ width: 160 }}>
+            <Segmented<MeasurementUnit> value={settings.unit} onChange={(unit) => user.updateSettings({ unit })} options={[{ value: 'ml', label: 'ml' }, { value: 'cl', label: 'cl' }, { value: 'oz', label: 'oz' }]} />
+          </View>
+        </Line>
+        <Divider />
+        <Line icon="moon" label="Thème">
+          <View style={{ width: 200 }}>
+            <Segmented<ThemeChoice> value={settings.theme} onChange={(theme) => user.updateSettings({ theme })} options={[{ value: 'auto', label: 'Auto' }, { value: 'light', label: 'Clair' }, { value: 'dark', label: 'Sombre' }]} />
+          </View>
+        </Line>
+        <Divider />
+        <Line icon="check" label="Basiques toujours disponibles" hint="Sucre, sel, poivre et eau gazeuse comptent comme présents dans votre bar.">
+          <Switch value={settings.assumeBasics} onValueChange={(assumeBasics) => user.updateSettings({ assumeBasics })} trackColor={{ true: colors.ok, false: colors.line }} />
+        </Line>
+      </Group>
+
+      <Group title="Base de recettes">
+        <View style={{ gap: 2 }}>
+          <T variant="h3">{catalog.cocktails.length} recettes · {db?.cocktails.filter((cocktail) => cocktail.image).length ?? 0} photos</T>
+          <T variant="small" tone="muted">Version {db?.version ?? '—'}{db ? ` · ${new Date(db.generatedAt).toLocaleDateString('fr-FR')}` : ''}</T>
+          {catalog.updateAvailable ? <T variant="small" tone="accent" style={{ fontWeight: '700' }}>Nouvelle version disponible : {catalog.remoteVersion}</T> : null}
+        </View>
+        {catalog.updateAvailable ? (
+          <Button label={catalog.progress ? catalog.progress.label : 'Mettre à jour la base'} icon="download" loading={busy === 'update'} onPress={update} />
+        ) : (
+          <Button label="Rechercher une mise à jour" icon="refresh" variant="secondary" loading={busy === 'check'} onPress={checkUpdate} />
+        )}
+        {catalog.updateAvailable ? null : <Button label="Retélécharger la base" icon="download" variant="ghost" size="sm" loading={busy === 'update'} onPress={update} />}
+        <Divider />
+        <T variant="small" tone="muted">Les photos s’enregistrent au fil de la navigation. Pour tout avoir hors ligne d’un coup (≈ {db ? Math.round(db.cocktails.filter((cocktail) => cocktail.image).length * 13 / 100) / 10 : 2} Mo) :</T>
+        <Button label={imageProgress ? `Photos ${imageProgress}` : 'Télécharger toutes les photos'} icon="image" variant="secondary" loading={busy === 'images'} onPress={downloadImages} />
+      </Group>
+
+      <Group title="Importer et exporter">
+        <T variant="small" tone="muted">Un seul bouton pour importer : l’app reconnaît une base de recettes ou une sauvegarde de vos données.</T>
+        <Button label="Importer un fichier" icon="upload" loading={busy === 'import'} onPress={importAny} />
+        <View style={styles.row}>
+          <Button label="Mes données" icon="download" variant="secondary" flex onPress={() => run('backup', () => saveJsonFile(`arturo-clementine-sauvegarde-${today()}.json`, user.backupFile()))} />
+          <Button label="La base" icon="database" variant="secondary" flex onPress={() => run('export', async () => { if (db) await saveJsonFile(`arturo-clementine-base-${db.version}.json`, databaseFile(db)); })} />
+        </View>
+        <T variant="tiny" tone="muted">« Mes données » : bar, favoris, notes, listes et recettes personnelles, pour les transférer vers un autre téléphone. « La base » : toutes les recettes, pour les partager sans connexion.</T>
+      </Group>
+
+      {Platform.OS === 'web' && !standalone ? (
+        <Group title="Installer l’app">
+          {isIos ? (
+            <T variant="small">Dans Safari, touchez <T variant="small" style={{ fontWeight: '700' }}>Partager</T> puis <T variant="small" style={{ fontWeight: '700' }}>Sur l’écran d’accueil</T>. L’app s’ouvrira en plein écran et fonctionnera hors ligne.</T>
+          ) : (
+            <T variant="small">Dans Chrome, ouvrez le menu ⋮ puis <T variant="small" style={{ fontWeight: '700' }}>Installer l’application</T> (ou « Ajouter à l’écran d’accueil »). L’app fonctionnera ensuite hors ligne.</T>
+          )}
+        </Group>
+      ) : null}
+
+      <Group title="Zone sensible">
+        <Button
+          label="Effacer toutes mes données"
+          icon="trash"
+          variant="danger"
+          onPress={async () => {
+            if (await confirm('Tout effacer ?', 'Bar, favoris, notes, listes et recettes personnelles seront supprimés de cet appareil. Pensez à exporter une sauvegarde avant.', 'Tout effacer')) {
+              user.replaceUserData({ ...emptyUserData(), settings: user.data.settings });
+              toast('Données effacées');
+            }
+          }}
+        />
+      </Group>
+
+      <View style={styles.about}>
+        <T variant="h3" tone="accent">Arturo et Clémentine</T>
+        <T variant="tiny" tone="muted" style={{ textAlign: 'center' }}>
+          Version {Constants.expoConfig?.version ?? '2'} · Recettes : sélection de Clément, spécifications IBA et classiques reformulés · Photos : TheCocktailDB · Icônes : Lucide · Police : Fraunces
+        </T>
+        <T variant="tiny" tone="muted" style={{ textAlign: 'center' }}>À consommer avec modération.</T>
+      </View>
+    </Screen>
+  );
+}
+
+function Group({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <View style={{ marginBottom: space.lg, gap: space.xs }}>
+      <T variant="label" tone="muted" style={{ marginLeft: 4 }}>{title}</T>
+      <Card style={{ gap: space.sm }}>{children}</Card>
     </View>
-    <View style={styles.summary}><Text style={styles.summaryNumber}>{cocktails.length}</Text><Text style={styles.summaryText}>recettes dans la bibliothèque, dont {customCocktails.length} expérimentale{customCocktails.length > 1 ? 's' : ''}.</Text></View>
-    <Text style={styles.note}>1 oz = 29,57 ml. Les traits, gouttes, pièces et garnitures ne sont pas convertis.</Text>
-  </View>;
+  );
+}
+
+function Line({ icon, label, hint, children }: { icon: IconName; label: string; hint?: string; children: React.ReactNode }) {
+  const { colors } = useTheme();
+  return (
+    <Pressable style={styles.line}>
+      <View style={[styles.lineIcon, { backgroundColor: colors.surfaceAlt }]}><Icon name={icon} size={17} color={colors.ink} /></View>
+      <View style={{ flex: 1 }}>
+        <T variant="body" style={{ fontWeight: '600' }}>{label}</T>
+        {hint ? <T variant="tiny" tone="muted">{hint}</T> : null}
+      </View>
+      {children}
+    </Pressable>
+  );
 }
 
 const styles = StyleSheet.create({
-  screen: { backgroundColor: palette.cream, flex: 1, padding: 20, paddingTop: 56 }, header: { alignItems: 'center', flexDirection: 'row', gap: 12 }, back: { alignItems: 'center', backgroundColor: palette.paper, borderRadius: 22, height: 44, justifyContent: 'center', width: 44 }, backText: { color: palette.wine, fontSize: 34, lineHeight: 36 }, eyebrow: { color: palette.wine, fontFamily: fonts.body, fontSize: 10, fontWeight: '800', letterSpacing: 2.2 }, title: { color: palette.ink, fontFamily: fonts.display, fontSize: 40, marginTop: 20 }, subtitle: { color: palette.muted, fontFamily: fonts.body, fontSize: 14, lineHeight: 21, marginTop: 6 },
-  card: { backgroundColor: palette.paper, borderColor: palette.line, borderRadius: radius.lg, borderWidth: 1, gap: 9, marginTop: 28, padding: 10 }, unit: { alignItems: 'center', borderRadius: radius.md, flexDirection: 'row', gap: 12, padding: 14 }, unitActive: { backgroundColor: '#F1E3DD' }, radio: { alignItems: 'center', borderColor: palette.wine, borderRadius: 11, borderWidth: 1.5, height: 22, justifyContent: 'center', width: 22 }, radioDot: { backgroundColor: palette.wine, borderRadius: 6, height: 12, width: 12 }, unitTitle: { color: palette.ink, fontFamily: fonts.body, fontSize: 14, fontWeight: '800' }, unitDetail: { color: palette.muted, fontFamily: fonts.body, fontSize: 10, lineHeight: 15, marginTop: 3 }, unitCode: { color: palette.wine, fontFamily: fonts.display, fontSize: 21 },
-  summary: { alignItems: 'center', backgroundColor: palette.wineDark, borderRadius: radius.md, flexDirection: 'row', gap: 14, marginTop: 24, padding: 18 }, summaryNumber: { color: palette.gold, fontFamily: fonts.display, fontSize: 36 }, summaryText: { color: palette.white, flex: 1, fontFamily: fonts.body, fontSize: 12, lineHeight: 18 }, note: { color: palette.muted, fontFamily: fonts.body, fontSize: 11, lineHeight: 17, marginTop: 18 },
+  row: { flexDirection: 'row', gap: space.xs },
+  line: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
+  lineIcon: { width: 32, height: 32, borderRadius: radius.sm, alignItems: 'center', justifyContent: 'center' },
+  about: { alignItems: 'center', gap: 4, marginTop: space.md },
 });

@@ -1,0 +1,732 @@
+[
+ {
+  "requestedName": "Tequila Sunrise",
+  "cocktailDb": {
+   "cocktailDbId": "13621",
+   "name": "Tequila Sunrise",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "2 measures",
+     "Tequila"
+    ],
+    [
+     "",
+     "Orange juice"
+    ],
+    [
+     "",
+     "Grenadine"
+    ]
+   ],
+   "instructions": "Pour the tequila and orange juice into glass over ice. Add the grenadine, which will sink to the bottom. Stir gently to create the sunrise effect. Garnish and serve.",
+   "instructionsFR": "Versez la tequila et le jus d'orange dans un verre sur de la glace. Ajoutez la grenadine qui coulera au fond. Remuez doucement pour créer l’effet lever du soleil. Garnir et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/quqyqp1480879103.jpg"
+  }
+ },
+ {
+  "requestedName": "Tuxedo Cocktail",
+  "cocktailDb": {
+   "cocktailDbId": "12420",
+   "name": "Tuxedo Cocktail",
+   "iba": "Unforgettables",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Dry Vermouth"
+    ],
+    [
+     "1 1/2 oz",
+     "Gin"
+    ],
+    [
+     "1/4 tsp",
+     "Maraschino liqueur"
+    ],
+    [
+     "1/4 tsp",
+     "Anis"
+    ],
+    [
+     "2 dashes",
+     "Orange bitters"
+    ],
+    [
+     "1",
+     "Cherry"
+    ]
+   ],
+   "instructions": "Stir all ingredients with ice and strain into a cocktail glass. Garnish with a cherry and a twist of lemon zest.",
+   "instructionsFR": "Mélanger tous les ingrédients avec de la glace et passer dans un verre à cocktail. Garnir d'une cerise et d'un zeste de citron.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/4u0nbl1504352551.jpg"
+  }
+ },
+ {
+  "requestedName": "Vesper",
+  "cocktailDb": {
+   "cocktailDbId": "17218",
+   "name": "Vesper",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "6 cl",
+     "Gin"
+    ],
+    [
+     "1.5 cl",
+     "Vodka"
+    ],
+    [
+     "0.75 cl",
+     "Lillet Blanc"
+    ]
+   ],
+   "instructions": "Shake over ice until well chilled, then strain into a deep goblet and garnish with a thin slice of lemon peel.",
+   "instructionsFR": "Secouez sur de la glace jusqu'à ce que le tout soit bien refroidi, puis versez dans un gobelet profond et décorez d'une fine tranche de zeste de citron.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/mtdxpa1504374514.jpg"
+  }
+ },
+ {
+  "requestedName": "Vampiro",
+  "cocktailDb": {
+   "cocktailDbId": "17217",
+   "name": "Vampiro",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Old-Fashioned glass",
+   "ingredients": [
+    [
+     "6 cl",
+     "Tequila"
+    ],
+    [
+     "3 cl",
+     "Tomato Juice"
+    ],
+    [
+     "3 cl",
+     "Orange Juice"
+    ],
+    [
+     "1.5 cl",
+     "Lime Juice"
+    ],
+    [
+     "1 dash",
+     "Sugar Syrup"
+    ],
+    [
+     "1 pinch",
+     "Salt"
+    ]
+   ],
+   "instructions": "Vampiros may be made in a tall glass or an old fashioned glass. Bartenders may first \"rim\" the glass with Kosher Salt, which is done by placing a layer of Kosher Salt on a chopping board, moistening the glass' rim with lime juice or water, and then placing the upside down glass rim onto the Kosher Salt, so that the salt sticks to the moistened rim. The second step is to fill half the glass with ice and add one or two shooter glasses full of high quality Tequila. The next stage is to add the flavouring elements. This is done by squeezing a fresh lime into the glass, adding a few grains of salt, adding citrus-flavoured soda pop, until the glass is 4/5 full, and then adding spicy Viuda de Sanchez (or orange juice, lime juice and pico de gallo). The final step is to stir the ingredients so that the flavours are properly blended.",
+   "instructionsFR": "Les Vampiros peuvent être servis dans un grand verre ou dans un verre à l'ancienne. Les barmen peuvent d'abord \"border\" le verre avec du sel casher, en plaçant une couche de sel casher sur une planche à découper, en humidifiant le bord du verre avec du jus de citron vert ou de l'eau, puis en plaçant le bord du verre renversé sur le sel casher, de sorte que le sel adhère au bord humidifié. La deuxième étape consiste à remplir la moitié du verre avec de la glace et à ajouter un ou deux verres à shooter remplis de Tequila de haute qualité. L'étape suivante consiste à ajouter les éléments aromatiques. Pour ce faire, pressez un citron vert frais dans le verre, ajoutez quelques grains de sel, ajoutez du soda aromatisé aux agrumes, jusqu'à ce que le verre soit rempli aux 4/5, puis ajoutez de la Viuda de Sanchez épicée (ou du jus d'orange, du jus de citron vert et du pico de gallo). La dernière étape consiste à remuer les ingrédients pour que les saveurs se mélangent bien.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/yfhn371504374246.jpg"
+  }
+ },
+ {
+  "requestedName": "Whiskey Sour",
+  "cocktailDb": {
+   "cocktailDbId": "11004",
+   "name": "Whiskey Sour",
+   "iba": "Unforgettables",
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Blended whiskey"
+    ],
+    [
+     "Juice of 1/2",
+     "Lemon"
+    ],
+    [
+     "1/2 tsp",
+     "Powdered sugar"
+    ],
+    [
+     "1",
+     "Cherry"
+    ],
+    [
+     "1/2 slice",
+     "Lemon"
+    ]
+   ],
+   "instructions": "Shake with ice. Strain into chilled glass, garnish and serve. If served 'On the rocks', strain ingredients into old-fashioned glass filled with ice.",
+   "instructionsFR": "Agiter avec de la glace. Filtrer dans un verre réfrigéré, garnir et servir. Pour un service \"on the rocks\", filtrer les ingrédients dans un verre à l'ancienne rempli de glace.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/hbkfsh1589574990.jpg"
+  }
+ },
+ {
+  "requestedName": "Yellow Bird",
+  "cocktailDb": {
+   "cocktailDbId": "17219",
+   "name": "Yellow Bird",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "3 cl",
+     "White Rum"
+    ],
+    [
+     "1.5 cl",
+     "Galliano"
+    ],
+    [
+     "1.5 cl",
+     "Triple Sec"
+    ],
+    [
+     "1.5 cl",
+     "Lime Juice"
+    ]
+   ],
+   "instructions": "Shake and strain into a chilled cocktail glass",
+   "instructionsFR": "Agiter et filtrer dans un verre à cocktail réfrigéré",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/2t9r6w1504374811.jpg"
+  }
+ },
+ {
+  "requestedName": "Long Island Iced Tea",
+  "cocktailDb": {
+   "cocktailDbId": "17204",
+   "name": "Long Island Iced Tea",
+   "iba": "Contemporary Classics",
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "1/2 oz",
+     "Vodka"
+    ],
+    [
+     "1/2 oz",
+     "Tequila"
+    ],
+    [
+     "1/2 oz",
+     "Light rum"
+    ],
+    [
+     "1/2 oz",
+     "Gin"
+    ],
+    [
+     "1 dash",
+     "Coca-Cola"
+    ],
+    [
+     "Twist of",
+     "Lemon peel"
+    ]
+   ],
+   "instructions": "Mix all contents in a highball glass and sitr gently. Add dash of Coca-Cola for the coloring and garnish with lemon or lime twist.",
+   "instructionsFR": "Mélanger le tout dans un verre à cocktail et laisser reposer doucement. Ajouter un trait de Coca-Cola pour la coloration et garnir d'un zeste de citron ou de citron vert.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/wx7hsg1504370510.jpg"
+  }
+ },
+ {
+  "requestedName": "Barracuda",
+  "cocktailDb": {
+   "cocktailDbId": "17209",
+   "name": "Barracuda",
+   "iba": "New Era Drinks",
+   "alcoholic": "Alcoholic",
+   "glass": "Margarita glass",
+   "ingredients": [
+    [
+     "4.5 cl",
+     "Rum"
+    ],
+    [
+     "1.5 cl",
+     "Galliano"
+    ],
+    [
+     "6 cl",
+     "Pineapple Juice"
+    ],
+    [
+     "1 dash",
+     "Lime Juice"
+    ],
+    [
+     "top up",
+     "Prosecco"
+    ]
+   ],
+   "instructions": "Shake pour ingredients with ice. Strain into glass, top with Sparkling wine.",
+   "instructionsFR": "Secouer les ingrédients versés avec de la glace. Filtrer dans un verre et compléter avec du vin pétillant.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/jwmr1x1504372337.jpg"
+  }
+ },
+ {
+  "requestedName": "Affinity",
+  "cocktailDb": {
+   "cocktailDbId": "17840",
+   "name": "Affinity",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Scotch"
+    ],
+    [
+     "1 oz",
+     "Sweet Vermouth"
+    ],
+    [
+     "1 oz",
+     "Dry Vermouth"
+    ],
+    [
+     "2 dashes",
+     "Orange bitters"
+    ]
+   ],
+   "instructions": "In a mixing glass half-filled with ice cubes, combine all of the ingredients. Stir well. Strain into a cocktail glass.",
+   "instructionsFR": "Dans un verre à mélange à moitié rempli de glaçons, mélanger tous les ingrédients. Bien mélanger. Filtrer dans un verre à cocktail.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/wzdtnn1582477684.jpg"
+  }
+ },
+ {
+  "requestedName": "Algonquin",
+  "cocktailDb": {
+   "cocktailDbId": "11020",
+   "name": "Algonquin",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Blended whiskey"
+    ],
+    [
+     "1 oz",
+     "Dry Vermouth"
+    ],
+    [
+     "1 oz",
+     "Pineapple juice"
+    ]
+   ],
+   "instructions": "Combine and shake all ingredients with ice, strain contents into a cocktail glass, and serve.",
+   "instructionsFR": "Mélanger et secouer tous les ingrédients avec de la glace, filtrer le contenu dans un verre à cocktail et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/uwryxx1483387873.jpg"
+  }
+ },
+ {
+  "requestedName": "Bijou",
+  "cocktailDb": {
+   "cocktailDbId": "17254",
+   "name": "Bijou",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "1 dash",
+     "Orange Bitters"
+    ],
+    [
+     "1 oz",
+     "Green Chartreuse"
+    ],
+    [
+     "1 oz",
+     "Gin"
+    ],
+    [
+     "1 oz",
+     "Sweet Vermouth"
+    ]
+   ],
+   "instructions": "Stir in mixing glass with ice and strain\r\n",
+   "instructionsFR": "Mélanger dans un verre à mélange avec de la glace et filtrer\r\n",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/rysb3r1513706985.jpg"
+  }
+ },
+ {
+  "requestedName": "Brooklyn",
+  "cocktailDb": {
+   "cocktailDbId": "178310",
+   "name": "Brooklyn",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Rye Whiskey"
+    ],
+    [
+     "1 oz",
+     "Dry Vermouth"
+    ],
+    [
+     "1/4 oz",
+     "Maraschino Liqueur"
+    ],
+    [
+     "3 dashes",
+     "Angostura Bitters"
+    ],
+    [
+     "1",
+     "Maraschino Cherry"
+    ]
+   ],
+   "instructions": "Combine ingredients with ice and stir until well-chilled. Strain into a chilled cocktail glass.",
+   "instructionsFR": "Mélanger les ingrédients avec de la glace et remuer jusqu'à ce qu'ils soient bien refroidis. Filtrer dans un verre à cocktail bien frais.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/ojsezf1582477277.jpg"
+  }
+ },
+ {
+  "requestedName": "Bahama Mama",
+  "cocktailDb": {
+   "cocktailDbId": "17267",
+   "name": "Bahama Mama",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "3 parts",
+     "Rum"
+    ],
+    [
+     "1 part",
+     "Dark Rum"
+    ],
+    [
+     "1 part",
+     "Banana liqueur"
+    ],
+    [
+     "1 part",
+     "Grenadine"
+    ],
+    [
+     "2 parts",
+     "Pineapple Juice"
+    ],
+    [
+     "2 parts",
+     "Orange Juice"
+    ],
+    [
+     "1 part",
+     "Sweet and Sour"
+    ]
+   ],
+   "instructions": "Add 2 parts club soda or more or less to taste.\r\n\r\nMix it all together and pour over a bunch of ice. Drink with a straw.",
+   "instructionsFR": "Ajouter 2 mesures de club soda ou plus ou moins selon le goût.\r\n\r\nMélangez le tout et versez sur des glaçons. Boire avec une paille.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/tyb4a41515793339.jpg"
+  }
+ },
+ {
+  "requestedName": "Corpse Reviver",
+  "cocktailDb": {
+   "cocktailDbId": "17250",
+   "name": "Corpse Reviver",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Cocktail glass",
+   "ingredients": [
+    [
+     "3/4 oz",
+     "Gin"
+    ],
+    [
+     "3/4 oz",
+     "Triple Sec"
+    ],
+    [
+     "3/4 oz",
+     "Lillet Blanc"
+    ],
+    [
+     "3/4 oz",
+     "Lemon Juice"
+    ],
+    [
+     "1 dash",
+     "Absinthe"
+    ]
+   ],
+   "instructions": "Shake, strain, straight up, cocktail glass rinsed with absinthe\r\n",
+   "instructionsFR": "Secouer, filtrer, directement dans un verre à cocktail rincé à l'absinthe.\r\n",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/gifgao1513704334.jpg"
+  }
+ },
+ {
+  "requestedName": "Death in the Afternoon",
+  "cocktailDb": {
+   "cocktailDbId": "178334",
+   "name": "Death in the Afternoon",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Margarita glass",
+   "ingredients": [
+    [
+     "2 shots",
+     "Absinthe"
+    ],
+    [
+     "Top",
+     "Champagne"
+    ]
+   ],
+   "instructions": "Easy as you like, pour the absinthe into a chilled glass, top with champagne. Must be drunk mid afternoon for the optimum effect.",
+   "instructionsFR": "Facile comme bonjour, versez l'absinthe dans un verre bien frais et complétez avec du champagne. A consommer en milieu d'après-midi pour un effet optimal.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/y7s3rh1598719574.jpg"
+  }
+ },
+ {
+  "requestedName": "Frozen Daiquiri",
+  "cocktailDb": {
+   "cocktailDbId": "11387",
+   "name": "Frozen Daiquiri",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Champagne flute",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Light rum"
+    ],
+    [
+     "1 tblsp",
+     "Triple sec"
+    ],
+    [
+     "1 1/2 oz",
+     "Lime juice"
+    ],
+    [
+     "1 tsp",
+     "Sugar"
+    ],
+    [
+     "1",
+     "Cherry"
+    ],
+    [
+     "1 cup crushed",
+     "Ice"
+    ]
+   ],
+   "instructions": "Combine all ingredients (except for the cherry) in an electric blender and blend at a low speed for five seconds, then blend at a high speed until firm. Pour contents into a champagne flute, top with the cherry, and serve.",
+   "instructionsFR": "Mélanger tous les ingrédients (sauf la cerise) dans un mélangeur électrique et mélanger à basse vitesse pendant cinq secondes, puis mélanger à haute vitesse jusqu'à consistance ferme. Versez le contenu dans une flûte à champagne, garnissez de cerise et servez.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/7oyrj91504884412.jpg"
+  }
+ },
+ {
+  "requestedName": "Gimlet",
+  "cocktailDb": {
+   "cocktailDbId": "17255",
+   "name": "Gimlet",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Martini Glass",
+   "ingredients": [
+    [
+     "2 1/2 oz",
+     "Gin"
+    ],
+    [
+     "1/2 oz",
+     "Lime Juice"
+    ],
+    [
+     "1/2 oz",
+     "Sugar Syrup"
+    ],
+    [
+     "1",
+     "Lime"
+    ]
+   ],
+   "instructions": "Add all the ingredients to a shaker and fill with ice.\r\n\r\nShake, and strain into a chilled cocktail glass or an Old Fashioned glass filled with fresh ice.\r\n\r\nGarnish with a lime wheel.",
+   "instructionsFR": "Ajoutez tous les ingrédients dans un shaker et remplissez-le de glace.\r\n\r\nSecouez et filtrez dans un verre à cocktail réfrigéré ou un verre Old Fashioned rempli de glace fraîche.\r\n\r\nGarnir d'une roue de citron vert.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/3xgldt1513707271.jpg"
+  }
+ },
+ {
+  "requestedName": "Godmother",
+  "cocktailDb": {
+   "cocktailDbId": "11424",
+   "name": "Godmother",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "1 1/2 oz",
+     "Vodka"
+    ],
+    [
+     "3/4 oz",
+     "Amaretto"
+    ]
+   ],
+   "instructions": "Pour vodka and amaretto into an old-fashioned glass over ice and serve.",
+   "instructionsFR": "Verser la vodka et l'amaretto dans un verre à l'ancienne avec des glaçons et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/quksqg1582582597.jpg"
+  }
+ },
+ {
+  "requestedName": "Gin Sour",
+  "cocktailDb": {
+   "cocktailDbId": "11417",
+   "name": "Gin Sour",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Whiskey sour glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Gin"
+    ],
+    [
+     "1 oz",
+     "Lemon juice"
+    ],
+    [
+     "1/2 tsp superfine",
+     "Sugar"
+    ],
+    [
+     "1",
+     "Orange"
+    ],
+    [
+     "1",
+     "Maraschino cherry"
+    ]
+   ],
+   "instructions": "In a shaker half-filled with ice cubes, combine the gin, lemon juice, and sugar. Shake well. Strain into a sour glass and garnish with the orange slice and the cherry.",
+   "instructionsFR": "Dans un shaker à moitié rempli de glaçons, mélangez le gin, le jus de citron et le sucre. Bien agiter. Filtrer dans un verre acidulé et garnir de tranche d'orange et de cerise.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/noxp7e1606769224.jpg"
+  }
+ },
+ {
+  "requestedName": "Gin Tonic",
+  "cocktailDb": {
+   "cocktailDbId": "178365",
+   "name": "Gin Tonic",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "4 cl",
+     "Gin"
+    ],
+    [
+     "10 cl",
+     "Tonic Water"
+    ],
+    [
+     "1 Slice",
+     "Lemon Peel"
+    ],
+    [
+     "cubes",
+     "Ice"
+    ]
+   ],
+   "instructions": "Fill a highball glass with ice, pour the gin, top with tonic water and squeeze a lemon wedge and garnish with a lemon wedge.",
+   "instructionsFR": "Remplissez un verre highball de glace, versez le gin, complétez avec de l'eau tonique, pressez un quartier de citron et décorez avec un quartier de citron.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg"
+  }
+ },
+ {
+  "requestedName": "Gin Smash",
+  "cocktailDb": {
+   "cocktailDbId": "11416",
+   "name": "Gin Smash",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Old-fashioned glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Gin"
+    ],
+    [
+     "1 oz",
+     "Carbonated water"
+    ],
+    [
+     "1 cube",
+     "Sugar"
+    ],
+    [
+     "4",
+     "Mint"
+    ],
+    [
+     "1 slice",
+     "Orange"
+    ],
+    [
+     "1",
+     "Cherry"
+    ]
+   ],
+   "instructions": "Muddle sugar with carbonated water and mint sprigs in an old-fashioned glass. Add gin and 1 ice cube. Stir, add the orange slice and the cherry, and serve.",
+   "instructionsFR": "Dans un verre à l'ancienne, mélangez le sucre avec l'eau gazeuse et les brins de menthe. Ajouter le gin et un glaçon. Remuer, ajouter la tranche d'orange et la cerise, et servir.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/iprva61606768774.jpg"
+  }
+ },
+ {
+  "requestedName": "Gin Rickey",
+  "cocktailDb": {
+   "cocktailDbId": "17230",
+   "name": "Gin Rickey",
+   "iba": null,
+   "alcoholic": "Alcoholic",
+   "glass": "Highball glass",
+   "ingredients": [
+    [
+     "2 oz",
+     "Gin"
+    ],
+    [
+     "1 tsp",
+     "Grenadine"
+    ],
+    [
+     "Juice of 1/2",
+     "lemon"
+    ],
+    [
+     "Top up with",
+     "Soda Water"
+    ],
+    [
+     "Garnish",
+     "Lime"
+    ]
+   ],
+   "instructions": "Half-fill a tall glass with ice. Mix the gin and Grenadine together and pour over the ice. Add the lime or lemon juice and top off with soda water. Decorate the glass with lime and/or lemon slices.",
+   "instructionsFR": "Remplir à moitié un grand verre de glace. Mélanger le gin et la grenadine et verser sur la glace. Ajoutez le jus de citron ou de lime et complétez avec de l'eau gazeuse. Décorez le verre avec des tranches de citron et/ou de lime.",
+   "thumb": "https://www.thecocktaildb.com/images/media/drink/s00d6f1504883945.jpg"
+  }
+ }
+]

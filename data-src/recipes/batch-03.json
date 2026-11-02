@@ -1,0 +1,670 @@
+{
+  "cocktails": [
+    {
+      "id": "tequila-sunrise",
+      "name": "Tequila Sunrise",
+      "aliases": [],
+      "tagline": "Un lever de soleil d'orange et de grenadine",
+      "description": "Popularisé dans les années 1970 en Californie, où il serait devenu la boisson fétiche de nombreux musiciens rock, il doit son nom au dégradé qui se forme dans le verre. La tequila reste discrète derrière le jus d'orange, tandis que la grenadine apporte une touche sucrée et fruitée au fond du verre.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "tequila", "amount": 45, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 90, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Demi-rondelle d'orange et cerise",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la tequila puis le jus d'orange et remuer brièvement.",
+        "Verser doucement la grenadine le long de la paroi pour qu'elle tombe au fond.",
+        "Ne pas remuer afin de garder le dégradé."
+      ],
+      "flavors": ["Fruité", "Agrume", "Sucré"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#F59A2E",
+      "cocktailDbId": "13621",
+      "notes": ""
+    },
+    {
+      "id": "tuxedo",
+      "name": "Tuxedo",
+      "aliases": ["Tuxedo Cocktail", "Tuxedo No. 2"],
+      "tagline": "Le dry martini relevé de marasquin et d'absinthe",
+      "description": "Baptisé d'après le Tuxedo Club, cercle mondain de l'État de New York de la fin du XIXe siècle, ce proche parent du Martini apparaît dans les manuels de bar dès les années 1880-1900. Gin Old Tom et vermouth sec à parts égales donnent une base souple, que quelques gouttes de marasquin et d'absinthe rendent plus aromatique.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "old-tom-gin", "amount": 30, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 30, "unit": "ml" },
+        { "id": "maraschino", "amount": 2.5, "unit": "ml", "note": "1/2 cuillère de bar" },
+        { "id": "absinthe", "amount": 1, "unit": "trait", "note": "1/4 de cuillère de bar" },
+        { "id": "orange-bitters", "amount": 3, "unit": "trait" }
+      ],
+      "garnish": "Cerise au marasquin et zeste de citron",
+      "steps": [
+        "Rafraîchir un verre à martini avec des glaçons.",
+        "Verser tous les ingrédients dans un verre à mélange rempli de glace.",
+        "Remuer 20 à 30 secondes jusqu'à ce que le mélange soit bien froid.",
+        "Filtrer dans le verre vidé de sa glace et garnir."
+      ],
+      "flavors": ["Sec", "Herbacé", "Floral"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#EDE5C6",
+      "cocktailDbId": "12420",
+      "notes": "Doses alignées sur l'IBA (Old Tom gin et vermouth sec 30 ml chacun, 3 traits de bitter) au lieu de 45 ml chacun et 2 traits dans la source."
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper",
+      "aliases": ["Vesper Martini"],
+      "tagline": "Le martini de James Bond, gin et vodka au Lillet",
+      "description": "Imaginé par Ian Fleming dans Casino Royale (1953), où James Bond le commande et le nomme d'après Vesper Lynd. Le gin domine, la vodka adoucit l'ensemble et le Lillet blanc apporte une note fruitée et légèrement amère ; c'est un drink sec et puissant.",
+      "family": "Spirit-forward",
+      "method": "Shaker",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "vodka", "amount": 15, "unit": "ml" },
+        { "id": "lillet-blanc", "amount": 7.5, "unit": "ml" }
+      ],
+      "garnish": "Large zeste de citron",
+      "steps": [
+        "Rafraîchir un verre à martini.",
+        "Verser le gin, la vodka et le Lillet dans un shaker rempli de glace.",
+        "Shaker 10 à 12 secondes, jusqu'à ce que le shaker soit glacé.",
+        "Filtrer dans le verre et exprimer le zeste de citron au-dessus avant de le déposer."
+      ],
+      "flavors": ["Sec", "Corsé", "Agrume"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#F1EBCB",
+      "cocktailDbId": "17218",
+      "notes": "Gin ramené à 45 ml selon la spécification IBA actuelle (60 ml dans la source, dose de l'ancienne spécification)."
+    },
+    {
+      "id": "vampiro",
+      "name": "Vampiro",
+      "aliases": [],
+      "tagline": "Tequila, tomate et agrumes, pimenté à la mexicaine",
+      "description": "Originaire du Mexique, et plus précisément de la région de Jalisco selon la plupart des récits, le Vampiro s'inspire de la sangrita qui accompagne traditionnellement la tequila. Tomate, orange et citron vert se mêlent au piment, à l'oignon et au sel pour un long drink salé, épicé et désaltérant.",
+      "family": "Highball",
+      "method": "Shaker",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "tequila", "amount": 50, "unit": "ml", "note": "blanco ou reposado" },
+        { "id": "jus-de-tomate", "amount": 70, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 30, "unit": "ml" },
+        { "id": "citron-vert", "amount": 10, "unit": "ml" },
+        { "id": "miel", "amount": 1, "unit": "cuillère" },
+        { "id": "oignon", "amount": 0.5, "unit": "tranche", "note": "hachée finement" },
+        { "id": "piment-frais", "amount": 3, "unit": "tranche", "note": "rondelles de piment rouge" },
+        { "id": "sauce-worcestershire", "amount": 3, "unit": "goutte" },
+        { "id": "sel", "amount": 1, "unit": "pincée" }
+      ],
+      "garnish": "Quartier de citron vert et piment",
+      "steps": [
+        "Verser tous les ingrédients dans un shaker rempli de glace.",
+        "Shaker doucement une dizaine de secondes pour bien dissoudre le miel.",
+        "Filtrer dans un verre highball rempli de glaçons.",
+        "Garnir et goûter : ajuster le sel ou le piment si besoin."
+      ],
+      "flavors": ["Épicé", "Salé", "Agrume", "Fruité"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#C8502F",
+      "cocktailDbId": "17217",
+      "notes": "Recette IBA (miel, oignon, piment, Worcestershire) ; la source décrit une version de rue au soda d'agrumes et à la sangrita du commerce, avec 60 ml de tequila et du sirop de sucre."
+    },
+    {
+      "id": "whiskey-sour",
+      "name": "Whiskey Sour",
+      "aliases": ["Whisky Sour", "Bourbon Sour"],
+      "tagline": "Bourbon, citron et sucre : le sour dans sa version mère",
+      "description": "Mentionné dès les années 1860 dans les premiers guides de bar américains, le Whiskey Sour est l'archétype de la famille des sours. Le bourbon apporte rondeur et notes boisées, le citron le tranche net, et le blanc d'œuf facultatif lui donne une texture veloutée et une belle mousse.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "bourbon", "amount": 45, "unit": "ml" },
+        { "id": "citron", "amount": 25, "unit": "ml" },
+        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 20, "unit": "ml", "optional": true, "note": "pour la mousse" }
+      ],
+      "garnish": "Demi-rondelle d'orange et cerise au marasquin",
+      "steps": [
+        "Avec le blanc d'œuf, shaker d'abord 10 secondes sans glace pour l'émulsionner.",
+        "Ajouter la glace et shaker vivement 10 à 12 secondes.",
+        "Filtrer sur un gros glaçon dans un verre old fashioned (ou sans glace dans une coupe rafraîchie).",
+        "Garnir d'orange et de cerise."
+      ],
+      "flavors": ["Acidulé", "Boisé", "Sucré"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#E8B04A",
+      "cocktailDbId": "11004",
+      "notes": "Spécification IBA (bourbon 45 ml, citron 25 ml, sirop 20 ml, blanc d'œuf facultatif) ; la source utilise du blended whiskey et du sucre en poudre."
+    },
+    {
+      "id": "yellow-bird",
+      "name": "Yellow Bird",
+      "aliases": [],
+      "tagline": "Rhum blanc, Galliano et citron vert, soleil en coupe",
+      "description": "Associé aux Caraïbes, ce cocktail porterait le nom d'une chanson populaire tirée d'un air folklorique haïtien, sans que son origine exacte soit établie. Le Galliano y ajoute vanille et anis au duo rhum-citron vert, adouci par le triple sec : un sour doré, fruité et parfumé.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 30, "unit": "ml" },
+        { "id": "galliano", "amount": 15, "unit": "ml" },
+        { "id": "triple-sec", "amount": 15, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Rondelle de citron vert",
+      "steps": [
+        "Rafraîchir un verre à martini.",
+        "Verser tous les ingrédients dans un shaker rempli de glace.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer dans le verre rafraîchi."
+      ],
+      "flavors": ["Agrume", "Sucré", "Herbacé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#F2D24B",
+      "cocktailDbId": "17219",
+      "notes": ""
+    },
+    {
+      "id": "long-island-iced-tea",
+      "name": "Long Island Iced Tea",
+      "aliases": ["Long Island"],
+      "tagline": "Cinq alcools, un trait de cola, l'air d'un thé glacé",
+      "description": "Sa paternité est le plus souvent attribuée à un barman de Long Island dans les années 1970, mais plusieurs versions circulent. Malgré son apparence de thé glacé, il assemble vodka, gin, tequila, rhum et triple sec, équilibrés par le citron, le sucre et une touche de cola : très frais à boire, mais nettement chargé en alcool.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 15, "unit": "ml" },
+        { "id": "tequila", "amount": 15, "unit": "ml" },
+        { "id": "rhum-blanc", "amount": 15, "unit": "ml" },
+        { "id": "gin", "amount": 15, "unit": "ml" },
+        { "id": "triple-sec", "amount": 15, "unit": "ml" },
+        { "id": "citron", "amount": 25, "unit": "ml" },
+        { "id": "sucre", "amount": 30, "unit": "ml" },
+        { "id": "coca-cola", "amount": 40, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Spirale de zeste de citron",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser les cinq alcools, le jus de citron et le sirop de sucre.",
+        "Compléter avec le cola.",
+        "Remuer doucement de bas en haut et servir avec une paille."
+      ],
+      "flavors": ["Agrume", "Sucré", "Corsé"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#A3622C",
+      "cocktailDbId": "17204",
+      "notes": "Spécification IBA : ajout du triple sec, du jus de citron et du sirop, absents de la source."
+    },
+    {
+      "id": "barracuda",
+      "name": "Barracuda",
+      "aliases": [],
+      "tagline": "Rhum ambré et ananas sous une mousse de prosecco",
+      "description": "Création italienne contemporaine reprise par l'IBA, le Barracuda marie l'ananas et le rhum ambré à la vanille anisée du Galliano. Le prosecco versé en dernier allège l'ensemble et lui donne un pétillant festif.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-ambre", "amount": 45, "unit": "ml" },
+        { "id": "galliano", "amount": 15, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 60, "unit": "ml" },
+        { "id": "citron-vert", "amount": 1, "unit": "trait" },
+        { "id": "prosecco", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser le rhum, le Galliano, le jus d'ananas et le citron vert dans un shaker rempli de glace.",
+        "Shaker vivement 10 secondes.",
+        "Filtrer dans une grande coupe rafraîchie.",
+        "Compléter délicatement avec le prosecco bien froid."
+      ],
+      "flavors": ["Tropical", "Fruité", "Pétillant"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#F2C84E",
+      "cocktailDbId": "17209",
+      "notes": "Rhum ambré (gold rum) comme le veut l'IBA ; servi en coupe faute de verre à margarita dans la liste."
+    },
+    {
+      "id": "affinity",
+      "name": "Affinity",
+      "aliases": ["Affinity Cocktail"],
+      "tagline": "Scotch et deux vermouths, un Rob Roy tout en équilibre",
+      "description": "Ce classique du début du XXe siècle figure dans plusieurs ouvrages de l'entre-deux-guerres comme une variante du Rob Roy. En partageant le vermouth entre rouge et sec, il gagne en équilibre : le scotch reste au centre, entouré de notes vineuses, légèrement sucrées et épicées.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "scotch", "amount": 45, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 30, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 30, "unit": "ml" },
+        { "id": "angostura", "amount": 2, "unit": "trait" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Rafraîchir une coupe.",
+        "Verser tous les ingrédients dans un verre à mélange à moitié rempli de glace.",
+        "Remuer 20 à 30 secondes.",
+        "Filtrer dans la coupe et exprimer le zeste de citron au-dessus."
+      ],
+      "flavors": ["Boisé", "Épicé", "Sec"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#9A4B2B",
+      "cocktailDbId": "17840",
+      "notes": "Angostura à la place du bitter orange de la source, conformément à la recette classique la plus répandue."
+    },
+    {
+      "id": "algonquin",
+      "name": "Algonquin",
+      "aliases": [],
+      "tagline": "Rye, vermouth sec et ananas, façon New York chic",
+      "description": "Il porte le nom de l'hôtel Algonquin de Manhattan, célèbre pour la table ronde d'écrivains et de critiques qui s'y réunissait dans les années 1920, sans que sa création y soit formellement attestée. Le rye épicé, le vermouth sec et une touche d'ananas donnent un cocktail sec, légèrement fruité et étonnamment soyeux.",
+      "family": "Spirit-forward",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rye", "amount": 50, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 25, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 25, "unit": "ml" }
+      ],
+      "garnish": "Cerise au marasquin (facultatif)",
+      "steps": [
+        "Rafraîchir une coupe.",
+        "Verser tous les ingrédients dans un shaker rempli de glace.",
+        "Shaker vivement 10 à 12 secondes pour faire mousser l'ananas.",
+        "Double-filtrer dans la coupe."
+      ],
+      "flavors": ["Boisé", "Fruité", "Sec"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E2C27C",
+      "cocktailDbId": "11020",
+      "notes": "Rye à la place du blended whiskey et proportions 2:1:1 de la recette classique (source : 45/30/30)."
+    },
+    {
+      "id": "bijou",
+      "name": "Bijou",
+      "aliases": ["Bijou Cocktail"],
+      "tagline": "Gin, chartreuse verte et vermouth rouge à parts égales",
+      "description": "Attribué au barman Harry Johnson à la fin du XIXe siècle, le Bijou devrait son nom aux pierres précieuses évoquées par ses ingrédients : le diamant du gin, le rubis du vermouth et l'émeraude de la chartreuse. Riche et herbacé, il est porté par la puissance végétale de la chartreuse et arrondi par le vermouth.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 30, "unit": "ml" },
+        { "id": "chartreuse-verte", "amount": 30, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 30, "unit": "ml" },
+        { "id": "orange-bitters", "amount": 1, "unit": "trait" }
+      ],
+      "garnish": "Zeste de citron et cerise",
+      "steps": [
+        "Rafraîchir une coupe.",
+        "Verser tous les ingrédients dans un verre à mélange rempli de glace.",
+        "Remuer 30 secondes pour bien diluer ce mélange puissant.",
+        "Filtrer dans la coupe et garnir."
+      ],
+      "flavors": ["Herbacé", "Sucré", "Corsé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#8C6A22",
+      "cocktailDbId": "17254",
+      "notes": ""
+    },
+    {
+      "id": "brooklyn",
+      "name": "Brooklyn",
+      "aliases": [],
+      "tagline": "Le cousin sec et amer du Manhattan",
+      "description": "Apparu au début du XXe siècle, le Brooklyn fait partie des cocktails nommés d'après les quartiers de New York, dans le sillage du Manhattan. Le rye y rencontre le vermouth sec, le marasquin et un amer à l'orange : le résultat est sec, épicé et doucement amer.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rye", "amount": 60, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 30, "unit": "ml" },
+        { "id": "maraschino", "amount": 7.5, "unit": "ml" },
+        { "id": "amaro-nonino", "amount": 7.5, "unit": "ml", "note": "idéalement Amer Picon, sinon un amaro à l'orange" }
+      ],
+      "garnish": "Cerise au marasquin",
+      "steps": [
+        "Rafraîchir une coupe.",
+        "Verser tous les ingrédients dans un verre à mélange rempli de glace.",
+        "Remuer 20 à 30 secondes.",
+        "Filtrer dans la coupe et ajouter la cerise."
+      ],
+      "flavors": ["Boisé", "Amer", "Sec"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#C4863A",
+      "cocktailDbId": "178310",
+      "notes": "Recette classique avec Amer Picon (remplacé par un amaro, absent du catalogue) ; la source remplace l'Amer Picon par de l'Angostura."
+    },
+    {
+      "id": "bahama-mama",
+      "name": "Bahama Mama",
+      "aliases": [],
+      "tagline": "Deux rhums, banane et jus tropicaux en grand verre",
+      "description": "Long drink de vacances né aux Bahamas, dont la recette varie beaucoup d'un bar à l'autre et dont l'origine précise reste floue. Rhums blanc et brun, crème de banane, ananas, orange et grenadine composent un cocktail fruité, sucré et très tropical, relevé par un peu de citron vert.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Hurricane",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 45, "unit": "ml" },
+        { "id": "rhum-brun", "amount": 15, "unit": "ml" },
+        { "id": "liqueur-banane", "amount": 15, "unit": "ml" },
+        { "id": "jus-d-ananas", "amount": 60, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 30, "unit": "ml" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Quartier d'ananas et cerise",
+      "steps": [
+        "Verser tous les ingrédients dans un shaker rempli de glace.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer dans un verre hurricane rempli de glaçons.",
+        "Garnir et servir avec une paille."
+      ],
+      "flavors": ["Tropical", "Fruité", "Sucré"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F07B3B",
+      "cocktailDbId": "17267",
+      "notes": "Pas de recette de référence unique. Proportions de la source conservées (1 part = 15 ml), sweet & sour remplacé par du citron vert, grenadine réduite et eau gazeuse omise."
+    },
+    {
+      "id": "corpse-reviver-2",
+      "name": "Corpse Reviver #2",
+      "aliases": ["Corpse Reviver", "Corpse Reviver No. 2"],
+      "tagline": "Gin, Lillet, Cointreau, citron : le remède à parts égales",
+      "description": "Popularisé par le Savoy Cocktail Book d'Harry Craddock en 1930, il appartient à une famille de « remontants » censés réveiller les lendemains difficiles. Les quatre ingrédients à parts égales donnent un sour vif et parfumé, où un simple soupçon d'absinthe ajoute une profondeur anisée.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 30, "unit": "ml" },
+        { "id": "triple-sec", "amount": 30, "unit": "ml" },
+        { "id": "lillet-blanc", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 30, "unit": "ml" },
+        { "id": "absinthe", "amount": 1, "unit": "trait" }
+      ],
+      "garnish": "Zeste d'orange",
+      "steps": [
+        "Rafraîchir une coupe (on peut aussi la rincer à l'absinthe au lieu de la mettre dans le shaker).",
+        "Verser tous les ingrédients dans un shaker rempli de glace.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et exprimer le zeste d'orange au-dessus."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Herbacé"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#F0E2A6",
+      "cocktailDbId": "17250",
+      "notes": "La source (« Corpse Reviver ») décrit le Corpse Reviver #2 : fiche nommée en conséquence, spécification IBA (catégorie Unforgettables)."
+    },
+    {
+      "id": "death-in-the-afternoon",
+      "name": "Death in the Afternoon",
+      "aliases": ["Hemingway Champagne", "Mort dans l'après-midi"],
+      "tagline": "Absinthe et champagne, la recette signée Hemingway",
+      "description": "Ernest Hemingway a confié cette recette à un recueil de cocktails d'écrivains paru en 1935, en reprenant le titre de son livre sur la tauromachie. Le champagne glacé trouble l'absinthe et la rend opalescente : la boisson est sèche, anisée et pétillante, plus puissante qu'elle n'en a l'air.",
+      "family": "Pétillant & Spritz",
+      "method": "Au verre",
+      "glass": "Flûte",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "absinthe", "amount": 45, "unit": "ml" },
+        { "id": "champagne", "amount": 120, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser l'absinthe dans une flûte bien froide.",
+        "Compléter lentement avec le champagne glacé jusqu'à ce que le mélange devienne laiteux.",
+        "Servir aussitôt, sans remuer."
+      ],
+      "flavors": ["Herbacé", "Pétillant", "Sec"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#DCE7C1",
+      "cocktailDbId": "178334",
+      "notes": "Absinthe ramenée de 90 ml (2 shots dans la source) à 45 ml, soit le jigger de la recette d'Hemingway."
+    },
+    {
+      "id": "frozen-daiquiri",
+      "name": "Frozen Daiquiri",
+      "aliases": ["Daiquiri frappé"],
+      "tagline": "Le daiquiri passé au blender, glacé comme un sorbet",
+      "description": "La version frappée du daiquiri a été popularisée à La Havane, notamment au bar El Floridita, dont Hemingway était un habitué. Rhum blanc, citron vert et sucre mixés avec de la glace pilée donnent une texture de granité, acidulée et très rafraîchissante.",
+      "family": "Sour",
+      "method": "Blender",
+      "glass": "Coupe",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 60, "unit": "ml" },
+        { "id": "citron-vert", "amount": 30, "unit": "ml" },
+        { "id": "sucre", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Rondelle de citron vert",
+      "steps": [
+        "Verser le rhum, le citron vert et le sirop dans un blender avec environ 150 g de glace pilée.",
+        "Mixer d'abord à vitesse lente quelques secondes, puis à pleine vitesse jusqu'à obtenir une texture lisse.",
+        "Goûter et ajuster le sucre si besoin.",
+        "Verser dans une coupe rafraîchie et servir avec une paille courte."
+      ],
+      "flavors": ["Acidulé", "Frais", "Sucré"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#EEF2D6",
+      "cocktailDbId": "11387",
+      "notes": "Triple sec de la source retiré (absent de la recette classique) ; servi en coupe plutôt qu'en flûte."
+    },
+    {
+      "id": "gimlet",
+      "name": "Gimlet",
+      "aliases": [],
+      "tagline": "Gin et cordial de citron vert, net et tranchant",
+      "description": "Il aurait vu le jour dans la marine britannique, où le jus de citron vert conservé était distribué contre le scorbut et se mariait volontiers au gin des officiers. Le cordial de citron vert lui donne son caractère à la fois acidulé et confit, autour d'un gin bien présent.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "cordial-citron-vert", "amount": 15, "unit": "ml", "note": "ou 15 ml de sirop de sucre" },
+        { "id": "citron-vert", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Rondelle ou zeste de citron vert",
+      "steps": [
+        "Rafraîchir une coupe.",
+        "Verser tous les ingrédients dans un shaker rempli de glace.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans la coupe et garnir."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Herbacé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E5ECC4",
+      "cocktailDbId": "17255",
+      "notes": "Version au cordial de citron vert, fidèle au classique ; la source (gin 75 ml, sirop de sucre) est une variante moderne."
+    },
+    {
+      "id": "godmother",
+      "name": "Godmother",
+      "aliases": [],
+      "tagline": "Vodka et amaretto sur glace, l'amande sans détour",
+      "description": "Variante du Godfather apparue dans les années 1970, elle remplace le whisky par la vodka. Plus neutre, la base laisse toute la place à l'amaretto : une boisson douce aux notes d'amande et de massepain, à siroter lentement.",
+      "family": "Spirit-forward",
+      "method": "Au verre",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "vodka", "amount": 50, "unit": "ml" },
+        { "id": "amaretto", "amount": 25, "unit": "ml" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Placer un gros glaçon dans un verre old fashioned.",
+        "Verser la vodka puis l'amaretto.",
+        "Remuer une quinzaine de secondes pour refroidir et lier le mélange."
+      ],
+      "flavors": ["Sucré", "Corsé"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#E8C88E",
+      "cocktailDbId": "11424",
+      "notes": ""
+    },
+    {
+      "id": "gin-sour",
+      "name": "Gin Sour",
+      "aliases": [],
+      "tagline": "Gin, citron et sucre, le sour le plus aromatique",
+      "description": "Ancêtre direct du Tom Collins et du Gin Fizz, le Gin Sour applique au gin la formule du sour née au XIXe siècle. Les botaniques du gin ressortent sous l'acidité du citron, et le blanc d'œuf facultatif lui donne une mousse soyeuse.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 50, "unit": "ml" },
+        { "id": "citron", "amount": 25, "unit": "ml" },
+        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 20, "unit": "ml", "optional": true, "note": "pour la mousse" }
+      ],
+      "garnish": "Demi-rondelle d'orange et cerise",
+      "steps": [
+        "Avec le blanc d'œuf, shaker d'abord 10 secondes sans glace.",
+        "Ajouter la glace et shaker vivement 10 à 12 secondes.",
+        "Double-filtrer dans une coupe rafraîchie.",
+        "Garnir d'orange et de cerise."
+      ],
+      "flavors": ["Acidulé", "Herbacé", "Agrume"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F1E6B2",
+      "cocktailDbId": "11417",
+      "notes": "Sucre porté à 20 ml de sirop (1/2 c. à café de sucre dans la source, trop peu pour 30 ml de citron)."
+    },
+    {
+      "id": "gin-tonic",
+      "name": "Gin Tonic",
+      "aliases": ["Gin & Tonic", "Gin and Tonic", "G&T"],
+      "tagline": "Gin, tonic bien froid et un trait d'agrume",
+      "description": "On rattache souvent sa naissance aux Britanniques installés en Inde au XIXe siècle, qui adoucissaient leur quinine contre le paludisme avec du gin, du sucre et de l'eau. Simple en apparence, il dépend surtout de la qualité du tonic et de la glace : amer, frais et pétillant, il laisse s'exprimer les botaniques du gin.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "gin", "amount": 50, "unit": "ml" },
+        { "id": "tonic", "amount": 150, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Quartier de citron vert ou rondelle de citron",
+      "steps": [
+        "Remplir un verre highball de glaçons bien froids.",
+        "Verser le gin.",
+        "Compléter avec le tonic en le faisant couler le long d'une cuillère pour garder les bulles.",
+        "Remuer une seule fois délicatement et ajouter l'agrume."
+      ],
+      "flavors": ["Amer", "Pétillant", "Frais", "Herbacé"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#EDF3F1",
+      "cocktailDbId": "178365",
+      "notes": ""
+    },
+    {
+      "id": "gin-smash",
+      "name": "Gin Smash",
+      "aliases": [],
+      "tagline": "Citron écrasé, menthe et gin sur glace pilée",
+      "description": "Le smash figure déjà dans le guide de Jerry Thomas de 1862, comme un petit julep à la menthe ; la version moderne, avec des quartiers de citron pilés, a été relancée par les bartenders new-yorkais des années 1990-2000. Frais et mentholé, il équilibre l'agrume pressé et le sucre autour du gin.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "citron-quartiers", "amount": 3, "unit": "pièce", "note": "quartiers" },
+        { "id": "menthe", "amount": 8, "unit": "pièce", "note": "feuilles" },
+        { "id": "sucre", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Brin de menthe",
+      "steps": [
+        "Piler les quartiers de citron avec le sirop dans le shaker pour en extraire jus et huiles.",
+        "Ajouter les feuilles de menthe et les presser doucement, sans les déchiqueter.",
+        "Ajouter le gin et la glace, puis shaker 10 secondes.",
+        "Double-filtrer sur de la glace pilée dans un verre old fashioned et garnir de menthe."
+      ],
+      "flavors": ["Frais", "Herbacé", "Agrume"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#DDE8C6",
+      "cocktailDbId": "11416",
+      "notes": "Version moderne au citron pilé ; la source suit la formule ancienne (sucre, eau gazeuse, menthe, sans agrume)."
+    },
+    {
+      "id": "gin-rickey",
+      "name": "Gin Rickey",
+      "aliases": ["Rickey"],
+      "tagline": "Gin, citron vert et eau gazeuse, sec et désaltérant",
+      "description": "Selon le récit le plus courant, le Rickey est né à Washington dans les années 1880, au nom d'un lobbyiste nommé Joe Rickey, d'abord avec du bourbon avant que le gin ne s'impose. Sans sucre, c'est un highball sec et très rafraîchissant, où le citron vert pressé et ses écorces parfument l'eau gazeuse.",
+      "family": "Fizz & Collins",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "gin", "amount": 50, "unit": "ml" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml", "note": "un demi-citron vert pressé" },
+        { "id": "sucre", "amount": 5, "unit": "ml", "optional": true, "note": "pour une version moins sèche" },
+        { "id": "soda", "amount": 120, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "L'écorce du demi-citron vert pressé",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Presser le demi-citron vert dans le verre et y laisser tomber l'écorce.",
+        "Verser le gin (et le sirop si désiré).",
+        "Compléter avec l'eau gazeuse et remuer brièvement."
+      ],
+      "flavors": ["Acidulé", "Pétillant", "Sec", "Frais"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#EFF4EA",
+      "cocktailDbId": "17230",
+      "notes": "Recette classique sans grenadine ni citron jaune (présents dans la source, qui s'écarte du Rickey) ; la photo de la source peut donc ne pas correspondre."
+    }
+  ],
+  "newIngredients": [
+    ["oignon", "Oignon", "frais_garniture", 0, 40, 0, 0, "🧅"],
+    ["piment-frais", "Piment frais", "frais_garniture", 0, 0, 0, 0, "🌶️"]
+  ]
+}

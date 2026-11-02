@@ -1,0 +1,652 @@
+{
+  "cocktails": [
+    {
+      "id": "greyhound",
+      "name": "Greyhound",
+      "aliases": [],
+      "tagline": "Vodka et pamplemousse, l'amertume en version désaltérante",
+      "description": "Ce highball tout simple s'est popularisé aux États-Unis au milieu du XXe siècle, et l'on rattache souvent son nom aux restaurants des gares routières Greyhound. La vodka s'efface derrière le pamplemousse, qui apporte une acidité franche et une pointe d'amertume très rafraîchissante. Avec une croûte de sel, il devient le Salty Dog.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "vodka", "amount": 45, "unit": "ml" },
+        { "id": "jus-de-pamplemousse", "amount": 120, "unit": "ml", "note": "de préférence pressé" }
+      ],
+      "garnish": "Quartier de pamplemousse",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser la vodka, puis compléter avec le jus de pamplemousse.",
+        "Remuer brièvement avec une cuillère de bar."
+      ],
+      "flavors": ["Agrume", "Amer", "Frais"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#F2C7A5",
+      "cocktailDbId": "17252",
+      "notes": ""
+    },
+    {
+      "id": "hot-toddy",
+      "name": "Hot Toddy",
+      "aliases": ["Toddy"],
+      "tagline": "Whisky, miel et citron dans l'eau chaude, le grog écossais",
+      "description": "Boisson chaude des pays anglo-saxons depuis le XVIIIe siècle, le Hot Toddy est aussi un remède de grand-mère contre les soirées d'hiver et les rhumes. Le whisky se détend dans l'eau chaude, adouci par le miel et réveillé par le citron, tandis que la cannelle et les clous de girofle apportent une chaleur épicée.",
+      "family": "Chaud",
+      "method": "Au verre",
+      "glass": "Tasse",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "scotch", "amount": 50, "unit": "ml", "note": "ou whiskey irlandais" },
+        { "id": "miel", "amount": 15, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" },
+        { "id": "eau", "amount": 120, "unit": "ml", "note": "frémissante" },
+        { "id": "cannelle", "amount": 1, "unit": "pièce", "optional": true }
+      ],
+      "garnish": "Rondelle de citron piquée de clous de girofle",
+      "steps": [
+        "Réchauffer la tasse en la remplissant d'eau chaude, puis la vider.",
+        "Y délayer le miel avec le whisky et le jus de citron.",
+        "Ajouter l'eau frémissante et le bâton de cannelle, puis remuer.",
+        "Goûter et ajuster le citron ou le miel avant de servir aussitôt."
+      ],
+      "flavors": ["Épicé", "Boisé", "Sucré", "Agrume"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#D9A441",
+      "cocktailDbId": "178345",
+      "notes": "Source pour deux verres ramenée à une portion ; eau ramenée de 200 à 120 ml."
+    },
+    {
+      "id": "honey-bee",
+      "name": "Honey Bee",
+      "aliases": [],
+      "tagline": "Le cousin rhum du Bee's Knees, miel et citron en coupe",
+      "description": "Le Honey Bee figure dans des ouvrages de bar du milieu du XXe siècle comme une variation au rhum du sour au miel. Le sirop de miel arrondit l'acidité du citron et laisse au rhum blanc toute sa fraîcheur, pour un résultat soyeux, floral et bien équilibré.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 60, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sirop-de-miel", "amount": 20, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker.",
+        "Remplir de glaçons et shaker vivement 12 secondes.",
+        "Filtrer finement dans une coupe rafraîchie."
+      ],
+      "flavors": ["Acidulé", "Sucré", "Floral"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#EEDC9A",
+      "cocktailDbId": "178316",
+      "notes": "Source : shaké sur glace pilée en verre à margarita ; servi ici « up » en coupe, comme les sours classiques. Le miel pur est remplacé par du sirop de miel pour qu'il se mélange à froid."
+    },
+    {
+      "id": "jack-rose",
+      "name": "Jack Rose",
+      "aliases": ["Jack Rose Cocktail"],
+      "tagline": "Eau-de-vie de pomme et grenadine, un sour rose et sec",
+      "description": "Star des bars américains du début du XXe siècle, le Jack Rose doit son nom à des origines discutées, entre la rose Jacqueminot et diverses figures new-yorkaises. Hemingway le fait boire à son narrateur dans « Le soleil se lève aussi ». L'applejack donne un fond de pomme sèche, relevé par le citron vert et juste teinté de grenadine.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "applejack", "amount": 60, "unit": "ml", "note": "ou calvados" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 15, "unit": "ml", "note": "idéalement maison" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker.",
+        "Remplir de glaçons et shaker vivement 12 secondes.",
+        "Filtrer finement dans une coupe rafraîchie."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Sec"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E07A7A",
+      "cocktailDbId": "11542",
+      "notes": "Doses source (45 ml, 1 c. à café de grenadine, jus d'un demi citron vert) rééquilibrées selon la recette moderne de référence."
+    },
+    {
+      "id": "john-collins",
+      "name": "John Collins",
+      "aliases": [],
+      "tagline": "Gin, citron et eau gazeuse, le Collins dans sa forme IBA",
+      "description": "Le John Collins viendrait d'un serveur londonien du XIXe siècle et partage presque tout avec son frère le Tom Collins, qui se fait au gin Old Tom. Aux États-Unis, on appelle aussi John Collins la version au bourbon. Long, vif et pétillant, c'est une limonade pour adultes où le gin garde sa fraîcheur herbacée.",
+      "family": "Fizz & Collins",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "citron", "amount": 30, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" },
+        { "id": "soda", "amount": 60, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Tranche de citron et cerise au marasquin",
+      "steps": [
+        "Remplir un verre highball de glaçons.",
+        "Verser le gin, le jus de citron et le sirop de sucre.",
+        "Compléter avec l'eau gazeuse et remuer délicatement de bas en haut."
+      ],
+      "flavors": ["Agrume", "Pétillant", "Frais", "Acidulé"],
+      "difficulty": 1,
+      "iba": "Unforgettables",
+      "color": "#F3EED0",
+      "cocktailDbId": "11580",
+      "notes": "La source utilise du bourbon (usage américain) ; la spécification IBA retenue ici est au gin."
+    },
+    {
+      "id": "kir",
+      "name": "Kir",
+      "aliases": ["Blanc-cassis"],
+      "tagline": "Blanc sec et crème de cassis, l'apéritif bourguignon",
+      "description": "Le blanc-cassis se buvait déjà en Bourgogne, mais c'est le chanoine Félix Kir, maire de Dijon après la Seconde Guerre mondiale, qui lui a laissé son nom en le servant lors des réceptions. Un aligoté vif équilibre la douceur de la crème de cassis, pour un apéritif fruité et léger.",
+      "family": "Pétillant & Spritz",
+      "method": "Au verre",
+      "glass": "Verre à vin",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "creme-de-cassis", "amount": 10, "unit": "ml" },
+        { "id": "vin-blanc", "amount": 90, "unit": "ml", "note": "bourgogne aligoté, bien frais" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser la crème de cassis au fond d'un verre à vin.",
+        "Compléter avec le vin blanc bien frais.",
+        "Remuer d'un tour de cuillère et servir aussitôt."
+      ],
+      "flavors": ["Fruité", "Sucré", "Sec"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#A8344F",
+      "cocktailDbId": "17203",
+      "notes": "La source indique du champagne (c'est le Kir Royale) ; le Kir IBA se fait au vin blanc sec. Famille « Pétillant & Spritz » faute de catégorie apéritif à base de vin tranquille."
+    },
+    {
+      "id": "kir-royale",
+      "name": "Kir Royale",
+      "aliases": [],
+      "tagline": "Le Kir version fête, avec du champagne",
+      "description": "Variante festive du Kir, le Kir Royale remplace le vin blanc par du champagne ou un crémant. Les bulles allègent la crème de cassis et donnent un apéritif fruité, sec en finale, devenu un incontournable des célébrations.",
+      "family": "Pétillant & Spritz",
+      "method": "Au verre",
+      "glass": "Flûte",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "creme-de-cassis", "amount": 10, "unit": "ml" },
+        { "id": "champagne", "amount": 90, "unit": "ml", "note": "bien frais" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser la crème de cassis au fond d'une flûte.",
+        "Compléter doucement avec le champagne en inclinant le verre pour préserver les bulles.",
+        "Servir sans remuer."
+      ],
+      "flavors": ["Pétillant", "Fruité", "Sucré"],
+      "difficulty": 1,
+      "iba": "Contemporary Classics",
+      "color": "#B8435E",
+      "cocktailDbId": "13837",
+      "notes": "L'IBA le décrit comme variante officielle du Kir (même dosage, champagne à la place du vin blanc)."
+    },
+    {
+      "id": "lemon-drop",
+      "name": "Lemon Drop",
+      "aliases": ["Lemon Drop Martini"],
+      "tagline": "Vodka, triple sec et citron, un bonbon acidulé en coupe",
+      "description": "Le Lemon Drop serait né dans un bar de San Francisco dans les années 1970, inspiré du bonbon au citron du même nom. Vodka, triple sec et citron frais donnent un cocktail court, nettement acidulé et à peine sucré, que l'on sert souvent dans un verre au bord givré de sucre.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Martini",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka", "amount": 30, "unit": "ml" },
+        { "id": "triple-sec", "amount": 20, "unit": "ml" },
+        { "id": "citron", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Bord givré au sucre (facultatif) et zeste de citron",
+      "steps": [
+        "Givrer éventuellement le bord d'un verre à martini rafraîchi avec du sucre.",
+        "Verser tous les ingrédients dans le shaker rempli de glaçons.",
+        "Shaker vivement 10 à 12 secondes.",
+        "Filtrer finement dans le verre."
+      ],
+      "flavors": ["Acidulé", "Agrume", "Sucré"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#F3E6A2",
+      "cocktailDbId": "14366",
+      "notes": "Doses source (1,5 shot de vodka et de Cointreau, jus d'un quartier de citron) remplacées par la spécification IBA."
+    },
+    {
+      "id": "mint-julep",
+      "name": "Mint Julep",
+      "aliases": [],
+      "tagline": "Bourbon, menthe et glace pilée dans un gobelet givré",
+      "description": "Boisson du Sud des États-Unis depuis le XIXe siècle, le Mint Julep est la boisson officielle du Kentucky Derby. Servi sur une montagne de glace pilée jusqu'à givrer le gobelet, il laisse le bourbon s'exprimer, à peine sucré et parfumé par la menthe fraîche.",
+      "family": "Spirit-forward",
+      "method": "Au verre",
+      "glass": "Julep",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "bourbon", "amount": 60, "unit": "ml" },
+        { "id": "menthe", "amount": 4, "unit": "pièce", "note": "brins" },
+        { "id": "sucre", "amount": 10, "unit": "ml" }
+      ],
+      "garnish": "Bouquet de menthe",
+      "steps": [
+        "Presser délicatement la menthe avec le sirop au fond du gobelet, sans la déchiqueter.",
+        "Remplir de glace pilée tassée et verser le bourbon.",
+        "Remuer longuement jusqu'à ce que le gobelet se couvre de givre.",
+        "Rajouter de la glace en dôme et piquer le bouquet de menthe près de la paille."
+      ],
+      "flavors": ["Herbacé", "Frais", "Boisé", "Sucré"],
+      "difficulty": 2,
+      "iba": "Contemporary Classics",
+      "color": "#D49A3A",
+      "cocktailDbId": "17206",
+      "notes": "IBA : 1 c. à café de sucre glace + 2 c. à café d'eau, remplacées ici par 10 ml de sirop de sucre (équivalent)."
+    },
+    {
+      "id": "michelada",
+      "name": "Michelada",
+      "aliases": [],
+      "tagline": "Bière mexicaine, citron vert et sauces piquantes",
+      "description": "Au Mexique, la michelada se boit à toute heure, notamment pour se remettre d'une longue soirée. La bière blonde s'y mêle au citron vert, à la sauce Worcestershire et au piment, souvent avec du jus de tomate, sous une croûte de sel pimenté. Le résultat est salé, acidulé et étonnamment désaltérant.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Pinte",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "piment-sel", "amount": 1, "unit": "pincée", "optional": true, "note": "pour la croûte" },
+        { "id": "citron-vert", "amount": 30, "unit": "ml" },
+        { "id": "sauce-worcestershire", "amount": 2, "unit": "trait" },
+        { "id": "tabasco", "amount": 2, "unit": "trait" },
+        { "id": "jus-de-tomate", "amount": 90, "unit": "ml", "optional": true },
+        { "id": "biere-blonde", "amount": 250, "unit": "ml", "note": "type lager mexicaine, bien froide" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Humecter le bord d'un verre pinte avec du citron vert et le passer dans le sel pimenté.",
+        "Verser le jus de citron vert, les sauces et le jus de tomate, puis ajouter quelques glaçons.",
+        "Compléter doucement avec la bière en inclinant le verre.",
+        "Remuer délicatement une fois avant de servir."
+      ],
+      "flavors": ["Salé", "Épicé", "Acidulé", "Pétillant"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#C8642E",
+      "cocktailDbId": "178343",
+      "notes": "Sauce soja de la source omise (absente du catalogue, facultative). Jus de tomate marqué facultatif : la version de base n'en contient pas."
+    },
+    {
+      "id": "martinez",
+      "name": "Martinez",
+      "aliases": [],
+      "tagline": "Gin, vermouth rouge et marasquin, l'ancêtre du Martini",
+      "description": "Apparu dans les manuels de bar américains des années 1880, le Martinez est souvent présenté comme l'ancêtre du Martini, avec une origine disputée entre San Francisco et la ville californienne de Martinez. Plus rond et plus aromatique que son descendant, il marie le gin à parts égales avec le vermouth rouge, rehaussé d'une touche de marasquin.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 45, "unit": "ml" },
+        { "id": "maraschino", "amount": 5, "unit": "ml" },
+        { "id": "orange-bitters", "amount": 2, "unit": "trait" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Verser tous les ingrédients dans un verre à mélange rempli de glaçons.",
+        "Remuer 20 à 30 secondes jusqu'à ce que le mélange soit bien froid.",
+        "Filtrer dans une coupe rafraîchie et exprimer le zeste de citron au-dessus."
+      ],
+      "flavors": ["Herbacé", "Sucré", "Amer", "Corsé"],
+      "difficulty": 2,
+      "iba": "Unforgettables",
+      "color": "#8E3B2A",
+      "cocktailDbId": "17256",
+      "notes": "Nom source « Martinez 2 » corrigé. La source utilise de l'Angostura ; l'IBA prescrit du bitter orange."
+    },
+    {
+      "id": "miami-vice",
+      "name": "Miami Vice",
+      "aliases": [],
+      "tagline": "Piña colada et daiquiri fraise glacés, côte à côte",
+      "description": "Le Miami Vice réunit dans un même verre deux classiques frappés au blender : une Piña Colada et un daiquiri à la fraise, versés sans les mélanger. Son nom évoque la série télévisée des années 1980. On y alterne la douceur crémeuse de la noix de coco et l'acidité fruitée de la fraise.",
+      "family": "Tiki & Tropical",
+      "method": "Blender",
+      "glass": "Hurricane",
+      "ice": "Glace pilée",
+      "ingredients": [
+        { "id": "rhum-blanc", "amount": 90, "unit": "ml", "note": "45 ml pour chaque moitié" },
+        { "id": "jus-d-ananas", "amount": 60, "unit": "ml" },
+        { "id": "creme-de-coco", "amount": 45, "unit": "ml" },
+        { "id": "fraises", "amount": 5, "unit": "pièce" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 15, "unit": "ml" }
+      ],
+      "garnish": "Fraise et morceau d'ananas",
+      "steps": [
+        "Mixer 45 ml de rhum avec le jus d'ananas, la crème de coco et une poignée de glace jusqu'à texture lisse, puis réserver au froid.",
+        "Rincer le blender et mixer le reste du rhum avec les fraises, le citron vert, le sirop et une poignée de glace.",
+        "Verser la moitié fraise dans le verre, puis la moitié coco en la faisant glisser sur le bord pour garder deux couches distinctes."
+      ],
+      "flavors": ["Tropical", "Fruité", "Crémeux", "Sucré"],
+      "difficulty": 3,
+      "iba": null,
+      "color": "#F08A8A",
+      "cocktailDbId": "13936",
+      "notes": "La source utilise du rhum 151 et des préparations industrielles ; recette reconstruite à partir des deux classiques maison."
+    },
+    {
+      "id": "mauresque",
+      "name": "Mauresque",
+      "aliases": [],
+      "tagline": "Pastis et orgeat, l'anis adouci à l'amande",
+      "description": "Grand classique des terrasses du Midi, la mauresque fait partie des pastis « colorés », aux côtés de la tomate et du perroquet. Le sirop d'orgeat apporte une rondeur amandée qui adoucit l'anis, et l'eau fraîche en fait une boisson longue et désaltérante.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "pastis", "amount": 30, "unit": "ml" },
+        { "id": "sirop-d-orgeat", "amount": 10, "unit": "ml" },
+        { "id": "eau", "amount": 150, "unit": "ml", "note": "bien fraîche, pour compléter" }
+      ],
+      "garnish": "",
+      "steps": [
+        "Verser le pastis puis le sirop d'orgeat dans le verre.",
+        "Ajouter l'eau fraîche et remuer : le mélange se trouble.",
+        "Ajouter les glaçons en dernier."
+      ],
+      "flavors": ["Herbacé", "Sucré", "Frais"],
+      "difficulty": 1,
+      "iba": null,
+      "color": "#EFE6C8",
+      "cocktailDbId": "178370",
+      "notes": ""
+    },
+    {
+      "id": "vin-chaud",
+      "name": "Vin chaud",
+      "aliases": ["Mulled Wine", "Glühwein"],
+      "tagline": "Vin rouge, orange et épices, la chaleur des marchés de Noël",
+      "description": "Héritier des vins épicés de l'Antiquité et du Moyen Âge, le vin chaud est indissociable des marchés de Noël d'Alsace et d'Europe centrale. Chauffé doucement sans jamais bouillir, le vin rouge s'adoucit au sucre et s'imprègne d'agrumes, de cannelle et de girofle, avec une touche de cognac pour la chaleur.",
+      "family": "Chaud",
+      "method": "Au verre",
+      "glass": "Tasse",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vin-rouge", "amount": 150, "unit": "ml" },
+        { "id": "cognac", "amount": 15, "unit": "ml", "optional": true },
+        { "id": "sucre", "amount": 15, "unit": "ml", "note": "ou 1 cuillère de miel" },
+        { "id": "orange-fruit", "amount": 1, "unit": "tranche" },
+        { "id": "cannelle", "amount": 1, "unit": "pièce" },
+        { "id": "clou-de-girofle", "amount": 2, "unit": "pièce" }
+      ],
+      "garnish": "Demi-tranche d'orange et bâton de cannelle",
+      "steps": [
+        "Mettre le vin, le sucre, l'orange et les épices dans une casserole.",
+        "Chauffer à feu doux 10 minutes sans laisser bouillir.",
+        "Retirer du feu, ajouter le cognac et filtrer dans une tasse chaude."
+      ],
+      "flavors": ["Épicé", "Fruité", "Sucré", "Boisé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#6E1F2A",
+      "cocktailDbId": "12988",
+      "notes": "Source pour une bouteille, ramenée à une portion (multiplier pour une casserole). L'eau de la source (3 tasses pour 75 cl) est supprimée : trop diluée."
+    },
+    {
+      "id": "old-pal",
+      "name": "Old Pal",
+      "aliases": [],
+      "tagline": "Rye, Campari et vermouth sec, le cousin sec du Boulevardier",
+      "description": "L'Old Pal est attribué au Harry's New York Bar de Paris et apparaît dans les recueils de cocktails des années 1920. Proche du Boulevardier mais avec du vermouth sec, il est plus tranchant : le seigle épicé, l'amertume du Campari et la finale sèche s'enchaînent sans sucre superflu.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rye", "amount": 50, "unit": "ml" },
+        { "id": "campari", "amount": 25, "unit": "ml" },
+        { "id": "vermouth-sec", "amount": 25, "unit": "ml" }
+      ],
+      "garnish": "Zeste de citron",
+      "steps": [
+        "Verser tous les ingrédients dans un verre à mélange rempli aux deux tiers de glaçons.",
+        "Remuer environ 20 secondes.",
+        "Filtrer dans une coupe rafraîchie et exprimer le zeste de citron au-dessus."
+      ],
+      "flavors": ["Amer", "Sec", "Épicé", "Corsé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#C2402F",
+      "cocktailDbId": "17827",
+      "notes": "Proportions modernes 2:1:1 ; la recette d'origine est à parts égales."
+    },
+    {
+      "id": "old-cuban",
+      "name": "Old Cuban",
+      "aliases": [],
+      "tagline": "Mojito chic : rhum âgé, menthe et champagne en coupe",
+      "description": "Imaginé par la barmaid new-yorkaise Audrey Saunders au début des années 2000, l'Old Cuban croise le Mojito et le French 75. Le rhum âgé, la menthe et le citron vert sont shakés puis coiffés de champagne, avec quelques traits d'Angostura pour la profondeur : frais, épicé et pétillant.",
+      "family": "Pétillant & Spritz",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "rhum-age", "amount": 45, "unit": "ml" },
+        { "id": "citron-vert", "amount": 22.5, "unit": "ml" },
+        { "id": "sucre", "amount": 30, "unit": "ml" },
+        { "id": "angostura", "amount": 2, "unit": "trait" },
+        { "id": "menthe", "amount": 7, "unit": "pièce", "note": "6 à 8 feuilles" },
+        { "id": "champagne", "amount": 60, "unit": "ml", "note": "brut, ou prosecco" }
+      ],
+      "garnish": "Brin de menthe",
+      "steps": [
+        "Verser tous les ingrédients sauf le champagne dans le shaker avec les feuilles de menthe.",
+        "Remplir de glaçons et shaker vivement 12 secondes.",
+        "Double-filtrer dans une coupe rafraîchie.",
+        "Compléter avec le champagne bien frais."
+      ],
+      "flavors": ["Herbacé", "Pétillant", "Acidulé", "Épicé"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#E3DCA0",
+      "cocktailDbId": "178371",
+      "notes": ""
+    },
+    {
+      "id": "paloma",
+      "name": "Paloma",
+      "aliases": [],
+      "tagline": "Tequila et soda pamplemousse, le highball préféré du Mexique",
+      "description": "Au Mexique, la Paloma est sans doute plus bue que la Margarita : une tequila allongée d'un soda au pamplemousse, avec un trait de citron vert et une pincée de sel. Elle est désaltérante, légèrement amère et acidulée, l'agave restant bien présent.",
+      "family": "Highball",
+      "method": "Au verre",
+      "glass": "Highball",
+      "ice": "Glaçons",
+      "ingredients": [
+        { "id": "tequila", "amount": 50, "unit": "ml", "note": "100 % agave" },
+        { "id": "citron-vert", "amount": 5, "unit": "ml" },
+        { "id": "sel", "amount": 1, "unit": "pincée" },
+        { "id": "soda-pamplemousse", "amount": 100, "unit": "ml", "note": "pour compléter" }
+      ],
+      "garnish": "Rondelle de citron vert",
+      "steps": [
+        "Verser la tequila dans un verre highball et y presser le citron vert.",
+        "Ajouter les glaçons et la pincée de sel.",
+        "Compléter avec le soda au pamplemousse et remuer délicatement."
+      ],
+      "flavors": ["Agrume", "Pétillant", "Amer", "Salé"],
+      "difficulty": 1,
+      "iba": "New Era Drinks",
+      "color": "#F4D2C2",
+      "cocktailDbId": "17253",
+      "notes": "La source indique « Grape Soda » (soda au raisin) : erreur, la Paloma se fait au soda pamplemousse. Spécification IBA appliquée."
+    },
+    {
+      "id": "pink-gin",
+      "name": "Pink Gin",
+      "aliases": ["Pink Gin & Bitters", "Gin and Bitters"],
+      "tagline": "Gin teinté d'Angostura, le classique de la Royal Navy",
+      "description": "Le Pink Gin est associé aux officiers de la Royal Navy du XIXe siècle, qui mêlaient l'Angostura, alors prisée pour ses vertus supposées, à leur gin. Rien de sucré ici : quelques traits d'amer colorent le gin en rose pâle et lui ajoutent des notes épicées et sèches.",
+      "family": "Spirit-forward",
+      "method": "Verre à mélange",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "angostura", "amount": 3, "unit": "trait" },
+        { "id": "gin", "amount": 60, "unit": "ml", "note": "idéalement Plymouth" }
+      ],
+      "garnish": "Zeste de citron (facultatif)",
+      "steps": [
+        "Verser l'Angostura dans une coupe, la faire tourner pour enrober les parois et jeter l'excédent.",
+        "Remuer le gin avec des glaçons dans un verre à mélange 20 secondes.",
+        "Filtrer dans la coupe préparée."
+      ],
+      "flavors": ["Amer", "Sec", "Épicé", "Corsé"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F1C5BE",
+      "cocktailDbId": "11936",
+      "notes": "La version d'origine se sert à température ambiante, sans glace ; on le refroidit ici au verre à mélange comme en bar moderne."
+    },
+    {
+      "id": "pegu-club",
+      "name": "Pegu Club",
+      "aliases": [],
+      "tagline": "Gin, curaçao et citron vert, un sour venu de Birmanie",
+      "description": "Ce cocktail doit son nom à un club d'officiers britanniques de Rangoun, en Birmanie, au début du XXe siècle, avant de se retrouver dans les grands recueils de bar des années 1920. Le gin y est porté par le curaçao orange et le citron vert, deux bitters apportant une finale aromatique et sèche.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 60, "unit": "ml" },
+        { "id": "curacao-orange", "amount": 20, "unit": "ml" },
+        { "id": "citron-vert", "amount": 20, "unit": "ml" },
+        { "id": "angostura", "amount": 1, "unit": "trait" },
+        { "id": "orange-bitters", "amount": 1, "unit": "trait" }
+      ],
+      "garnish": "Quartier de citron vert",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker.",
+        "Remplir de glaçons et shaker vivement 12 secondes.",
+        "Filtrer finement dans une coupe rafraîchie."
+      ],
+      "flavors": ["Agrume", "Acidulé", "Herbacé", "Amer"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#E8E2A6",
+      "cocktailDbId": "17249",
+      "notes": ""
+    },
+    {
+      "id": "pink-lady",
+      "name": "Pink Lady",
+      "aliases": [],
+      "tagline": "Gin, pomme et grenadine sous une mousse rose pâle",
+      "description": "Très en vogue dans l'Amérique des années 1930, la Pink Lady a longtemps eu une réputation de cocktail léger, qu'elle ne mérite pas. Le gin, renforcé d'applejack, s'équilibre avec le citron et la grenadine, tandis que le blanc d'œuf donne une texture soyeuse et une jolie mousse.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "gin", "amount": 45, "unit": "ml" },
+        { "id": "applejack", "amount": 15, "unit": "ml" },
+        { "id": "citron", "amount": 20, "unit": "ml" },
+        { "id": "sirop-de-grenadine", "amount": 10, "unit": "ml" },
+        { "id": "blanc-oeuf", "amount": 20, "unit": "ml", "note": "pour la mousse" }
+      ],
+      "garnish": "Cerise au marasquin",
+      "steps": [
+        "Verser tous les ingrédients dans le shaker et shaker 10 secondes à sec, sans glace.",
+        "Ajouter les glaçons et shaker vivement 12 secondes.",
+        "Double-filtrer dans une coupe rafraîchie."
+      ],
+      "flavors": ["Fruité", "Acidulé", "Crémeux"],
+      "difficulty": 2,
+      "iba": null,
+      "color": "#F2A9B4",
+      "cocktailDbId": "11938",
+      "notes": "La source (crème liquide, pas d'agrume) décrit une variante ancienne ; recette classique avec applejack et citron retenue."
+    },
+    {
+      "id": "penicillin",
+      "name": "Penicillin",
+      "aliases": [],
+      "tagline": "Scotch, miel, gingembre et un voile de whisky tourbé",
+      "description": "Créé par Sam Ross au bar Milk & Honey de New York au milieu des années 2000, le Penicillin est devenu un classique moderne. Sous ses allures de remède, il associe scotch, citron, miel et gingembre frais, puis un filet de whisky d'Islay posé en surface apporte une fumée qui accompagne chaque gorgée.",
+      "family": "Sour",
+      "method": "Shaker",
+      "glass": "Old fashioned",
+      "ice": "Gros glaçon",
+      "ingredients": [
+        { "id": "scotch", "amount": 60, "unit": "ml" },
+        { "id": "citron", "amount": 22.5, "unit": "ml" },
+        { "id": "sirop-de-miel", "amount": 22.5, "unit": "ml" },
+        { "id": "gingembre-frais", "amount": 3, "unit": "tranche" },
+        { "id": "scotch-tourbe", "amount": 7.5, "unit": "ml", "note": "en surface" }
+      ],
+      "garnish": "Gingembre confit",
+      "steps": [
+        "Écraser le gingembre frais au pilon dans le shaker.",
+        "Ajouter le scotch, le citron et le sirop de miel, remplir de glaçons et shaker vivement 12 secondes.",
+        "Double-filtrer sur un gros glaçon dans un verre old fashioned rafraîchi.",
+        "Verser délicatement le whisky tourbé sur le dos d'une cuillère pour qu'il reste en surface."
+      ],
+      "flavors": ["Fumé", "Épicé", "Acidulé", "Sucré"],
+      "difficulty": 3,
+      "iba": "New Era Drinks",
+      "color": "#E0B058",
+      "cocktailDbId": "17829",
+      "notes": "La source emploie des sirops de miel et de gingembre séparés ; la spécification IBA (gingembre frais pilé) est retenue."
+    },
+    {
+      "id": "pornstar-martini",
+      "name": "Pornstar Martini",
+      "aliases": ["Porn Star Martini", "Passion Fruit Martini"],
+      "tagline": "Passion et vanille, servi avec un shot de bulles à côté",
+      "description": "Créé à Londres au début des années 2000 par le barman Douglas Ankrah, le Pornstar Martini est vite devenu l'un des cocktails les plus commandés du Royaume-Uni. Vodka vanille, liqueur et purée de fruit de la passion donnent un cocktail tropical et acidulé, accompagné d'un petit verre de bulles à boire à part ou à verser dedans.",
+      "family": "Tiki & Tropical",
+      "method": "Shaker",
+      "glass": "Coupe",
+      "ice": "Sans glace",
+      "ingredients": [
+        { "id": "vodka-vanille", "amount": 50, "unit": "ml" },
+        { "id": "liqueur-passion", "amount": 20, "unit": "ml" },
+        { "id": "puree-passion", "amount": 50, "unit": "ml" },
+        { "id": "sirop-de-vanille", "amount": 10, "unit": "ml" },
+        { "id": "champagne", "amount": 50, "unit": "ml", "note": "servi à part en shot" }
+      ],
+      "garnish": "Demi fruit de la passion",
+      "steps": [
+        "Verser la vodka, la liqueur, la purée de passion et le sirop de vanille dans le shaker.",
+        "Remplir de glaçons et shaker vivement 12 secondes.",
+        "Double-filtrer dans une grande coupe rafraîchie et poser le demi fruit de la passion à la surface.",
+        "Servir le champagne bien frais dans un verre à shot à côté."
+      ],
+      "flavors": ["Tropical", "Fruité", "Acidulé", "Sucré"],
+      "difficulty": 2,
+      "iba": "New Era Drinks",
+      "color": "#F5B940",
+      "cocktailDbId": "178357",
+      "notes": "IBA : 2 cuillères de bar de sucre vanillé, remplacées par 10 ml de sirop de vanille. L'IBA indique du champagne ; le prosecco de la source est l'usage courant au Royaume-Uni."
+    }
+  ],
+  "newIngredients": [
+    ["eau", "Eau", "soft_bulle", 0, 0, 0, 0, "💧"],
+    ["liqueur-passion", "Liqueur de fruit de la passion (Passoã)", "liqueur", 17, 250, 1, 0, "💛"]
+  ]
+}

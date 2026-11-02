@@ -66,6 +66,34 @@ export function CocktailRow({ cocktail }: { cocktail: Cocktail }) {
   );
 }
 
+/** Case de grille : photo carrée, nom, pastille de disponibilité. */
+export function CocktailGridItem({ cocktail }: { cocktail: Cocktail }) {
+  const { colors } = useTheme();
+  const { favorites } = useUser();
+  const value = useAvailability(cocktail);
+  const one = value.missing.length === 1;
+  const dot = value.ready ? colors.ok : one ? colors.warn : colors.line;
+  return (
+    <Pressable onPress={() => openCocktail(cocktail.id)} style={({ pressed }) => [{ opacity: pressed ? 0.75 : 1 }]}>
+      <View>
+        <CocktailImage cocktail={cocktail} style={styles.gridImage} rounded={radius.md} artScale={0.62} />
+        {favorites.has(cocktail.id) ? (
+          <View style={[styles.gridHeart, { backgroundColor: colors.surface }]}><Icon name="heart" size={12} color={colors.accent} filled /></View>
+        ) : null}
+      </View>
+      <T variant="small" numberOfLines={2} style={styles.gridName}>{cocktail.name}</T>
+      {value.required ? (
+        <View style={styles.gridStatus}>
+          <View style={[styles.gridDot, { backgroundColor: dot }]} />
+          <T variant="tiny" tone={value.ready ? 'ok' : one ? 'warn' : 'muted'} numberOfLines={1} style={{ fontWeight: '700' }}>
+            {value.ready ? 'Faisable' : `Manque ${value.missing.length}`}
+          </T>
+        </View>
+      ) : null}
+    </Pressable>
+  );
+}
+
 /** Carte de carrousel : grande image et nom. */
 export function CocktailTile({ cocktail, width = 156, subtitle }: { cocktail: Cocktail; width?: number; subtitle?: string }) {
   const value = useAvailability(cocktail);
@@ -87,4 +115,9 @@ const styles = StyleSheet.create({
   rowTitle: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   rowMeta: { flexDirection: 'row', alignItems: 'center', gap: space.xs, marginTop: 2 },
   rating: { flexDirection: 'row', alignItems: 'center', gap: 2 },
+  gridImage: { width: '100%', aspectRatio: 1 },
+  gridHeart: { position: 'absolute', top: 6, right: 6, width: 22, height: 22, borderRadius: 11, alignItems: 'center', justifyContent: 'center' },
+  gridName: { fontWeight: '700', marginTop: 6, lineHeight: 17 },
+  gridStatus: { flexDirection: 'row', alignItems: 'center', gap: 5, marginTop: 2 },
+  gridDot: { width: 7, height: 7, borderRadius: 4 },
 });

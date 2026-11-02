@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { FlatList, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { CocktailRow } from '@/components/cocktail-card';
+import { CocktailGridItem, CocktailRow } from '@/components/cocktail-card';
 import { Icon } from '@/components/icon';
 import { Chip, Divider, Empty, IconButton, T } from '@/components/ui';
 import { fonts, MAX_WIDTH, radius, space } from '@/constants/theme';
@@ -27,7 +27,8 @@ export default function CocktailsScreen() {
   const insets = useSafeAreaInsets();
   const params = useLocalSearchParams<{ q?: string; filter?: string; mood?: string; family?: string; ingredient?: string }>();
   const { cocktails, ingredientById, searchIndex } = useCatalog();
-  const { stock, favorites, data } = useUser();
+  const { stock, favorites, data, updateSettings } = useUser();
+  const layout = data.settings.layout ?? 'list';
 
   const [query, setQuery] = useState('');
   const [quick, setQuick] = useState<Quick[]>([]);
@@ -97,6 +98,9 @@ export default function CocktailsScreen() {
   })();
 
   const advancedCount = families.length + bases.length + flavors.length + methods.length + (mood ? 1 : 0) + (ingredient ? 1 : 0);
+  // En grille, la dernière rangée est complétée par des cases vides pour garder trois colonnes égales.
+  const gridData: (Cocktail | null)[] = [...results, ...Array.from({ length: (3 - (results.length % 3)) % 3 }, () => null)];
+
   const resetAll = () => {
     setQuery(''); setQuick([]); setMood(null); setFamilies([]); setBases([]); setFlavors([]); setMethods([]); setIngredient(null);
   };
@@ -105,8 +109,23 @@ export default function CocktailsScreen() {
   const header = (
     <View style={styles.headerInner}>
       <View style={styles.titleRow}>
-        <T variant="h1" style={{ flex: 1 }}>Cocktails</T>
-        <T variant="small" tone="muted">{results.length} / {cocktails.length}</T>
+        <View style={{ flex: 1 }}>
+          <T variant="h1">Cocktails</T>
+          <T variant="small" tone="muted">{results.length === cocktails.length ? `${cocktails.length} recettes` : `${results.length} sur ${cocktails.length}`}</T>
+        </View>
+        <View style={[styles.layoutSwitch, { backgroundColor: colors.surfaceAlt }]}>
+          {(['list', 'grid'] as const).map((value) => (
+            <Pressable
+              key={value}
+              accessibilityRole="button"
+              accessibilityLabel={value === 'list' ? 'Affichage en liste' : 'Affichage en grille'}
+              accessibilityState={{ selected: layout === value }}
+              onPress={() => updateSettings({ layout: value })}
+              style={[styles.layoutButton, layout === value && { backgroundColor: colors.surface }]}>
+              <Icon name={value} size={18} color={layout === value ? colors.ink : colors.muted} />
+            </Pressable>
+          ))}
+        </View>
       </View>
       <View style={[styles.search, { backgroundColor: colors.surface, borderColor: colors.line }]}>
         <Icon name="search" size={19} color={colors.muted} />
@@ -177,11 +196,16 @@ export default function CocktailsScreen() {
 
   return (
     <View style={[styles.screen, { backgroundColor: colors.bg, paddingTop: insets.top }]}>
-      <FlatList
-        data={results}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <View style={styles.item}><CocktailRow cocktail={item} /></View>}
-        ItemSeparatorComponent={() => <View style={styles.item}><Divider style={{ marginLeft: 84 }} /></View>}
+      <FlatList<Cocktail | null>
+        key={layout}
+        data={layout === 'grid' ? gridData : results}
+        numColumns={layout === 'grid' ? 3 : 1}
+        keyExtractor={(item, index) => item?.id ?? `vide-${index}`}
+        columnWrapperStyle={layout === 'grid' ? styles.gridRow : undefined}
+        renderItem={({ item }) => layout === 'grid'
+          ? <View style={styles.gridCell}>{item ? <CocktailGridItem cocktail={item} /> : null}</View>
+          : item ? <View style={styles.item}><CocktailRow cocktail={item} /></View> : null}
+        ItemSeparatorComponent={layout === 'grid' ? undefined : () => <View style={styles.item}><Divider style={{ marginLeft: 84 }} /></View>}
         ListHeaderComponent={header}
         ListEmptyComponent={
           <Empty
@@ -217,7 +241,6 @@ function FilterGroup({ title, children }: { title: string; children: React.React
 const styles = StyleSheet.create({
   screen: { flex: 1 },
   headerInner: { width: '100%', maxWidth: MAX_WIDTH, alignSelf: 'center', paddingHorizontal: space.md, paddingTop: space.md, paddingBottom: space.sm, gap: space.sm },
-  titleRow: { flexDirection: 'row', alignItems: 'baseline', gap: space.sm },
   search: { flexDirection: 'row', alignItems: 'center', gap: space.xs, borderWidth: 1, borderRadius: radius.pill, paddingHorizontal: space.md, minHeight: 48 },
   searchInput: { flex: 1, fontFamily: fonts.body, fontSize: 16, paddingVertical: 10, outlineStyle: 'none' } as object,
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs },
@@ -227,5 +250,10 @@ const styles = StyleSheet.create({
   panelActions: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   panelDone: { borderRadius: radius.pill, paddingHorizontal: space.md, paddingVertical: 10 },
   item: { width: '100%', maxWidth: MAX_WIDTH, alignSelf: 'center', paddingHorizontal: space.md },
+  titleRow: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
+  layoutSwitch: { flexDirection: 'row', borderRadius: radius.pill, padding: 3 },
+  layoutButton: { width: 38, height: 32, borderRadius: radius.pill, alignItems: 'center', justifyContent: 'center' },
+  gridRow: { width: '100%', maxWidth: MAX_WIDTH, alignSelf: 'center', paddingHorizontal: space.md, gap: 10, marginBottom: space.md },
+  gridCell: { flex: 1, minWidth: 0 },
   fab: { position: 'absolute', right: space.md },
 });

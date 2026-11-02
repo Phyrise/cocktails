@@ -26,12 +26,12 @@ export default function HomeScreen() {
   const { colors } = useTheme();
   const catalog = useCatalog();
   const user = useUser();
-  const { cocktails, ingredientById } = catalog;
+  const { cocktails } = catalog;
   const { stock, data } = user;
 
   const featured = useMemo(() => cocktailOfTheDay(cocktails), [cocktails]);
 
-  const { ready, almost, forYou, hasTaste } = useMemo(() => {
+  const { ready, forYou, hasTaste } = useMemo(() => {
     const profile = tasteProfile(cocktails, { favorites: user.favorites, ratings: data.ratings, likedFlavors: data.likedFlavors, avoid: data.avoid });
     const scored = cocktails
       .filter((cocktail) => !containsAvoided(cocktail, profile.avoid))
@@ -39,15 +39,11 @@ export default function HomeScreen() {
     const byTaste = (a: { taste: number; cocktail: Cocktail }, b: { taste: number; cocktail: Cocktail }) => b.taste - a.taste || Number(!!b.cocktail.image) - Number(!!a.cocktail.image);
     return {
       ready: scored.filter((entry) => entry.value.ready).sort(byTaste),
-      almost: scored.filter((entry) => entry.value.missing.length === 1).sort(byTaste),
       // Suggestions personnelles : des recettes ni favorites ni encore notées.
       forYou: scored.filter((entry) => !user.favorites.has(entry.cocktail.id) && !data.ratings[entry.cocktail.id] && entry.taste > 0).sort(byTaste).slice(0, 12),
       hasTaste: profile.liked.length > 0 || profile.flavors.length > 0,
     };
   }, [cocktails, data.avoid, data.likedFlavors, data.ratings, data.settings.assumeBasics, stock, user.favorites]);
-
-  const recent = data.recent.map((id) => catalog.byId.get(id)).filter((cocktail): cocktail is Cocktail => !!cocktail).slice(0, 10);
-  const toTry = cocktails.filter((cocktail) => user.toTry.has(cocktail.id));
 
   const surprise = () => {
     const pool = ready.length ? ready.map((entry) => entry.cocktail) : cocktails;
@@ -89,8 +85,21 @@ export default function HomeScreen() {
       ) : null}
 
       <View style={styles.quickRow}>
-        <Button label="Que puis-je faire ?" icon="wine" flex onPress={() => router.push({ pathname: '/recettes', params: { filter: 'ready' } })} />
+        <Button
+          label={ready.length ? `Que puis-je faire ? · ${ready.length}` : 'Que puis-je faire ?'}
+          icon="wine"
+          flex
+          onPress={() => router.push({ pathname: '/recettes', params: { filter: 'ready' } })}
+        />
         <IconButton name="shuffle" label="Cocktail au hasard" onPress={surprise} size={48} />
+      </View>
+
+      <View style={styles.moods}>
+        <HScroll gap={space.xs}>
+          {MOODS.map((mood) => (
+            <Chip key={mood.id} label={mood.label} icon={mood.icon} onPress={() => router.push({ pathname: '/recettes', params: { mood: mood.id } })} />
+          ))}
+        </HScroll>
       </View>
 
       <View style={styles.section}>
@@ -114,89 +123,33 @@ export default function HomeScreen() {
             {ready.slice(0, 12).map(({ cocktail }) => <CocktailTile key={cocktail.id} cocktail={cocktail} subtitle={cocktail.tagline} />)}
           </HScroll>
         ) : (
-          <Card><T variant="small" tone="muted">Rien de complet pour l’instant. Regardez ci-dessous ce qu’il vous manque de peu.</T></Card>
-        )}
-      </View>
-
-      {almost.length ? (
-        <View style={styles.section}>
-          <SectionHeader title="À un ingrédient près" action="Tout voir" onAction={() => router.push({ pathname: '/recettes', params: { filter: 'one' } })} />
-          <HScroll>
-            {almost.slice(0, 12).map(({ cocktail, value }) => (
-              <CocktailTile key={cocktail.id} cocktail={cocktail} subtitle={`Manque : ${ingredientById.get(value.missing[0].id)?.name ?? value.missing[0].id}`} />
-            ))}
-          </HScroll>
-        </View>
-      ) : null}
-
-      <View style={styles.section}>
-        <SectionHeader
-          title="Pour vous"
-          subtitle={hasTaste ? 'D’après vos favoris, vos notes et vos goûts' : undefined}
-          action={hasTaste ? 'Mes goûts' : undefined}
-          onAction={() => router.push('/settings')}
-        />
-        {hasTaste && forYou.length ? (
-          <HScroll>{forYou.map(({ cocktail }) => <CocktailTile key={cocktail.id} cocktail={cocktail} />)}</HScroll>
-        ) : (
-          <Card onPress={() => router.push('/settings')} style={styles.cta}>
-            <View style={[styles.ctaIcon, { backgroundColor: colors.accentSoft }]}><Icon name="heart" size={20} color={colors.accent} /></View>
+          <Card onPress={() => router.push({ pathname: '/bar', params: { tab: 'achats' } })} style={styles.cta}>
             <View style={{ flex: 1 }}>
-              <T variant="h3">Dites-nous ce que vous aimez</T>
-              <T variant="small" tone="muted">Saveurs préférées, ingrédients à éviter : les suggestions s’adaptent. Les favoris et les notes comptent aussi.</T>
+              <T variant="h3">Rien de complet pour l’instant</T>
+              <T variant="small" tone="muted">Voyez quelle bouteille débloquerait le plus de recettes.</T>
             </View>
             <Icon name="chevronRight" size={18} color={colors.muted} />
           </Card>
         )}
       </View>
 
-      <View style={styles.section}>
-        <SectionHeader title="Envie de…" />
-        <View style={styles.moods}>
-          {MOODS.map((mood) => (
-            <Chip key={mood.id} label={mood.label} icon={mood.icon} onPress={() => router.push({ pathname: '/recettes', params: { mood: mood.id } })} />
-          ))}
-        </View>
-      </View>
-
-      {toTry.length ? (
+      {hasTaste && forYou.length ? (
         <View style={styles.section}>
-          <SectionHeader title="À essayer" action="Ma liste" onAction={() => router.push({ pathname: '/listes', params: { tab: 'essayer' } })} />
-          <HScroll>{toTry.slice(0, 12).map((cocktail) => <CocktailTile key={cocktail.id} cocktail={cocktail} />)}</HScroll>
+          <SectionHeader title="Pour vous" subtitle="D’après vos favoris, vos notes et vos goûts" action="Mes goûts" onAction={() => router.push('/settings')} />
+          <HScroll>{forYou.map(({ cocktail }) => <CocktailTile key={cocktail.id} cocktail={cocktail} />)}</HScroll>
         </View>
       ) : null}
-
-      {recent.length ? (
-        <View style={styles.section}>
-          <SectionHeader title="Vus récemment" />
-          <HScroll>{recent.map((cocktail) => <CocktailTile key={cocktail.id} cocktail={cocktail} width={128} />)}</HScroll>
-        </View>
-      ) : null}
-
-      <Card style={[styles.section, styles.cta]} onPress={() => router.push('/editor')}>
-        <View style={[styles.ctaIcon, { backgroundColor: colors.surfaceAlt }]}><Icon name="pencil" size={20} color={colors.ink} /></View>
-        <View style={{ flex: 1 }}>
-          <T variant="h3">Créer votre recette</T>
-          <T variant="small" tone="muted">Gardez vos créations et vos variantes avec photo.</T>
-        </View>
-        <Icon name="chevronRight" size={18} color={colors.muted} />
-      </Card>
-
-      <T variant="tiny" tone="muted" style={styles.footer}>
-        {cocktails.length} recettes · base du {catalog.db ? new Date(catalog.db.generatedAt).toLocaleDateString('fr-FR') : '—'}
-      </T>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   banner: { flexDirection: 'row', alignItems: 'center', gap: space.sm, marginBottom: space.md },
-  hero: { height: 380, borderRadius: radius.xl, overflow: 'hidden', justifyContent: 'flex-end' },
+  hero: { height: 340, borderRadius: radius.xl, overflow: 'hidden', justifyContent: 'flex-end' },
   heroText: { padding: space.lg, gap: 4 },
   quickRow: { flexDirection: 'row', gap: space.sm, marginTop: space.md },
   section: { marginTop: space.xl },
   cta: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
   ctaIcon: { width: 44, height: 44, borderRadius: 22, alignItems: 'center', justifyContent: 'center' },
-  moods: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs },
-  footer: { textAlign: 'center', marginTop: space.xl },
+  moods: { marginTop: space.sm },
 });

@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from 'expo-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { CocktailRow } from '@/components/cocktail-card';
@@ -21,6 +21,10 @@ export default function ListsScreen() {
     setAppliedTab(params.tab);
     if (params.tab && ['favoris', 'essayer', 'notes', 'perso'].includes(params.tab)) setTab(params.tab as Tab);
   }
+  // Le paramètre est consommé : un nouveau lien vers le même onglet le réappliquera.
+  useEffect(() => {
+    if (params.tab) router.setParams({ tab: undefined });
+  }, [params.tab]);
 
   const lists: Record<Tab, Cocktail[]> = {
     favoris: cocktails.filter((cocktail) => favorites.has(cocktail.id)),

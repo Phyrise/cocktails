@@ -2,8 +2,8 @@ import { createContext, type PropsWithChildren, useCallback, useContext, useEffe
 import { useColorScheme } from 'react-native';
 
 import { dark, light, type Palette } from '@/constants/theme';
-import { searchText } from '@/lib/cocktails';
-import { defaultDbUrl, downloadDatabase, fetchManifest, FILE_KINDS, loadStoredDatabase, type Progress, saveDatabase } from '@/lib/database';
+import { sanitizeCocktail, sanitizeIngredient, sanitizeList, searchText } from '@/lib/cocktails';
+import { defaultDbUrl, downloadDatabase, fetchManifest, FILE_KINDS, isNewerVersion, loadStoredDatabase, type Progress, saveDatabase, validateDatabase } from '@/lib/database';
 import { getItem, setItem } from '@/lib/storage';
 import type { Cocktail, Database, Ingredient, MeasurementUnit } from '@/types/cocktail';
 
@@ -52,8 +52,8 @@ function sanitizeUserData(value: Partial<UserData> | undefined): UserData {
     notes: value.notes && typeof value.notes === 'object' ? value.notes : {},
     shopping: list(value.shopping),
     recent: list(value.recent).slice(0, 20),
-    custom: Array.isArray(value.custom) ? value.custom : [],
-    customIngredients: Array.isArray(value.customIngredients) ? value.customIngredients : [],
+    custom: sanitizeList(value.custom, sanitizeCocktail).map((cocktail) => ({ ...cocktail, origin: 'perso' as const })),
+    customIngredients: sanitizeList(value.customIngredients, sanitizeIngredient),
     likedFlavors: list(value.likedFlavors),
     avoid: list(value.avoid),
     settings: { ...base.settings, ...(value.settings ?? {}) },
@@ -138,6 +138,8 @@ export function AppProvider({ children }: PropsWithChildren) {
         setData(sanitizeUserData(saved));
         setUserReady(true);
       }
+      // Demande au navigateur de ne pas effacer ces données en cas de manque de place (Safari, Chrome).
+      (globalThis.navigator as Navigator | undefined)?.storage?.persist?.().catch(() => undefined);
     })();
     return () => { active = false; };
   }, []);
@@ -183,9 +185,10 @@ export function AppProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     let active = true;
     (async () => {
-      const stored = await loadStoredDatabase().catch(() => undefined);
+      // Une base stockée illisible (import abîmé, ancienne version) est ignorée et retéléchargée.
+      const stored = validateDatabase(await loadStoredDatabase().catch(() => undefined));
       if (!active) return;
-      if (stored?.cocktails?.length) {
+      if (stored) {
         setDb(stored);
         setStatus('ready');
         return;
@@ -209,9 +212,10 @@ export function AppProvider({ children }: PropsWithChildren) {
     checked.current = true;
     (async () => {
       const version = await checkForUpdate();
-      if (autoUpdate && version !== db?.version) await downloadLatest();
+      // Une base importée depuis un fichier n'est jamais remplacée automatiquement.
+      if (autoUpdate && isNewerVersion(version, db)) await downloadLatest();
     })().catch(() => undefined);
-  }, [autoUpdate, checkForUpdate, db?.version, downloadLatest, status, userReady]);
+  }, [autoUpdate, checkForUpdate, db, downloadLatest, status, userReady]);
 
   const catalog = useMemo<Catalog>(() => {
     const baseCocktails = db?.cocktails ?? [];
@@ -228,7 +232,7 @@ export function AppProvider({ children }: PropsWithChildren) {
     return {
       status, error, db, cocktails, byId: new Map(cocktails.map((cocktail) => [cocktail.id, cocktail])), baseById,
       ingredients, ingredientById, searchIndex, progress, remoteVersion,
-      updateAvailable: !!db && !!remoteVersion && remoteVersion !== db.version,
+      updateAvailable: isNewerVersion(remoteVersion, db),
       downloadLatest, checkForUpdate, replaceDatabase,
     };
   }, [checkForUpdate, data.custom, data.customIngredients, db, downloadLatest, error, progress, remoteVersion, replaceDatabase, status]);

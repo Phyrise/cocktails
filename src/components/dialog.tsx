@@ -11,7 +11,11 @@ export function DialogProvider({ children }: PropsWithChildren) {
   const { colors } = useTheme();
   const [request, setRequest] = useState<DialogRequest | null>(null);
 
-  useEffect(() => registerDialog(setRequest), []);
+  // Une nouvelle demande annule celle déjà ouverte (double toucher), pour qu'aucune promesse ne reste en attente.
+  useEffect(() => registerDialog((next) => setRequest((current) => {
+    current?.resolve(null);
+    return next;
+  })), []);
 
   const close = (value: string | null) => {
     request?.resolve(value);

@@ -74,7 +74,12 @@ const SHELL = BASE + '/';
 const PRECACHE = ${JSON.stringify([`${BASE}/`, ...precache])};
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(SHELL_CACHE).then((cache) => cache.addAll(PRECACHE)).then(() => self.skipWaiting()));
+  // cache: 'reload' contourne le cache HTTP (GitHub Pages : max-age 600) pour ne pas figer une ancienne page.
+  event.waitUntil(
+    caches.open(SHELL_CACHE)
+      .then((cache) => cache.addAll(PRECACHE.map((url) => new Request(url, { cache: 'reload' }))))
+      .then(() => self.skipWaiting()),
+  );
 });
 
 self.addEventListener('activate', (event) => {

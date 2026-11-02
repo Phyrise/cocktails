@@ -29,6 +29,15 @@ export default function CocktailScreen() {
   const [servings, setServings] = useState(1);
   const [note, setNote] = useState(user.data.notes[id ?? ''] ?? '');
 
+  // Les notes s'enregistrent pendant la frappe : rien n'est perdu si l'app est fermée en cours de saisie.
+  const savedNote = user.data.notes[id ?? ''] ?? '';
+  const { setNote: persistNote } = user;
+  useEffect(() => {
+    if (!id || note === savedNote) return;
+    const timer = setTimeout(() => persistNote(id, note), 500);
+    return () => clearTimeout(timer);
+  }, [id, note, persistNote, savedNote]);
+
   const { markViewed } = user;
   useEffect(() => {
     if (cocktail) markViewed(cocktail.id);
@@ -211,7 +220,7 @@ export default function CocktailScreen() {
                 placeholderTextColor={colors.muted}
                 style={[styles.note, { color: colors.ink, borderColor: colors.line, backgroundColor: colors.bg }]}
               />
-              {note !== (user.data.notes[cocktail.id] ?? '') ? <Button label="Enregistrer la note" size="sm" onPress={saveNote} /> : null}
+              <T variant="tiny" tone="muted">{note && note === savedNote ? 'Note enregistrée.' : 'Enregistrement automatique.'}</T>
             </Card>
 
             <View style={{ gap: space.xs }}>
@@ -296,5 +305,5 @@ const styles = StyleSheet.create({
   meter: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
   meterTrack: { flex: 1, height: 8, borderRadius: 4, overflow: 'hidden' },
   meterFill: { height: 8, borderRadius: 4 },
-  note: { minHeight: 84, borderWidth: 1, borderRadius: radius.sm, padding: space.sm, fontFamily: fonts.body, fontSize: 15, textAlignVertical: 'top' },
+  note: { minHeight: 84, borderWidth: 1, borderRadius: radius.sm, padding: space.sm, fontFamily: fonts.body, fontSize: 16, textAlignVertical: 'top' },
 });

@@ -100,4 +100,6 @@ export type Database = {
   ingredients: Ingredient[];
   /** Base d'URL des images de cette version (vide si les images sont intégrées). */
   imageBase: string;
+  /** Téléchargée depuis le site (mise à jour automatique) ou importée depuis un fichier (gardée telle quelle). */
+  source?: 'remote' | 'file';
 };

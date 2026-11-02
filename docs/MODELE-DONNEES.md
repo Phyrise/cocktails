@@ -54,7 +54,7 @@ Toutes les doses liquides sont en ml ; l'affichage convertit en cl ou oz et mult
 ## Disponibilité et suggestions
 
 - Un cocktail est **faisable** si tous ses ingrédients non facultatifs sont dans le bar. Formes équivalentes acceptées
-  (jus / quartiers de citron, sucre en sirop / morceau / poudre, champagne / prosecco…). Sucre, sel, poivre et eau gazeuse
+  (jus / quartiers de citron, sucre en sirop / morceau / poudre, champagne / prosecco…). Eau, eau gazeuse, sucre, sel et poivre
   peuvent être considérés comme toujours présents (réglage).
 - **Meilleurs achats** : chaque ingrédient manquant reçoit un score selon les recettes qu'il complète (1 point s'il est le
   seul manquant, 0,3 s'il en manque deux, 0,08 s'il en manque trois).

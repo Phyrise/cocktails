@@ -15,7 +15,7 @@ const equivalentOf = new Map<string, string[]>();
 for (const group of equivalents) for (const id of group) equivalentOf.set(id, group);
 
 /** Ingrédients du placard que l'on considère toujours disponibles (réglage « basiques »). */
-export const BASICS = new Set(['sucre', 'sucre-morceau', 'sucre-poudre', 'sucre-roux', 'sel', 'poivre', 'soda']);
+export const BASICS = new Set(['sucre', 'sucre-morceau', 'sucre-poudre', 'sucre-roux', 'sel', 'poivre', 'soda', 'eau']);
 
 export function hasIngredient(id: string, stock: Set<string>, assumeBasics: boolean) {
   if (assumeBasics && BASICS.has(id)) return true;
@@ -200,3 +200,51 @@ export function tasteScore(cocktail: Cocktail, profile: TasteProfile) {
 }
 
 export const slugify = (value: string) => normalize(value).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+// ——— Validation des données venues d'un fichier ou du stockage ———
+
+const isString = (value: unknown): value is string => typeof value === 'string';
+const strings = (value: unknown) => (Array.isArray(value) ? value.filter(isString) : []);
+
+/** Rend une fiche sûre à afficher (champs manquants complétés), ou null si elle est inutilisable. */
+export function sanitizeCocktail(value: unknown): Cocktail | null {
+  if (!value || typeof value !== 'object') return null;
+  const raw = value as Partial<Cocktail>;
+  if (!isString(raw.id) || !raw.id || !isString(raw.name) || !raw.name.trim()) return null;
+  const ingredients = (Array.isArray(raw.ingredients) ? raw.ingredients : [])
+    .filter((item): item is RecipeIngredient => !!item && isString(item.id) && typeof item.amount === 'number' && isString(item.unit));
+  if (!ingredients.length) return null;
+  return {
+    ...raw,
+    id: raw.id,
+    name: raw.name,
+    tagline: isString(raw.tagline) ? raw.tagline : '',
+    description: isString(raw.description) ? raw.description : '',
+    family: isString(raw.family) ? raw.family : 'Sour',
+    method: isString(raw.method) ? raw.method : 'Au verre',
+    glass: isString(raw.glass) ? raw.glass : 'Old fashioned',
+    ice: isString(raw.ice) ? raw.ice : 'Glaçons',
+    ingredients,
+    garnish: isString(raw.garnish) ? raw.garnish : '',
+    steps: strings(raw.steps),
+    flavors: strings(raw.flavors),
+    aliases: strings(raw.aliases),
+    difficulty: raw.difficulty === 1 || raw.difficulty === 3 ? raw.difficulty : 2,
+    color: isString(raw.color) && /^#[0-9a-f]{6}$/i.test(raw.color) ? raw.color : '#C9A27A',
+    origin: raw.origin ?? 'classique',
+  } as Cocktail;
+}
+
+export function sanitizeIngredient(value: unknown): Ingredient | null {
+  if (!value || typeof value !== 'object') return null;
+  const raw = value as Partial<Ingredient>;
+  if (!isString(raw.id) || !raw.id || !isString(raw.name)) return null;
+  const num = (input: unknown) => (typeof input === 'number' && Number.isFinite(input) ? input : 0);
+  return {
+    id: raw.id, name: raw.name, category: raw.category ?? 'frais_garniture', emoji: isString(raw.emoji) ? raw.emoji : '•',
+    abv: num(raw.abv), sugar: num(raw.sugar), acidity: num(raw.acidity), bitterness: num(raw.bitterness),
+  };
+}
+
+export const sanitizeList = <T,>(value: unknown, sanitize: (item: unknown) => T | null) =>
+  (Array.isArray(value) ? value : []).map(sanitize).filter((item): item is T => item !== null);

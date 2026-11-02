@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { availability, bestPurchases, computeMetrics, formatAmount, matchesQuery, searchText, tasteProfile, tasteScore } from '../../src/lib/cocktails.ts';
+import { availability, bestPurchases, computeMetrics, formatAmount, matchesQuery, sanitizeCocktail, sanitizeList, searchText, tasteProfile, tasteScore } from '../../src/lib/cocktails.ts';
 
 const negroni = {
   id: 'negroni', name: 'Negroni', tagline: '', description: '', family: 'Spirit-forward', method: 'Verre à mélange', glass: 'Old fashioned', ice: 'Gros glaçon',
@@ -59,6 +59,16 @@ test('goûts : saveurs aimées, favoris et ingrédients évités', () => {
   assert.ok(tasteScore(daiquiri, fan) > tasteScore(negroni, fan));
   const allergic = tasteProfile([negroni, daiquiri], { ...base, avoid: ['campari'] });
   assert.ok(tasteScore(negroni, allergic) < -5);
+});
+
+test('fichier abîmé : fiches complétées ou écartées, jamais de plantage', () => {
+  const repaired = sanitizeCocktail({ id: 'x', name: 'X', ingredients: [{ id: 'gin', amount: 30, unit: 'ml' }] });
+  assert.deepEqual(repaired.steps, []);
+  assert.deepEqual(repaired.flavors, []);
+  assert.equal(sanitizeCocktail({ id: 'y', name: 'Y' }), null, 'sans ingrédient');
+  assert.equal(sanitizeCocktail({ name: 'Z', ingredients: [] }), null, 'sans id');
+  assert.equal(sanitizeList([negroni, null, 42, { id: 'a' }], sanitizeCocktail).length, 1);
+  assert.deepEqual(sanitizeList('pas une liste', sanitizeCocktail), []);
 });
 
 test('recherche : accents ignorés, nom prioritaire', () => {

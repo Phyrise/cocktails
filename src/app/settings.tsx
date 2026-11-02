@@ -9,7 +9,7 @@ import { Button, Card, Chip, Divider, Screen, Segmented, T } from '@/components/
 import { fonts, radius, space } from '@/constants/theme';
 import { normalize } from '@/lib/cocktails';
 import { FLAVORS } from '@/lib/filters';
-import { databaseFile, defaultDbUrl, parseDatabaseFile, prefetchImages } from '@/lib/database';
+import { databaseFile, defaultDbUrl, isNewerVersion, parseDatabaseFile, prefetchImages } from '@/lib/database';
 import { ask, confirm } from '@/lib/dialogs';
 import { pickJsonFile, saveJsonFile } from '@/lib/files';
 import { emptyUserData, mergeUserData, parseBackupFile, type ThemeChoice, useCatalog, useTheme, useUser } from '@/state/store';
@@ -44,7 +44,8 @@ export default function SettingsScreen() {
 
   const checkUpdate = () => run('check', async () => {
     const version = await catalog.checkForUpdate();
-    toast(version === db?.version ? 'Votre base est à jour' : 'Une nouvelle version est disponible');
+    if (db?.source === 'file' && version !== db.version) toast('Base importée : « Retélécharger » pour revenir à la base publiée');
+    else toast(isNewerVersion(version, db) ? 'Une nouvelle version est disponible' : 'Votre base est à jour');
   });
 
   const update = () => run('update', async () => {
@@ -103,7 +104,7 @@ export default function SettingsScreen() {
           </View>
         </Line>
         <Divider />
-        <Line icon="check" label="Basiques toujours disponibles" hint="Sucre, sel, poivre et eau gazeuse comptent comme présents dans votre bar.">
+        <Line icon="check" label="Basiques toujours disponibles" hint="Eau, eau gazeuse, sucre, sel et poivre comptent comme présents dans votre bar.">
           <Switch value={settings.assumeBasics} onValueChange={(assumeBasics) => user.updateSettings({ assumeBasics })} trackColor={{ true: colors.ok, false: colors.line }} />
         </Line>
       </Group>
@@ -141,7 +142,7 @@ export default function SettingsScreen() {
       <Group title="Base de recettes">
         <View style={{ gap: 2 }}>
           <T variant="h3">{catalog.cocktails.length} recettes · {db?.cocktails.filter((cocktail) => cocktail.image).length ?? 0} photos</T>
-          <T variant="small" tone="muted">Version {db?.version ?? '—'}{db ? ` · ${new Date(db.generatedAt).toLocaleDateString('fr-FR')}` : ''}</T>
+          <T variant="small" tone="muted">Version {db?.version ?? '—'}{db ? ` · ${new Date(db.generatedAt).toLocaleDateString('fr-FR')}` : ''}{db?.source === 'file' ? ' · importée d’un fichier' : ''}</T>
           {catalog.updateAvailable ? <T variant="small" tone="accent" style={{ fontWeight: '700' }}>Nouvelle version disponible : {catalog.remoteVersion}</T> : null}
         </View>
         {catalog.updateAvailable ? (

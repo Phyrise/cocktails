@@ -63,8 +63,15 @@ export default function BarScreen() {
     const text = `Courses cocktails :\n${shoppingItems.map((item) => `• ${item.name}`).join('\n')}`;
     try {
       const nav = globalThis.navigator as Navigator | undefined;
-      if (Platform.OS === 'web' && nav?.share && matchMedia('(pointer: coarse)').matches) await nav.share({ text });
-      else await nav?.clipboard?.writeText(text);
+      if (Platform.OS === 'web' && nav?.share && matchMedia('(pointer: coarse)').matches) {
+        await nav.share({ text });
+        return;
+      }
+      if (!nav?.clipboard) {
+        toast('Copie indisponible ici (connexion non sécurisée)');
+        return;
+      }
+      await nav.clipboard.writeText(text);
       toast('Liste copiée');
     } catch {
       // Partage annulé.
@@ -152,7 +159,7 @@ export default function BarScreen() {
               ) : null}
             </View>
             {data.settings.assumeBasics ? (
-              <T variant="tiny" tone="muted">Sucre, sel, poivre et eau gazeuse sont considérés comme toujours disponibles (modifiable dans les réglages).</T>
+              <T variant="tiny" tone="muted">Eau, eau gazeuse, sucre, sel et poivre sont considérés comme toujours disponibles (modifiable dans les réglages).</T>
             ) : null}
           </View>
 

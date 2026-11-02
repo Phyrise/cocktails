@@ -1,8 +1,9 @@
 import Constants from 'expo-constants';
 import { Platform } from 'react-native';
 
+import { sanitizeCocktail, sanitizeIngredient, sanitizeList } from '@/lib/cocktails';
 import { getItem, setItem } from '@/lib/storage';
-import type { Cocktail, Database, DatabaseManifest, Ingredient } from '@/types/cocktail';
+import type { Cocktail, Database, DatabaseManifest } from '@/types/cocktail';
 
 const DB_KEY = 'database/v1';
 /** Adresse publique de la base pour les versions natives (et pour une mise à jour depuis un autre hébergement). */
@@ -40,17 +41,34 @@ export async function downloadDatabase(dbUrl = defaultDbUrl(), onProgress?: (pro
   const manifest = await fetchManifest(dbUrl);
   if (manifest.format !== 1) throw new Error('Format de base inconnu : mettez l’application à jour.');
   const total = manifest.chunks.length + 1;
+  // La version dans l'adresse empêche de mélanger les tronçons de deux versions (cache, réseau instable).
+  const versioned = (file: string) => `${dbUrl}${file}?v=${encodeURIComponent(manifest.version)}`;
   onProgress?.({ done: 0, total, label: 'Ingrédients' });
-  const ingredients = await fetchJson<Ingredient[]>(`${dbUrl}${manifest.ingredients}`);
+  const ingredients = sanitizeList(await fetchJson<unknown>(versioned(manifest.ingredients)), sanitizeIngredient);
   const cocktails: Cocktail[] = [];
   for (const [index, chunk] of manifest.chunks.entries()) {
     onProgress?.({ done: index + 1, total, label: `Tronçon ${index + 1}/${manifest.chunks.length}` });
-    const part = await fetchJson<Cocktail[]>(`${dbUrl}${chunk.file}`);
-    if (part.length !== chunk.count) throw new Error(`Tronçon incomplet : ${chunk.file}`);
-    cocktails.push(...part);
+    const part = await fetchJson<unknown[]>(versioned(chunk.file));
+    if (!Array.isArray(part) || part.length !== chunk.count) throw new Error(`Tronçon incomplet : ${chunk.file}`);
+    cocktails.push(...sanitizeList(part, sanitizeCocktail));
   }
+  if (!cocktails.length) throw new Error('La base téléchargée est vide.');
   onProgress?.({ done: total, total, label: 'Terminé' });
-  return { version: manifest.version, generatedAt: manifest.generatedAt, cocktails, ingredients, imageBase: dbUrl };
+  return { version: manifest.version, generatedAt: manifest.generatedAt, cocktails, ingredients, imageBase: dbUrl, source: 'remote' };
+}
+
+/** Base stockée relue au démarrage : null si elle est illisible (elle sera alors retéléchargée). */
+export function validateDatabase(value: Database | undefined): Database | null {
+  if (!value || typeof value !== 'object') return null;
+  const cocktails = sanitizeList(value.cocktails, sanitizeCocktail);
+  if (!cocktails.length) return null;
+  return { ...value, cocktails, ingredients: sanitizeList(value.ingredients, sanitizeIngredient), source: value.source ?? 'remote' };
+}
+
+/** Une version publiée est-elle plus récente que la base installée ? (versions « AAAA-MM-JJ-empreinte ») */
+export function isNewerVersion(remote: string | null, local: Database | null) {
+  if (!remote || !local || remote === local.version || local.source === 'file') return false;
+  return remote.slice(0, 10) >= local.version.slice(0, 10);
 }
 
 export function imageUri(image: string | null | undefined, db: Pick<Database, 'imageBase'> | null) {
@@ -91,13 +109,16 @@ export function databaseFile(db: Database) {
 
 export function parseDatabaseFile(data: unknown, imageBase: string): Database | null {
   if (!data || typeof data !== 'object') return null;
-  const file = data as { kind?: string; version?: string; generatedAt?: string; cocktails?: Cocktail[]; ingredients?: Ingredient[] };
-  if (file.kind !== FILE_KINDS.database || !Array.isArray(file.cocktails) || !Array.isArray(file.ingredients)) return null;
+  const file = data as { kind?: string; version?: string; generatedAt?: string; cocktails?: unknown; ingredients?: unknown };
+  if (file.kind !== FILE_KINDS.database) return null;
+  const cocktails = sanitizeList(file.cocktails, sanitizeCocktail);
+  if (!cocktails.length) return null;
   return {
-    version: file.version ?? 'import',
-    generatedAt: file.generatedAt ?? new Date().toISOString(),
-    cocktails: file.cocktails,
-    ingredients: file.ingredients,
+    version: typeof file.version === 'string' ? file.version : 'import',
+    generatedAt: typeof file.generatedAt === 'string' ? file.generatedAt : new Date().toISOString(),
+    cocktails,
+    ingredients: sanitizeList(file.ingredients, sanitizeIngredient),
     imageBase,
+    source: 'file',
   };
 }

@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Icon, type IconName } from '@/components/icon';
 import { fonts } from '@/constants/theme';
-import { useTheme, useUser } from '@/state/store';
+import { useCatalog, useTheme, useUser } from '@/state/store';
 
 const tab = (title: string, icon: IconName) => ({
   title,
@@ -14,6 +14,9 @@ const tab = (title: string, icon: IconName) => ({
 export default function TabsLayout() {
   const { colors } = useTheme();
   const { shopping } = useUser();
+  const { ingredientById } = useCatalog();
+  // Seuls les ingrédients encore connus de la base comptent (une mise à jour peut en retirer).
+  const shoppingCount = [...shopping].filter((id) => ingredientById.has(id)).length;
   const insets = useSafeAreaInsets();
   return (
     <Tabs
@@ -34,7 +37,7 @@ export default function TabsLayout() {
       }}>
       <Tabs.Screen name="index" options={tab('Accueil', 'home')} />
       <Tabs.Screen name="cocktails" options={tab('Cocktails', 'search')} />
-      <Tabs.Screen name="bar" options={{ ...tab('Mon bar', 'wine'), tabBarBadge: shopping.size || undefined, tabBarBadgeStyle: { backgroundColor: colors.accent, color: colors.accentInk, fontSize: 10 } }} />
+      <Tabs.Screen name="bar" options={{ ...tab('Mon bar', 'wine'), tabBarBadge: shoppingCount || undefined, tabBarBadgeStyle: { backgroundColor: colors.accent, color: colors.accentInk, fontSize: 10 } }} />
       <Tabs.Screen name="listes" options={tab('Mes listes', 'heart')} />
     </Tabs>
   );

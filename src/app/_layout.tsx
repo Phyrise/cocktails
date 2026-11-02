@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { DialogProvider } from '@/components/dialog';
 import { ToastProvider } from '@/components/toast';
 import { Button, T } from '@/components/ui';
 import { space } from '@/constants/theme';
@@ -75,7 +76,9 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <AppProvider>
         <ToastProvider>
-          <Gate />
+          <DialogProvider>
+            <Gate />
+          </DialogProvider>
         </ToastProvider>
       </AppProvider>
     </SafeAreaProvider>

@@ -10,7 +10,7 @@ import { fonts, radius, space } from '@/constants/theme';
 import { normalize } from '@/lib/cocktails';
 import { FLAVORS } from '@/lib/filters';
 import { databaseFile, defaultDbUrl, parseDatabaseFile, prefetchImages } from '@/lib/database';
-import { confirm } from '@/lib/dialogs';
+import { ask, confirm } from '@/lib/dialogs';
 import { pickJsonFile, saveJsonFile } from '@/lib/files';
 import { emptyUserData, mergeUserData, parseBackupFile, type ThemeChoice, useCatalog, useTheme, useUser } from '@/state/store';
 import type { MeasurementUnit } from '@/types/cocktail';
@@ -71,9 +71,13 @@ export default function SettingsScreen() {
     }
     const backup = parseBackupFile(data);
     if (backup) {
-      const replace = await confirm('Importer la sauvegarde', 'OK : remplacer toutes vos données par celles du fichier.\nAnnuler : fusionner avec vos données actuelles (rien n’est perdu).', 'Remplacer');
-      user.replaceUserData(replace ? backup : mergeUserData(user.data, backup));
-      toast(replace ? 'Données remplacées' : 'Données fusionnées');
+      const choice = await ask('Importer la sauvegarde', 'Fusionner ajoute le contenu du fichier à vos données actuelles (rien n’est perdu). Remplacer efface vos données actuelles.', [
+        { label: 'Fusionner', value: 'merge', tone: 'primary' },
+        { label: 'Remplacer', value: 'replace', tone: 'danger' },
+      ]);
+      if (!choice) return;
+      user.replaceUserData(choice === 'replace' ? backup : mergeUserData(user.data, backup));
+      toast(choice === 'replace' ? 'Données remplacées' : 'Données fusionnées');
       return;
     }
     throw new Error('Ce fichier n’est ni une base ni une sauvegarde Arturo et Clémentine.');

@@ -106,7 +106,8 @@ export default function EditorScreen() {
     };
     user.saveCocktail(cocktail);
     toast('Recette enregistrée');
-    if (draft.id) router.back();
+    // Retour à la fiche ; si l'éditeur a été ouvert directement (lien, rechargement), il n'y a pas d'historique.
+    if (draft.id && router.canGoBack()) router.back();
     else router.replace({ pathname: '/cocktail/[id]', params: { id } });
   };
 

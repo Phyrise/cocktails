@@ -4,7 +4,7 @@
 
 - Web app installable (iPhone, Android, ordinateur), hors ligne, publiable sur GitHub Pages.
 - Refonte visuelle : thème clair / sombre, police Fraunces, icônes, fiches lisibles, illustrations de verres.
-- Base de 228 recettes (sélection de Clément, IBA, classiques, 26 sans alcool), 145 photos WebP légères.
+- Base de 228 recettes (sélection de Clément, IBA, classiques, 24 sans alcool), 145 photos WebP légères.
 - Base découpée en tronçons, mise à jour automatique, import / export d'un fichier.
 - Bar, meilleurs achats, liste de courses, favoris, à essayer, notes et commentaires, recettes personnelles avec photo.
 - Tests automatiques de la base et de la logique.

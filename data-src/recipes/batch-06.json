@@ -74,9 +74,9 @@
       "ice": "Sans glace",
       "ingredients": [
         { "id": "gin", "amount": 52.5, "unit": "ml" },
-        { "id": "citron", "amount": 20, "unit": "ml" },
-        { "id": "jus-d-orange", "amount": 15, "unit": "ml" },
-        { "id": "sirop-de-miel", "amount": 20, "unit": "ml" }
+        { "id": "citron", "amount": 22.5, "unit": "ml" },
+        { "id": "jus-d-orange", "amount": 22.5, "unit": "ml" },
+        { "id": "sirop-de-miel", "amount": 10, "unit": "ml" }
       ],
       "garnish": "Zeste de citron ou d'orange (facultatif)",
       "steps": [
@@ -90,7 +90,7 @@
       "iba": "New Era Drinks",
       "color": "#E9D27A",
       "cocktailDbId": null,
-      "notes": "Spec IBA avec jus d'orange ; la version courante s'en passe (60 ml gin, 20 ml citron, 20 ml sirop de miel)."
+      "notes": "Spécification IBA (52,5 ml de gin, 22,5 ml de citron et 22,5 ml d'orange, 2 cuillères de sirop de miel) ; la version courante, sans orange, se fait à 60 / 20 / 20 ml."
     },
     {
       "id": "hanky-panky",
@@ -147,7 +147,7 @@
       ],
       "flavors": ["Tropical", "Amer", "Fruité", "Acidulé"],
       "difficulty": 2,
-      "iba": null,
+      "iba": "New Era Drinks",
       "color": "#D9573A",
       "cocktailDbId": null,
       "notes": ""
@@ -233,10 +233,10 @@
       ],
       "flavors": ["Acidulé", "Fruité", "Sucré", "Agrume"],
       "difficulty": 2,
-      "iba": "Unforgettables",
+      "iba": null,
       "color": "#F4A1A8",
       "cocktailDbId": "17183",
-      "notes": "Source : 52,5 ml de rhum, 30 ml de citron vert, sirop de sucre et un trait de grenadine ; on suit la spec IBA (45 / 20 / 10 ml de grenadine, sans sirop de sucre)."
+      "notes": "Source : 52,5 ml de rhum, 30 ml de citron vert, sirop de sucre et un trait de grenadine ; doses de l'ancienne spécification IBA (45 / 20 / 10 ml de grenadine, sans sirop de sucre). Retiré de la liste IBA en 2020."
     },
     {
       "id": "caipiroska",
@@ -301,15 +301,15 @@
       "name": "Gin Basil Smash",
       "aliases": ["Gin Pesto"],
       "tagline": "Gin et basilic frais, d'un vert éclatant",
-      "description": "Créé en 2008 par Jörg Meyer au Le Lion, bar de Hambourg, il s'est diffusé en quelques années dans le monde entier. Le basilic, secoué énergiquement avec le citron, colore la boisson et lui donne un parfum vert et poivré, posé sur la structure d'un gin sour.",
+      "description": "Créé en 2008 par Jörg Meyer au bar Le Lion de Hambourg, il s'est diffusé en quelques années dans le monde entier. Le basilic, secoué énergiquement avec le citron, colore la boisson et lui donne un parfum vert et poivré, posé sur la structure d'un gin sour.",
       "family": "Sour",
       "method": "Shaker",
       "glass": "Old fashioned",
       "ice": "Glaçons",
       "ingredients": [
         { "id": "gin", "amount": 60, "unit": "ml" },
-        { "id": "citron", "amount": 25, "unit": "ml" },
-        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "citron", "amount": 22.5, "unit": "ml" },
+        { "id": "sucre", "amount": 22.5, "unit": "ml" },
         { "id": "basilic", "amount": 10, "unit": "pièce", "note": "feuilles, une belle poignée" }
       ],
       "garnish": "Brin de basilic",
@@ -321,24 +321,24 @@
       ],
       "flavors": ["Herbacé", "Frais", "Acidulé", "Agrume"],
       "difficulty": 2,
-      "iba": null,
+      "iba": "New Era Drinks",
       "color": "#A9C95A",
       "cocktailDbId": "178314",
-      "notes": "Source : 20 ml de citron ; on suit la recette du Le Lion (25 ml)."
+      "notes": "Spécification IBA (60 / 22,5 / 22,5 ml, 10 feuilles de basilic) ; servi sur glace comme au Le Lion, alors que l'IBA le sert sans glace en verre à cocktail."
     },
     {
       "id": "southside",
       "name": "Southside",
       "aliases": ["South Side"],
-      "tagline": "Gin, citron vert et menthe, comme un mojito chic",
-      "description": "Associé à la Prohibition, il est souvent rattaché au Southside Sportsmen's Club de Long Island ou aux bandes du sud de Chicago, sans preuve décisive. Servi frappé et sans glace, il marie la vivacité du citron vert à la fraîcheur de la menthe sur une base de gin sec.",
+      "tagline": "Gin, citron et menthe, comme un mojito chic",
+      "description": "Associé à la Prohibition, il est souvent rattaché au Southside Sportsmen's Club de Long Island ou aux bandes du sud de Chicago, sans preuve décisive. Servi frappé et sans glace, il marie la vivacité du citron à la fraîcheur de la menthe sur une base de gin sec.",
       "family": "Sour",
       "method": "Shaker",
       "glass": "Coupe",
       "ice": "Sans glace",
       "ingredients": [
         { "id": "gin", "amount": 60, "unit": "ml" },
-        { "id": "citron-vert", "amount": 30, "unit": "ml" },
+        { "id": "citron", "amount": 30, "unit": "ml" },
         { "id": "sucre", "amount": 15, "unit": "ml" },
         { "id": "menthe", "amount": 6, "unit": "pièce", "note": "feuilles" }
       ],
@@ -346,7 +346,7 @@
       "steps": [
         "Rafraîchir la coupe.",
         "Placer les feuilles de menthe dans le shaker et les presser doucement, sans les déchirer.",
-        "Ajouter le gin, le jus de citron vert, le sirop et des glaçons, puis shaker 10 à 12 secondes.",
+        "Ajouter le gin, le jus de citron, le sirop et des glaçons, puis shaker 10 à 12 secondes.",
         "Double-filtrer dans la coupe et poser une feuille de menthe en surface."
       ],
       "flavors": ["Frais", "Herbacé", "Acidulé", "Agrume"],
@@ -354,7 +354,7 @@
       "iba": "New Era Drinks",
       "color": "#DCE8C0",
       "cocktailDbId": null,
-      "notes": "Certaines recettes utilisent du citron jaune à la place du citron vert ; doses IBA à confirmer."
+      "notes": "Spécification IBA (60 / 30 / 15 ml, citron jaune, blanc d'œuf facultatif) ; beaucoup de bars le préparent au citron vert."
     },
     {
       "id": "naked-and-famous",

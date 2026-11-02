@@ -84,7 +84,7 @@
       ],
       "flavors": ["Sec", "Corsé", "Agrume"],
       "difficulty": 2,
-      "iba": "New Era Drinks",
+      "iba": "Contemporary Classics",
       "color": "#F1EBCB",
       "cocktailDbId": "17218",
       "notes": "Gin ramené à 45 ml selon la spécification IBA actuelle (60 ml dans la source, dose de l'ancienne spécification)."
@@ -119,10 +119,10 @@
       ],
       "flavors": ["Épicé", "Salé", "Agrume", "Fruité"],
       "difficulty": 2,
-      "iba": "New Era Drinks",
+      "iba": null,
       "color": "#C8502F",
       "cocktailDbId": "17217",
-      "notes": "Recette IBA (miel, oignon, piment, Worcestershire) ; la source décrit une version de rue au soda d'agrumes et à la sangrita du commerce, avec 60 ml de tequila et du sirop de sucre."
+      "notes": "Recette de l'ancienne spécification IBA (miel, oignon, piment, Worcestershire), retirée de la liste en 2020 ; la source décrit une version de rue au soda d'agrumes et à la sangrita du commerce, avec 60 ml de tequila et du sirop de sucre."
     },
     {
       "id": "whiskey-sour",
@@ -179,10 +179,10 @@
       ],
       "flavors": ["Agrume", "Sucré", "Herbacé"],
       "difficulty": 2,
-      "iba": "New Era Drinks",
+      "iba": null,
       "color": "#F2D24B",
       "cocktailDbId": "17219",
-      "notes": ""
+      "notes": "Doses de l'ancienne spécification IBA ; retiré de la liste en 2024."
     },
     {
       "id": "long-island-iced-tea",
@@ -223,7 +223,7 @@
       "name": "Barracuda",
       "aliases": [],
       "tagline": "Rhum ambré et ananas sous une mousse de prosecco",
-      "description": "Création italienne contemporaine reprise par l'IBA, le Barracuda marie l'ananas et le rhum ambré à la vanille anisée du Galliano. Le prosecco versé en dernier allège l'ensemble et lui donne un pétillant festif.",
+      "description": "Création italienne contemporaine, inscrite à la liste IBA jusqu'en 2024, le Barracuda marie l'ananas et le rhum ambré à la vanille anisée du Galliano. Le prosecco versé en dernier allège l'ensemble et lui donne un pétillant festif.",
       "family": "Tiki & Tropical",
       "method": "Shaker",
       "glass": "Coupe",
@@ -244,10 +244,10 @@
       ],
       "flavors": ["Tropical", "Fruité", "Pétillant"],
       "difficulty": 2,
-      "iba": "New Era Drinks",
+      "iba": null,
       "color": "#F2C84E",
       "cocktailDbId": "17209",
-      "notes": "Rhum ambré (gold rum) comme le veut l'IBA ; servi en coupe faute de verre à margarita dans la liste."
+      "notes": "Rhum ambré (gold rum) comme dans l'ancienne spécification IBA ; servi en coupe faute de verre à margarita dans la liste."
     },
     {
       "id": "affinity",
@@ -427,10 +427,10 @@
       ],
       "flavors": ["Acidulé", "Agrume", "Herbacé"],
       "difficulty": 2,
-      "iba": "Unforgettables",
+      "iba": "Contemporary Classics",
       "color": "#F0E2A6",
       "cocktailDbId": "17250",
-      "notes": "La source (« Corpse Reviver ») décrit le Corpse Reviver #2 : fiche nommée en conséquence, spécification IBA (catégorie Unforgettables)."
+      "notes": "La source (« Corpse Reviver ») décrit le Corpse Reviver #2 : fiche nommée en conséquence, spécification IBA (Contemporary Classics)."
     },
     {
       "id": "death-in-the-afternoon",

@@ -192,10 +192,10 @@
       ],
       "flavors": ["Pétillant", "Fruité", "Sucré"],
       "difficulty": 1,
-      "iba": "Contemporary Classics",
+      "iba": null,
       "color": "#B8435E",
       "cocktailDbId": "13837",
-      "notes": "L'IBA le décrit comme variante officielle du Kir (même dosage, champagne à la place du vin blanc)."
+      "notes": "Variante citée sur la fiche IBA du Kir (même dosage, champagne à la place du vin blanc), sans entrée propre dans la liste officielle."
     },
     {
       "id": "lemon-drop",
@@ -221,7 +221,7 @@
       ],
       "flavors": ["Acidulé", "Agrume", "Sucré"],
       "difficulty": 2,
-      "iba": "New Era Drinks",
+      "iba": "Contemporary Classics",
       "color": "#F3E6A2",
       "cocktailDbId": "14366",
       "notes": "Doses source (1,5 shot de vodka et de Cointreau, jus d'un quartier de citron) remplacées par la spécification IBA."
@@ -616,7 +616,7 @@
     {
       "id": "pornstar-martini",
       "name": "Pornstar Martini",
-      "aliases": ["Porn Star Martini", "Passion Fruit Martini"],
+      "aliases": ["Porn Star Martini"],
       "tagline": "Passion et vanille, servi avec un shot de bulles à côté",
       "description": "Créé à Londres au début des années 2000 par le barman Douglas Ankrah, le Pornstar Martini est vite devenu l'un des cocktails les plus commandés du Royaume-Uni. Vodka vanille, liqueur et purée de fruit de la passion donnent un cocktail tropical et acidulé, accompagné d'un petit verre de bulles à boire à part ou à verser dedans.",
       "family": "Tiki & Tropical",

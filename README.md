@@ -67,7 +67,7 @@ Publication : voir [docs/PUBLIER.md](./docs/PUBLIER.md).
 ## Données
 
 228 recettes : les 44 de la sélection de Clément (doses inchangées, textes réécrits), 5 fiches éditoriales et 179
-classiques (spécifications IBA ou recettes de référence, rédigées en français), dont 26 sans alcool. 145 ont une photo
+classiques (spécifications IBA ou recettes de référence, rédigées en français), dont 24 sans alcool et 89 cocktails officiels IBA. 145 ont une photo
 (TheCocktailDB, recadrée en WebP 480 px) ; les autres ont une illustration de leur verre teintée à la couleur de la boisson.
 Détails : [docs/MODELE-DONNEES.md](./docs/MODELE-DONNEES.md).
 

@@ -3,5 +3,13 @@
   "amaretto-sour": { "cocktailDbId": "13731" },
   "blue-lagoon": { "cocktailDbId": "11117" },
   "last-word": { "cocktailDbId": "17247" },
-  "amaretto-sunset": { "cocktailDbId": "17168" }
+  "amaretto-sunset": { "cocktailDbId": "17168" },
+  "tom-collins": {
+    "ingredients": [
+      { "id": "old-tom-gin", "amount": 45, "unit": "ml", "note": "ou un London dry gin, un peu moins rond" },
+      { "id": "citron", "amount": 30, "unit": "ml" },
+      { "id": "sucre", "amount": 15, "unit": "ml" },
+      { "id": "soda", "amount": 60, "unit": "ml", "note": "pour compléter" }
+    ]
+  }
 }

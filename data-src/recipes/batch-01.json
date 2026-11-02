@@ -53,10 +53,10 @@
       ],
       "flavors": ["Café", "Crémeux", "Sucré", "Agrume"],
       "difficulty": 3,
-      "iba": "New Era Drinks",
+      "iba": null,
       "color": "#8B5A2B",
       "cocktailDbId": "15853",
-      "notes": "Doses de la source incohérentes (1/3, 1/3, 1/4) : remplacées par trois parts égales de 20 ml. Catégorie IBA reprise de la source, à vérifier (le B-52 ne figure peut-être plus dans la liste IBA actuelle)."
+      "notes": "Doses de la source incohérentes (1/3, 1/3, 1/4) : remplacées par trois parts égales de 20 ml. Retiré de la liste IBA en 2020."
     },
     {
       "id": "bellini",
@@ -128,7 +128,7 @@
       "ingredients": [
         { "id": "cachaca", "amount": 60, "unit": "ml" },
         { "id": "citron-vert-quartiers", "amount": 1, "unit": "pièce", "note": "coupé en petits quartiers" },
-        { "id": "sucre-morceau", "amount": 4, "unit": "pièce", "note": "ou 4 cuillères de sucre blanc en poudre" }
+        { "id": "sucre-poudre", "amount": 4, "unit": "cuillère", "note": "sucre blanc" }
       ],
       "garnish": "",
       "steps": [
@@ -142,7 +142,7 @@
       "iba": "Contemporary Classics",
       "color": "#E3EDC8",
       "cocktailDbId": "11202",
-      "notes": "Sucre en poudre absent du catalogue : sucre-morceau utilisé (4 morceaux ≈ 4 cuillères de la spécification IBA)."
+      "notes": ""
     },
     {
       "id": "clover-club",
@@ -238,7 +238,7 @@
       "name": "Derby",
       "aliases": [],
       "tagline": "Gin, bitter pêche et menthe, un martini parfumé",
-      "description": "Sous ce nom circulent plusieurs recettes ; la version au gin, au bitter de pêche et à la menthe figure dans les guides de bar anciens et a longtemps été retenue par l'IBA. Très sèche, elle laisse parler le gin, simplement nuancé d'un fruit discret et d'une fraîcheur mentholée.",
+      "description": "Sous ce nom circulent plusieurs recettes ; la version au gin, au bitter de pêche et à la menthe figure dans les guides de bar anciens et a figuré sur la liste IBA jusqu'en 2020. Très sèche, elle laisse parler le gin, simplement nuancé d'un fruit discret et d'une fraîcheur mentholée.",
       "family": "Spirit-forward",
       "method": "Verre à mélange",
       "glass": "Coupe",
@@ -257,10 +257,10 @@
       ],
       "flavors": ["Sec", "Herbacé", "Frais"],
       "difficulty": 2,
-      "iba": "Unforgettables",
+      "iba": null,
       "color": "#EEF2E2",
       "cocktailDbId": "17187",
-      "notes": "Bitter pêche ajouté au catalogue (newIngredients). Catégorie IBA reprise de la source, à vérifier (le Derby ne figure peut-être plus dans la liste actuelle). Ne pas confondre avec le Derby au bourbon, vermouth, curaçao et citron vert."
+      "notes": "Bitter pêche ajouté au catalogue (newIngredients). Retiré de la liste IBA en 2020. Ne pas confondre avec le Derby au bourbon, vermouth, curaçao et citron vert."
     },
     {
       "id": "dry-martini",
@@ -314,10 +314,10 @@
       ],
       "flavors": ["Salé", "Sec", "Herbacé"],
       "difficulty": 2,
-      "iba": "New Era Drinks",
+      "iba": null,
       "color": "#E6E3C8",
       "cocktailDbId": "17181",
-      "notes": "Saumure d'olive ajoutée au catalogue (newIngredients). Source au shaker, 70 ml de vodka et 30 ml de saumure, bord frotté au citron : ramené à la recette IBA (60 / 10 / 10 ml, remué). Catégorie IBA à vérifier (peut-être retiré de la liste actuelle)."
+      "notes": "Saumure d'olive ajoutée au catalogue (newIngredients). Source au shaker, 70 ml de vodka et 30 ml de saumure, bord frotté au citron : ramené à l'ancienne spécification IBA (60 / 10 / 10 ml, remué). Retiré de la liste IBA en 2020."
     },
     {
       "id": "dark-n-stormy",
@@ -468,7 +468,7 @@
       "name": "Gin Fizz",
       "aliases": [],
       "tagline": "Gin, citron et eau gazeuse, désaltérant et pétillant",
-      "description": "Popularisé aux États-Unis dans la seconde moitié du XIXe siècle, le Gin Fizz est un sour allongé d'eau gazeuse, servi traditionnellement sans glace dans un verre court et étroit. Vif et rafraîchissant, il laisse le gin et le citron s'exprimer sous une effervescence légère.",
+      "description": "Popularisé aux États-Unis dans la seconde moitié du XIXe siècle, le Gin Fizz est un sour allongé d'eau gazeuse, servi traditionnellement sans glace dans un verre étroit. Vif et rafraîchissant, il laisse le gin et le citron s'exprimer sous une effervescence légère.",
       "family": "Fizz & Collins",
       "method": "Shaker",
       "glass": "Highball",
@@ -515,10 +515,10 @@
       ],
       "flavors": ["Sucré", "Boisé", "Corsé"],
       "difficulty": 1,
-      "iba": "Contemporary Classics",
+      "iba": null,
       "color": "#A2622A",
       "cocktailDbId": "11423",
-      "notes": "Source à 45 / 22,5 ml : proportions IBA à parts égales (35 / 35 ml) retenues ; beaucoup de bars préfèrent un ratio 2:1, moins sucré. Catégorie IBA à vérifier (peut-être retiré de la liste actuelle)."
+      "notes": "Source à 45 / 22,5 ml : proportions de l'ancienne spécification IBA à parts égales (35 / 35 ml) retenues ; beaucoup de bars préfèrent un ratio 2:1, moins sucré. Retiré de la liste IBA en 2020."
     },
     {
       "id": "grasshopper",
@@ -601,10 +601,10 @@
       ],
       "flavors": ["Agrume", "Sucré", "Herbacé"],
       "difficulty": 1,
-      "iba": "Contemporary Classics",
+      "iba": null,
       "color": "#F5A623",
       "cocktailDbId": "11462",
-      "notes": "Source à 30 / 15 / 120 ml : doses IBA (45 / 15 / 90 ml) retenues. Catégorie IBA à vérifier (peut-être retiré de la liste actuelle)."
+      "notes": "Source à 30 / 15 / 120 ml : doses de l'ancienne spécification IBA (45 / 15 / 90 ml) retenues. Retiré de la liste IBA en 2020."
     },
     {
       "id": "hemingway-special",

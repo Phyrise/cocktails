@@ -54,10 +54,10 @@
       ],
       "flavors": ["Acidulé", "Agrume", "Sucré"],
       "difficulty": 2,
-      "iba": "New Era Drinks",
+      "iba": null,
       "color": "#E9EFC9",
       "cocktailDbId": "11600",
-      "notes": ""
+      "notes": "Retiré de la liste IBA en 2020."
     },
     {
       "id": "mimosa",
@@ -320,7 +320,7 @@
       ],
       "flavors": ["Acidulé", "Agrume", "Crémeux"],
       "difficulty": 2,
-      "iba": "New Era Drinks",
+      "iba": "Contemporary Classics",
       "color": "#F3EBC8",
       "cocktailDbId": "13214",
       "notes": ""
@@ -639,10 +639,10 @@
       ],
       "flavors": ["Agrume", "Fruité", "Frais"],
       "difficulty": 1,
-      "iba": "Unforgettables",
+      "iba": null,
       "color": "#F7A520",
       "cocktailDbId": "12162",
-      "notes": ""
+      "notes": "Doses de l'ancienne spécification IBA ; retiré de la liste en 2020."
     }
   ],
   "newIngredients": [

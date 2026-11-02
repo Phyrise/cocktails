@@ -99,7 +99,7 @@
       "name": "Mud Slide",
       "aliases": ["Mudslide"],
       "tagline": "Café, vanille et crème en version dessert",
-      "description": "Le Mudslide serait apparu dans les Caraïbes dans les années 1970, comme cousin du White Russian enrichi de crème irlandaise. Cette version remplace le Baileys par une crème de rhum vanille et de la crème fraîche : un petit dessert liquide, velouté, au goût de café vanillé.",
+      "description": "Le Mudslide serait apparu dans les Caraïbes dans les années 1970, comme cousin du White Russian enrichi de crème irlandaise. Cette version remplace le Baileys par une crème de rhum vanille et de la crème liquide : un petit dessert liquide, velouté, au goût de café vanillé.",
       "family": "Crémeux & Dessert",
       "method": "Shaker",
       "glass": "Tasse",
@@ -130,7 +130,7 @@
       "name": "Mezcal Mule",
       "aliases": [],
       "tagline": "Le Moscow Mule passé au feu de bois",
-      "description": "Variante du Moscow Mule devenue courante avec l'essor du mezcal dans les bars à cocktails des années 2000 et 2010. Le mezcal remplace la vodka et apporte une fumée terreuse que le citron vert, l'agave et le piquant du ginger beer viennent rafraîchir.",
+      "description": "Variante du Moscow Mule devenue courante avec l'essor du mezcal dans les bars à cocktails des années 2000 et 2010. Le mezcal remplace la vodka et apporte une fumée terreuse que le citron vert, l'agave et le piquant de la ginger beer viennent rafraîchir.",
       "family": "Highball",
       "method": "Shaker",
       "glass": "Mug cuivre",
@@ -146,7 +146,7 @@
         "Verser le mezcal, le jus de citron vert et le sirop d'agave dans le shaker avec des glaçons.",
         "Shaker brièvement 8 à 10 secondes.",
         "Filtrer dans un mug en cuivre rempli de glaçons.",
-        "Compléter avec le ginger beer et remuer doucement une fois."
+        "Compléter avec la ginger beer et remuer doucement une fois."
       ],
       "flavors": ["Fumé", "Épicé", "Acidulé", "Pétillant"],
       "difficulty": 2,

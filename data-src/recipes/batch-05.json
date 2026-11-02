@@ -62,7 +62,7 @@
       "name": "Rum Punch",
       "aliases": ["Punch caribéen"],
       "tagline": "Rhum, citron vert et fruits, à la mode des Caraïbes",
-      "description": "Héritier des punchs que les marins et planteurs buvaient dans les Antilles dès le XVIIe siècle, le rum punch suit la vieille règle « un d'acide, deux de sucre, trois de fort, quatre de doux ». Le rhum jamaïcain y domine, arrondi par les jus d'orange et d'ananas et relevé d'amer et de muscade.",
+      "description": "Héritier des punchs que les marins et planteurs buvaient dans les Antilles dès le XVIIe siècle, le rum punch suit la vieille règle « un d'acide, deux de sucre, trois de fort, quatre de léger ». Le rhum jamaïcain y domine, arrondi par les jus d'orange et d'ananas et relevé d'amer et de muscade.",
       "family": "Punch & Partage",
       "method": "Shaker",
       "glass": "Highball",
@@ -161,26 +161,26 @@
       "name": "Sangria",
       "aliases": [],
       "tagline": "Vin rouge, agrumes et cannelle, à partager au pichet",
-      "description": "Boisson de partage emblématique de l'Espagne, la sangria fait macérer du vin rouge avec des fruits, un peu d'eau-de-vie et des épices. Fruitée, légèrement sucrée et parfumée à la cannelle, elle se prépare quelques heures à l'avance et se sert bien fraîche (recette pour un pichet d'environ six verres).",
+      "description": "Boisson de partage emblématique de l'Espagne, la sangria fait macérer du vin rouge avec des fruits, un peu d'eau-de-vie et des épices. Fruitée, légèrement sucrée et parfumée à la cannelle, elle se prépare quelques heures à l'avance, idéalement au pichet en multipliant les doses (une bouteille de vin pour six verres), et se sert bien fraîche.",
       "family": "Punch & Partage",
       "method": "Au verre",
       "glass": "Verre à vin",
       "ice": "Glaçons",
       "ingredients": [
-        { "id": "vin-rouge", "amount": 750, "unit": "ml" },
-        { "id": "cognac", "amount": 60, "unit": "ml" },
-        { "id": "triple-sec", "amount": 30, "unit": "ml", "optional": true },
-        { "id": "jus-d-orange", "amount": 120, "unit": "ml" },
-        { "id": "sucre", "amount": 40, "unit": "ml" },
-        { "id": "orange-fruit", "amount": 1, "unit": "pièce", "note": "en rondelles" },
-        { "id": "citron-quartiers", "amount": 1, "unit": "pièce", "note": "un citron en rondelles" },
-        { "id": "cannelle", "amount": 1, "unit": "pièce" },
-        { "id": "clou-de-girofle", "amount": 2, "unit": "pièce", "optional": true },
-        { "id": "soda", "amount": 200, "unit": "ml", "optional": true, "note": "pour compléter" }
+        { "id": "vin-rouge", "amount": 125, "unit": "ml" },
+        { "id": "cognac", "amount": 10, "unit": "ml" },
+        { "id": "triple-sec", "amount": 5, "unit": "ml", "optional": true },
+        { "id": "jus-d-orange", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 7.5, "unit": "ml" },
+        { "id": "orange-fruit", "amount": 1, "unit": "tranche" },
+        { "id": "citron-quartiers", "amount": 1, "unit": "tranche", "note": "une rondelle de citron" },
+        { "id": "cannelle", "amount": 0.5, "unit": "pièce", "note": "un demi-bâton" },
+        { "id": "clou-de-girofle", "amount": 1, "unit": "pièce", "optional": true },
+        { "id": "soda", "amount": 30, "unit": "ml", "optional": true, "note": "pour compléter" }
       ],
       "garnish": "Rondelles d'orange et de citron",
       "steps": [
-        "Dans un grand pichet, mélanger le vin, le cognac, le triple sec, le jus d'orange et le sirop.",
+        "Dans un pichet (doses multipliées par le nombre de verres), mélanger le vin, le cognac, le triple sec, le jus d'orange et le sirop.",
         "Ajouter les rondelles d'agrumes, la cannelle et les clous de girofle.",
         "Couvrir et laisser macérer au moins 2 heures au réfrigérateur.",
         "Au moment de servir, ajouter l'eau gazeuse et verser sur des glaçons."
@@ -190,7 +190,7 @@
       "iba": null,
       "color": "#7A1E2E",
       "cocktailDbId": "13020",
-      "notes": "Recette pour un pichet (~6 verres). Source : une tasse entière de jus de citron pour une bouteille, beaucoup trop acide ; remplacée par des rondelles de citron et un peu de cognac, comme dans la recette espagnole courante."
+      "notes": "Ramenée à une portion (×6 pour une bouteille de 75 cl). Source : une tasse entière de jus de citron pour une bouteille, beaucoup trop acide ; remplacée par des rondelles de citron et un peu de cognac, comme dans la recette espagnole courante."
     },
     {
       "id": "salty-dog",
@@ -291,9 +291,10 @@
       "glass": "Coupe",
       "ice": "Sans glace",
       "ingredients": [
-        { "id": "whisky-irlandais", "amount": 60, "unit": "ml" },
-        { "id": "vermouth-rouge", "amount": 30, "unit": "ml" },
-        { "id": "chartreuse-verte", "amount": 15, "unit": "ml" }
+        { "id": "whisky-irlandais", "amount": 50, "unit": "ml" },
+        { "id": "vermouth-rouge", "amount": 25, "unit": "ml" },
+        { "id": "chartreuse-verte", "amount": 15, "unit": "ml" },
+        { "id": "angostura", "amount": 2, "unit": "trait" }
       ],
       "garnish": "Zeste d'orange exprimé puis retiré",
       "steps": [
@@ -304,10 +305,10 @@
       ],
       "flavors": ["Herbacé", "Corsé", "Sucré"],
       "difficulty": 2,
-      "iba": null,
+      "iba": "New Era Drinks",
       "color": "#8A3B1E",
       "cocktailDbId": "17828",
-      "notes": ""
+      "notes": "Spécification IBA (50 / 25 / 15 ml et 2 traits d'Angostura)."
     },
     {
       "id": "white-russian",
@@ -586,9 +587,9 @@
       "ingredients": [
         { "id": "bourbon", "amount": 60, "unit": "ml", "note": "ou rye" },
         { "id": "citron", "amount": 30, "unit": "ml" },
-        { "id": "sucre", "amount": 20, "unit": "ml" },
+        { "id": "sucre", "amount": 22.5, "unit": "ml" },
         { "id": "blanc-oeuf", "amount": 20, "unit": "ml", "optional": true, "note": "pour la mousse" },
-        { "id": "vin-rouge", "amount": 30, "unit": "ml", "note": "en surface" }
+        { "id": "vin-rouge", "amount": 15, "unit": "ml", "note": "en surface" }
       ],
       "garnish": "",
       "steps": [
@@ -599,10 +600,10 @@
       ],
       "flavors": ["Acidulé", "Fruité", "Boisé"],
       "difficulty": 2,
-      "iba": null,
+      "iba": "New Era Drinks",
       "color": "#9A2B34",
       "cocktailDbId": "11844",
-      "notes": "Source : blended whiskey et 1 cuillère de sucre en poudre. Fiche alignée sur la recette moderne courante (bourbon ou rye, sirop, blanc d'œuf facultatif)."
+      "notes": "Spécification IBA (60 / 30 / 22,5 ml, 15 ml de vin rouge en surface, quelques gouttes de blanc d'œuf facultatives). Source : blended whiskey et 1 cuillère de sucre en poudre."
     },
     {
       "id": "elderflower-caipirinha",

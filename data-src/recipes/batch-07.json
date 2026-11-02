@@ -318,7 +318,7 @@
         { "id": "sirop-de-sureau", "amount": 15, "unit": "ml" },
         { "id": "citron-vert", "amount": 15, "unit": "ml" },
         { "id": "sirop-de-miel", "amount": 10, "unit": "ml" },
-        { "id": "piment-rouge", "amount": 2, "unit": "tranche", "note": "fines" }
+        { "id": "piment-frais", "amount": 2, "unit": "tranche", "note": "fines" }
       ],
       "garnish": "Piment rouge",
       "steps": [
@@ -652,8 +652,6 @@
     }
   ],
   "newIngredients": [
-    ["eau", "Eau plate", "soft_bulle", 0, 0, 0, 0, "💧"],
-    ["piment-rouge", "Piment rouge frais", "frais_garniture", 0, 0, 0, 0, "🌶️"],
     ["picon", "Picon (amer à l'orange)", "aperitif_vermouth", 18, 200, 0.5, 3, "🍊"]
   ]
 }

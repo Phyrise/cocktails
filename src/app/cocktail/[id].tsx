@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AvailabilityBadge, CocktailTile, useAvailability } from '@/components/cocktail-card';
+import { AvailabilityBadge, CocktailTile, useArchive, useAvailability } from '@/components/cocktail-card';
 import { CocktailImage } from '@/components/cocktail-image';
 import { Icon, type IconName } from '@/components/icon';
 import { Scrim } from '@/components/scrim';
@@ -48,6 +48,7 @@ export default function CocktailScreen() {
   const metrics = useMemo(() => (cocktail ? computeMetrics(cocktail, catalog.ingredientById) : null), [catalog.ingredientById, cocktail]);
   const similar = useMemo(() => (cocktail ? similarCocktails(cocktail, catalog.cocktails) : []), [catalog.cocktails, cocktail]);
   const value = useAvailability(cocktail ?? { ingredients: [] } as never);
+  const { archive, restore } = useArchive();
 
   if (!cocktail || !metrics) {
     return (
@@ -60,6 +61,7 @@ export default function CocktailScreen() {
   const isFavorite = user.favorites.has(cocktail.id);
   const inParty = user.data.party.some((entry) => entry.id === cocktail.id);
   const isToTry = user.toTry.has(cocktail.id);
+  const isArchived = user.archived.has(cocktail.id);
   const rating = user.data.ratings[cocktail.id] ?? 0;
   const unit = user.data.settings.unit;
   const base = catalog.baseById.get(cocktail.id);
@@ -89,6 +91,7 @@ export default function CocktailScreen() {
             <View style={[styles.heroBar, { top: insets.top + space.sm }]}>
               <IconButton name="chevronLeft" label="Retour" onPress={back} />
               <View style={{ flexDirection: 'row', gap: space.xs }}>
+                {isArchived ? null : <IconButton name="archive" label="Archiver (ne plus afficher)" onPress={() => { archive(cocktail); back(); }} />}
                 <IconButton name="bookmark" label={isToTry ? 'Retirer de « À essayer »' : 'À essayer'} filled={isToTry} active={isToTry} onPress={() => { user.toggleToTry(cocktail.id); toast(isToTry ? 'Retiré de « À essayer »' : 'Ajouté à « À essayer »'); }} />
                 <IconButton name="heart" label={isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'} filled={isFavorite} active={isFavorite} onPress={() => user.toggleFavorite(cocktail.id)} />
               </View>
@@ -102,6 +105,16 @@ export default function CocktailScreen() {
           </View>
 
           <View style={styles.body}>
+            {isArchived ? (
+              <Card style={[styles.archived, { backgroundColor: colors.surfaceAlt, borderColor: colors.surfaceAlt }]}>
+                <Icon name="archive" size={20} color={colors.muted} />
+                <View style={{ flex: 1 }}>
+                  <T variant="h3">Recette archivée</T>
+                  <T variant="small" tone="muted">Elle n’apparaît plus dans les recherches ni les suggestions.</T>
+                </View>
+                <Button label="Restaurer" icon="restore" size="sm" onPress={() => restore(cocktail)} />
+              </Card>
+            ) : null}
             <View style={styles.tags}>
               <Tag label={cocktail.family} />
               {cocktail.iba ? <Tag label={`IBA · ${cocktail.iba}`} /> : null}
@@ -316,6 +329,7 @@ const styles = StyleSheet.create({
   heroBar: { position: 'absolute', left: space.md, right: space.md, flexDirection: 'row', justifyContent: 'space-between' },
   heroText: { padding: space.md, paddingBottom: space.lg, gap: 4 },
   body: { padding: space.md, gap: space.lg },
+  archived: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
   tags: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
   tag: { borderRadius: radius.pill, borderWidth: 1, paddingHorizontal: 10, paddingVertical: 4 },
   facts: { flexDirection: 'row', borderWidth: 1, borderRadius: radius.lg, paddingVertical: space.sm },

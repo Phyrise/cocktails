@@ -22,6 +22,9 @@ fonctionnement hors connexion.
 - **Mon bar** : « Ce que j'ai », ingrédients par catégorie repliable, idées d'achat (ce qui débloque le plus de
   recettes), liste de courses.
 - **Mes listes** : favoris, à essayer, notés, recettes personnelles.
+- **Appui long sur une recette** : favori, à essayer, soirée ou **archiver**. Une recette archivée disparaît partout
+  (recherche, accueil, listes) mais reste récupérable dans Réglages › Recettes archivées (« Annuler » juste après, ou
+  « Restaurer » depuis sa fiche).
 - **Créer / modifier** une recette (avec photo, compressée sur le téléphone). Modifier une recette de la base crée
   « ma version », réversible.
 - **Réglages** : unités, thème clair / sombre, mise à jour de la base, photos hors ligne, import / export (sauvegarde de

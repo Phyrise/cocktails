@@ -26,7 +26,8 @@ export default function CocktailsScreen() {
   const { colors } = useTheme();
   const insets = useSafeAreaInsets();
   const params = useLocalSearchParams<{ q?: string; filter?: string; mood?: string; family?: string; ingredient?: string; collection?: string }>();
-  const { cocktails, ingredientById, searchIndex } = useCatalog();
+  const { cocktails, ingredientById, searchIndex, archived } = useCatalog();
+  const archivedCount = archived.length;
   const { stock, favorites, data, updateSettings } = useUser();
   const layout = data.settings.layout ?? 'list';
 
@@ -116,7 +117,10 @@ export default function CocktailsScreen() {
       <View style={styles.titleRow}>
         <View style={{ flex: 1 }}>
           <T variant="h1">Cocktails</T>
-          <T variant="small" tone="muted">{results.length === cocktails.length ? `${cocktails.length} recettes` : `${results.length} sur ${cocktails.length}`}</T>
+          <T variant="small" tone="muted">
+            {results.length === cocktails.length ? `${cocktails.length} recettes` : `${results.length} sur ${cocktails.length}`}
+            {archivedCount ? <T variant="small" tone="muted" onPress={() => router.push('/archives')} style={{ textDecorationLine: 'underline' }}>{` · ${archivedCount} archivée${archivedCount > 1 ? 's' : ''}`}</T> : null}
+          </T>
         </View>
         <View style={[styles.layoutSwitch, { backgroundColor: colors.surfaceAlt }]}>
           {(['list', 'grid'] as const).map((value) => (

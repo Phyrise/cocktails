@@ -38,6 +38,8 @@ export type UserData = {
   /** Soirée en préparation : cocktails choisis et nombre de verres de chacun. */
   party: { id: string; glasses: number }[];
   guests: number;
+  /** Cocktails masqués partout (recherche, accueil, listes) ; réversibles depuis les réglages. */
+  archived: string[];
   settings: Settings;
 };
 
@@ -46,7 +48,7 @@ const LEGACY_KEY = '@arturo-clementine/v1';
 
 export const emptyUserData = (): UserData => ({
   version: 1, stock: [], favorites: [], toTry: [], ratings: {}, notes: {}, shopping: [], recent: [], custom: [], customIngredients: [],
-  likedFlavors: [], avoid: [], party: [], guests: 4,
+  likedFlavors: [], avoid: [], party: [], guests: 4, archived: [],
   settings: { unit: 'ml', theme: 'auto', assumeBasics: true, autoUpdate: true },
 });
 
@@ -71,6 +73,7 @@ function sanitizeUserData(value: Partial<UserData> | undefined): UserData {
       .filter((entry): entry is { id: string; glasses: number } => !!entry && typeof entry.id === 'string' && typeof entry.glasses === 'number')
       .map((entry) => ({ id: entry.id, glasses: Math.max(1, Math.min(200, Math.round(entry.glasses))) })),
     guests: typeof value.guests === 'number' && value.guests > 0 ? Math.min(100, Math.round(value.guests)) : 4,
+    archived: list(value.archived),
     settings: { ...base.settings, ...(value.settings ?? {}) },
   };
 }
@@ -83,7 +86,11 @@ export type Catalog = {
   status: CatalogStatus;
   error?: string;
   db: Database | null;
+  /** Recettes visibles (sans les archivées). */
   cocktails: Cocktail[];
+  /** Recettes archivées, par ordre alphabétique. */
+  archived: Cocktail[];
+  /** Toutes les recettes, archivées comprises (une fiche archivée reste consultable). */
   byId: Map<string, Cocktail>;
   baseById: Map<string, Cocktail>;
   ingredients: Ingredient[];
@@ -104,6 +111,7 @@ type UserActions = {
   favorites: Set<string>;
   toTry: Set<string>;
   shopping: Set<string>;
+  archived: Set<string>;
   toggleStock: (id: string) => void;
   setStockMany: (ids: string[], owned: boolean) => void;
   toggleFavorite: (id: string) => void;
@@ -118,6 +126,7 @@ type UserActions = {
   setPartyGlasses: (id: string, glasses: number) => void;
   setGuests: (guests: number) => void;
   clearParty: () => void;
+  setArchived: (ids: string[], archived: boolean) => void;
   addShopping: (ids: string[]) => void;
   clearShopping: (onlyOwned?: boolean) => void;
   markViewed: (id: string) => void;
@@ -249,13 +258,17 @@ export function AppProvider({ children }: PropsWithChildren) {
     for (const ingredient of [...(db?.ingredients ?? []), ...data.customIngredients]) ingredientById.set(ingredient.id, ingredient);
     const ingredients = [...ingredientById.values()].sort((a, b) => a.name.localeCompare(b.name, 'fr'));
     const searchIndex = new Map(cocktails.map((cocktail) => [cocktail.id, searchText(cocktail, ingredientById)]));
+    const archivedIds = new Set(data.archived);
     return {
-      status, error, db, cocktails, byId: new Map(cocktails.map((cocktail) => [cocktail.id, cocktail])), baseById,
+      status, error, db,
+      cocktails: archivedIds.size ? cocktails.filter((cocktail) => !archivedIds.has(cocktail.id)) : cocktails,
+      archived: cocktails.filter((cocktail) => archivedIds.has(cocktail.id)),
+      byId: new Map(cocktails.map((cocktail) => [cocktail.id, cocktail])), baseById,
       ingredients, ingredientById, searchIndex, progress, remoteVersion,
       updateAvailable: isNewerVersion(remoteVersion, db),
       downloadLatest, checkForUpdate, replaceDatabase,
     };
-  }, [checkForUpdate, data.custom, data.customIngredients, db, downloadLatest, error, progress, remoteVersion, replaceDatabase, status]);
+  }, [checkForUpdate, data.archived, data.custom, data.customIngredients, db, downloadLatest, error, progress, remoteVersion, replaceDatabase, status]);
 
   const user = useMemo<UserActions>(() => {
     const update = (fn: (current: UserData) => UserData) => setData((current) => fn(current));
@@ -266,6 +279,7 @@ export function AppProvider({ children }: PropsWithChildren) {
       favorites: new Set(data.favorites),
       toTry: new Set(data.toTry),
       shopping: new Set(data.shopping),
+      archived: new Set(data.archived),
       toggleStock: (id) => update((current) => ({ ...current, stock: toggle(current.stock, id), shopping: current.stock.includes(id) ? current.shopping : current.shopping.filter((item) => item !== id) })),
       setStockMany: (ids, owned) => update((current) => ({
         ...current,
@@ -294,6 +308,10 @@ export function AppProvider({ children }: PropsWithChildren) {
       setPartyGlasses: (id, glasses) => update((current) => ({ ...current, party: current.party.map((entry) => (entry.id === id ? { ...entry, glasses: Math.max(1, Math.min(200, glasses)) } : entry)) })),
       setGuests: (guests) => update((current) => ({ ...current, guests: Math.max(1, Math.min(100, guests)) })),
       clearParty: () => update((current) => ({ ...current, party: [] })),
+      setArchived: (ids, archived) => update((current) => ({
+        ...current,
+        archived: archived ? [...new Set([...current.archived, ...ids])] : current.archived.filter((item) => !ids.includes(item)),
+      })),
       addShopping: (ids) => update((current) => ({ ...current, shopping: [...new Set([...current.shopping, ...ids])] })),
       clearShopping: () => update((current) => ({ ...current, shopping: [] })),
       markViewed: (id) => update((current) => (current.recent[0] === id ? current : { ...current, recent: [id, ...current.recent.filter((item) => item !== id)].slice(0, 20) })),
@@ -362,6 +380,7 @@ export function mergeUserData(current: UserData, incoming: UserData): UserData {
     shopping: union(current.shopping, incoming.shopping),
     likedFlavors: union(current.likedFlavors, incoming.likedFlavors),
     avoid: union(current.avoid, incoming.avoid),
+    archived: union(current.archived, incoming.archived),
     ratings: { ...incoming.ratings, ...current.ratings },
     notes: { ...incoming.notes, ...current.notes },
     custom: [...custom.values()],

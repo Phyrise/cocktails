@@ -1,5 +1,6 @@
 import Constants from 'expo-constants';
 import { useState } from 'react';
+import { router } from 'expo-router';
 import { Platform, Pressable, StyleSheet, Switch, TextInput, View } from 'react-native';
 
 import { Icon, type IconName } from '@/components/icon';
@@ -139,9 +140,20 @@ export default function SettingsScreen() {
         ) : null}
       </Group>
 
+      <Group title="Recettes archivées">
+        <Pressable accessibilityRole="button" onPress={() => router.push('/archives')} style={({ pressed }) => [styles.line, { opacity: pressed ? 0.6 : 1 }]}>
+          <View style={[styles.lineIcon, { backgroundColor: colors.surfaceAlt }]}><Icon name="archive" size={17} color={colors.ink} /></View>
+          <View style={{ flex: 1 }}>
+            <T variant="body" style={{ fontWeight: '600' }}>{catalog.archived.length ? `${catalog.archived.length} recette${catalog.archived.length > 1 ? 's' : ''} archivée${catalog.archived.length > 1 ? 's' : ''}` : 'Aucune recette archivée'}</T>
+            <T variant="tiny" tone="muted">Masquées partout dans l’app. Touchez pour les revoir ou les restaurer.</T>
+          </View>
+          <Icon name="chevronRight" size={18} color={colors.muted} />
+        </Pressable>
+      </Group>
+
       <Group title="Base de recettes">
         <View style={{ gap: 2 }}>
-          <T variant="h3">{catalog.cocktails.length} recettes · {db?.cocktails.filter((cocktail) => cocktail.image).length ?? 0} photos</T>
+          <T variant="h3">{catalog.byId.size} recettes · {db?.cocktails.filter((cocktail) => cocktail.image).length ?? 0} photos</T>
           <T variant="small" tone="muted">Version {db?.version ?? '—'}{db ? ` · ${new Date(db.generatedAt).toLocaleDateString('fr-FR')}` : ''}{db?.source === 'file' ? ' · importée d’un fichier' : ''}</T>
           {catalog.updateAvailable ? <T variant="small" tone="accent" style={{ fontWeight: '700' }}>Nouvelle version disponible : {catalog.remoteVersion}</T> : null}
         </View>

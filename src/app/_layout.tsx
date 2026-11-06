@@ -66,6 +66,7 @@ function Gate() {
         <Stack.Screen name="settings" />
         <Stack.Screen name="preparer" options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
         <Stack.Screen name="soiree" />
+        <Stack.Screen name="archives" />
       </Stack>
     </>
   );

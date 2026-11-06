@@ -3,13 +3,53 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { CocktailImage } from '@/components/cocktail-image';
 import { Icon } from '@/components/icon';
+import { useToast } from '@/components/toast';
 import { T } from '@/components/ui';
 import { fonts, radius, space } from '@/constants/theme';
 import { availability, type Availability } from '@/lib/cocktails';
+import { ask } from '@/lib/dialogs';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
 
 export const openCocktail = (id: string) => router.push({ pathname: '/cocktail/[id]', params: { id } });
+
+/** Archiver / restaurer une recette, avec « Annuler » en cas d'erreur de doigt. */
+export function useArchive() {
+  const { setArchived } = useUser();
+  const toast = useToast();
+  return {
+    archive: (cocktail: Cocktail) => {
+      setArchived([cocktail.id], true);
+      toast(`« ${cocktail.name} » archivé`, { label: 'Annuler', onPress: () => setArchived([cocktail.id], false) });
+    },
+    restore: (cocktail: Cocktail) => {
+      setArchived([cocktail.id], false);
+      toast(`« ${cocktail.name} » est de retour`);
+    },
+  };
+}
+
+/** Appui long sur une recette : favori, à essayer, soirée, archiver. */
+export function useCocktailMenu() {
+  const user = useUser();
+  const toast = useToast();
+  const { archive } = useArchive();
+  return async (cocktail: Cocktail) => {
+    const favorite = user.favorites.has(cocktail.id);
+    const toTry = user.toTry.has(cocktail.id);
+    const inParty = user.data.party.some((entry) => entry.id === cocktail.id);
+    const choice = await ask(cocktail.name, cocktail.tagline, [
+      { label: favorite ? 'Retirer des favoris' : 'Ajouter aux favoris', value: 'favorite', tone: 'secondary' },
+      { label: toTry ? 'Retirer de « À essayer »' : 'À essayer', value: 'toTry', tone: 'secondary' },
+      ...(inParty ? [] : [{ label: 'Ajouter à ma soirée', value: 'party', tone: 'secondary' as const }]),
+      { label: 'Archiver (ne plus l’afficher)', value: 'archive', tone: 'danger' },
+    ]);
+    if (choice === 'favorite') { user.toggleFavorite(cocktail.id); toast(favorite ? 'Retiré des favoris' : 'Ajouté aux favoris'); }
+    if (choice === 'toTry') { user.toggleToTry(cocktail.id); toast(toTry ? 'Retiré de « À essayer »' : 'Ajouté à « À essayer »'); }
+    if (choice === 'party') { user.addToParty(cocktail.id); toast('Ajouté au menu de la soirée'); }
+    if (choice === 'archive') archive(cocktail);
+  };
+}
 
 export function useAvailability(cocktail: Cocktail) {
   const { stock, data } = useUser();
@@ -39,10 +79,11 @@ export function CocktailRow({ cocktail }: { cocktail: Cocktail }) {
   const { favorites, data } = useUser();
   const { ingredientById } = useCatalog();
   const value = useAvailability(cocktail);
+  const menu = useCocktailMenu();
   const rating = data.ratings[cocktail.id];
   const keyIngredients = cocktail.ingredients.filter((item) => !item.optional).slice(0, 4).map((item) => ingredientById.get(item.id)?.name.replace(/ \(.*\)$/, '') ?? item.id).join(' · ');
   return (
-    <Pressable onPress={() => openCocktail(cocktail.id)} style={({ pressed }) => [styles.row, { opacity: pressed ? 0.7 : 1 }]}>
+    <Pressable accessibilityRole="button" onPress={() => openCocktail(cocktail.id)} onLongPress={() => menu(cocktail)} style={({ pressed }) => [styles.row, { opacity: pressed ? 0.7 : 1 }]}>
       <CocktailImage cocktail={cocktail} style={styles.rowImage} rounded={14} artScale={0.62} />
       <View style={styles.rowBody}>
         <View style={styles.rowTitle}>
@@ -71,10 +112,11 @@ export function CocktailGridItem({ cocktail }: { cocktail: Cocktail }) {
   const { colors } = useTheme();
   const { favorites } = useUser();
   const value = useAvailability(cocktail);
+  const menu = useCocktailMenu();
   const one = value.missing.length === 1;
   const dot = value.ready ? colors.ok : one ? colors.warn : colors.line;
   return (
-    <Pressable onPress={() => openCocktail(cocktail.id)} style={({ pressed }) => [{ opacity: pressed ? 0.75 : 1 }]}>
+    <Pressable accessibilityRole="button" onPress={() => openCocktail(cocktail.id)} onLongPress={() => menu(cocktail)} style={({ pressed }) => [{ opacity: pressed ? 0.75 : 1 }]}>
       <View>
         <CocktailImage cocktail={cocktail} style={styles.gridImage} rounded={radius.md} artScale={0.62} />
         {favorites.has(cocktail.id) ? (
@@ -97,8 +139,9 @@ export function CocktailGridItem({ cocktail }: { cocktail: Cocktail }) {
 /** Carte de carrousel : grande image et nom. */
 export function CocktailTile({ cocktail, width = 156, subtitle }: { cocktail: Cocktail; width?: number; subtitle?: string }) {
   const value = useAvailability(cocktail);
+  const menu = useCocktailMenu();
   return (
-    <Pressable onPress={() => openCocktail(cocktail.id)} style={({ pressed }) => [{ width, opacity: pressed ? 0.75 : 1 }]}>
+    <Pressable accessibilityRole="button" onPress={() => openCocktail(cocktail.id)} onLongPress={() => menu(cocktail)} style={({ pressed }) => [{ width, opacity: pressed ? 0.75 : 1 }]}>
       <CocktailImage cocktail={cocktail} style={{ width, height: width * 1.12 }} rounded={radius.lg} />
       <T variant="h3" numberOfLines={1} style={{ marginTop: space.xs }}>{cocktail.name}</T>
       {subtitle ? <T variant="small" tone="muted" numberOfLines={1}>{subtitle}</T> : <View style={{ marginTop: 4, flexDirection: 'row' }}><AvailabilityBadge value={value} compact /></View>}

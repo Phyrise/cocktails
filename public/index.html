@@ -43,6 +43,16 @@
       textarea {
         font-size: 16px;
       }
+      /* Appui long sur une recette : notre menu, pas celui du navigateur (« Enregistrer l'image »…). */
+      img {
+        -webkit-touch-callout: none;
+        -webkit-user-drag: none;
+      }
+      [role='button'] {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
     </style>
     <script>
       // Le service worker (cache hors ligne) n'est installé que dans le site publié.

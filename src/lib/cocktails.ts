@@ -305,3 +305,96 @@ export function sanitizeIngredient(value: unknown): Ingredient | null {
 
 export const sanitizeList = <T,>(value: unknown, sanitize: (item: unknown) => T | null) =>
   (Array.isArray(value) ? value : []).map(sanitize).filter((item): item is T => item !== null);
+
+// ——— Partage ———
+
+/** Recette en texte brut, lisible dans WhatsApp, un SMS ou une note. */
+export function cocktailShareText(cocktail: Cocktail, ingredients: Map<string, Ingredient>, unit: MeasurementUnit, servings = 1, url?: string) {
+  const name = (id: string) => ingredients.get(id)?.name ?? id;
+  const lines = [`🍸 ${cocktail.name}`];
+  if (cocktail.tagline) lines.push(cocktail.tagline);
+  lines.push('', `Ingrédients (${servings} verre${servings > 1 ? 's' : ''}) :`);
+  for (const item of cocktail.ingredients) lines.push(`• ${formatAmount(item, unit, servings)} ${name(item.id)}${item.optional ? ' (facultatif)' : ''}`);
+  if (cocktail.garnish) lines.push(`Garniture : ${cocktail.garnish}`);
+  if (cocktail.steps.length) {
+    lines.push('', 'Préparation :');
+    cocktail.steps.forEach((step, index) => lines.push(`${index + 1}. ${step}`));
+  }
+  lines.push('', `${cocktail.method} · ${cocktail.glass} · ${cocktail.ice}`);
+  if (url) lines.push('', `La fiche : ${url}`);
+  return lines.join('\n');
+}
+
+// ——— Carafe (batch) ———
+
+/** « de prosecco », « d’eau gazeuse », « d’huile »… */
+export const deName = (name: string) => (/^[aeiouyhàâéèêëîïôöûü]/i.test(name) ? `d’${name}` : `de ${name}`);
+
+export type BatchLine = { id: string; name: string; text: string; volumeMl: number };
+export type BatchPlan = {
+  glasses: number;
+  /** Ce qui va dans la carafe à l'avance. */
+  batch: BatchLine[];
+  /** Eau de dilution ajoutée (0 si non diluée à l'avance). */
+  waterMl: number;
+  /** Bulles, fruits, herbes… ajoutés au moment de servir, verre par verre. */
+  atService: { id: string; name: string; perGlass: string; total: string; sparkling: boolean }[];
+  totalMl: number;
+  perGlassMl: number;
+  /** Taux de dilution habituel de la méthode (eau de fonte de la glace). */
+  dilution: number;
+  /** Ingrédients qui se conservent mal en carafe (œuf, crème…) ou méthode inadaptée. */
+  warnings: string[];
+  container: string;
+};
+
+const NOT_BATCHABLE = new Set(['blanc-oeuf', 'oeuf', 'creme', 'glace-vanille', 'yaourt', 'banane', 'espresso', 'cafe']);
+const FRESH_CITRUS = new Set(['citron', 'citron-vert', 'jus-de-pamplemousse', 'jus-d-orange']);
+
+/** Dilution apportée par la glace selon la méthode (fonte pendant la préparation). */
+export const methodDilution = (cocktail: Cocktail) =>
+  cocktail.method === 'Shaker' ? 0.25 : cocktail.method === 'Verre à mélange' ? 0.2 : cocktail.method === 'Blender' ? 0.3 : 0;
+
+function containerFor(ml: number) {
+  if (ml <= 500) return 'une bouteille de 50 cl';
+  if (ml <= 750) return 'une bouteille de 75 cl';
+  if (ml <= 1000) return 'une carafe de 1 L';
+  if (ml <= 1500) return 'une bouteille de 1,5 L';
+  if (ml <= 2000) return 'un pichet de 2 L';
+  return `${Math.ceil(ml / 1500)} bouteilles de 1,5 L`;
+}
+
+const roundMl = (ml: number) => (ml >= 100 ? Math.round(ml / 5) * 5 : Math.round(ml));
+
+/**
+ * Prépare un cocktail en carafe : tout ce qui se garde est multiplié et mélangé à l'avance,
+ * avec l'eau que la glace aurait apportée si `dilute` ; les bulles et le frais attendent le service.
+ */
+export function batchPlan(cocktail: Cocktail, ingredients: Map<string, Ingredient>, glasses: number, unit: MeasurementUnit, dilute: boolean): BatchPlan {
+  const n = Math.max(1, Math.round(glasses));
+  const name = (id: string) => ingredients.get(id)?.name ?? id;
+  const batch: BatchLine[] = [];
+  const atService: BatchPlan['atService'] = [];
+  const warnings: string[] = [];
+  for (const item of cocktail.ingredients) {
+    const profile = ingredients.get(item.id);
+    const sparkling = profile?.category === 'vin_bulles' || profile?.category === 'soft_bulle';
+    const volume = liquidVolume(item) * n;
+    if (NOT_BATCHABLE.has(item.id)) warnings.push(`${name(item.id)} : se conserve mal mélangé, à ajouter verre par verre.`);
+    if (sparkling || NOT_BATCHABLE.has(item.id) || !volume) {
+      atService.push({ id: item.id, name: name(item.id), perGlass: formatAmount(item, unit, 1), total: formatAmount(item, unit, n), sparkling });
+      continue;
+    }
+    // Traits et cuillères : au-delà de quelques verres, on mesure en ml.
+    const inMl = formatAmount({ id: item.id, amount: roundMl(volume), unit: 'ml' }, unit, 1);
+    const text = item.unit === 'ml' ? inMl : `${formatAmount(item, unit, n)} (≈ ${inMl})`;
+    batch.push({ id: item.id, name: name(item.id), text, volumeMl: volume });
+  }
+  if (cocktail.method === 'Blender') warnings.push('Recette mixée : préparez la base en carafe, puis mixez avec la glace par petites quantités.');
+  if (cocktail.ingredients.some((item) => FRESH_CITRUS.has(item.id))) warnings.push('Jus d’agrumes frais : préparez la carafe le jour même et gardez-la au frais.');
+  const dilution = methodDilution(cocktail);
+  const liquids = batch.reduce((sum, line) => sum + line.volumeMl, 0);
+  const waterMl = dilute && dilution ? roundMl(liquids * dilution) : 0;
+  const totalMl = liquids + waterMl;
+  return { glasses: n, batch, waterMl, atService, totalMl, perGlassMl: totalMl / n, dilution, warnings, container: containerFor(totalMl) };
+}

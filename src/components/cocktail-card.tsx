@@ -6,8 +6,9 @@ import { Icon } from '@/components/icon';
 import { useToast } from '@/components/toast';
 import { T } from '@/components/ui';
 import { fonts, radius, space } from '@/constants/theme';
-import { availability, type Availability } from '@/lib/cocktails';
+import { availability, type Availability, cocktailShareText } from '@/lib/cocktails';
 import { ask } from '@/lib/dialogs';
+import { cocktailUrl, shareText } from '@/lib/share';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
 
@@ -30,10 +31,25 @@ export function useArchive() {
 }
 
 /** Appui long sur une recette : favori, à essayer, soirée, archiver. */
+/** Partage d'une recette en texte (feuille de partage du téléphone, ou copie sur ordinateur). */
+export function useShareCocktail() {
+  const { data } = useUser();
+  const catalog = useCatalog();
+  const toast = useToast();
+  return async (cocktail: Cocktail, servings = 1) => {
+    // Une création personnelle n'existe que sur cet appareil : pas de lien.
+    const url = catalog.db?.cocktails.some((item) => item.id === cocktail.id) ? cocktailUrl(cocktail.id) : undefined;
+    const result = await shareText(cocktailShareText(cocktail, catalog.ingredientById, data.settings.unit, servings, url), cocktail.name);
+    if (result === 'copied') toast('Recette copiée : collez-la où vous voulez');
+    if (result === 'unavailable') toast('Partage indisponible ici');
+  };
+}
+
 export function useCocktailMenu() {
   const user = useUser();
   const toast = useToast();
   const { archive } = useArchive();
+  const share = useShareCocktail();
   return async (cocktail: Cocktail) => {
     const favorite = user.favorites.has(cocktail.id);
     const toTry = user.toTry.has(cocktail.id);
@@ -42,11 +58,13 @@ export function useCocktailMenu() {
       { label: favorite ? 'Retirer des favoris' : 'Ajouter aux favoris', value: 'favorite', tone: 'secondary' },
       { label: toTry ? 'Retirer de « À essayer »' : 'À essayer', value: 'toTry', tone: 'secondary' },
       ...(inParty ? [] : [{ label: 'Ajouter à ma soirée', value: 'party', tone: 'secondary' as const }]),
+      { label: 'Partager la recette', value: 'share', tone: 'secondary' },
       { label: 'Archiver (ne plus l’afficher)', value: 'archive', tone: 'danger' },
     ]);
     if (choice === 'favorite') { user.toggleFavorite(cocktail.id); toast(favorite ? 'Retiré des favoris' : 'Ajouté aux favoris'); }
     if (choice === 'toTry') { user.toggleToTry(cocktail.id); toast(toTry ? 'Retiré de « À essayer »' : 'Ajouté à « À essayer »'); }
     if (choice === 'party') { user.addToParty(cocktail.id); toast('Ajouté au menu de la soirée'); }
+    if (choice === 'share') await share(cocktail);
     if (choice === 'archive') archive(cocktail);
   };
 }

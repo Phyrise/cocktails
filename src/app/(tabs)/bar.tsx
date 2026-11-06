@@ -1,14 +1,15 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
-import { Platform, Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, TextInput, View } from 'react-native';
 
 import { Icon } from '@/components/icon';
-import { PageHeader } from '@/components/page-header';
+import { PageHeader, SettingsButton } from '@/components/page-header';
 import { useToast } from '@/components/toast';
 import { Button, Card, Divider, Empty, Screen, Segmented, T } from '@/components/ui';
 import { fonts, radius, space } from '@/constants/theme';
 import { availability, BASICS, bestPurchases, normalize } from '@/lib/cocktails';
 import { confirm } from '@/lib/dialogs';
+import { shareText } from '@/lib/share';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { CategoryId, Ingredient } from '@/types/cocktail';
 
@@ -83,27 +84,16 @@ export default function BarScreen() {
 
   const copyList = async () => {
     const text = `Courses cocktails :\n${shoppingItems.map((item) => `• ${item.name}`).join('\n')}`;
-    try {
-      const nav = globalThis.navigator as Navigator | undefined;
-      if (Platform.OS === 'web' && nav?.share && matchMedia('(pointer: coarse)').matches) {
-        await nav.share({ text });
-        return;
-      }
-      if (!nav?.clipboard) {
-        toast('Copie indisponible ici (connexion non sécurisée)');
-        return;
-      }
-      await nav.clipboard.writeText(text);
-      toast('Liste copiée');
-    } catch {
-      // Partage annulé.
-    }
+    const result = await shareText(text, 'Courses cocktails');
+    if (result === 'copied') toast('Liste copiée');
+    if (result === 'unavailable') toast('Copie indisponible ici (connexion non sécurisée)');
   };
 
   return (
     <Screen>
       <PageHeader
         title="Mon bar"
+        right={<SettingsButton />}
         subtitle={`${stock.size} ingrédient${stock.size > 1 ? 's' : ''} · ${readyCount} cocktail${readyCount > 1 ? 's' : ''} faisable${readyCount > 1 ? 's' : ''}`}
       />
       <Segmented

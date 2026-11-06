@@ -5,6 +5,11 @@ import { StyleSheet, View } from 'react-native';
 import { IconButton, T } from '@/components/ui';
 import { space } from '@/constants/theme';
 
+/** Accès aux réglages, en haut à droite de chaque onglet. */
+export function SettingsButton() {
+  return <IconButton name="settings" label="Réglages" onPress={() => router.push('/settings')} />;
+}
+
 export function PageHeader({ title, subtitle, right, back, eyebrow }: { title: string; subtitle?: string; right?: ReactNode; back?: boolean; eyebrow?: string }) {
   return (
     <View style={styles.header}>

@@ -88,3 +88,42 @@ test('recherche : accents ignorés, nom prioritaire', () => {
   assert.ok(matchesQuery(negroni, haystack, 'vermouth'));
   assert.equal(matchesQuery(negroni, haystack, 'tequila'), 0);
 });
+
+test('partage : texte de la recette, doses à l’échelle et lien', async () => {
+  const { cocktailShareText } = await import('../../src/lib/cocktails.ts');
+  const text = cocktailShareText({ ...negroni, steps: ['Remuer sur glace.', 'Filtrer.'], garnish: 'Zeste d’orange' }, ingredients, 'ml', 2, 'https://exemple.fr/cocktail/negroni');
+  assert.match(text, /^🍸 Negroni/);
+  assert.match(text, /Ingrédients \(2 verres\)/);
+  assert.match(text, /• 60 ml Gin/);
+  assert.match(text, /2\. Filtrer\./);
+  assert.match(text, /Garniture : Zeste d’orange/);
+  assert.ok(text.endsWith('La fiche : https://exemple.fr/cocktail/negroni'));
+});
+
+test('carafe : dilution, bulles au service, avertissements', async () => {
+  const { batchPlan } = await import('../../src/lib/cocktails.ts');
+  const plan = batchPlan(negroni, ingredients, 10, 'ml', true);
+  assert.equal(plan.batch.length, 3);
+  assert.equal(plan.batch[0].text, '300 ml');
+  assert.equal(plan.waterMl, 180); // 900 ml × 20 % (verre à mélange)
+  assert.equal(plan.totalMl, 1080);
+  assert.equal(Math.round(plan.perGlassMl), 108);
+  assert.equal(plan.container, 'une bouteille de 1,5 L');
+  assert.equal(batchPlan(negroni, ingredients, 10, 'ml', false).waterMl, 0);
+
+  const withSoda = new Map([...ingredients, ['prosecco', { id: 'prosecco', name: 'Prosecco', category: 'vin_bulles', abv: 11 }], ['blanc-oeuf', { id: 'blanc-oeuf', name: 'Blanc d’œuf', category: 'frais_garniture', abv: 0 }]]);
+  const spritz = { ...negroni, method: 'Au verre', ingredients: [{ id: 'campari', amount: 60, unit: 'ml' }, { id: 'prosecco', amount: 90, unit: 'ml' }, { id: 'angostura', amount: 2, unit: 'trait' }, { id: 'blanc-oeuf', amount: 1, unit: 'pièce' }] };
+  const spritzPlan = batchPlan(spritz, withSoda, 6, 'cl', true);
+  assert.deepEqual(spritzPlan.atService.map((line) => line.id), ['prosecco', 'blanc-oeuf']);
+  assert.equal(spritzPlan.atService[0].perGlass, '9 cl');
+  assert.equal(spritzPlan.waterMl, 0); // construit au verre : la glace du verre suffit
+  assert.equal(spritzPlan.batch[1].text, '12 traits (≈ 1,1 cl)');
+  assert.equal(spritzPlan.warnings.length, 1);
+});
+
+test('carafe : élision du « de »', async () => {
+  const { deName } = await import('../../src/lib/cocktails.ts');
+  assert.equal(deName('eau gazeuse'), 'd’eau gazeuse');
+  assert.equal(deName('prosecco'), 'de prosecco');
+  assert.equal(deName('blanc d’œuf'), 'de blanc d’œuf');
+});

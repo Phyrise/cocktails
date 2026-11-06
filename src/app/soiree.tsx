@@ -62,6 +62,9 @@ export default function PartyScreen() {
                     <T variant="h3" numberOfLines={2} style={{ flex: 1 }}>{cocktail.name}</T>
                   </Pressable>
                   <Stepper value={glasses} onChange={(value) => user.setPartyGlasses(cocktail.id, value)} suffix="verres" />
+                  <Pressable accessibilityLabel={`Préparer ${cocktail.name} en carafe`} hitSlop={8} onPress={() => router.push({ pathname: '/carafe', params: { id: cocktail.id, glasses: String(glasses) } })}>
+                    <Icon name="carafe" size={19} color={colors.accent} />
+                  </Pressable>
                   <Pressable accessibilityLabel={`Retirer ${cocktail.name}`} hitSlop={8} onPress={() => user.removeFromParty(cocktail.id)}>
                     <Icon name="x" size={18} color={colors.muted} />
                   </Pressable>

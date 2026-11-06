@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { AvailabilityBadge, CocktailTile, useArchive, useAvailability } from '@/components/cocktail-card';
+import { AvailabilityBadge, CocktailTile, useArchive, useAvailability, useShareCocktail } from '@/components/cocktail-card';
 import { CocktailImage } from '@/components/cocktail-image';
 import { Icon, type IconName } from '@/components/icon';
 import { Scrim } from '@/components/scrim';
@@ -49,6 +49,7 @@ export default function CocktailScreen() {
   const similar = useMemo(() => (cocktail ? similarCocktails(cocktail, catalog.cocktails) : []), [catalog.cocktails, cocktail]);
   const value = useAvailability(cocktail ?? { ingredients: [] } as never);
   const { archive, restore } = useArchive();
+  const share = useShareCocktail();
 
   if (!cocktail || !metrics) {
     return (
@@ -92,6 +93,7 @@ export default function CocktailScreen() {
               <IconButton name="chevronLeft" label="Retour" onPress={back} />
               <View style={{ flexDirection: 'row', gap: space.xs }}>
                 {isArchived ? null : <IconButton name="archive" label="Archiver (ne plus afficher)" onPress={() => { archive(cocktail); back(); }} />}
+                <IconButton name="share" label="Partager la recette" onPress={() => share(cocktail, servings)} />
                 <IconButton name="bookmark" label={isToTry ? 'Retirer de « À essayer »' : 'À essayer'} filled={isToTry} active={isToTry} onPress={() => { user.toggleToTry(cocktail.id); toast(isToTry ? 'Retiré de « À essayer »' : 'Ajouté à « À essayer »'); }} />
                 <IconButton name="heart" label={isFavorite ? 'Retirer des favoris' : 'Ajouter aux favoris'} filled={isFavorite} active={isFavorite} onPress={() => user.toggleFavorite(cocktail.id)} />
               </View>
@@ -264,6 +266,12 @@ export default function CocktailScreen() {
               ) : (
                 <Button label="Ajouter à ma soirée" icon="users" variant="secondary" onPress={() => { user.addToParty(cocktail.id); toast(`Ajouté au menu de la soirée (${user.data.guests} verres)`); }} />
               )}
+              <Button
+                label="Préparer en carafe"
+                icon="carafe"
+                variant="secondary"
+                onPress={() => router.push({ pathname: '/carafe', params: { id: cocktail.id, glasses: String(Math.max(servings, user.data.guests)) } })}
+              />
               <Button label={isCustom ? 'Modifier ma recette' : 'Modifier à mon goût'} icon="pencil" variant="secondary" onPress={() => router.push({ pathname: '/editor', params: { id: cocktail.id } })} />
               {isOverride ? (
                 <Button

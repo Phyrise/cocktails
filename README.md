@@ -16,6 +16,10 @@ fonctionnement hors connexion.
   amertume), histoire, note sur 5 et commentaire, favoris, « à essayer », recettes proches, ajout des manquants aux courses.
 - **Pas à pas** : depuis une fiche, préparation guidée en plein écran (une étape par écran, doses rappelées, écran
   maintenu allumé), puis note du cocktail.
+- **Partager** : depuis la fiche (ou l'appui long), la recette part en texte (doses, étapes, lien vers la fiche) par
+  WhatsApp, SMS… ; sur ordinateur, elle est copiée.
+- **Carafe** : préparer un cocktail à l'avance pour N verres : doses multipliées, eau de dilution (20 % remué, 25 %
+  shaker), contenant à prévoir, bulles et œuf ajoutés au service, étapes de service.
 - **Soirée** : on choisit quelques cocktails et le nombre de verres ; l'app additionne tout et le traduit en bouteilles,
   citrons et kilos de glaçons, puis ajoute les manquants aux courses.
 - **Collections** : sélection de Clément, classiques IBA, apéritif à l'italienne, trois ingrédients, tiki…

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { CocktailRow } from '@/components/cocktail-card';
-import { PageHeader } from '@/components/page-header';
-import { Button, Divider, Empty, IconButton, Screen, Segmented } from '@/components/ui';
+import { PageHeader, SettingsButton } from '@/components/page-header';
+import { Button, Divider, Empty, Screen, Segmented } from '@/components/ui';
 import { space } from '@/constants/theme';
 import { useCatalog, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
@@ -44,7 +44,7 @@ export default function ListsScreen() {
 
   return (
     <Screen>
-      <PageHeader title="Mes listes" right={<IconButton name="settings" label="Réglages" onPress={() => router.push('/settings')} />} />
+      <PageHeader title="Mes listes" right={<SettingsButton />} />
       <Segmented
         value={tab}
         onChange={setTab}

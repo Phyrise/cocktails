@@ -6,7 +6,7 @@ import { CocktailTile, openCocktail } from '@/components/cocktail-card';
 import { CocktailImage } from '@/components/cocktail-image';
 import { Icon } from '@/components/icon';
 import { InstallHint } from '@/components/install-hint';
-import { PageHeader } from '@/components/page-header';
+import { PageHeader, SettingsButton } from '@/components/page-header';
 import { Scrim } from '@/components/scrim';
 import { Button, Card, Chip, HScroll, IconButton, Screen, SectionHeader, T } from '@/components/ui';
 import { radius, space } from '@/constants/theme';
@@ -63,7 +63,7 @@ export default function HomeScreen() {
       <PageHeader
         eyebrow={greeting()}
         title="Arturo et Clémentine"
-        right={<IconButton name="settings" label="Réglages" onPress={() => router.push('/settings')} />}
+        right={<SettingsButton />}
       />
 
       <InstallHint />

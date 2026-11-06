@@ -5,6 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { CocktailGridItem, CocktailRow } from '@/components/cocktail-card';
 import { Icon } from '@/components/icon';
+import { SettingsButton } from '@/components/page-header';
 import { Chip, Divider, Empty, IconButton, T } from '@/components/ui';
 import { fonts, MAX_WIDTH, radius, space } from '@/constants/theme';
 import { availability, type Availability, computeMetrics, containsAvoided, isAlcoholFree, matchesQuery, tasteProfile, tasteScore } from '@/lib/cocktails';
@@ -135,6 +136,7 @@ export default function CocktailsScreen() {
             </Pressable>
           ))}
         </View>
+        <SettingsButton />
       </View>
       <View style={[styles.search, { backgroundColor: colors.surface, borderColor: colors.line }]}>
         <Icon name="search" size={19} color={colors.muted} />

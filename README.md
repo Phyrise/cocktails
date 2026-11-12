@@ -18,6 +18,9 @@ fonctionnement hors connexion.
   maintenu allumé), puis note du cocktail.
 - **Partager** : depuis la fiche (ou l'appui long), la recette part en texte (doses, étapes, lien vers la fiche) par
   WhatsApp, SMS… ; sur ordinateur, elle est copiée.
+- **Envoyer une fiche** : une recette perso part aussi en lien ; l'ami qui a l'app l'ouvre et l'ajoute à ses recettes
+  (ou colle le message dans Mes listes › Perso › Importer, indispensable sur iPhone avec l'app sur l'écran d'accueil).
+  Les ingrédients créés à la main voyagent avec la fiche, pas la photo.
 - **Carafe** : préparer un cocktail à l'avance pour N verres : doses multipliées, eau de dilution (20 % remué, 25 %
   shaker), contenant à prévoir, bulles et œuf ajoutés au service, étapes de service.
 - **Soirée** : on choisit quelques cocktails et le nombre de verres ; l'app additionne tout et le traduit en bouteilles,
@@ -56,13 +59,14 @@ pnpm typecheck    # TypeScript
 pnpm lint         # règles Expo
 pnpm test         # cohérence de la base + logique (disponibilité, quantités, recherche)
 pnpm db:build     # reconstruit public/db à partir de data-src (fiches, photos WebP, tronçons)
+pnpm db:perso     # verse des recettes perso (sauvegarde ou lien de fiche) dans data-src
 pnpm db:fetch     # retélécharge le catalogue TheCocktailDB (rarement utile)
 pnpm build:web    # site statique installable dans dist/ (base /cocktails)
 pnpm serve:web    # sert dist/ comme GitHub Pages sur http://localhost:8090/cocktails/
 pnpm icons        # régénère les icônes
 ```
 
-Publication : voir [docs/PUBLIER.md](./docs/PUBLIER.md).
+Publication, et ajout de vos recettes perso à la base de tous : voir [docs/PUBLIER.md](./docs/PUBLIER.md).
 
 ## Où travailler
 

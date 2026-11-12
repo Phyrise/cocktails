@@ -68,6 +68,7 @@ function Gate() {
         <Stack.Screen name="soiree" />
         <Stack.Screen name="archives" />
         <Stack.Screen name="carafe" />
+        <Stack.Screen name="importer" />
       </Stack>
     </>
   );

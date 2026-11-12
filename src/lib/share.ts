@@ -3,14 +3,16 @@ import { Platform, Share } from 'react-native';
 
 const PUBLIC_SITE = 'https://phyrise.github.io/cocktails';
 
-/** Adresse publique d'une fiche (celle du site en cours sur le web, le site publié ailleurs). */
-export function cocktailUrl(id: string) {
+/** Adresse publique d'une page de l'app (celle du site en cours sur le web, le site publié ailleurs). */
+export function siteUrl(path: string) {
   if (Platform.OS === 'web' && globalThis.location) {
     const base = (Constants.expoConfig?.experiments?.baseUrl ?? '').replace(/\/$/, '');
-    return `${globalThis.location.origin}${base}/cocktail/${encodeURIComponent(id)}`;
+    return `${globalThis.location.origin}${base}${path}`;
   }
-  return `${PUBLIC_SITE}/cocktail/${encodeURIComponent(id)}`;
+  return `${PUBLIC_SITE}${path}`;
 }
+
+export const cocktailUrl = (id: string) => siteUrl(`/cocktail/${encodeURIComponent(id)}`);
 
 export type ShareResult = 'shared' | 'copied' | 'unavailable' | 'cancelled';
 

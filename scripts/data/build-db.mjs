@@ -1,4 +1,4 @@
-// Assemble la base publiée dans public/db/ à partir des fiches rédigées (data-src/recipes/*.json) :
+// Assemble la base publiée dans public/db/ à partir des fiches rédigées (data-src/recipes/batch-*.json, dont batch-perso.json) :
 // validation, fusion des ingrédients, découpage en tronçons JSON et images WebP légères.
 // Usage : node scripts/data/build-db.mjs [--chunk 80] [--size 480] [--quality 64]
 import { createHash } from 'node:crypto';
@@ -39,7 +39,7 @@ const toIngredient = ([id, name, category, abv, sugar, acidity, bitterness, emoj
 const ingredients = new Map(catalog.items.map((row) => [row[0], toIngredient(row)]));
 
 // ——— Fiches ———
-const batchFiles = (await readdir(path.join(SRC, 'recipes'))).filter((file) => /^batch-\d+\.json$/.test(file)).sort();
+const batchFiles = (await readdir(path.join(SRC, 'recipes'))).filter((file) => /^batch-[a-z0-9-]+\.json$/.test(file)).sort();
 const cocktails = [];
 for (const file of batchFiles) {
   const batch = await readJson(path.join(SRC, 'recipes', file));

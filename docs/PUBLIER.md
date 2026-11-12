@@ -38,6 +38,32 @@ s'enregistrent au fil de la navigation, ou toutes d'un coup depuis **Réglages �
 Au prochain lancement, l'app de chacun télécharge la nouvelle base (réglage « Mise à jour automatique », activé par défaut).
 Les favoris, notes, bar et recettes personnelles sont stockés à part et ne sont jamais écrasés.
 
+## Ajouter vos recettes perso à la base
+
+Les recettes créées dans l'app restent sur le téléphone. Pour les publier (tout le monde les reçoit à la mise à jour) :
+
+1. Dans l'app : **Réglages › Exporter mes données**, puis récupérer le fichier sur l'ordinateur (AirDrop, mail…).
+   Pour une seule recette, un lien de fiche suffit (Partager › La fiche, à ajouter dans l'app).
+2. Voir ce qui serait ajouté, sans rien écrire :
+
+   ```bash
+   pnpm db:perso chemin/vers/arturo-clementine-sauvegarde-AAAA-MM-JJ.json
+   ```
+
+3. Écrire dans `data-src` (fiches dans `data-src/recipes/batch-perso.json`, photos dans `data-src/images/`) :
+
+   ```bash
+   pnpm db:perso chemin/vers/arturo-clementine-sauvegarde-AAAA-MM-JJ.json --write
+   ```
+
+   Options : `--only id1,id2` pour en choisir quelques-unes, `--origin clement` pour les signer « Sélection de Clément »,
+   `--versions` pour publier aussi vos versions modifiées de recettes de la base (dans `overrides.json`).
+4. `pnpm db:build`, `pnpm test`, relire le diff, puis commit et push.
+
+Les ids sont gardés : sur votre téléphone (et chez les amis qui avaient importé la fiche), la recette publiée se fond avec la
+copie perso au lieu d'apparaître en double. Elle s'affiche alors comme « ma version » : « Revenir à la recette d'origine »
+supprime la copie perso.
+
 ## Taille et découpage
 
 | Élément | Taille |

@@ -8,7 +8,8 @@ import { T } from '@/components/ui';
 import { fonts, radius, space } from '@/constants/theme';
 import { availability, type Availability, cocktailShareText } from '@/lib/cocktails';
 import { ask } from '@/lib/dialogs';
-import { cocktailUrl, shareText } from '@/lib/share';
+import { encodeRecipe, recipeLinkPath } from '@/lib/recipe-link';
+import { cocktailUrl, shareText, siteUrl } from '@/lib/share';
 import { useCatalog, useTheme, useUser } from '@/state/store';
 import type { Cocktail } from '@/types/cocktail';
 
@@ -30,21 +31,45 @@ export function useArchive() {
   };
 }
 
-/** Appui long sur une recette : favori, à essayer, soirée, archiver. */
-/** Partage d'une recette en texte (feuille de partage du téléphone, ou copie sur ordinateur). */
+/**
+ * Partage d'une recette (feuille de partage du téléphone, ou copie sur ordinateur).
+ * Une recette personnelle peut aussi partir en fiche : un lien qui l'ajoute à l'app d'un ami.
+ */
 export function useShareCocktail() {
   const { data } = useUser();
   const catalog = useCatalog();
   const toast = useToast();
   return async (cocktail: Cocktail, servings = 1) => {
-    // Une création personnelle n'existe que sur cet appareil : pas de lien.
-    const url = catalog.db?.cocktails.some((item) => item.id === cocktail.id) ? cocktailUrl(cocktail.id) : undefined;
-    const result = await shareText(cocktailShareText(cocktail, catalog.ingredientById, data.settings.unit, servings, url), cocktail.name);
-    if (result === 'copied') toast('Recette copiée : collez-la où vous voulez');
+    const inBase = !!catalog.db?.cocktails.some((item) => item.id === cocktail.id);
+    const personal = data.custom.some((item) => item.id === cocktail.id);
+    let mode: string | null = 'text';
+    if (personal) {
+      mode = await ask('Partager « ' + cocktail.name + ' »', 'La fiche s’ajoute en un geste dans l’app d’un ami. Le texte se lit partout.', [
+        { label: 'La fiche, à ajouter dans l’app', value: 'card', tone: 'primary' },
+        { label: 'La recette en texte', value: 'text', tone: 'secondary' },
+      ]);
+    }
+    if (!mode) return;
+    let text: string;
+    if (mode === 'card') {
+      const link = siteUrl(recipeLinkPath(await encodeRecipe(cocktail, catalog.ingredientById)));
+      text = [
+        `🍸 ${cocktail.name}${cocktail.tagline ? ` : ${cocktail.tagline.charAt(0).toLowerCase()}${cocktail.tagline.slice(1)}` : ''}`,
+        'Ma fiche pour l’app Arturo et Clémentine : ouvre ce lien pour l’ajouter à tes recettes.',
+        link,
+        'Sur iPhone, si l’app est sur l’écran d’accueil : copie ce message, puis dans l’app, Mes listes › Perso › Importer.',
+      ].join('\n\n');
+    } else {
+      // Une création personnelle n'existe que sur cet appareil : pas de lien vers sa fiche.
+      text = cocktailShareText(cocktail, catalog.ingredientById, data.settings.unit, servings, inBase ? cocktailUrl(cocktail.id) : undefined);
+    }
+    const result = await shareText(text, cocktail.name);
+    if (result === 'copied') toast(mode === 'card' ? 'Fiche copiée : envoyez le lien à vos amis' : 'Recette copiée : collez-la où vous voulez');
     if (result === 'unavailable') toast('Partage indisponible ici');
   };
 }
 
+/** Appui long sur une recette : favori, à essayer, soirée, partager, archiver. */
 export function useCocktailMenu() {
   const user = useUser();
   const toast = useToast();

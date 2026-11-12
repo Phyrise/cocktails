@@ -55,7 +55,12 @@ export default function ListsScreen() {
           { value: 'perso', label: 'Perso', count: lists.perso.length },
         ]}
       />
-      {tab === 'perso' ? <Button label="Créer une recette" icon="plus" style={{ marginTop: space.md }} onPress={() => router.push('/editor')} /> : null}
+      {tab === 'perso' ? (
+        <View style={styles.persoActions}>
+          <Button label="Créer" icon="plus" flex onPress={() => router.push('/editor')} />
+          <Button label="Importer" icon="download" variant="secondary" flex onPress={() => router.push('/importer')} />
+        </View>
+      ) : null}
       <View style={styles.list}>
         {list.length ? list.map((cocktail, index) => (
           <View key={cocktail.id}>
@@ -70,4 +75,5 @@ export default function ListsScreen() {
 
 const styles = StyleSheet.create({
   list: { marginTop: space.md },
+  persoActions: { flexDirection: 'row', gap: space.sm, marginTop: space.md },
 });

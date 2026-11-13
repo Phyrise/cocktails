@@ -53,9 +53,6 @@ const manifest = {
   short_name: 'Cocktails',
   description: 'Quoi boire ce soir ? Recettes de cocktails, votre bar et vos envies.',
   lang: 'fr',
-  // Identité de l'app pour Chrome. Changée (« app-v2 ») parce qu'un Chrome Android gardait la trace d'une ancienne
-  // installation supprimée et refusait de réinstaller. Les données (IndexedDB) suivent le site, pas cet id.
-  id: `${BASE}/?app-v2`,
   start_url: `${BASE}/`,
   scope: `${BASE}/`,
   display: 'standalone',
